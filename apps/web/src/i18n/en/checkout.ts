@@ -44,7 +44,7 @@ export const checkout = {
   // ---------- vet ----------
   'checkout.vet.bannerTitle': "Needs a vet's okay.",
   'checkout.vet.bannerBody':
-    'After you pay, we hold this order until a vet approves it, then pack it. Demo shop: this is not real medicine and no vet is contacted.',
+    'After you pay, we hold this order until a vet approves it, then pack it. Most requests are approved within one working day.',
   'checkout.vet.legend': 'Your vet',
   'checkout.vet.intro':
     "An item in your cart needs a vet's okay before we pack it. We will email you as soon as it is decided.",

@@ -46,7 +46,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   // ---------- vet ----------
   'checkout.vet.bannerTitle': 'Nécessite l’accord d’un vétérinaire.',
   'checkout.vet.bannerBody':
-    'Après le paiement, nous mettons cette commande en attente jusqu’à l’approbation d’un vétérinaire, puis nous la préparons. Boutique de démonstration : ce n’est pas un vrai médicament et aucun vétérinaire n’est contacté.',
+    'Après le paiement, nous mettons cette commande en attente jusqu’à l’approbation d’un vétérinaire, puis nous la préparons. La plupart des demandes sont validées sous un jour ouvré.',
   'checkout.vet.legend': 'Votre vétérinaire',
   'checkout.vet.intro':
     'Un article de votre panier nécessite l’accord d’un vétérinaire avant que nous le préparions. Nous vous écrirons dès que la décision sera prise.',

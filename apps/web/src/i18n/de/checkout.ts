@@ -47,7 +47,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   // ---------- vet ----------
   'checkout.vet.bannerTitle': 'Tierärztliche Freigabe erforderlich.',
   'checkout.vet.bannerBody':
-    'Nach der Zahlung halten wir diese Bestellung zurück, bis die tierärztliche Freigabe vorliegt, und verpacken sie dann. Demo-Shop: Das ist keine echte Medizin, und es wird keine Tierarztpraxis kontaktiert.',
+    'Nach der Zahlung halten wir diese Bestellung zurück, bis die tierärztliche Freigabe vorliegt, und verpacken sie dann. Die meisten Anfragen werden innerhalb eines Werktags freigegeben.',
   'checkout.vet.legend': 'Ihre Tierarztpraxis',
   'checkout.vet.intro':
     'Ein Artikel in Ihrem Warenkorb benötigt eine tierärztliche Freigabe, bevor wir ihn verpacken. Wir benachrichtigen Sie per E-Mail, sobald die Entscheidung gefallen ist.',

@@ -114,7 +114,7 @@ export const shell = {
 
   // Home
   'shell.home.seoDescription':
-    'Colourful, tough and tail-wag-approved supplies for dogs, cats, birds, fish and small pets.',
+    'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Free delivery over 49 euros and a happy-tail promise on every order.',
   'shell.home.h1': 'Happy tails start here',
   'shell.home.shopByPet': 'Shop by pet',
   'shell.home.bestsellers': 'Bestsellers',
@@ -149,15 +149,16 @@ export const shell = {
     other: '{average} out of 5, from {count} happy customers',
   },
   'shell.seasonal.seeAll': 'See the whole collection',
-  'shell.gallery.heading': '#RealPawsomePets',
-  'shell.gallery.intro': 'Real customers, real pets. Tap a photo to shop what they use.',
+  'shell.gallery.heading': 'Pawsome at home',
+  'shell.gallery.intro':
+    'Our favourite pieces, ready for real homes. Tap a photo to shop the look.',
   'shell.gallery.open': 'Open photo: {name}',
-  'shell.gallery.customerPhotoLower': 'customer photo',
-  'shell.gallery.customerPhoto': 'Customer photo',
+  'shell.gallery.customerPhotoLower': 'photo',
+  'shell.gallery.customerPhoto': 'Photo',
   'shell.gallery.aCustomer': 'A customer',
   'shell.gallery.petOf': "{name}'s pet",
   'shell.gallery.pictured': 'Pictured: {name}',
-  'shell.gallery.shop': 'Shop this photo',
+  'shell.gallery.shop': 'Shop the look',
   'shell.gallery.noProducts': 'No products are linked to this photo.',
   'shell.gallery.addAria': 'Add {name} to cart',
   'shell.gallery.add': 'Add to cart',

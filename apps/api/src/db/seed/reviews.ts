@@ -99,35 +99,6 @@ const WEIGHT_G: Record<string, [number, number]> = {
 export const SEEDED_REVIEW_TARGET = 60;
 const PRODUCT_COUNT = 22;
 
-const GALLERY_CAPTIONS = [
-  'Nap time on the new bed',
-  'Tug of war champion',
-  'Walkies in the new harness',
-  'Dinner is served',
-  'Zoomies after the first parcel',
-  'Supervising the unboxing',
-  'Quality time with the favourite toy',
-  'Best seat in the house',
-  'Training day treats',
-  'Cosy corner finally finished',
-  'Weekend adventure',
-  'Sunday morning stretch',
-];
-const GALLERY_PET_NAMES = [
-  'Biscuit',
-  'Luna',
-  'Pepper',
-  'Mochi',
-  'Waffles',
-  'Juniper',
-  'Ziggy',
-  'Olive',
-  'Basil',
-  'Nugget',
-  'Clover',
-  'Tango',
-];
-
 export async function seedReviews(
   tx: Tx,
   opts: {
@@ -248,6 +219,8 @@ export async function seedReviews(
   `);
 
   // ---- gallery: twelve photos built from catalogue pictures ----
+  // The pictures are product shots, so the caption names the product and no pet is credited
+  // (the storefront calls the strip "Pawsome at home", not customer photos).
   await tx.delete(galleryPhotos).where(like(galleryPhotos.path, '/products/%'));
   const withPhoto = products.filter((p) => {
     const img = imageRowsFor(p)[0];
@@ -260,8 +233,8 @@ export async function seedReviews(
       .insert(galleryPhotos)
       .values({
         path: imageRowsFor(main)[0]!.url,
-        caption: GALLERY_CAPTIONS[i]!,
-        petName: GALLERY_PET_NAMES[i]!,
+        caption: main.name,
+        petName: '',
         sortOrder: i + 1,
         // One stays a draft, so the admin screen has both states to show.
         published: i !== 11,

@@ -21,9 +21,8 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.page.attr.size': 'Größe',
   'pdp.page.attr.brand': 'Marke',
   'pdp.page.attr.goodFor': 'Gut für',
-  'pdp.page.gallery.heading': 'Kundinnen und Kunden mit diesem Produkt',
-  'pdp.page.gallery.intro':
-    'Fotos von echten Pawsome-Haustieren. Tippen Sie auf ein Foto, um die abgebildeten Produkte zu kaufen.',
+  'pdp.page.gallery.heading': 'So sieht es zu Hause aus',
+  'pdp.page.gallery.intro': 'Tippen Sie auf ein Foto, um den Look zu entdecken.',
 
   // ---- tabs ----
   'pdp.tabs.label': 'Produktinformationen',
