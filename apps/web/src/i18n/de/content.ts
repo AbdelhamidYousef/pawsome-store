@@ -149,4 +149,16 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'msg.content.emailInvalid': 'Geben Sie eine gültige E-Mail-Adresse ein',
   'msg.content.messageShort': 'Erzählen Sie uns etwas mehr (mindestens 10 Zeichen)',
   'content.guides.read': 'Ratgeber lesen',
+  'content.contact.eyebrow': 'Wir helfen gern',
+  'content.contact.aboutTitle': 'Wer Ihre Nachricht liest',
+  'content.contact.about':
+    'Pawsome ist ein kleines Team von Tierfreunden. Jede Nachricht liest ein Mensch und beantwortet sie richtig: keine Bots, keine Textbausteine.',
+  'content.contact.replyLabel': 'Antwortzeit',
+  'content.contact.replyValue': 'Innerhalb eines Werktags',
+  'content.contact.hoursLabel': 'Erreichbarkeit',
+  'content.contact.hoursValue': 'Montag bis Freitag, 9:00 bis 17:00 Uhr (Amsterdamer Zeit)',
+  'content.contact.emailLabel': 'Per E-Mail',
+  'content.contact.emailValue': 'Wir antworten an die Adresse, die Sie im Formular angeben.',
+  'content.contact.quickTitle': 'Schnelle Antworten',
+  'content.contact.formTitle': 'Schreiben Sie uns',
 };
