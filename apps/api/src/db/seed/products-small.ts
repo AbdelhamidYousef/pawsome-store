@@ -4,7 +4,7 @@ import type { ProductSeed } from './expand.ts';
 export const smallProducts: ProductSeed[] = [
   {
     slug: 'meadow-hay-bundle',
-    brand: 'pebble-and-pine',
+    brand: 'hop-and-hay',
     tags: ['dental'],
     eco: true,
     name: 'Meadow Hay Bundle',
@@ -25,7 +25,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'carrot-crunch-chews',
-    brand: 'burrow-and-biscuit',
+    brand: 'nibble-lab',
     tags: ['dental'],
     name: 'Carrot Crunch Chews',
     code: 'CARROT',
@@ -144,6 +144,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'chew-stick-hanger',
+    brand: 'hop-and-hay',
     name: 'Chew Stick Hanger',
     code: 'CHWH',
     categorySlug: 'small-toys',
@@ -160,6 +161,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'activity-cube',
+    brand: 'hop-and-hay',
     name: 'Activity Cube',
     code: 'ACTV',
     categorySlug: 'small-toys',
@@ -175,6 +177,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'guinea-pig-pellets',
+    brand: 'hop-and-hay',
     name: 'Guinea Pig Pellets',
     code: 'GPEL',
     categorySlug: 'small-food',
@@ -194,6 +197,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'rabbit-herb-treats',
+    brand: 'nibble-lab',
     name: 'Rabbit Herb Treats',
     code: 'RHRB',
     categorySlug: 'small-food',
@@ -213,6 +217,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'hamster-seed-mix',
+    brand: 'hop-and-hay',
     name: 'Hamster Seed Mix',
     code: 'HSTR',
     categorySlug: 'small-food',
@@ -228,6 +233,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'starter-wooden-hutch',
+    brand: 'hop-and-hay',
     name: 'Starter Wooden Hutch',
     code: 'HTCH',
     categorySlug: 'small-housing',
@@ -243,6 +249,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'nesting-fleece-liners',
+    brand: 'groomwell',
     name: 'Nesting Fleece Liners',
     code: 'LINR',
     categorySlug: 'small-housing',
@@ -255,7 +262,6 @@ export const smallProducts: ProductSeed[] = [
     basePriceCents: 1890,
     baseWeightGrams: 350,
     axes: [sizes(400, ['S', 'M']), colors(['sage', 'sand', 'sky'])],
-    brand: 'pebble-and-pine',
     eco: true,
   },
   {
@@ -276,6 +282,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'travel-carry-box',
+    brand: 'hop-and-hay',
     name: 'Travel Carry Box',
     code: 'CARY',
     categorySlug: 'small-housing',
@@ -291,6 +298,7 @@ export const smallProducts: ProductSeed[] = [
   },
   {
     slug: 'hanging-hay-rack',
+    brand: 'hop-and-hay',
     name: 'Hanging Hay Rack',
     code: 'HRCK',
     categorySlug: 'small-bowls',

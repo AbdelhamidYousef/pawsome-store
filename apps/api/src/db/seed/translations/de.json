@@ -834,6 +834,42 @@
       "tagline": "Klares Wasser, entspannte Fische, einfache Pflege.",
       "story": "Tidepool nimmt der Aquaristik das Rätselraten. Die Starter-Aquarien kommen mit allem Nötigen in einem Karton, das Futter ist auf gängige Gesellschaftsfische abgestimmt, und das Licht ist sanft genug, um Farben zu zeigen, ohne die Fische zu stressen. Dekoration und Seidenpflanzen bieten Verstecke und Platz zum Erkunden. Zu jedem Produkt gibt es verständliche Tipps, denn ein gesundes Aquarium ist vor allem eine Frage guter Gewohnheiten.",
       "slug": "tidepool"
+    },
+    "feather-and-finch": {
+      "name": "Feather & Finch",
+      "tagline": "Futterstellen, Futter und Beschäftigung für glückliche, aktive Vögel.",
+      "story": "Feather & Finch begann an einem Küchentisch voller Kolbenhirse, Samenschalen und Skizzen für bessere Futterspender. Jedes Produkt ist darauf ausgelegt, wie Vögel wirklich fressen, klettern und nach Futter suchen, damit sich ein Käfig weniger wie eine Kiste und mehr wie ein Ast anfühlt. Die Futtermischungen entstehen in kleinen Chargen ohne künstliche Farbstoffe, und die Spielzeuge bestehen aus Holz, Glöckchen und Naturfasern, an denen bedenkenlos geknabbert werden darf. Fröhliche Morgen und volle Kröpfe – darum geht es.",
+      "slug": "feather-and-finch"
+    },
+    "hop-and-hay": {
+      "name": "Hop & Hay",
+      "tagline": "Heuraufen, Verstecke und gutes Futter für Kaninchen, Meerschweinchen und Hamster.",
+      "story": "Hop & Hay ist für die kleinen Haustiere, die vom Gehege aus den ganzen Haushalt regieren. Wir kümmern uns um das, was ihnen am wichtigsten ist: frisches Heu in Reichweite, ein sicheres Versteck und genug zum Knabbern. Pellets und Mischungen sind auf jede Tierart abgestimmt, denn ein Hamster braucht ein ganz anderes Abendessen als ein Kaninchen. Die Häuschen sind aus unbehandeltem Holz mit leicht zu reinigenden Schalen – Saubermachen dauert Minuten statt eines ganzen Nachmittags.",
+      "slug": "hop-and-hay"
+    },
+    "whiskerworks": {
+      "name": "Whiskerworks",
+      "tagline": "Durchdachte Näpfe, Trinkbrunnen und Reisezubehör für Katzen.",
+      "story": "Whiskerworks macht das Alltagszubehör, bei dem Katzen wählerisch sind: Näpfe, die die Schnurrhaare nicht stören, Brunnen, die das Wasser in Bewegung halten, und Transporttaschen, die sich sicher statt unheimlich anfühlen. Jedes Design wird von echten Katzen getestet – ehrliche Kritiker, die sehr schnell einfach weggehen. Wir mögen klare Linien, Materialien, die sich leicht reinigen lassen, und Details, die sich gut in jede Wohnung einfügen. Weniger Machtkämpfe beim Abendessen, entspanntere Fahrten zum Tierarzt.",
+      "slug": "whiskerworks"
+    },
+    "trailtail": {
+      "name": "Trailtail",
+      "tagline": "Geschirre, Leinen und Outdoor-Ausrüstung für Hunde, die lange Spaziergänge lieben.",
+      "story": "Trailtail ist gemacht für matschige Felder, verregnete Gehwege und den Spaziergang, der zum Abenteuer wird. Geschirre und Leinen bestehen aus robustem Gurtband mit gepolsterten Riemen und reflektierenden Details, damit Sie auch an dunklen Abenden gesehen werden. Reisenäpfe lassen sich flach falten und Bälle springen zuverlässig, denn zu einem guten Tag draußen gehören Wasser und ein Spiel. Jedes Teil wird gespült, getrocknet und noch einmal getestet, bevor es den Namen Trailtail tragen darf.",
+      "slug": "trailtail"
+    },
+    "nibble-lab": {
+      "name": "Nibble Lab",
+      "tagline": "Leckerlis für jedes Haustier, mit kurzen Zutatenlisten.",
+      "story": "Nibble Lab backt, trocknet und mischt Leckerlis für Hunde, Katzen, Kaninchen, Reptilien und Fische. Jedes Rezept beginnt mit einer Hauptzutat, und die Liste bleibt so kurz, dass man sie auf einen Blick lesen kann. Die Portionen sind fürs Training, als Belohnung oder einfach zur Begrüßung gedacht – so bleibt ein Leckerli ein Leckerli und wird nicht zum zweiten Abendessen. Jede Charge wird von einem Team sehr begeisterter Vorkoster geprüft, bevor sie ins Regal kommt.",
+      "slug": "nibble-lab"
+    },
+    "groomwell": {
+      "name": "Groomwell",
+      "tagline": "Fellpflege und Sauberkeit, die den Pflegetag leicht machen.",
+      "story": "Groomwell kümmert sich um die weniger glamouröse Seite der Tierpflege: Fell, Haut und das Aufräumen danach. Ergänzungen für das Fell sorgen von innen für gesunden Glanz, und ein feiner Sprühnebel hilft Reptilien bei einer sauberen Häutung. Einlagen, Schalen und kompostierbare Beutel machen die tägliche Routine schnell und hinterlassen weniger Abfall. Ein sauberes, zufriedenes Tier ist ein glückliches Tier – und der Mensch, der sich darum kümmert, auch.",
+      "slug": "groomwell"
     }
   },
   "collections": {

@@ -40,6 +40,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'bouncy-rubber-ball',
+    brand: 'trailtail',
     name: 'Bouncy Rubber Ball',
     code: 'BALL',
     categorySlug: 'dog-toys',
@@ -154,6 +155,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'everyday-webbing-collar',
+    brand: 'trailtail',
     name: 'Everyday Webbing Collar',
     code: 'COLLAR',
     categorySlug: 'dog-walk',
@@ -169,6 +171,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'reflective-walking-leash',
+    brand: 'trailtail',
     isNew: true,
     name: 'Reflective Walking Leash',
     code: 'LEASH',
@@ -263,6 +266,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'travel-blanket-roll',
+    brand: 'trailtail',
     name: 'Travel Blanket Roll',
     code: 'ROLL',
     categorySlug: 'dog-beds',
@@ -275,7 +279,6 @@ export const dogProducts: ProductSeed[] = [
     basePriceCents: 2490,
     baseWeightGrams: 500,
     axes: [colors(['terracotta', 'olive', 'navy'])],
-    brand: 'pebble-and-pine',
     eco: true,
   },
   {
@@ -321,6 +324,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'light-lean-bites',
+    brand: 'nibble-lab',
     name: 'Light Lean Bites',
     code: 'LEAN',
     categorySlug: 'dog-treats',
@@ -364,6 +368,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'collapsible-travel-bowl',
+    brand: 'trailtail',
     name: 'Collapsible Travel Bowl',
     code: 'FOLD',
     categorySlug: 'dog-bowls',
@@ -412,6 +417,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'comfort-harness',
+    brand: 'trailtail',
     name: 'Comfort Harness',
     code: 'HARN',
     categorySlug: 'dog-walk',
@@ -428,6 +434,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'hands-free-leash',
+    brand: 'trailtail',
     name: 'Hands-Free Leash',
     code: 'FREE',
     categorySlug: 'dog-walk',
@@ -443,6 +450,7 @@ export const dogProducts: ProductSeed[] = [
   },
   {
     slug: 'compostable-waste-bags',
+    brand: 'groomwell',
     name: 'Compostable Waste Bags',
     code: 'BAGS',
     categorySlug: 'dog-walk',
@@ -457,7 +465,6 @@ export const dogProducts: ProductSeed[] = [
     axes: [
       packs({ value: '60x', label: '60 bags' }, { value: '180x', label: '180 bags' }, 900, 2.8),
     ],
-    brand: 'pebble-and-pine',
     eco: true,
   },
 ];

@@ -38,7 +38,7 @@ describe('seed', () => {
       categories: 31,
       // 125 catalogue products plus the three kits.
       products: 128,
-      brands: 6,
+      brands: 12,
       tags: 6,
       collections: 5,
       // 3 demo logins, the 14 invented reviewers (phase 17) and the returns demo customer (phase 22).

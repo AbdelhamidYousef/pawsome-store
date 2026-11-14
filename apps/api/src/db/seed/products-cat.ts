@@ -112,7 +112,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'creamy-lick-pouches',
-    brand: 'moonbeam-mews',
+    brand: 'nibble-lab',
     tags: ['sensitive-tummy'],
     name: 'Creamy Lick Pouches',
     code: 'CREAMY',
@@ -134,6 +134,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'ceramic-whisker-bowl',
+    brand: 'whiskerworks',
     name: 'Ceramic Whisker Bowl',
     code: 'WHISKER',
     categorySlug: 'cat-bowls',
@@ -149,6 +150,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'gravity-water-dispenser',
+    brand: 'whiskerworks',
     name: 'Gravity Water Dispenser',
     code: 'GRAVITY',
     categorySlug: 'cat-bowls',
@@ -164,6 +166,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'soft-travel-carrier',
+    brand: 'whiskerworks',
     tags: ['calming'],
     name: 'Soft Travel Carrier',
     code: 'CARRIER',
@@ -266,6 +269,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'dental-crunch-bites',
+    brand: 'nibble-lab',
     name: 'Dental Crunch Bites',
     code: 'DCRN',
     categorySlug: 'cat-treats',
@@ -281,7 +285,6 @@ export const catProducts: ProductSeed[] = [
       choice('flavour', ['chicken', 'tuna']),
       packs({ value: '60g', label: '60 g' }, { value: '180g', label: '180 g' }, 450, 3),
     ],
-    brand: 'moonbeam-mews',
     tags: ['dental'],
     vetApproval: true,
   },
@@ -310,6 +313,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'omega-coat-paste',
+    brand: 'groomwell',
     name: 'Omega Coat Paste',
     code: 'OMEG',
     categorySlug: 'cat-treats',
@@ -322,12 +326,12 @@ export const catProducts: ProductSeed[] = [
     basePriceCents: 899,
     baseWeightGrams: 80,
     axes: [choice('flavour', ['salmon', 'chicken'])],
-    brand: 'moonbeam-mews',
     tags: ['skin-coat'],
     net: 75,
   },
   {
     slug: 'slanted-raised-bowl',
+    brand: 'whiskerworks',
     name: 'Slanted Raised Bowl',
     code: 'SLNT',
     categorySlug: 'cat-bowls',
@@ -343,6 +347,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'whisper-drinking-fountain',
+    brand: 'whiskerworks',
     name: 'Whisper Drinking Fountain',
     code: 'FONT',
     categorySlug: 'cat-bowls',
@@ -355,10 +360,10 @@ export const catProducts: ProductSeed[] = [
     basePriceCents: 2990,
     baseWeightGrams: 650,
     axes: [choice('size', ['2l', '3l'])],
-    brand: 'moonbeam-mews',
   },
   {
     slug: 'snuffle-feeding-mat',
+    brand: 'whiskerworks',
     name: 'Snuffle Feeding Mat',
     code: 'SNUF',
     categorySlug: 'cat-bowls',
@@ -375,6 +380,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'bubble-window-backpack',
+    brand: 'whiskerworks',
     name: 'Bubble Window Backpack',
     code: 'BUBL',
     categorySlug: 'cat-travel',
@@ -390,6 +396,7 @@ export const catProducts: ProductSeed[] = [
   },
   {
     slug: 'cat-harness-and-lead',
+    brand: 'whiskerworks',
     name: 'Cat Harness and Lead',
     code: 'HLAD',
     categorySlug: 'cat-travel',
@@ -402,10 +409,10 @@ export const catProducts: ProductSeed[] = [
     basePriceCents: 1890,
     baseWeightGrams: 150,
     axes: [colors(['coral', 'teal', 'mustard']), sizes(200, ['S', 'M'])],
-    brand: 'moonbeam-mews',
   },
   {
     slug: 'portable-litter-tray',
+    brand: 'groomwell',
     name: 'Portable Litter Tray',
     code: 'LITR',
     categorySlug: 'cat-travel',
