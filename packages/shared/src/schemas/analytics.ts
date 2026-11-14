@@ -1,12 +1,15 @@
 import { z } from 'zod';
 
+import { STORE_ZONE } from '../delivery.ts';
+
 import { DataSchema } from './common.ts';
 
 // ---------- admin analytics ----------
 
 export const ANALYTICS_MAX_DAYS = 366;
 // The shop's calendar: "a day" in every figure is a day in this zone, not in UTC or the viewer's.
-export const STORE_TIME_ZONE = 'Europe/Riga';
+// The same zone as dispatch cutoffs (one shop, one clock).
+export const STORE_TIME_ZONE = STORE_ZONE;
 
 export const AnalyticsIntervalSchema = z.enum(['day', 'week', 'month']);
 export type AnalyticsInterval = z.infer<typeof AnalyticsIntervalSchema>;
