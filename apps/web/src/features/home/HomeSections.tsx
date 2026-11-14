@@ -105,13 +105,21 @@ export function PromoTile({
     <section
       aria-label={t('shell.home.offer')}
       data-testid="promo-tile"
-      className="flex flex-wrap items-center justify-between gap-3 rounded-card bg-primary-soft p-5"
+      className="flex flex-col items-start gap-4 rounded-card border border-line bg-surface p-6 shadow-card sm:flex-row sm:items-center sm:gap-6 sm:px-8"
     >
-      <p className="max-w-prose font-display text-lg font-semibold text-ink">{text}</p>
+      <span
+        aria-hidden="true"
+        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary-strong"
+      >
+        <TruckIcon width={28} height={28} />
+      </span>
+      <p className="max-w-prose flex-1 font-display text-lg font-semibold leading-snug text-ink sm:text-xl">
+        {text}
+      </p>
       {linkLabel && linkHref && (
         <Link
           to={linkHref}
-          className="min-h-11 rounded-control font-semibold text-primary-strong underline underline-offset-2"
+          className="inline-flex min-h-11 shrink-0 items-center rounded-full border-2 border-ink px-5 font-display font-semibold text-ink transition-colors hover:bg-primary-soft"
         >
           {linkLabel}
         </Link>
@@ -128,8 +136,11 @@ export function GuidesTeaser() {
   if (isError || (data && data.data.length === 0)) return null;
   return (
     <section aria-labelledby="home-guides-heading" data-testid="guides-teaser">
-      <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
-        <h2 id="home-guides-heading" className="text-2xl font-bold sm:text-3xl">
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-2">
+        <h2
+          id="home-guides-heading"
+          className="text-[1.75rem] font-semibold leading-tight sm:text-4xl"
+        >
           {t('shell.home.guides.title')}
         </h2>
         <Link
@@ -187,8 +198,11 @@ export function Testimonials() {
   if (isError || (data && data.data.length === 0)) return null;
   return (
     <section aria-labelledby="home-testimonials-heading" data-testid="testimonials">
-      <div className="mb-5 flex flex-wrap items-end justify-between gap-x-4 gap-y-1">
-        <h2 id="home-testimonials-heading" className="text-2xl font-bold sm:text-3xl">
+      <div className="mb-6 flex flex-wrap items-end justify-between gap-x-4 gap-y-1">
+        <h2
+          id="home-testimonials-heading"
+          className="text-[1.75rem] font-semibold leading-tight sm:text-4xl"
+        >
           {t('shell.home.happyTails')}
         </h2>
         <p className="min-h-6 text-muted" data-testid="rating-summary">

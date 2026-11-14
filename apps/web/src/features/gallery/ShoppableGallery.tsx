@@ -43,10 +43,16 @@ export function ShoppableGallery({
   const shown = data.slice(0, (featured ? FEATURED_MIN : MORE_STEP) + extra);
 
   return (
-    <section aria-labelledby={`gallery-heading-${productId ?? 'home'}`} className="mt-10">
+    <section
+      aria-labelledby={`gallery-heading-${productId ?? 'home'}`}
+      className={productId ? 'mt-10' : undefined}
+    >
       <h2
         id={`gallery-heading-${productId ?? 'home'}`}
-        className="font-display text-2xl font-semibold sm:text-3xl"
+        className={cn(
+          'font-display font-semibold leading-tight',
+          productId ? 'text-2xl sm:text-3xl' : 'text-[1.75rem] sm:text-4xl',
+        )}
       >
         {heading ?? t('shell.gallery.heading')}
       </h2>
