@@ -129,7 +129,7 @@ function ProductView({ product }: { product: ProductDetail }) {
   ];
   const attributes = ATTRIBUTE_LABELS.flatMap(([key, label]) => {
     const value = product.attributes[key];
-    return value ? [{ label: t(label), value: formatFacetValue(key, value) }] : [];
+    return value ? [{ label: t(label), value: formatFacetValue(key, value, t) }] : [];
   });
 
   return (

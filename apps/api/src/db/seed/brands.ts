@@ -73,4 +73,58 @@ export const brands: BrandSeed[] = [
     accentColor: '#0284C7',
     logoUrl: '/brands/tidepool.webp',
   },
+  {
+    slug: 'feather-and-finch',
+    name: 'Feather & Finch',
+    tagline: 'Feeders, food and play for happy, busy birds.',
+    story:
+      "Feather & Finch started at a kitchen table covered in millet, seed husks and sketches of better feeders. Everything in the range is designed around how birds really eat, climb and forage, so a cage feels less like a box and more like a branch. Foods are blended in small batches with no artificial colours, and the toys are made from wood, bells and natural fibres that are safe to chew. Bright mornings and full crops: that's the whole idea.",
+    accentColor: '#0EA5A4',
+    logoUrl: '/brands/feather-and-finch.webp',
+  },
+  {
+    slug: 'hop-and-hay',
+    name: 'Hop & Hay',
+    tagline: 'Hay racks, hideaways and good food for rabbits, guinea pigs and hamsters.',
+    story:
+      'Hop & Hay is for the small pets who run the house from a hutch. We think about what they care about most: fresh hay within reach, somewhere safe to hide and plenty to gnaw. Pellets and mixes are made for each species, because a hamster and a rabbit need very different dinners. Housing is untreated wood with easy-clean trays, so tidying up takes minutes, not an afternoon.',
+    accentColor: '#84CC16',
+    logoUrl: '/brands/hop-and-hay.webp',
+  },
+  {
+    slug: 'whiskerworks',
+    name: 'Whiskerworks',
+    tagline: 'Smart bowls, fountains and travel kit for cats.',
+    story:
+      "Whiskerworks makes the everyday kit cats are fussy about: bowls that don't squash whiskers, fountains that keep water moving and carriers that feel safe instead of scary. Every design is tested by real cats, who are honest critics and very quick to walk away. We like clean lines, materials that wash easily and details that fit neatly into a home. Fewer standoffs at dinner time, calmer trips to the vet.",
+    accentColor: '#8B5CF6',
+    logoUrl: '/brands/whiskerworks.webp',
+  },
+  {
+    slug: 'trailtail',
+    name: 'Trailtail',
+    tagline: 'Harnesses, leads and outdoor gear for dogs who love a long walk.',
+    story:
+      'Trailtail is built for muddy fields, rainy pavements and the walk that turns into an adventure. Harnesses and leads use tough webbing, padded straps and reflective trim, so you are seen when the evenings draw in. Travel bowls fold flat and balls bounce true, because a good day out needs water and a game. Every piece is rinsed, dried and tested again before it earns the Trailtail name.',
+    accentColor: '#EA580C',
+    logoUrl: '/brands/trailtail.webp',
+  },
+  {
+    slug: 'nibble-lab',
+    name: 'Nibble Lab',
+    tagline: 'Treats for every pet, with short ingredient lists.',
+    story:
+      'Nibble Lab bakes, dries and blends treats for dogs, cats, rabbits, reptiles and fish. Each recipe starts with one main ingredient and keeps the list short enough to read at a glance. Portions are sized for training, rewarding or simply saying hello, so a treat stays a treat and not a second dinner. Every batch is tried by a panel of very keen tasters before it reaches the shelf.',
+    accentColor: '#DB2777',
+    logoUrl: '/brands/nibble-lab.webp',
+  },
+  {
+    slug: 'groomwell',
+    name: 'Groomwell',
+    tagline: 'Coat care and clean-up that make grooming day easy.',
+    story:
+      'Groomwell looks after the less glamorous side of pet care: coats, skin and the clean-up afterwards. Coat supplements support a glossy shine from the inside, and a fine misting spray helps reptiles shed cleanly. Liners, trays and compostable bags make tidy routines quick and leave less waste behind. A clean, comfortable pet is a happy one, and so is the person who looks after them.',
+    accentColor: '#0284C7',
+    logoUrl: '/brands/groomwell.webp',
+  },
 ];

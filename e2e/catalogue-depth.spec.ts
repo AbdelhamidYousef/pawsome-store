@@ -68,7 +68,7 @@ test('an unknown collection or brand shows the not-found page', async ({ page })
 
 test('the brands page lists the house brands and opens one', async ({ page }) => {
   await page.goto('/brands');
-  await expect(page.getByTestId('brand-card')).toHaveCount(6);
+  await expect(page.getByTestId('brand-card')).toHaveCount(12);
   await page.getByTestId('brand-card').filter({ hasText: 'Scaleby' }).click();
   await expect(page).toHaveURL(/\/brands\/scaleby$/);
   await expect(page.getByRole('heading', { level: 1, name: 'Scaleby' })).toBeVisible();

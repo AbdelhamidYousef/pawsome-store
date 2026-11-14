@@ -4,13 +4,23 @@ import type { Tx } from '../client.ts';
 import {
   galleryPhotoProducts,
   galleryPhotos,
+  products as productsTable,
   reviewPhotos,
   reviews,
+  sessions,
   users,
 } from '../schema/index.ts';
 
+import { bundleSeeds } from './bundles.ts';
 import type { ProductSeed } from './expand.ts';
 import { imageRowsFor } from './images.ts';
+import {
+  CROWD_EMAIL_PATTERN,
+  crowdReviewers,
+  generateCrowdReviews,
+  kindFor,
+  type CrowdProduct,
+} from './review-crowd.ts';
 
 // Phase 17 demo content: about 60 invented reviews spread over 22 products (mixed ratings, some
 // pending or rejected, some with pet details or a photo) and 12 gallery photos. Everything is
@@ -104,11 +114,12 @@ export async function seedReviews(
   opts: {
     products: readonly ProductSeed[];
     productId: ReadonlyMap<string, string>;
-    passwordHash: string;
+    // Unusable password hash (users.ts): reviewer accounts cannot sign in.
+    lockedHash: string;
     now: Date;
   },
 ) {
-  const { products, productId, passwordHash, now } = opts;
+  const { products, productId, lockedHash, now } = opts;
   const rand = rng(17);
   const DAY = 24 * 60 * 60 * 1000;
 
@@ -120,7 +131,7 @@ export async function seedReviews(
         email: reviewerEmail(i),
         firstName,
         lastName,
-        passwordHash,
+        passwordHash: lockedHash,
       })),
     )
     .onConflictDoUpdate({
@@ -128,6 +139,7 @@ export async function seedReviews(
       set: {
         firstName: sql.raw('excluded."first_name"'),
         lastName: sql.raw('excluded."last_name"'),
+        passwordHash: sql.raw('excluded."password_hash"'),
       },
     })
     .returning({ id: users.id, email: users.email });
@@ -136,6 +148,13 @@ export async function seedReviews(
     if (!row) throw new Error(`reviewer ${i} was not inserted`);
     return row.id;
   };
+
+  await tx.delete(sessions).where(
+    inArray(
+      sessions.userId,
+      reviewerRows.map((r) => r.id),
+    ),
+  );
 
   // Re-running replaces the seeded reviews only (their photos and votes go by cascade); reviews
   // written by anyone else, including e2e and real use, stay.
@@ -208,6 +227,8 @@ export async function seedReviews(
     }
   }
 
+  await seedCrowdReviews(tx, { products, productId, lockedHash, now });
+
   // The aggregate is recomputed from the approved reviews for EVERY product (not only the seeded
   // ones), so it is right after a re-seed even when other reviews exist.
   await tx.execute(sql`
@@ -250,4 +271,151 @@ export async function seedReviews(
       .insert(galleryPhotoProducts)
       .values([...new Set(linked)].map((pid) => ({ photoId: photo.id, productId: pid })));
   }
+}
+
+// Rows per INSERT. Each batch travels as ONE jsonb parameter (no 65 535-parameter limit), about
+// 1.5 MB; a handful of round trips writes the ~40k rows even on a remote database.
+const CROWD_BATCH = 4000;
+
+/**
+ * The crowd: 100-1000 approved reviews per catalogue product and kit, from a pool of 1100 invented
+ * customers (one review per customer per product, as the unique key demands). Idempotent:
+ * an upsert on (user, product) that rewrites a row only when its content changed, then a delete of
+ * crowd rows the generator no longer produces. The seed is the source of truth for these rows: a
+ * re-seed puts back a crowd review an admin rejected or deleted (approved again, same text), and a
+ * re-seed on a later day rewrites every row because the dates move with "today". Helpful counts are
+ * written once and then left alone, so real votes on a seeded review survive a re-seed.
+ */
+export async function seedCrowdReviews(
+  tx: Tx,
+  opts: {
+    products: readonly ProductSeed[];
+    productId: ReadonlyMap<string, string>;
+    // Unusable password hash (users.ts): reviewer accounts cannot sign in.
+    lockedHash: string;
+    now: Date;
+  },
+): Promise<number> {
+  const { products, productId, lockedHash, now } = opts;
+
+  const pool = crowdReviewers();
+  const userRows = await tx
+    .insert(users)
+    .values(pool.map((r) => ({ ...r, passwordHash: lockedHash })))
+    .onConflictDoUpdate({
+      target: users.email,
+      set: {
+        firstName: sql.raw('excluded."first_name"'),
+        lastName: sql.raw('excluded."last_name"'),
+        passwordHash: sql.raw('excluded."password_hash"'),
+        createdAt: sql.raw('excluded."created_at"'),
+      },
+    })
+    .returning({ id: users.id, email: users.email });
+  // Nobody signs in as a seeded reviewer: drop any session one might have.
+  await tx.delete(sessions).where(
+    inArray(
+      sessions.userId,
+      userRows.map((r) => r.id),
+    ),
+  );
+  const idByEmail = new Map(userRows.map((r) => [r.email, r.id]));
+  const userIds = pool.map((r) => {
+    const id = idByEmail.get(r.email);
+    if (!id) throw new Error(`reviewer ${r.email} was not inserted`);
+    return id;
+  });
+
+  const catalogue: CrowdProduct[] = products.map((p) => {
+    const id = productId.get(p.slug);
+    if (!id) throw new Error(`product ${p.slug} was not inserted`);
+    return {
+      id,
+      slug: p.slug,
+      pet: p.pet,
+      kind: kindFor(p.categorySlug, p.slug),
+      bestseller: p.bestseller ?? false,
+      axes: p.axes
+        .map((a) => ({
+          key: a.key,
+          labels: a.values.filter((v) => !v.isTrial).map((v) => v.label),
+        }))
+        .filter((a) => a.labels.length > 0),
+    };
+  });
+  const kits = await tx
+    .select({ id: productsTable.id, slug: productsTable.slug })
+    .from(productsTable)
+    .where(
+      inArray(
+        productsTable.slug,
+        bundleSeeds.map((b) => b.slug),
+      ),
+    );
+  const all = [
+    ...catalogue,
+    ...kits.map((k) => ({
+      id: k.id,
+      slug: k.slug,
+      pet: 'dog' as const,
+      kind: 'kit' as const,
+      bestseller: false,
+      axes: [],
+    })),
+  ];
+
+  const rows = generateCrowdReviews(all, now).map((r) => ({
+    product_id: r.productId,
+    user_id: userIds[r.reviewer]!,
+    rating: r.rating,
+    title: r.title,
+    body: r.body,
+    verified_buyer: r.verifiedBuyer,
+    pet_age_months: r.petAgeMonths,
+    pet_weight_g: r.petWeightG,
+    size_purchased: r.sizePurchased,
+    would_recommend: r.wouldRecommend,
+    helpful_count: r.helpfulCount,
+    created_at: r.createdAt.toISOString(),
+    moderated_at: r.moderatedAt.toISOString(),
+  }));
+
+  for (let i = 0; i < rows.length; i += CROWD_BATCH) {
+    const batch = JSON.stringify(rows.slice(i, i + CROWD_BATCH));
+    await tx.execute(sql`
+      insert into reviews (product_id, user_id, rating, title, body, verified_buyer, pet_age_months,
+        pet_weight_g, size_purchased, would_recommend, status, helpful_count, created_at, moderated_at)
+      select x.product_id, x.user_id, x.rating, x.title, x.body, x.verified_buyer, x.pet_age_months,
+        x.pet_weight_g, x.size_purchased, x.would_recommend, 'approved', x.helpful_count,
+        x.created_at, x.moderated_at
+      from jsonb_to_recordset(${batch}::jsonb) as x(product_id uuid, user_id uuid, rating smallint,
+        title text, body text, verified_buyer boolean, pet_age_months integer, pet_weight_g integer,
+        size_purchased text, would_recommend boolean, helpful_count integer,
+        created_at timestamptz, moderated_at timestamptz)
+      on conflict on constraint reviews_user_product_unique do update set
+        rating = excluded.rating, title = excluded.title, body = excluded.body,
+        verified_buyer = excluded.verified_buyer, pet_age_months = excluded.pet_age_months,
+        pet_weight_g = excluded.pet_weight_g, size_purchased = excluded.size_purchased,
+        would_recommend = excluded.would_recommend, status = 'approved', reject_reason = null,
+        created_at = excluded.created_at, moderated_at = excluded.moderated_at
+      where (reviews.rating, reviews.title, reviews.body, reviews.verified_buyer,
+          reviews.pet_age_months, reviews.pet_weight_g, reviews.size_purchased,
+          reviews.would_recommend, reviews.status, reviews.created_at, reviews.moderated_at)
+        is distinct from (excluded.rating, excluded.title, excluded.body, excluded.verified_buyer,
+          excluded.pet_age_months, excluded.pet_weight_g, excluded.size_purchased,
+          excluded.would_recommend, 'approved'::review_status, excluded.created_at,
+          excluded.moderated_at)
+    `);
+  }
+
+  // Crowd rows the generator no longer makes (a product left the catalogue, a count went down).
+  const keys = JSON.stringify(rows.map((r) => ({ p: r.product_id, u: r.user_id })));
+  await tx.execute(sql`
+    delete from reviews r
+    where r.user_id in (select id from users where email like ${CROWD_EMAIL_PATTERN})
+      and not exists (
+        select 1 from jsonb_to_recordset(${keys}::jsonb) as k(p uuid, u uuid)
+        where k.p = r.product_id and k.u = r.user_id)
+  `);
+  return rows.length;
 }

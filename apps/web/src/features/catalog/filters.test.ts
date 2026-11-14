@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
+import { lookupFor } from '../../i18n';
+
 import {
   centsToInput,
   defaultSort,
@@ -37,6 +39,8 @@ describe('formatting', () => {
     expect(formatFacetValue('pet', 'small')).toBe('Small pets');
     expect(formatFacetValue('ageStage', 'all')).toBe('All ages');
     expect(formatFacetValue('material', 'natural rubber')).toBe('Natural rubber');
+    expect(formatFacetValue('material', 'rubber')).toBe('Rubber & silicone');
+    expect(formatFacetValue('material', 'wood', lookupFor('de-DE').t)).toBe('Holz & Bambus');
   });
   it('offers best match only for a search', () => {
     expect(sortOptions(true)[0]).toBe('relevance');

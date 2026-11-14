@@ -127,6 +127,7 @@ export const fishProducts: ProductSeed[] = [
   },
   {
     slug: 'freeze-dried-bloodworms',
+    brand: 'nibble-lab',
     name: 'Freeze-Dried Bloodworms',
     code: 'BLDW',
     categorySlug: 'fish-food',
@@ -143,7 +144,6 @@ export const fishProducts: ProductSeed[] = [
         trial: { amount: 5, priceCents: 99 },
       }),
     ],
-    brand: 'tidepool',
   },
   {
     slug: 'algae-wafers',

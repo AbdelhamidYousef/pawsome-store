@@ -226,6 +226,7 @@ export const reptileProducts: ProductSeed[] = [
   },
   {
     slug: 'misting-bottle',
+    brand: 'groomwell',
     name: 'Misting Bottle',
     code: 'MIST',
     categorySlug: 'reptile-feeders',
@@ -238,7 +239,6 @@ export const reptileProducts: ProductSeed[] = [
     basePriceCents: 899,
     baseWeightGrams: 150,
     axes: [],
-    brand: 'pebble-and-pine',
     eco: true,
     net: 500,
     netUnit: 'ml',
@@ -380,6 +380,7 @@ export const reptileProducts: ProductSeed[] = [
   },
   {
     slug: 'dried-mealworm-treat',
+    brand: 'nibble-lab',
     name: 'Dried Mealworm Treat',
     code: 'DMWM',
     categorySlug: 'reptile-food',
@@ -396,7 +397,6 @@ export const reptileProducts: ProductSeed[] = [
         trial: { amount: 20, priceCents: 99 },
       }),
     ],
-    brand: 'scaleby',
   },
   {
     slug: 'dragon-salad-crumble',

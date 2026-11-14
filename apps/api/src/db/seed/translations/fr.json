@@ -834,6 +834,42 @@
       "name": "Tidepool",
       "tagline": "Eau limpide, poissons sereins, entretien simple.",
       "story": "Tidepool rend l'aquariophilie simple. Les aquariums de démarrage arrivent avec tout le nécessaire dans un seul carton, les aliments sont équilibrés pour les poissons d'aquarium communautaire courants, et l'éclairage est assez doux pour sublimer les couleurs sans stresser personne. Décors et plantes en soie offrent aux poissons des cachettes et de quoi explorer. Chaque produit est accompagné de conseils clairs, car un bel aquarium, c'est avant tout une affaire de bonnes habitudes."
+    },
+    "feather-and-finch": {
+      "name": "Feather & Finch",
+      "tagline": "Mangeoires, graines et jeux pour des oiseaux heureux et actifs.",
+      "story": "Feather & Finch est né sur une table de cuisine couverte de millet, d'enveloppes de graines et de croquis de mangeoires plus pratiques. Chaque produit est pensé pour la façon dont les oiseaux mangent, grimpent et fouillent vraiment, pour qu'une cage ressemble moins à une boîte et davantage à une branche. Nos mélanges sont préparés en petites quantités, sans colorants artificiels, et nos jouets sont faits de bois, de clochettes et de fibres naturelles qu'ils peuvent mâchouiller sans risque. Des matins joyeux et des jabots bien remplis : voilà toute l'idée.",
+      "slug": "feather-and-finch"
+    },
+    "hop-and-hay": {
+      "name": "Hop & Hay",
+      "tagline": "Râteliers, cachettes et bonne nourriture pour lapins, cochons d'Inde et hamsters.",
+      "story": "Hop & Hay s'adresse aux petits animaux qui règnent sur la maison depuis leur clapier. Nous pensons à ce qui compte le plus pour eux : du foin frais à portée de museau, un endroit sûr où se cacher et de quoi ronger à volonté. Granulés et mélanges sont adaptés à chaque espèce, car un hamster et un lapin n'ont pas du tout le même menu. Les abris sont en bois non traité avec des bacs faciles à nettoyer : le ménage prend quelques minutes, pas tout un après-midi.",
+      "slug": "hop-and-hay"
+    },
+    "whiskerworks": {
+      "name": "Whiskerworks",
+      "tagline": "Gamelles malignes, fontaines et accessoires de voyage pour chats.",
+      "story": "Whiskerworks conçoit les accessoires du quotidien sur lesquels les chats sont les plus exigeants : des gamelles qui n'écrasent pas les moustaches, des fontaines qui gardent l'eau en mouvement et des sacs de transport rassurants plutôt qu'effrayants. Chaque modèle est testé par de vrais chats, des critiques honnêtes qui savent tourner les talons très vite. Nous aimons les lignes épurées, les matériaux faciles à laver et les détails qui s'intègrent joliment à la maison. Moins de bras de fer à l'heure du repas, des visites chez le vétérinaire plus sereines.",
+      "slug": "whiskerworks"
+    },
+    "trailtail": {
+      "name": "Trailtail",
+      "tagline": "Harnais, laisses et équipement outdoor pour les chiens qui adorent les longues balades.",
+      "story": "Trailtail est pensé pour les champs boueux, les trottoirs sous la pluie et la promenade qui se transforme en aventure. Harnais et laisses sont faits de sangles robustes, de brides rembourrées et de finitions réfléchissantes, pour être bien vu quand les soirées raccourcissent. Les gamelles de voyage se plient à plat et les balles rebondissent droit, car une belle journée dehors demande de l'eau et un bon jeu. Chaque pièce est rincée, séchée et testée à nouveau avant de mériter le nom Trailtail.",
+      "slug": "trailtail"
+    },
+    "nibble-lab": {
+      "name": "Nibble Lab",
+      "tagline": "Des friandises pour tous les animaux, avec des listes d'ingrédients courtes.",
+      "story": "Nibble Lab cuit, sèche et mélange des friandises pour chiens, chats, lapins, reptiles et poissons. Chaque recette part d'un ingrédient principal et garde une liste assez courte pour se lire d'un coup d'œil. Les portions sont pensées pour l'éducation, la récompense ou simplement pour dire bonjour : une friandise reste une friandise, pas un deuxième dîner. Chaque lot est goûté par un panel de testeurs très motivés avant d'arriver en rayon.",
+      "slug": "nibble-lab"
+    },
+    "groomwell": {
+      "name": "Groomwell",
+      "tagline": "Soin du pelage et propreté pour des séances de toilettage faciles.",
+      "story": "Groomwell s'occupe du côté le moins glamour des soins aux animaux : le pelage, la peau et le nettoyage qui suit. Nos compléments pour le pelage favorisent un poil brillant de l'intérieur, et une brume fine aide les reptiles à muer proprement. Alèses, bacs et sacs compostables rendent les routines de propreté rapides et laissent moins de déchets. Un animal propre et à l'aise est un animal heureux, tout comme la personne qui s'en occupe.",
+      "slug": "groomwell"
     }
   },
   "collections": {
