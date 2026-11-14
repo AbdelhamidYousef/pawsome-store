@@ -209,4 +209,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.hero.rating': 'Mit {average} von 5 bewertet',
   'shell.home.hero.delivery': 'Gratis Versand ab 49 Euro',
   'shell.home.hero.returns': '30 Tage Rückgabe',
+  'shell.gallery.more': 'Mehr Fotos zeigen',
+  'shell.gallery.with': 'mit {product}',
+  'shell.gallery.inPhoto': 'Auf diesem Foto',
 };

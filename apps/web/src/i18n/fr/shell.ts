@@ -205,4 +205,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.hero.rating': 'Noté {average} sur 5',
   'shell.home.hero.delivery': 'Livraison offerte dès 49 euros',
   'shell.home.hero.returns': 'Retours sous 30 jours',
+  'shell.gallery.more': 'Voir plus de photos',
+  'shell.gallery.with': 'avec {product}',
+  'shell.gallery.inPhoto': 'Sur cette photo',
 };

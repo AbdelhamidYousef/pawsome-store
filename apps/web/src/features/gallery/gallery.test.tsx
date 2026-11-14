@@ -83,6 +83,7 @@ describe('shoppable gallery', () => {
     expect(
       within(modal).getByText('Biscuit with his tug 1', { selector: 'p' }),
     ).toBeInTheDocument();
+    expect(within(modal).getByText('Pictured: Biscuit')).toBeInTheDocument();
     expect(within(modal).getByRole('link', { name: 'Rope Tug' })).toHaveAttribute(
       'href',
       '/products/rope-tug',
@@ -126,6 +127,36 @@ describe('shoppable gallery', () => {
       await screen.findByRole('heading', { name: 'Customers with this product' }),
     ).toBeInTheDocument();
     expect(seen.some((s) => s.startsWith('?productId='))).toBe(true);
+  });
+});
+
+describe('gallery layout', () => {
+  it('features the first photo and shows 9, then 8 more per click', async () => {
+    serve(Array.from({ length: 20 }, (_, i) => photo(i + 1)));
+    renderWithProviders(
+      <MemoryRouter>
+        <ShoppableGallery />
+      </MemoryRouter>,
+    );
+    expect(await screen.findAllByTestId('gallery-item')).toHaveLength(9);
+    expect(screen.getAllByTestId('gallery-item')[0]!.parentElement).toHaveClass('col-span-2');
+    await userEvent.click(screen.getByRole('button', { name: 'Show more photos' }));
+    expect(screen.getAllByTestId('gallery-item')).toHaveLength(17);
+    await userEvent.click(screen.getByRole('button', { name: 'Show more photos' }));
+    expect(screen.getAllByTestId('gallery-item')).toHaveLength(20);
+    expect(screen.queryByRole('button', { name: 'Show more photos' })).not.toBeInTheDocument();
+  });
+
+  it('captions a tile with the pet and the first product', async () => {
+    serve([photo(1)]);
+    renderWithProviders(
+      <MemoryRouter>
+        <ShoppableGallery />
+      </MemoryRouter>,
+    );
+    const tile = await screen.findByTestId('gallery-item');
+    expect(tile).toHaveTextContent('Biscuit');
+    expect(tile).toHaveTextContent('with Rope Tug');
   });
 });
 

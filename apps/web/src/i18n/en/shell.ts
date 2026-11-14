@@ -200,4 +200,7 @@ export const shell = {
   'shell.home.hero.rating': 'Rated {average} out of 5',
   'shell.home.hero.delivery': 'Free delivery over 49 euros',
   'shell.home.hero.returns': '30-day returns',
+  'shell.gallery.more': 'Show more photos',
+  'shell.gallery.with': 'with {product}',
+  'shell.gallery.inPhoto': 'In this photo',
 } satisfies Dictionary;
