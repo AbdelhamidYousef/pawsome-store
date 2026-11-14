@@ -3,12 +3,16 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { sql } from 'drizzle-orm';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import { db } from '../client.ts';
 
 import { loadContent, seedContent } from './content.ts';
 import { runSeed } from './index.ts';
+
+// Two tests run the whole seed (catalogue plus ~36k crowd reviews), twice each: same generous
+// limit as seed.test.ts, so a busy machine does not time them out.
+vi.setConfig({ testTimeout: 60_000 });
 
 async function contentCounts() {
   const rows = await db.execute<Record<string, number>>(sql`
