@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 
 import { db } from '../../db/client.ts';
 import {
+  bundleItems,
   inventory,
   orderItems,
   orders,
@@ -149,6 +150,21 @@ describe('GET /products/:slug/recommendations', () => {
     const { data } = await recs('main');
     expect(slugs(data.boughtTogether.map((i) => i.card))).toEqual(['fine']);
     expect(slugs(data.related)).toEqual([]);
+  });
+
+  it('never tops up with a kit made of the product itself', async () => {
+    const category = await createCategory();
+    const main = await createProduct({ slug: 'main', categoryId: category.id });
+    const kit = await createProduct({ slug: 'kit-of-main', categoryId: category.id });
+    await db.update(products).set({ kind: 'bundle' }).where(eq(products.id, kit.product.id));
+    await db.insert(bundleItems).values({
+      bundleVariantId: kit.variants[0]!.id,
+      componentVariantId: main.variants[0]!.id,
+    });
+    await createProduct({ slug: 'fine', categoryId: category.id });
+    const { data } = await recs('main');
+    expect(slugs(data.boughtTogether.map((i) => i.card))).toEqual(['fine']);
+    expect(slugs(data.related)).not.toContain('kit-of-main');
   });
 
   it('suggests an in-stock variant and skips the default one when it is sold out', async () => {
