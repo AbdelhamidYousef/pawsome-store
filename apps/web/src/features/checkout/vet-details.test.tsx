@@ -43,12 +43,12 @@ describe('vet details at checkout', () => {
     expect(screen.queryByTestId('vet-details-form')).not.toBeInTheDocument();
   });
 
-  it('requires every vet field before moving on, with the demo notice', async () => {
+  it('requires every vet field before moving on, with the turnaround note', async () => {
     serveCart(true);
     renderApp('/checkout');
     const user = userEvent.setup();
     await fillAddress(user);
-    expect(screen.getByTestId('vet-details-form')).toHaveTextContent('not real medicine');
+    expect(screen.getByTestId('vet-details-form')).toHaveTextContent('within one working day');
     await user.click(screen.getByTestId('checkout-continue-shipping'));
     expect(await screen.findByLabelText("Vet's name")).toHaveAttribute('aria-invalid', 'true');
     expect(screen.getByLabelText('Clinic')).toHaveAttribute('aria-invalid', 'true');

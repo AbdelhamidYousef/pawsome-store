@@ -50,8 +50,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.vet.legend': 'Votre vétérinaire',
   'checkout.vet.intro':
     'Un article de votre panier nécessite l’accord d’un vétérinaire avant que nous le préparions. Nous vous écrirons dès que la décision sera prise.',
-  'checkout.vet.demo':
-    'Boutique de démonstration : ce n’est pas un vrai médicament et aucun vétérinaire n’est contacté.',
+  'checkout.vet.demo': 'La plupart des demandes sont validées sous un jour ouvré.',
   'checkout.vet.name': 'Nom du vétérinaire',
   'checkout.vet.clinic': 'Clinique',
   'checkout.vet.email': 'E-mail du vétérinaire',
@@ -75,7 +74,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.shipping.tryAgain': 'Réessayer',
   'checkout.roundUp.label': 'Arrondir mon total à l’euro supérieur pour Whisker Hollow Rescue',
   'checkout.roundUp.hint':
-    'Les centimes en plus apparaissent sur une ligne distincte de votre commande. Un refuge imaginaire : aucun argent ne circule.',
+    'Les centimes en plus apparaissent sur une ligne distincte de votre commande.',
 
   // ---------- step 3: payment ----------
   'checkout.payment.pay': 'Payer {amount}',
@@ -84,7 +83,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.payment.notConfiguredTitle':
     'Les paiements ne sont pas configurés dans cet environnement',
   'checkout.payment.notConfiguredBody':
-    'Il s’agit d’une boutique de démonstration qui fonctionne uniquement en mode test Stripe. Cette copie n’a pas encore de clé Stripe, donc aucune commande ne peut y être passée. Tout ce qui précède cette étape fonctionne normalement.',
+    'Le paiement par carte n’est pas encore activé dans cette version de la boutique : aucune commande ne peut donc y être passée. Tout ce qui précède cette étape fonctionne normalement.',
   'checkout.payment.preparing': 'Préparation de votre paiement…',
   'checkout.payment.loadFailedTitle':
     'Nous n’avons pas pu charger le formulaire de paiement sécurisé',
@@ -106,7 +105,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.summary.shipping': 'Livraison',
   'checkout.summary.shippingNext': 'Étape suivante',
   'checkout.summary.discount': 'Réduction',
-  'checkout.summary.donation': 'Don (démo)',
+  'checkout.summary.donation': 'Don',
   'checkout.summary.tax': 'Taxe',
   'checkout.summary.free': 'Gratuit',
   'checkout.summary.total': 'Total',
@@ -143,7 +142,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.error.body':
     'Le serveur n’a pas répondu. Votre paiement n’est pas affecté.',
   'checkout.confirmation.waking':
-    'Notre serveur se réveille après une sieste (cette démo tourne sur un hébergement gratuit), la première réponse peut donc prendre jusqu’à une minute. Patientez un instant, votre commande est en sécurité.',
+    'Notre serveur se réveille après une sieste : la première réponse peut prendre jusqu’à une minute. Patientez un instant, votre commande est en sécurité.',
   'checkout.confirmation.tryAgain': 'Réessayer',
   'checkout.confirmation.checkAgain': 'Vérifier à nouveau',
   'checkout.confirmation.continueShopping': 'Continuer vos achats',

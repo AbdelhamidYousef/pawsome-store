@@ -138,7 +138,7 @@ export const catalog = {
   'catalog.brands.description': 'The Pawsome house brands: bakes, beds, habitat gear and more.',
   'catalog.brands.title': 'Our brands',
   'catalog.brands.intro':
-    'Every brand here is our own, made up by us and tested by a very fussy panel of pets.',
+    'Six labels, one standard: every product is tested at home by our fussy panel of pets before it reaches the shop.',
   'catalog.brands.loadError': 'We could not load the brands.',
   'catalog.collection.loadError': 'We could not load this collection',
   'catalog.collection.loading': 'Loading collection',

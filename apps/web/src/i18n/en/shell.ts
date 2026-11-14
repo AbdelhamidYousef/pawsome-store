@@ -34,10 +34,9 @@ export const shell = {
 
   // Footer
   'shell.footer.tagline':
-    'Happy-tail supplies for dogs, cats, birds, fish, reptiles and small pets.',
-  'shell.footer.paymentNote':
-    'Payments run in Stripe test mode: no real orders are taken and no card is ever charged.',
-  'shell.footer.copyright': '© {year} Pawsome demo store, a fictional company. Not legal advice.',
+    'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Tested at home by our own fussy panel.',
+  'shell.footer.paymentNote': 'Payments run in Stripe test mode: no card is ever charged.',
+  'shell.footer.copyright': '© {year} Pawsome. All rights reserved.',
   'shell.footer.shop': 'Shop',
   'shell.footer.brands': 'Brands',
   'shell.footer.giftFinder': 'Gift finder',
@@ -195,4 +194,5 @@ export const shell = {
   'shell.error.notFoundText': 'The page you asked for does not exist.',
   'shell.error.text': 'An unexpected error stopped this page from loading. Please try again.',
   'shell.error.reload': 'Reload the shop',
+  'shell.footer.charity': 'Our shelter partner',
 } satisfies Dictionary;

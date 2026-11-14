@@ -65,7 +65,8 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.form.photosToUpload': 'Photos à téléverser',
   'reviews.form.photoPreview': 'Aperçu de {name}',
   'reviews.form.remove': 'Retirer',
-  'reviews.form.uploadsOff': 'Le téléversement de photos est désactivé dans cette démo.',
+  'reviews.form.uploadsOff':
+    'L’ajout de photos arrive bientôt. En attendant, racontez-nous tout avec des mots.',
   'reviews.form.note':
     'Les avis sont vérifiés avant d’apparaître. Merci de n’y inclure aucune donnée personnelle.',
   'reviews.form.submit': 'Envoyer l’avis',

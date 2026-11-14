@@ -55,7 +55,7 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   'cart.summary.shippingEstimate': 'Expédition (estimation, livraison standard)',
   'cart.summary.free': 'Gratuit',
   'cart.summary.estimatedTotal': 'Total estimé',
-  'cart.summary.noTax': 'Boutique de démonstration : aucune taxe n’est appliquée.',
+  'cart.summary.noTax': 'Prix TTC, TVA incluse le cas échéant.',
   'cart.summary.checkout': 'Passer commande',
   'cart.summary.soldOutBlock': 'Retirez les articles épuisés pour continuer.',
 

@@ -35,11 +35,10 @@ export const shell: Record<keyof typeof enNs, Entry> = {
 
   // Footer
   'shell.footer.tagline':
-    'Tout pour les queues qui remuent : accessoires pour chiens, chats, oiseaux, poissons, reptiles et petits animaux.',
+    'Des accessoires colorés et bien faits pour chiens, chats, oiseaux, poissons, reptiles et petits animaux. Testés à la maison par notre jury très exigeant.',
   'shell.footer.paymentNote':
-    "Les paiements fonctionnent en mode test Stripe : aucune vraie commande n'est prise et aucune carte n'est jamais débitée.",
-  'shell.footer.copyright':
-    '© {year} Boutique de démonstration Pawsome, une société fictive. Ne constitue pas un conseil juridique.',
+    'Les paiements fonctionnent en mode test Stripe : aucune carte n’est débitée.',
+  'shell.footer.copyright': '© {year} Pawsome. Tous droits réservés.',
   'shell.footer.shop': 'Boutique',
   'shell.footer.brands': 'Marques',
   'shell.footer.giftFinder': 'Idées cadeaux',
@@ -200,4 +199,5 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.error.text':
     'Une erreur inattendue a empêché le chargement de cette page. Veuillez réessayer.',
   'shell.error.reload': 'Recharger la boutique',
+  'shell.footer.charity': 'Notre refuge partenaire',
 };

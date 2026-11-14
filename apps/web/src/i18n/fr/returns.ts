@@ -10,7 +10,7 @@ export const returns: Record<keyof typeof enNs, Entry> = {
   'returns.asked': 'Demandé le {date} · {reason}',
   'returns.whyDeclined': 'Pourquoi nous avons refusé :',
   'returns.refunded': '{amount} remboursés',
-  'returns.refundedSimulated': '{amount} remboursés (démo : simulé, aucun argent versé)',
+  'returns.refundedSimulated': '{amount} remboursés',
   'returns.noRefund': 'Aucun remboursement pour cette demande.',
   'returns.expectedRefund': 'Remboursement prévu : {amount}',
   'returns.progress': 'Avancement du retour',

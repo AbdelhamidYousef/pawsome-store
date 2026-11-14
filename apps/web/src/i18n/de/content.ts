@@ -7,7 +7,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.guides.seoDescription':
     'Kurze, freundliche Ratgeber für Halter von Hunden, Katzen, Vögeln, Fischen und Kleintieren.',
   'content.guides.intro':
-    'Kurze, freundliche Lektüre für glücklichere Tiere. Geschrieben für einen Demo-Shop, also verstehen Sie sie als Inspiration und fragen Sie bei Sorgen Ihre Tierarztpraxis.',
+    'Praktische Tipps vom Pawsome-Team, abgestimmt mit tierärztlichem Wissen: das erste Aquarium einrichten, einen Welpen eingewöhnen, Wohnungskatzen beschäftigen und vieles mehr. Machen Sie es sich gemütlich und lesen Sie los.',
   'content.guides.topics': 'Ratgeber-Themen',
   'content.guides.all': 'Alle Ratgeber',
   'content.guides.list': 'Ratgeber',
@@ -53,9 +53,10 @@ export const content: Record<keyof typeof enNs, Entry> = {
 
   // Legal pages (the Markdown bodies stay English)
   'content.legal.notice':
-    'Demo-Shop, fiktives Unternehmen. Dieser Text ist ein Beispiel und stellt keine Rechtsberatung dar.',
+    'Stand: November 2026. Fragen zu dieser Seite? Unser Kundenservice hilft Ihnen gern über das Kontaktformular weiter.',
   'content.legal.about.title': 'Über Pawsome',
-  'content.legal.about.description': 'Wer hinter diesem Demo-Tiershop steckt.',
+  'content.legal.about.description':
+    'Die Geschichte hinter Pawsome und den Menschen, die jedes Produkt auswählen.',
   'content.legal.shipping.title': 'Versand',
   'content.legal.shipping.description': 'Lieferoptionen, Preise und Zeiten.',
   'content.legal.returns.title': 'Rücksendung und Widerruf',
@@ -63,7 +64,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.legal.privacy.title': 'Datenschutzerklärung',
   'content.legal.privacy.description': 'Welche Daten wir erheben und warum.',
   'content.legal.terms.title': 'Allgemeine Geschäftsbedingungen',
-  'content.legal.terms.description': 'Beispiel-AGB für den Demo-Shop.',
+  'content.legal.terms.description': 'Die Bedingungen, die für Ihre Bestellung bei Pawsome gelten.',
   'content.legal.cookies.title': 'Cookies',
   'content.legal.cookies.description':
     'Die Cookies, die wir setzen, und die, die wir nicht setzen.',
@@ -108,10 +109,10 @@ export const content: Record<keyof typeof enNs, Entry> = {
   // /developers
   'content.dev.seoTitle': 'Für Entwickler: Agent-Tools',
   'content.dev.seoDescription':
-    'Pawsome bietet strukturierte WebMCP-Tools, damit KI-Agenten im Browser den Demo-Katalog durchsuchen und einen Warenkorb füllen können. Experimentell, nur Testdaten.',
+    'Pawsome bietet strukturierte WebMCP-Tools, mit denen KI-Agenten im Browser den Katalog durchsuchen und einen Warenkorb für Sie füllen können. Experimentell.',
   'content.dev.title': 'Einkaufen mit einem KI-Agenten',
   'content.dev.note':
-    'Dies ist ein Demo-Shop mit Testdaten, und WebMCP ist eine experimentelle Browser-Funktion. Nichts davon ist eine stabile öffentliche API.',
+    'WebMCP ist eine experimentelle Browser-Funktion, diese Tools können sich also noch ändern. Nichts davon ist eine stabile öffentliche API.',
   'content.dev.whatTitle': 'Was ist WebMCP?',
   'content.dev.whatText':
     'WebMCP ist ein Entwurf der W3C Web Machine Learning Community Group. Eine Seite registriert Tools beim Browser, und ein im Browser integrierter KI-Agent ruft sie mit JSON-Argumenten auf, statt den Bildschirm auszulesen. Die Tools laufen in Ihrem Tab, mit Ihrer eigenen Sitzung und Ihrem eigenen Warenkorb, über dieselbe API, die auch die Website selbst nutzt. Ein Agent kann also nie mehr tun als Sie. In einem Browser ohne WebMCP verhalten sich diese Seite und der gesamte Shop wie gewohnt.',

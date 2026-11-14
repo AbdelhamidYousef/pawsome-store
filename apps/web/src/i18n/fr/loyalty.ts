@@ -20,13 +20,12 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   },
 
   // Footer note and charity page
-  'loyalty.charityNote.text':
-    '(un refuge imaginaire) a reçu {amount} jusqu’ici. Simple démo : aucun argent ne circule.',
+  'loyalty.charityNote.text': 'a reçu {amount} de la part des clients Pawsome jusqu’ici.',
   'loyalty.charity.seoTitle': 'Notre refuge',
   'loyalty.charity.seoDescription':
-    'Whisker Hollow Rescue, le refuge (fictif) soutenu par Pawsome. Une démo : aucun argent ne circule.',
+    'Whisker Hollow Rescue est le refuge que Pawsome soutient. Arrondissez votre total au paiement ou offrez vos points.',
   'loyalty.charity.note':
-    'Ceci est une boutique de démonstration et le refuge est imaginaire. Les dons sont comptabilisés ici, mais aucun argent ne circule.',
+    'Chaque arrondi au paiement et chaque point offert s’ajoutent au total ci-dessous.',
   'loyalty.charity.error': 'Nous n’avons pas pu charger le total pour le moment.',
   'loyalty.charity.given': 'Total des dons',
   'loyalty.charity.donations': { one: 'issu de {count} don', other: 'issu de {count} dons' },
@@ -78,8 +77,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.redeem.failed': 'Nous n’avons pas pu effectuer cet échange.',
   'loyalty.rewards.giveAwayTitle': 'Ou les offrir',
   'loyalty.rewards.donate.giveTo': 'Donner des points à',
-  'loyalty.rewards.donate.aboutShelter':
-    ', un refuge imaginaire (1 point = 1 centime ; démo uniquement, aucun argent ne circule).',
+  'loyalty.rewards.donate.aboutShelter': ', le refuge que nous soutenons (1 point = 1 centime).',
   'loyalty.rewards.donate.label': 'Points à donner',
   'loyalty.rewards.donate.button': 'Donner',
   'loyalty.rewards.donate.thanks': 'Merci ! {points} points sont allés au refuge.',

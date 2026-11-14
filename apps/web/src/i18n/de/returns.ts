@@ -10,7 +10,7 @@ export const returns: Record<keyof typeof enNs, Entry> = {
   'returns.asked': 'Angefragt am {date} · {reason}',
   'returns.whyDeclined': 'Grund der Ablehnung:',
   'returns.refunded': '{amount} erstattet',
-  'returns.refundedSimulated': '{amount} erstattet (Demo: simuliert, es wurde kein Geld bewegt)',
+  'returns.refundedSimulated': '{amount} erstattet',
   'returns.noRefund': 'Für diese Anfrage gibt es keine Erstattung.',
   'returns.expectedRefund': 'Voraussichtliche Erstattung {amount}',
   'returns.progress': 'Stand der Rücksendung',

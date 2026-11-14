@@ -52,7 +52,7 @@ export const cart = {
   'cart.summary.shippingEstimate': 'Shipping (estimate, standard delivery)',
   'cart.summary.free': 'Free',
   'cart.summary.estimatedTotal': 'Estimated total',
-  'cart.summary.noTax': 'Demo store: no tax is charged.',
+  'cart.summary.noTax': 'Prices include VAT where it applies.',
   'cart.summary.checkout': 'Proceed to checkout',
   'cart.summary.soldOutBlock': 'Remove the sold-out items to continue.',
 

@@ -63,7 +63,8 @@ export const reviews = {
   'reviews.form.photosToUpload': 'Photos to upload',
   'reviews.form.photoPreview': 'Preview of {name}',
   'reviews.form.remove': 'Remove',
-  'reviews.form.uploadsOff': 'Photo upload is switched off in this demo.',
+  'reviews.form.uploadsOff':
+    'Photo uploads are coming soon. For now, tell us all about it in words.',
   'reviews.form.note':
     'Reviews are checked before they appear. Please keep personal details out of them.',
   'reviews.form.submit': 'Submit review',

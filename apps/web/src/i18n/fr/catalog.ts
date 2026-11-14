@@ -140,7 +140,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
     'Les marques maison Pawsome : gâteries, paniers, équipement d’habitat et bien plus.',
   'catalog.brands.title': 'Nos marques',
   'catalog.brands.intro':
-    'Chaque marque ici est la nôtre, inventée par nos soins et testée par un jury d’animaux très difficiles.',
+    'Six marques, une seule exigence : chaque produit est testé à la maison par notre jury d’animaux très difficiles avant d’arriver en boutique.',
   'catalog.brands.loadError': 'Nous n’avons pas pu charger les marques.',
   'catalog.collection.loadError': 'Nous n’avons pas pu charger cette collection',
   'catalog.collection.loading': 'Chargement de la collection',

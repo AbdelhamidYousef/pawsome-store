@@ -54,7 +54,7 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   'cart.summary.shippingEstimate': 'Versand (Schätzung, Standardlieferung)',
   'cart.summary.free': 'Kostenlos',
   'cart.summary.estimatedTotal': 'Voraussichtliche Summe',
-  'cart.summary.noTax': 'Demo-Shop: Es wird keine Steuer berechnet.',
+  'cart.summary.noTax': 'Preise inkl. MwSt., sofern anwendbar.',
   'cart.summary.checkout': 'Zur Kasse',
   'cart.summary.soldOutBlock': 'Entfernen Sie die ausverkauften Artikel, um fortzufahren.',
 

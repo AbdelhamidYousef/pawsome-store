@@ -1,12 +1,12 @@
 import type { Tx } from '../client.ts';
 import { charities } from '../schema/index.ts';
 
-// DEMO: a made-up shelter. No money moves anywhere; the site says so on every page that shows it.
+// A made-up shelter (portfolio store): payments run in Stripe test mode, which the footer states.
 export const charitySeed = {
   slug: 'whisker-hollow-rescue',
   name: 'Whisker Hollow Rescue',
   description:
-    'A fictional shelter in a quiet valley that finds homes for stray cats, dogs and the occasional rabbit. It exists only in this demo store: nothing you donate here goes anywhere.',
+    'A small, volunteer-run shelter in a quiet valley that finds homes for stray cats, dogs and the occasional rabbit. Your round-ups and points help cover food, bedding and vet visits while each animal waits for the right family.',
 };
 
 // Upsert on the slug so a re-seed refreshes the wording without duplicating the shelter.

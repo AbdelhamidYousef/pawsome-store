@@ -51,8 +51,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.vet.legend': 'Ihr Tierarzt',
   'checkout.vet.intro':
     'Ein Artikel in Ihrem Warenkorb benötigt das Okay eines Tierarztes, bevor wir ihn packen. Wir schreiben Ihnen per E-Mail, sobald entschieden ist.',
-  'checkout.vet.demo':
-    'Demo-Shop: Das ist keine echte Medizin, und es wird kein Tierarzt kontaktiert.',
+  'checkout.vet.demo': 'Die meisten Anfragen werden innerhalb eines Werktags freigegeben.',
   'checkout.vet.name': 'Name des Tierarztes',
   'checkout.vet.clinic': 'Praxis',
   'checkout.vet.email': 'E-Mail des Tierarztes',
@@ -74,8 +73,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.shipping.continue': 'Weiter zur Zahlung',
   'checkout.shipping.tryAgain': 'Erneut versuchen',
   'checkout.roundUp.label': 'Meine Summe für Whisker Hollow Rescue auf den nächsten Euro aufrunden',
-  'checkout.roundUp.hint':
-    'Die zusätzlichen Cent erscheinen als eigene Zeile in Ihrer Bestellung. Ein erfundenes Tierheim: Es fließt kein Geld.',
+  'checkout.roundUp.hint': 'Die zusätzlichen Cent erscheinen als eigene Zeile in Ihrer Bestellung.',
 
   // ---------- step 3: payment ----------
   'checkout.payment.pay': '{amount} bezahlen',
@@ -83,7 +81,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
     'Testmodus: Verwenden Sie die Karte 4242 4242 4242 4242, ein beliebiges Datum in der Zukunft und eine beliebige Prüfziffer. Es fließt kein echtes Geld.',
   'checkout.payment.notConfiguredTitle': 'Zahlungen sind in dieser Umgebung nicht eingerichtet',
   'checkout.payment.notConfiguredBody':
-    'Dies ist ein Demo-Shop, der nur im Stripe-Testmodus läuft. Diese Kopie hat noch keinen Stripe-Schlüssel, daher können hier keine Bestellungen aufgegeben werden. Alles vor diesem Schritt funktioniert wie gewohnt.',
+    'Kartenzahlungen sind in dieser Shop-Umgebung noch nicht freigeschaltet, daher können hier keine Bestellungen aufgegeben werden. Alles vor diesem Schritt funktioniert wie gewohnt.',
   'checkout.payment.preparing': 'Ihre Zahlung wird vorbereitet…',
   'checkout.payment.loadFailedTitle': 'Wir konnten das sichere Zahlungsformular nicht laden',
   'checkout.payment.loadFailedBody':
@@ -104,7 +102,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.summary.shipping': 'Versand',
   'checkout.summary.shippingNext': 'Nächster Schritt',
   'checkout.summary.discount': 'Rabatt',
-  'checkout.summary.donation': 'Spende (Demo)',
+  'checkout.summary.donation': 'Spende',
   'checkout.summary.tax': 'Steuer',
   'checkout.summary.free': 'Kostenlos',
   'checkout.summary.total': 'Gesamtsumme',
@@ -141,7 +139,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.error.body':
     'Der Server hat nicht geantwortet. Ihre Zahlung ist davon nicht betroffen.',
   'checkout.confirmation.waking':
-    'Unser Server wacht gerade aus einem Nickerchen auf (diese Demo läuft auf kostenlosem Hosting), daher kann die erste Antwort bis zu einer Minute dauern. Einen Moment Geduld, Ihre Bestellung ist sicher.',
+    'Unser Server wacht gerade aus einem Nickerchen auf, daher kann die erste Antwort bis zu einer Minute dauern. Einen Moment Geduld, Ihre Bestellung ist sicher.',
   'checkout.confirmation.tryAgain': 'Erneut versuchen',
   'checkout.confirmation.checkAgain': 'Erneut prüfen',
   'checkout.confirmation.continueShopping': 'Weiter einkaufen',

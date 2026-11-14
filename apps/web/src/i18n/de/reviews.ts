@@ -64,7 +64,8 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.form.photosToUpload': 'Hochzuladende Fotos',
   'reviews.form.photoPreview': 'Vorschau von {name}',
   'reviews.form.remove': 'Entfernen',
-  'reviews.form.uploadsOff': 'Der Foto-Upload ist in dieser Demo deaktiviert.',
+  'reviews.form.uploadsOff':
+    'Foto-Uploads kommen bald. Bis dahin erzählen Sie uns gern alles in Worten.',
   'reviews.form.note':
     'Bewertungen werden geprüft, bevor sie erscheinen. Bitte geben Sie darin keine persönlichen Daten an.',
   'reviews.form.submit': 'Bewertung absenden',

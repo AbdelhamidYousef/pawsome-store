@@ -95,7 +95,7 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.delivery.shipLink': 'Versand',
   'pdp.delivery.shipOutro': '.',
   'pdp.delivery.cutoffNote':
-    'Bestellungen, die an einem Werktag vor 15:00 Uhr Amsterdamer Zeit eingehen, werden am selben Tag versandt. Der Versandplan und die Feiertagsliste sind für diesen Demo-Shop erfunden.',
+    'Bestellungen, die an einem Werktag vor 15:00 Uhr Amsterdamer Zeit eingehen, verschicken wir noch am selben Tag.',
   'pdp.delivery.returnsHeading': 'Rücksendung',
   'pdp.delivery.returnsIntro':
     'Anders überlegt? Unbenutzte Artikel in der Originalverpackung können innerhalb von 30 Tagen zurückgesendet werden. Geöffnete Lebensmittel und Hygieneartikel sind von der Rücksendung ausgeschlossen, es sei denn, sie sind fehlerhaft. Siehe',

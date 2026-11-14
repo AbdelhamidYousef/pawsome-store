@@ -96,7 +96,7 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.delivery.shipLink': 'expédition',
   'pdp.delivery.shipOutro': 'pour les prix et les délais.',
   'pdp.delivery.cutoffNote':
-    'Les commandes passées avant 15 h (heure d’Amsterdam) un jour ouvré sont expédiées le jour même. Le calendrier d’expédition et la liste des jours fériés sont inventés pour cette boutique de démonstration.',
+    'Les commandes passées avant 15 h (heure d’Amsterdam) un jour ouvré sont expédiées le jour même.',
   'pdp.delivery.returnsHeading': 'Retours',
   'pdp.delivery.returnsIntro':
     'Vous avez changé d’avis ? Les articles non utilisés dans leur emballage d’origine peuvent être retournés sous 30 jours. Les aliments ouverts et les articles d’hygiène ne peuvent pas être retournés, sauf s’ils sont défectueux. Voir',

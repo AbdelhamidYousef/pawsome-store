@@ -38,11 +38,9 @@ export const shell: Record<keyof typeof enNs, Entry> = {
 
   // Footer
   'shell.footer.tagline':
-    'Alles für glückliche Schwänze: Zubehör für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere.',
-  'shell.footer.paymentNote':
-    'Zahlungen laufen im Stripe-Testmodus: Es werden keine echten Bestellungen angenommen und keine Karte wird belastet.',
-  'shell.footer.copyright':
-    '© {year} Pawsome Demo-Shop, ein fiktives Unternehmen. Keine Rechtsberatung.',
+    'Bunte, gut gemachte Ausstattung für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere. Zu Hause getestet von unserem wählerischen Testteam.',
+  'shell.footer.paymentNote': 'Zahlungen laufen im Stripe-Testmodus: Keine Karte wird belastet.',
+  'shell.footer.copyright': '© {year} Pawsome. Alle Rechte vorbehalten.',
   'shell.footer.shop': 'Shop',
   'shell.footer.brands': 'Marken',
   'shell.footer.giftFinder': 'Geschenkefinder',
@@ -204,4 +202,5 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.error.text':
     'Ein unerwarteter Fehler hat das Laden dieser Seite verhindert. Bitte versuchen Sie es erneut.',
   'shell.error.reload': 'Shop neu laden',
+  'shell.footer.charity': 'Unser Partner-Tierheim',
 };

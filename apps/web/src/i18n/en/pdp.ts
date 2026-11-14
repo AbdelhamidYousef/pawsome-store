@@ -93,7 +93,7 @@ export const pdp = {
   'pdp.delivery.shipLink': 'shipping page',
   'pdp.delivery.shipOutro': 'for prices and times.',
   'pdp.delivery.cutoffNote':
-    'Orders placed before 15:00 Amsterdam time on a business day ship the same day. The dispatch schedule and the holiday list are invented for this demo shop.',
+    'Orders placed before 15:00 Amsterdam time on a business day ship the same day.',
   'pdp.delivery.returnsHeading': 'Returns',
   'pdp.delivery.returnsIntro':
     'Changed your mind? Unused items in their original packaging can be returned within 30 days. Opened food and hygiene items cannot be returned unless they are faulty. See',

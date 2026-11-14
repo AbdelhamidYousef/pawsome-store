@@ -17,13 +17,12 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.earn.points': { one: '{count} Punkt sammeln', other: '{count} Punkte sammeln' },
 
   // Footer note and charity page
-  'loyalty.charityNote.text':
-    '(ein erfundenes Tierheim) hat bisher {amount} erhalten. Nur eine Demo: Es fließt kein Geld.',
+  'loyalty.charityNote.text': 'hat von Pawsome-Kundinnen und -Kunden bisher {amount} erhalten.',
   'loyalty.charity.seoTitle': 'Unser Tierheim',
   'loyalty.charity.seoDescription':
-    'Whisker Hollow Rescue, das (fiktive) Tierheim, das Pawsome unterstützt. Eine Demo: Es fließt kein Geld.',
+    'Whisker Hollow Rescue ist das Tierheim, das Pawsome unterstützt. Runden Sie an der Kasse auf oder spenden Sie Ihre Punkte.',
   'loyalty.charity.note':
-    'Dies ist ein Demo-Shop und das Tierheim ist erfunden. Spenden werden hier gezählt, aber es fließt nirgendwohin Geld.',
+    'Jede Aufrundung an der Kasse und jeder gespendete Punkt fließt in die Summe unten ein.',
   'loyalty.charity.error': 'Die Summe konnte gerade nicht geladen werden.',
   'loyalty.charity.given': 'Bisher gespendet',
   'loyalty.charity.donations': { one: 'aus {count} Spende', other: 'aus {count} Spenden' },
@@ -74,8 +73,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.redeem.failed': 'Das konnte nicht eingelöst werden.',
   'loyalty.rewards.giveAwayTitle': 'Oder verschenken',
   'loyalty.rewards.donate.giveTo': 'Punkte spenden an',
-  'loyalty.rewards.donate.aboutShelter':
-    ', ein erfundenes Tierheim (1 Punkt = 1 Cent; nur Demo, es fließt kein Geld).',
+  'loyalty.rewards.donate.aboutShelter': ', das Tierheim, das wir unterstützen (1 Punkt = 1 Cent).',
   'loyalty.rewards.donate.label': 'Zu spendende Punkte',
   'loyalty.rewards.donate.button': 'Spenden',
   'loyalty.rewards.donate.thanks': 'Danke! {points} Punkte gingen an das Tierheim.',
