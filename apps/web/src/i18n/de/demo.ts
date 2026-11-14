@@ -9,7 +9,6 @@ export const demo: Record<keyof typeof enNs, Entry> = {
   'demo.expand': 'Demo-Helfer: Formular ausfüllen',
   'demo.close': 'Demo-Helfer schließen',
   'demo.copy': 'Kopieren',
-  'demo.copyAria': '{label} kopieren',
   'demo.copied': '{label} kopiert',
   'demo.copyFailed': 'Kopieren hat nicht geklappt. Markieren und kopieren Sie den Text von Hand.',
   'demo.email': 'E-Mail',

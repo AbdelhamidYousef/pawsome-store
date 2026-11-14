@@ -117,6 +117,7 @@ export function CopyValue({
   testId?: string;
 }) {
   const { t } = useT();
+  const labelId = useId();
   const [status, setStatus] = useState('');
   const copy = async () => {
     try {
@@ -129,7 +130,9 @@ export function CopyValue({
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-control bg-surface px-3 py-2">
       <div className="min-w-0 flex-1">
-        <p className="text-xs font-semibold text-muted">{label}</p>
+        <p id={labelId} className="text-xs font-semibold text-muted">
+          {label}
+        </p>
         <p className="break-all font-mono text-base font-semibold" data-testid={testId}>
           {value}
         </p>
@@ -137,7 +140,9 @@ export function CopyValue({
       <Button
         variant="secondary"
         size="sm"
-        aria-label={t('demo.copyAria', { label })}
+        // Named "Copy" and described by the value's label, so the button never shares an
+        // accessible name with the form field it helps fill ("Password").
+        aria-describedby={labelId}
         onClick={() => void copy()}
       >
         {t('demo.copy')}

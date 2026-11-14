@@ -10,7 +10,6 @@ export const demo = {
   'demo.expand': 'Demo helper: fill this form',
   'demo.close': 'Close the demo helper',
   'demo.copy': 'Copy',
-  'demo.copyAria': 'Copy {label}',
   'demo.copied': 'Copied {label}',
   'demo.copyFailed': 'Could not copy. Select the text and copy it by hand.',
   'demo.email': 'Email',
