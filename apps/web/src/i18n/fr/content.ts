@@ -150,4 +150,5 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'msg.content.required': 'Obligatoire',
   'msg.content.emailInvalid': 'Saisissez une adresse e-mail valide',
   'msg.content.messageShort': 'Dites-nous-en un peu plus (au moins 10 caractères)',
+  'content.guides.read': 'Lire le guide',
 };

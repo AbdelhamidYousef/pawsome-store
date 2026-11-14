@@ -143,4 +143,5 @@ export const content = {
   'msg.content.required': 'Required',
   'msg.content.emailInvalid': 'Enter a valid email address',
   'msg.content.messageShort': 'Tell us a little more (at least 10 characters)',
+  'content.guides.read': 'Read the guide',
 } satisfies Dictionary;
