@@ -182,6 +182,9 @@ describe('GET /admin/customers', () => {
     await simulate(app, paid.number);
     await placeOrder(app, { shopper: buyer.shopper }); // unpaid: does not count
     await createUser({ email: 'quiet@pawsome.test' });
+    // Seeded reviewer accounts sign reviews only; they are not customers to manage.
+    await createUser({ email: 'reviewer03@pawsome.test' });
+    await createUser({ email: 'customer0042@pawsome.test' });
 
     const res = await admin.shopper.call('get', '/admin/customers');
     const body = bodyOf<{

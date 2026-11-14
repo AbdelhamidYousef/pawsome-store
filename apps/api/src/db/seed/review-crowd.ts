@@ -1170,7 +1170,7 @@ const LAST = [
   'Ward',
 ];
 
-export const CROWD_EMAIL_PATTERN = 'customer____@pawsome.test';
+export { CROWD_EMAIL_PATTERN } from './reviewer-emails.ts';
 export const crowdReviewerEmail = (i: number) =>
   `customer${String(i + 1).padStart(4, '0')}@pawsome.test`;
 

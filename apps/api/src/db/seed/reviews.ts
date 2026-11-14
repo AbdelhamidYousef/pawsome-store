@@ -21,6 +21,7 @@ import {
   kindFor,
   type CrowdProduct,
 } from './review-crowd.ts';
+import { REVIEWER_EMAIL_DOMAIN } from './reviewer-emails.ts';
 
 // Phase 17 demo content: about 60 invented reviews spread over 22 products (mixed ratings, some
 // pending or rejected, some with pet details or a photo) and 12 gallery photos. Everything is
@@ -32,7 +33,7 @@ import {
 // credited in apps/web/public/products/CREDITS.md): no new art, and nothing to keep in step.
 // TODO(image task): real customer-style photos can replace these paths later (admin gallery).
 
-export const REVIEWER_EMAIL_DOMAIN = '@pawsome.test';
+export { REVIEWER_EMAIL_DOMAIN };
 const REVIEWER_NAMES: [string, string][] = [
   ['Mara', 'Kowalski'],
   ['Jonas', 'Berg'],

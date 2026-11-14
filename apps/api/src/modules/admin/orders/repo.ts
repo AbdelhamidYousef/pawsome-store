@@ -1,4 +1,4 @@
-import { and, count, desc, eq, ilike, ne, or, sql, sum } from 'drizzle-orm';
+import { and, count, desc, eq, ilike, ne, notLike, or, sql, sum } from 'drizzle-orm';
 
 import { db } from '../../../db/client.ts';
 import {
@@ -8,6 +8,7 @@ import {
   payments,
   users,
 } from '../../../db/schema/index.ts';
+import { SEEDED_REVIEWER_EMAIL_PATTERNS } from '../../../db/seed/reviewer-emails.ts';
 
 type Status = typeof orders.$inferSelect.status;
 
@@ -86,7 +87,10 @@ export async function findCustomer(userId: string) {
 // Explicit column list: `select()` would carry `password_hash` into memory and one careless spread
 // away from the response. Only what the list shows is ever read.
 export async function listCustomers(opts: { q?: string | undefined; page: number; limit: number }) {
-  const conditions = [eq(users.role, 'customer')];
+  const conditions = [
+    eq(users.role, 'customer'),
+    ...SEEDED_REVIEWER_EMAIL_PATTERNS.map((p) => notLike(users.email, p)),
+  ];
   if (opts.q) {
     const pattern = likePattern(opts.q);
     const search = or(
