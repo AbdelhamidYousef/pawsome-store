@@ -100,7 +100,7 @@ export function Header({
           </div>
           {/* Phones get the switcher in the footer: the header row is already full. */}
           <div className="hidden lg:block">
-            <StoreSwitcher />
+            <StoreSwitcher compact />
           </div>
           <Link
             to="/wishlist"
