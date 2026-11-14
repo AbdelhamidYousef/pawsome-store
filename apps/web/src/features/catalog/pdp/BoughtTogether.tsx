@@ -159,7 +159,7 @@ export function BoughtTogether({
         {t('pdp.bought.heading')}
       </h2>
       <div className="mt-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
-        <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-[3.25rem] overflow-x-auto px-4 pb-2 pt-1 [scrollbar-width:none] sm:mx-0 sm:scroll-px-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
+        <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-[3.25rem] overflow-x-auto lg:gap-12 px-4 pb-2 pt-1 [scrollbar-width:none] sm:mx-0 sm:scroll-px-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
           {tiles.map((tile, index) => {
             const on = isChosen(tile);
             const nameId = `${headingId}-${index}`;
