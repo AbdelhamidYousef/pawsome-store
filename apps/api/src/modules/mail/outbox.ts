@@ -12,6 +12,7 @@ import {
 } from '../../emails/index.ts';
 import type { MailTransport } from '../../lib/mailer.ts';
 import * as checkoutRepo from '../checkout/repo.ts';
+import { productNamesByVariant } from '../i18n/translations.ts';
 import { toOrderDto } from '../orders/view.ts';
 
 // ---------------------------------------------------------------------------------------------
@@ -43,6 +44,25 @@ export const backoffMs = (attempts: number): number =>
 // key makes it idempotent: replaying a transition cannot queue a second copy. An order email
 // defaults to one per kind and order; anything else (or an order email that can legitimately
 // repeat, like a second withdrawal) passes its own `dedupeKey`.
+// Order lines carry the English name as a snapshot; the email shows the catalogue name in its own
+// language where there is one (read at send time, decisions log "polish fix 5").
+async function localizedItems(
+  tx: Tx,
+  items: checkoutRepo.OrderItemRow[],
+  lang: string,
+): Promise<checkoutRepo.OrderItemRow[]> {
+  const names = await productNamesByVariant(
+    items.map((i) => i.variantId),
+    lang,
+    tx,
+  );
+  if (names.size === 0) return items;
+  return items.map((i) => {
+    const name = i.variantId ? names.get(i.variantId) : undefined;
+    return name ? { ...i, productName: name } : i;
+  });
+}
+
 export async function enqueueEmail(
   tx: Tx,
   email: {
@@ -154,7 +174,11 @@ export function createOutbox(opts: { transport: MailTransport; log: Logger }): O
           const dto = order
             ? toOrderDto(
                 order,
-                await checkoutRepo.listOrderItems(tx, order.id),
+                await localizedItems(
+                  tx,
+                  await checkoutRepo.listOrderItems(tx, order.id),
+                  storeFor(row.storeView).lang,
+                ),
                 await checkoutRepo.findPaymentByOrder(tx, order.id),
               )
             : null;

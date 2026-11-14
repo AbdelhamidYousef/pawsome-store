@@ -2,7 +2,7 @@
 import type { LangSlugs } from '@store/shared';
 import { and, eq, inArray, sql } from 'drizzle-orm';
 
-import { db } from '../../db/client.ts';
+import { db, type Tx } from '../../db/client.ts';
 import {
   brands,
   brandTranslations,
@@ -14,6 +14,7 @@ import {
   guideTranslations,
   products,
   productTranslations,
+  productVariants,
 } from '../../db/schema/index.ts';
 
 import { currentLang } from './context.ts';
@@ -172,6 +173,30 @@ export async function slugsByLang(entity: Entity, baseSlug: string): Promise<Lan
     if ((row.locale === 'de' || row.locale === 'fr') && row.slug && row.slug.trim() !== '') {
       out[row.locale] = row.slug;
     }
+  }
+  return out;
+}
+
+/**
+ * Product names in `lang` for order lines, keyed by variant id. Orders keep the English name as a
+ * snapshot; emails lay this over it when they are rendered, so a German order's mail lists German
+ * names. A line without a translated name (or whose variant is gone) keeps its snapshot.
+ */
+export async function productNamesByVariant(
+  variantIds: readonly (string | null)[],
+  lang: string,
+  run: Tx | typeof db = db,
+): Promise<Map<string, string>> {
+  const ids = [...new Set(variantIds.filter((id): id is string => id !== null))];
+  const out = new Map<string, string>();
+  if (lang === 'en' || ids.length === 0) return out;
+  const rows = await run
+    .select({ variantId: productVariants.id, name: productTranslations.name })
+    .from(productVariants)
+    .innerJoin(productTranslations, eq(productTranslations.productId, productVariants.productId))
+    .where(and(inArray(productVariants.id, ids), eq(productTranslations.locale, lang)));
+  for (const row of rows) {
+    if (row.name && row.name.trim() !== '') out.set(row.variantId, row.name);
   }
   return out;
 }

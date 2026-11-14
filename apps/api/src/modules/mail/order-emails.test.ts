@@ -3,7 +3,7 @@ import request from 'supertest';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { db } from '../../db/client.ts';
-import { emailOutbox } from '../../db/schema/index.ts';
+import { emailOutbox, productTranslations } from '../../db/schema/index.ts';
 import { MemoryTransport } from '../../lib/mailer.ts';
 import { makeTestApp, TEST_HOOK_SECRET } from '../../test/app.ts';
 import { createProduct, createShippingMethods } from '../../test/factories.ts';
@@ -68,6 +68,33 @@ describe('order emails through the outbox', () => {
       `Ihre Pawsome-Bestellung ${number} ist unterwegs`,
     ]);
     expect(transport.sent[0]?.html).toContain('Vielen Dank für Ihre Bestellung');
+  });
+
+  it('lists the products under their name in the order language, English where none is translated', async () => {
+    const bone = await createProduct({ name: 'Squeaky bone', variants: [{ stock: 10 }] });
+    const rope = await createProduct({ name: 'Rope tug', variants: [{ stock: 10 }] });
+    await db.insert(productTranslations).values([
+      { productId: bone.product.id, locale: 'de', name: 'Quietschknochen' },
+      // A French name must not leak into a German mail.
+      { productId: rope.product.id, locale: 'fr', name: 'Corde à tirer' },
+    ]);
+    const shopper = makeShopper(app, undefined, 'de-de');
+    await shopper.addToCart(bone.variants[0]!.id, 1);
+    await shopper.addToCart(rope.variants[0]!.id, 1);
+    const res = await shopper.call('post', '/checkout', {
+      email: 'hanna@pawsome.test',
+      shippingAddress: { ...TEST_ADDRESS, country: 'DE' },
+      shippingMethodCode: 'standard',
+    });
+    const number = (res.body as { data: { orderNumber: string } }).data.orderNumber;
+    await simulate(app, number);
+    await outbox.drain();
+    const mail = transport.sent[0]!;
+    expect(mail.html).toContain('Quietschknochen');
+    expect(mail.text).toContain('Quietschknochen');
+    expect(mail.html).toContain('Rope tug');
+    expect(mail.html).not.toContain('Squeaky bone');
+    expect(mail.html).not.toContain('Corde');
   });
 
   it('sends the confirmation once even if the payment event is delivered again', async () => {
