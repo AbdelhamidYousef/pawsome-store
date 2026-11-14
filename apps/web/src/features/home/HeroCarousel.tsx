@@ -15,7 +15,7 @@ const ROTATE_MS = 6000;
 // Desktop: the first screen minus the header (~150 px), never under 560 or over 760 px.
 // Phones: tall, but the trust strip still peeks above the fold.
 export const HERO_BOX =
-  'h-[clamp(34rem,calc(100svh-8rem),36rem)] md:h-[clamp(35rem,calc(100svh-9.5rem),47.5rem)]';
+  'h-[clamp(39rem,calc(100svh-8rem),40rem)] md:h-[clamp(35rem,calc(100svh-9.5rem),47.5rem)]';
 
 function prefersReducedMotion(): boolean {
   return (
