@@ -151,4 +151,6 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
 
   // Messages from outside
   'msg.catalog.priceFormat': 'Geben Sie einen Preis wie 12,50 ein',
+  'catalog.brands.shop': 'Zur Marke',
+  'catalog.brand.storyTitle': 'Unsere Geschichte',
 };

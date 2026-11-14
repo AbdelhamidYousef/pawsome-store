@@ -146,4 +146,6 @@ export const catalog = {
 
   // Messages from outside
   'msg.catalog.priceFormat': 'Enter a price like 12.50',
+  'catalog.brands.shop': 'Shop the brand',
+  'catalog.brand.storyTitle': 'Our story',
 } satisfies Dictionary;
