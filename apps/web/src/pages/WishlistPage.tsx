@@ -1,9 +1,10 @@
 import { type WishlistItem } from '@store/shared';
 import { Link } from 'react-router-dom';
 
+import { HeartIcon } from '../components/icons';
 import { Container } from '../components/layout/Container';
 import { Seo } from '../components/Seo';
-import { Button } from '../components/ui/Button';
+import { Button, buttonClasses } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
 import { useAuth } from '../features/auth/AuthProvider';
 import { useAddToCartAction } from '../features/cart/queries';
@@ -88,18 +89,26 @@ export default function WishlistPage() {
     : null;
 
   return (
-    <Container className="py-8" data-testid={TEST_IDS.pageWishlist}>
+    <Container className="pb-16 pt-8 sm:pb-24 sm:pt-10" data-testid={TEST_IDS.pageWishlist}>
       <Seo title={t('loyalty.wishlist.title')} noindex />
-      <h1 className="font-display text-3xl font-bold sm:text-4xl">{t('loyalty.wishlist.title')}</h1>
+      <h1 className="font-display text-3xl font-semibold sm:text-4xl">
+        {t('loyalty.wishlist.title')}
+      </h1>
       {isPending && <Skeleton className="mt-6 h-32 w-full rounded-card" />}
       {error && <p className="mt-6 text-danger">{t('loyalty.wishlist.error')}</p>}
       {data && data.items.length === 0 && (
-        <p className="mt-4 max-w-prose text-muted">
-          {t('loyalty.wishlist.empty')}{' '}
-          <Link to="/" className="font-semibold text-primary-strong underline">
+        <div className="mx-auto mt-8 flex max-w-xl flex-col items-center gap-5 rounded-card bg-surface px-6 py-12 text-center shadow-card sm:px-10">
+          <span
+            aria-hidden="true"
+            className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-soft text-primary-strong"
+          >
+            <HeartIcon className="h-9 w-9" />
+          </span>
+          <p className="text-lg">{t('loyalty.wishlist.empty')}</p>
+          <Link to="/" className={buttonClasses('primary', 'lg')}>
             {t('loyalty.wishlist.keepBrowsing')}
           </Link>
-        </p>
+        </div>
       )}
       {data && data.items.length > 0 && (
         <>
