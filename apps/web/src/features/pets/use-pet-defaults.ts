@@ -18,6 +18,10 @@ import { useActivePet } from './ActivePetProvider';
 // depends on it changing on its own, because every change goes through the URL, which re-renders).
 // key (page + pet) -> the pet filters we wrote, as a signature of the two URL values.
 const applied = new Map<string, string>();
+// Keys whose filters were handed to the router but are not in the URL yet. Until the URL shows
+// them, the list keeps holding its request: any unrelated re-render in between would otherwise
+// see "applied" with the old, unfiltered URL and fire one request without the pet's filters.
+const writing = new Set<string>();
 
 const EMPTY_SIG = '|';
 
@@ -40,8 +44,16 @@ export function usePetDefaults(scope: string | undefined): {
   // Filters in the URL that we did not write are the shopper's (a shared link, a chip they
   // chose) and are never overwritten; our own are replaced when the active pet changes.
   const urlIsOurs = urlSig === EMPTY_SIG || [...applied.values()].includes(urlSig);
+  const inFlight = key !== null && writing.has(key) && urlSig !== applied.get(key);
   const waiting =
-    scope !== undefined && (pending || (applies && key !== null && !applied.has(key) && urlIsOurs));
+    scope !== undefined &&
+    (pending || inFlight || (applies && key !== null && !applied.has(key) && urlIsOurs));
+
+  // The URL now carries what we wrote: stop holding (and never hold again once the shopper
+  // clears the chips).
+  useEffect(() => {
+    if (key !== null && writing.has(key) && urlSig === applied.get(key)) writing.delete(key);
+  }, [key, urlSig]);
 
   useEffect(() => {
     if (!applies || !activePet || key === null) return;
@@ -50,6 +62,7 @@ export function usePetDefaults(scope: string | undefined): {
     if (!applied.has(key)) {
       applied.set(key, `${filters.attr.pet.join(',')}|${ageStage.join(',')}`);
       if (urlIsOurs) {
+        writing.add(key);
         setSearch(
           (current) => applyListPatch(current, { attr: { pet: filters.attr.pet, ageStage } }),
           { replace: true, preventScrollReset: true },
@@ -58,6 +71,7 @@ export function usePetDefaults(scope: string | undefined): {
     }
     return () => {
       applied.delete(key);
+      writing.delete(key);
     };
     // Only a new page or pet starts a new application; the URL changing is the shopper's doing.
     // eslint-disable-next-line react-hooks/exhaustive-deps
