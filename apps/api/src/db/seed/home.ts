@@ -8,21 +8,21 @@ import { homeContent } from '../schema/index.ts';
 export const HERO_SLIDE_SEEDS = HeroSlidesSchema.parse([
   {
     title: 'Happy tails start here',
-    text: 'Tug ropes that survive the zoomies, beds deep enough to sink into and leads for every weather. Everything your dog needs, from first walk to last nap.',
+    text: 'Tug ropes that survive the zoomies, beds to sink into and leads for every weather.',
     ctaLabel: 'Shop dogs',
     ctaHref: '/c/dogs',
     imageUrl: '/products/dog-toys/braided-tug-rope-1.webp',
   },
   {
     title: 'Purr-fect playtime',
-    text: 'Feather wands, crinkly mice and cosy caves, designed around how cats really hunt, nap and hide. Quiet enough for 3 a.m., tough enough for every pounce.',
+    text: 'Feather wands, crinkly mice and cosy caves, made for the way cats hunt, nap and hide.',
     ctaLabel: 'Shop cats',
     ctaHref: '/c/cats',
     imageUrl: '/products/cat-toys/feather-wand-teaser-1.webp',
   },
   {
     title: 'Little pets, big love',
-    text: 'Sweet meadow hay, chew-safe tunnels and snug hideaways for rabbits, guinea pigs and hamsters. The smallest members of the family, properly spoiled.',
+    text: 'Meadow hay, chew-safe tunnels and snug hideaways for rabbits, guinea pigs and hamsters.',
     ctaLabel: 'Shop small pets',
     ctaHref: '/c/small-pets',
     imageUrl: '/products/small-food/meadow-hay-bundle-1.webp',

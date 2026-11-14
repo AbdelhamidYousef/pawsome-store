@@ -114,7 +114,7 @@ export const shell = {
 
   // Home
   'shell.home.seoDescription':
-    'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Free delivery over 49 euros and a happy-tail promise on every order.',
+    'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Free delivery over {amount} and a happy-tail promise on every order.',
   'shell.home.h1': 'Happy tails start here',
   'shell.home.shopByPet': 'Shop by pet',
   'shell.home.bestsellers': 'Bestsellers',
@@ -131,7 +131,7 @@ export const shell = {
   'shell.home.offer': 'Offer',
   'shell.home.trust.label': 'Why shop with us',
   'shell.home.trust.deliveryTitle': 'Free delivery',
-  'shell.home.trust.deliveryText': 'On orders over 49 euros',
+  'shell.home.trust.deliveryText': 'On orders over {amount}',
   'shell.home.trust.promiseTitle': 'Happy-tail promise',
   'shell.home.trust.promiseText': 'Not a hit? We make it right',
   'shell.home.trust.safeTitle': 'Pet-safe picks',
@@ -198,7 +198,7 @@ export const shell = {
   'shell.home.hero.eyebrow': 'Fresh picks for happy pets',
   'shell.home.hero.secondary': 'Try the gift finder',
   'shell.home.hero.rating': 'Rated {average} out of 5',
-  'shell.home.hero.delivery': 'Free delivery over 49 euros',
+  'shell.home.hero.delivery': 'Free delivery over {amount}',
   'shell.home.hero.returns': '30-day returns',
   'shell.gallery.more': 'Show more photos',
   'shell.gallery.with': 'with {product}',

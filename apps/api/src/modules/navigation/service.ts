@@ -11,6 +11,7 @@ import type { z } from 'zod';
 
 import { notFound } from '../../lib/errors.ts';
 import * as catalogService from '../catalog/service.ts';
+import { localizeCopy } from '../i18n/copy.ts';
 
 import * as repo from './repo.ts';
 
@@ -58,10 +59,10 @@ export async function getNavigation(): Promise<Navigation> {
         .map((b) => ({ slug: b.slug, name: b.name })),
       promo: promo
         ? {
-            title: promo.title,
-            subtitle: promo.subtitle,
+            title: localizeCopy(promo.title),
+            subtitle: localizeCopy(promo.subtitle),
             imageUrl: promo.imageUrl,
-            imageAlt: promo.imageAlt,
+            imageAlt: localizeCopy(promo.imageAlt),
             link: promo.link,
           }
         : null,

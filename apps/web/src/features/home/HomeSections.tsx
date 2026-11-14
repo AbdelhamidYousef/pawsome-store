@@ -7,6 +7,7 @@ import { useFormat } from '../../i18n/format';
 import { GuideCard } from '../guides/GuideCard';
 import { useGuides } from '../guides/queries';
 
+import { useFreeDeliveryAmount } from './free-delivery';
 import { HERO_BOX } from './HeroCarousel';
 import { HeartHandIcon, LeafIcon, ReturnIcon, ShieldIcon, StarIcon, TruckIcon } from './icons';
 import { useTestimonials } from './queries';
@@ -40,6 +41,7 @@ const TRUST: readonly { title: StringKey; text: StringKey; Icon: typeof TruckIco
 
 export function TrustBar() {
   const { t } = useT();
+  const amount = useFreeDeliveryAmount();
   return (
     <section
       aria-label={t('shell.home.trust.label')}
@@ -54,7 +56,7 @@ export function TrustBar() {
             </span>
             <span className="min-w-0">
               <span className="block font-display font-semibold leading-snug">{t(title)}</span>
-              <span className="block text-sm leading-snug text-muted">{t(text)}</span>
+              <span className="block text-sm leading-snug text-muted">{t(text, { amount })}</span>
             </span>
           </li>
         ))}
@@ -69,6 +71,7 @@ export function HeroTrust() {
   const { t } = useT();
   const format = useFormat();
   const { data } = useTestimonials();
+  const amount = useFreeDeliveryAmount();
   const average = data?.meta.average;
   const item = 'flex items-center gap-1.5';
   return (
@@ -83,7 +86,7 @@ export function HeroTrust() {
       )}
       <li className={item}>
         <TruckIcon width={18} height={18} className="text-pet-strong" />
-        {t('shell.home.hero.delivery')}
+        {t('shell.home.hero.delivery', { amount })}
       </li>
       <li className={item}>
         <ReturnIcon width={18} height={18} className="text-pet-strong" />

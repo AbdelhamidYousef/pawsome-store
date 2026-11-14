@@ -118,7 +118,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
 
   // Home
   'shell.home.seoDescription':
-    'Bunte, gut gemachte Ausstattung für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere. Kostenlose Lieferung ab 49 Euro und unser Pawsome-Versprechen bei jeder Bestellung.',
+    'Bunte, gut gemachte Ausstattung für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere. Kostenlose Lieferung ab {amount} und unser Pawsome-Versprechen bei jeder Bestellung.',
   'shell.home.h1': 'Hier beginnt das Schwanzwedeln',
   'shell.home.shopByPet': 'Nach Tier einkaufen',
   'shell.home.bestsellers': 'Bestseller',
@@ -135,7 +135,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.offer': 'Angebot',
   'shell.home.trust.label': 'Warum bei uns einkaufen',
   'shell.home.trust.deliveryTitle': 'Kostenlose Lieferung',
-  'shell.home.trust.deliveryText': 'Ab 49 Euro Bestellwert',
+  'shell.home.trust.deliveryText': 'Ab {amount} Bestellwert',
   'shell.home.trust.promiseTitle': 'Pawsome-Versprechen',
   'shell.home.trust.promiseText': 'Nicht ganz richtig? Wir finden eine Lösung',
   'shell.home.trust.safeTitle': 'Tiersichere Auswahl',
@@ -205,7 +205,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.hero.eyebrow': 'Neue Lieblinge für glückliche Tiere',
   'shell.home.hero.secondary': 'Zum Geschenkefinder',
   'shell.home.hero.rating': 'Mit {average} von 5 bewertet',
-  'shell.home.hero.delivery': 'Gratis Versand ab 49 Euro',
+  'shell.home.hero.delivery': 'Gratis Versand ab {amount}',
   'shell.home.hero.returns': '30 Tage Rückgabe',
   'shell.gallery.more': 'Mehr Fotos zeigen',
   'shell.gallery.with': 'mit {product}',

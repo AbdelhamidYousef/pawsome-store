@@ -9,6 +9,7 @@ import { asc, avg, count, desc, eq } from 'drizzle-orm';
 import { db } from '../../db/client.ts';
 import { testimonials } from '../../db/schema/index.ts';
 import { listBestsellerCards } from '../catalog/service.ts';
+import { localizeCopy } from '../i18n/copy.ts';
 
 import { getHomeContent } from './content.ts';
 
@@ -22,9 +23,17 @@ export async function getHome(): Promise<HomeResponse> {
   ]);
   const promo = content.promoTile;
   return {
-    heroSlides: content.heroSlides,
+    heroSlides: content.heroSlides.map((s) => ({
+      ...s,
+      title: localizeCopy(s.title),
+      text: localizeCopy(s.text),
+      ctaLabel: localizeCopy(s.ctaLabel),
+    })),
     // Switched on but empty is the same as off.
-    promoTile: promo.enabled && promo.text ? promo : null,
+    promoTile:
+      promo.enabled && promo.text
+        ? { ...promo, text: localizeCopy(promo.text), linkLabel: localizeCopy(promo.linkLabel) }
+        : null,
     bestsellers,
   };
 }
@@ -47,7 +56,11 @@ export async function getTestimonials(): Promise<TestimonialsResponse> {
   ]);
   const n = stats?.n ?? 0;
   return {
-    data: featured satisfies Testimonial[],
+    data: featured.map((t) => ({
+      ...t,
+      pet: localizeCopy(t.pet),
+      quote: localizeCopy(t.quote),
+    })) satisfies Testimonial[],
     meta: {
       count: n,
       average: n > 0 && stats?.mean ? Math.round(Number(stats.mean) * 10) / 10 : null,

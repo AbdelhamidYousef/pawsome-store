@@ -5,6 +5,7 @@ import { Seo } from '../components/Seo';
 import { PetTiles } from '../features/catalog/PetTiles';
 import { ProductGrid, ProductGridSkeleton } from '../features/catalog/ProductGrid';
 import '../features/home/builtin-slots';
+import { useFreeDeliveryAmount } from '../features/home/free-delivery';
 import { HeroCarousel } from '../features/home/HeroCarousel';
 import {
   GuidesTeaser,
@@ -45,6 +46,7 @@ function renderSlot(slot: HomeSlot) {
 
 export default function HomePage() {
   const { t } = useT();
+  const freeFrom = useFreeDeliveryAmount();
   const { data, isPending, isError } = useHome();
   const slots = getHomeSlots();
 
@@ -54,7 +56,11 @@ export default function HomePage() {
 
   return (
     <div data-testid={TEST_IDS.pageHome} className="pb-16 lg:pb-24">
-      <Seo title="Pawsome" canonical="/" description={t('shell.home.seoDescription')} />
+      <Seo
+        title="Pawsome"
+        canonical="/"
+        description={t('shell.home.seoDescription', { amount: freeFrom })}
+      />
 
       <SafetyBanner />
 

@@ -117,7 +117,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
 
   // Home
   'shell.home.seoDescription':
-    'Des accessoires colorés et bien faits pour chiens, chats, oiseaux, poissons, reptiles et petits animaux. Livraison offerte dès 49 euros et satisfaction garantie sur chaque commande.',
+    'Des accessoires colorés et bien faits pour chiens, chats, oiseaux, poissons, reptiles et petits animaux. Livraison offerte dès {amount} et satisfaction garantie sur chaque commande.',
   'shell.home.h1': 'Le bonheur de vos animaux commence ici',
   'shell.home.shopByPet': 'Acheter par animal',
   'shell.home.bestsellers': 'Meilleures ventes',
@@ -134,7 +134,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.offer': 'Offre',
   'shell.home.trust.label': 'Pourquoi acheter chez nous',
   'shell.home.trust.deliveryTitle': 'Livraison gratuite',
-  'shell.home.trust.deliveryText': 'Dès 49 euros de commande',
+  'shell.home.trust.deliveryText': 'Dès {amount} de commande',
   'shell.home.trust.promiseTitle': 'Promesse Pawsome',
   'shell.home.trust.promiseText': 'Pas un coup de cœur ? On arrange ça',
   'shell.home.trust.safeTitle': 'Une sélection sûre',
@@ -202,7 +202,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.hero.eyebrow': 'Des nouveautés pour des animaux heureux',
   'shell.home.hero.secondary': 'Trouver une idée cadeau',
   'shell.home.hero.rating': 'Noté {average} sur 5',
-  'shell.home.hero.delivery': 'Livraison offerte dès 49 euros',
+  'shell.home.hero.delivery': 'Livraison offerte dès {amount}',
   'shell.home.hero.returns': 'Retours sous 30 jours',
   'shell.gallery.more': 'Voir plus de photos',
   'shell.gallery.with': 'avec {product}',
