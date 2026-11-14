@@ -105,8 +105,8 @@ describe('GET /admin/analytics', () => {
     expect(a.aovCents).toBe(Math.floor((2 * total + 3) / 6));
   });
 
-  it("uses the shop's calendar day: 22:30 UTC is already the next day in Riga", async () => {
-    const late = await sale('2026-11-03T22:30:00Z');
+  it("uses the shop's calendar day: 23:30 UTC is already the next day in Amsterdam", async () => {
+    const late = await sale('2026-11-03T23:30:00Z');
     const a = await get('from=2026-11-03&to=2026-11-05');
     expect(a.revenue.series.map((s) => s.revenueCents)).toEqual([0, late.totalCents, 0]);
     // The range edges are local too: that order is not in a range that ends on the 3rd.

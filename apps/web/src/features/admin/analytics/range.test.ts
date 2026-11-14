@@ -18,8 +18,9 @@ describe('analytics range', () => {
   });
 
   it("counts today on the shop's calendar, not UTC", () => {
-    // 22:30 UTC on the 3rd is 00:30 on the 4th in Riga (UTC+2 in November).
-    expect(todayInStore(new Date('2026-11-03T22:30:00Z'))).toBe('2026-11-04');
+    // 23:30 UTC on the 3rd is 00:30 on the 4th in Amsterdam (UTC+1 in November).
+    expect(todayInStore(new Date('2026-11-03T23:30:00Z'))).toBe('2026-11-04');
+    expect(todayInStore(new Date('2026-11-03T22:30:00Z'))).toBe('2026-11-03');
     expect(todayInStore(new Date('2026-11-03T10:00:00Z'))).toBe('2026-11-03');
   });
 

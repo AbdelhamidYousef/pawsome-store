@@ -11,7 +11,7 @@ beforeEach(() => {
 });
 
 const analytics = (over: object = {}) => ({
-  range: { from: '2026-10-16', to: '2026-11-14', interval: 'day', timeZone: 'Europe/Riga' },
+  range: { from: '2026-10-16', to: '2026-11-14', interval: 'day', timeZone: 'Europe/Amsterdam' },
   currency: 'EUR',
   revenue: {
     totalCents: 123456,
