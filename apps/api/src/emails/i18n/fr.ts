@@ -61,7 +61,7 @@ export const fr: Record<EmailKey, TextEntry> = {
   'return.approved.l1':
     'Bonne nouvelle : votre retour {ref} pour la commande {order} est approuvé.',
   'return.approved.l2':
-    'Comment nous le renvoyer : emballez {list} dans l’emballage d’origine si possible, écrivez {ref} sur le colis et envoyez-le à Pawsome Returns, 1 Bone Street, Riga LV-1010.',
+    'Comment nous le renvoyer : emballez {list} dans l’emballage d’origine si possible, écrivez {ref} sur le colis et envoyez-le à Pawsome Returns, Pootjesweg 1, 1011 AA Amsterdam, Pays-Bas.',
   'return.approved.l3':
     'Dès que le colis sera arrivé et vérifié, nous vous rembourserons et vous écrirons de nouveau.',
   'return.rejected.subject': 'À propos de votre retour {ref}',

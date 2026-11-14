@@ -66,7 +66,7 @@ export const en = {
   'return.approved.heading': 'Your return is approved',
   'return.approved.l1': 'Good news: your return {ref} for order {order} is approved.',
   'return.approved.l2':
-    'How to send it back: pack {list} in the original packaging if you can, write {ref} on the parcel, and post it to Pawsome Returns, 1 Bone Street, Riga LV-1010.',
+    'How to send it back: pack {list} in the original packaging if you can, write {ref} on the parcel, and post it to Pawsome Returns, Pootjesweg 1, 1011 AA Amsterdam, Netherlands.',
   'return.approved.l3':
     'When it arrives and we have checked it, we refund you and send another email.',
   'return.rejected.subject': 'About your return {ref}',
