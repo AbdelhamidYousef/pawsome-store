@@ -21,6 +21,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'bell-and-mirror-toy',
+    brand: 'feather-and-finch',
     collections: ['christmas'],
     name: 'Bell and Mirror Toy',
     code: 'BELL',
@@ -57,6 +58,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'millet-spray-treats',
+    brand: 'feather-and-finch',
     name: 'Millet Spray Treats',
     code: 'MILLET',
     categorySlug: 'bird-food',
@@ -109,6 +111,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'hanging-seed-feeder',
+    brand: 'feather-and-finch',
     name: 'Hanging Seed Feeder',
     code: 'FEEDER',
     categorySlug: 'bird-feeders',
@@ -141,6 +144,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'ladder-and-bell-set',
+    brand: 'feather-and-finch',
     name: 'Ladder and Bell Set',
     code: 'LDDR',
     categorySlug: 'bird-toys',
@@ -156,6 +160,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'foraging-wheel',
+    brand: 'feather-and-finch',
     name: 'Foraging Wheel',
     code: 'WHEL',
     categorySlug: 'bird-toys',
@@ -172,6 +177,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'fruit-and-nut-mix',
+    brand: 'feather-and-finch',
     name: 'Fruit and Nut Mix',
     code: 'FRUT',
     categorySlug: 'bird-food',
@@ -187,6 +193,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'daily-pellets',
+    brand: 'feather-and-finch',
     name: 'Daily Pellets',
     code: 'PELL',
     categorySlug: 'bird-food',
@@ -240,6 +247,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'night-cage-cover',
+    brand: 'feather-and-finch',
     name: 'Night Cage Cover',
     code: 'COVR',
     categorySlug: 'bird-cages',
@@ -256,6 +264,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'travel-perch-stand',
+    brand: 'feather-and-finch',
     name: 'Travel Perch Stand',
     code: 'TRVL',
     categorySlug: 'bird-cages',
@@ -271,6 +280,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'seed-catcher-tray',
+    brand: 'groomwell',
     name: 'Seed Catcher Tray',
     code: 'CTCH',
     categorySlug: 'bird-feeders',
@@ -301,6 +311,7 @@ export const birdProducts: ProductSeed[] = [
   },
   {
     slug: 'treat-skewer-holder',
+    brand: 'feather-and-finch',
     name: 'Treat Skewer Holder',
     code: 'SKWR',
     categorySlug: 'bird-feeders',

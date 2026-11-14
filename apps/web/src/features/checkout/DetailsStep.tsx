@@ -67,6 +67,7 @@ export function DetailsStep({
     <form
       onSubmit={(e) => void handleSubmit(onSubmit)(e)}
       noValidate
+      data-demo-form="checkout-details"
       className="flex flex-col gap-4"
     >
       {!signedIn && (

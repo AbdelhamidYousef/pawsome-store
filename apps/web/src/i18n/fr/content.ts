@@ -7,7 +7,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.guides.seoDescription':
     'Des guides courts et conviviaux pour les propriétaires de chiens, de chats, d’oiseaux, de poissons et de petits animaux.',
   'content.guides.intro':
-    'De courtes lectures conviviales pour des animaux plus heureux. Rédigés pour une boutique de démonstration : prenez-les comme une source d’inspiration et demandez conseil à votre vétérinaire pour tout ce qui vous inquiète.',
+    'Des conseils pratiques de l’équipe Pawsome, dans le respect des recommandations vétérinaires : installer un premier aquarium, accueillir un chiot, occuper un chat d’intérieur et bien plus. Installez-vous confortablement et bonne lecture.',
   'content.guides.topics': 'Thèmes des guides',
   'content.guides.all': 'Tous les guides',
   'content.guides.list': 'Guides',
@@ -44,7 +44,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.help.noArticles': 'Pas encore d’article dans ce thème.',
   'content.help.tryDifferent': 'Essayez d’autres mots, ou',
   'content.help.browseAll': 'parcourez tous les thèmes',
-  'content.help.stuck': '. Toujours bloqué ?',
+  'content.help.stuck': '. Besoin d’aide supplémentaire ?',
   'content.help.contact': 'Contactez-nous',
   'content.help.contactRest': 'et une vraie personne vous répondra.',
   'content.help.results': {
@@ -54,9 +54,10 @@ export const content: Record<keyof typeof enNs, Entry> = {
 
   // Legal pages (the Markdown bodies stay English)
   'content.legal.notice':
-    'Boutique de démonstration, société fictive. Ce texte est un exemple et ne constitue pas un conseil juridique.',
+    'Dernière mise à jour : novembre 2026. Une question sur cette page ? Notre service client vous répond volontiers via la page de contact.',
   'content.legal.about.title': 'À propos de Pawsome',
-  'content.legal.about.description': 'Qui se cache derrière cette animalerie de démonstration.',
+  'content.legal.about.description':
+    'L’histoire de Pawsome et des personnes qui choisissent chaque produit.',
   'content.legal.shipping.title': 'Livraison',
   'content.legal.shipping.description': 'Options, tarifs et délais de livraison.',
   'content.legal.returns.title': 'Retours et rétractation',
@@ -64,7 +65,8 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.legal.privacy.title': 'Politique de confidentialité',
   'content.legal.privacy.description': 'Les données que nous collectons et pourquoi.',
   'content.legal.terms.title': 'Conditions générales de vente',
-  'content.legal.terms.description': 'Exemple de conditions pour la boutique de démonstration.',
+  'content.legal.terms.description':
+    'Les conditions qui s’appliquent lorsque vous commandez chez Pawsome.',
   'content.legal.cookies.title': 'Cookies',
   'content.legal.cookies.description':
     'Les cookies que nous déposons, et ceux que nous ne déposons pas.',
@@ -109,10 +111,10 @@ export const content: Record<keyof typeof enNs, Entry> = {
   // /developers
   'content.dev.seoTitle': 'Pour les développeurs : outils pour agents',
   'content.dev.seoDescription':
-    'Pawsome propose des outils WebMCP structurés pour que les agents IA du navigateur puissent parcourir le catalogue de démonstration et remplir un panier. Expérimental, données de test uniquement.',
+    'Pawsome propose des outils WebMCP structurés pour que les agents IA du navigateur puissent parcourir le catalogue et remplir un panier pour vous. Expérimental.',
   'content.dev.title': 'Faire ses achats avec un agent IA',
   'content.dev.note':
-    'Ceci est une boutique de démonstration avec des données de test, et WebMCP est une fonctionnalité expérimentale des navigateurs. Rien ici n’est une API publique stable.',
+    'WebMCP est une fonctionnalité expérimentale des navigateurs : ces outils peuvent encore évoluer. Rien ici n’est une API publique stable.',
   'content.dev.whatTitle': 'Qu’est-ce que WebMCP ?',
   'content.dev.whatText':
     'WebMCP est un projet du W3C Web Machine Learning Community Group. Une page déclare des outils auprès du navigateur, et un agent IA intégré au navigateur les appelle avec des arguments JSON au lieu d’analyser l’écran. Les outils s’exécutent dans votre onglet, avec votre propre session et votre propre panier, via la même API que le site lui-même : un agent ne peut donc jamais faire plus que vous. Dans un navigateur sans WebMCP, cette page, comme toute la boutique, se comporte comme d’habitude.',
@@ -150,4 +152,20 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'msg.content.required': 'Obligatoire',
   'msg.content.emailInvalid': 'Saisissez une adresse e-mail valide',
   'msg.content.messageShort': 'Dites-nous-en un peu plus (au moins 10 caractères)',
+  'content.guides.read': 'Lire le guide',
+  'content.contact.eyebrow': 'Nous sommes là pour vous',
+  'content.contact.aboutTitle': 'Qui lit votre message',
+  'content.contact.about':
+    'Pawsome, c’est une petite équipe de passionnés d’animaux. Une vraie personne lit chaque message et y répond vraiment : pas de robot, pas de réponse toute faite.',
+  'content.contact.replyLabel': 'Délai de réponse',
+  'content.contact.replyValue': 'Sous un jour ouvré',
+  'content.contact.hoursLabel': 'Horaires',
+  'content.contact.hoursValue': 'Du lundi au vendredi, de 9 h à 17 h (heure d’Amsterdam)',
+  'content.contact.emailLabel': 'Par e-mail',
+  'content.contact.emailValue': 'Nous répondons à l’adresse indiquée dans le formulaire.',
+  'content.contact.quickTitle': 'Réponses rapides',
+  'content.contact.formTitle': 'Écrivez-nous',
+  'content.help.moreTitle': 'Besoin d’aide supplémentaire ?',
+  'content.help.moreBody': 'Écrivez-nous : une vraie personne vous répond sous un jour ouvré.',
+  'content.help.moreCta': 'Nous contacter',
 };

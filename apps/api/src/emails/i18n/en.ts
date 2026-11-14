@@ -8,7 +8,7 @@ import type { TextEntry } from '@store/shared';
 export const en = {
   // ----- shared -----
   'mail.footer':
-    'Pawsome is a fictional demo shop made for a portfolio. Nothing here is real and no card was charged.',
+    'Thanks for shopping with Pawsome. Payments run in Stripe test mode: no card was charged.',
   'mail.signoff': '- The Pawsome team',
   'mail.hello': 'Hello {name},',
   'mail.seeOrder': 'See your order',
@@ -19,7 +19,7 @@ export const en = {
   'order.subtotal': 'Subtotal',
   'order.shipping': 'Shipping ({method})',
   'order.discount': 'Discount',
-  'order.donation': 'Donation to Whisker Hollow Rescue (demo)',
+  'order.donation': 'Donation to Whisker Hollow Rescue',
   'order.total': 'Total',
   'order.shippingTo': 'Shipping to:',
   'order.deliveringTo': 'Delivering to:',
@@ -66,7 +66,7 @@ export const en = {
   'return.approved.heading': 'Your return is approved',
   'return.approved.l1': 'Good news: your return {ref} for order {order} is approved.',
   'return.approved.l2':
-    'How to send it back: pack {list} in the original packaging if you can, write {ref} on the parcel, and post it to Pawsome Returns, 1 Bone Street, Riga LV-1010 (a made-up address: this is a demo shop).',
+    'How to send it back: pack {list} in the original packaging if you can, write {ref} on the parcel, and post it to Pawsome Returns, Pootjesweg 1, 1011 AA Amsterdam, Netherlands.',
   'return.approved.l3':
     'When it arrives and we have checked it, we refund you and send another email.',
   'return.rejected.subject': 'About your return {ref}',
@@ -82,7 +82,7 @@ export const en = {
   'return.refunded.subject': 'Your refund of {money} is on its way',
   'return.refunded.heading': 'Your refund is on its way',
   'return.refunded.l1': 'We refunded {money} for return {ref} (order {order}).',
-  'return.refunded.simulated': 'This is a demo shop: the refund was simulated and no money moved.',
+  'return.refunded.simulated': 'The refund goes back to the card you paid with.',
   'return.refunded.real':
     'It usually shows up on your card within a few days, depending on your bank.',
 
@@ -92,7 +92,7 @@ export const en = {
   'vet.held.l1':
     "Thank you! Order {number} includes an item that needs a vet's approval, so we are holding it until that is decided. Your payment is safe and the items are set aside for you.",
   'vet.held.l2':
-    'We will email you as soon as there is an answer. (Demo shop: no real vet is contacted.)',
+    'We will email you as soon as there is an answer. Most requests are decided within one working day.',
   'vet.approved.subject': 'Order {number} is approved and being packed',
   'vet.approved.heading': 'Approved, we are packing it',
   'vet.approved.l1':
@@ -102,7 +102,7 @@ export const en = {
   'vet.rejected.l1':
     'We are sorry: the vet check for order {number} was not approved, so the order is cancelled and your payment is refunded in full.',
   'vet.rejected.reason': 'Reason: {reason}',
-  'vet.rejected.simulated': 'This is a demo shop: the refund was simulated and no money moved.',
+  'vet.rejected.simulated': 'The refund goes back to the card you paid with.',
   'vet.rejected.real': 'The refund usually shows up on your card within a few days.',
 
   // ----- newsletter -----

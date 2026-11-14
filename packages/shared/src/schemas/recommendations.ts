@@ -14,6 +14,8 @@ export const RecommendedVariantSchema = z.object({
   // A running flash sale's price, or null. Member prices are never in here: this answer is
   // cacheable and must read the same for everybody.
   saleCents: z.number().int().min(0).nullable(),
+  // The running sale's 30-day reference price (Omnibus), or null: "You save" is counted from it.
+  referenceCents: z.number().int().min(0).nullable(),
   currency: z.string().length(3),
 });
 export type RecommendedVariant = z.infer<typeof RecommendedVariantSchema>;

@@ -10,7 +10,7 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.ratingLabel': '{rating} von 5',
   'reviews.count': { one: '{count} Bewertung', other: '{count} Bewertungen' },
   'reviews.stars': { one: '{count} Stern', other: '{count} Sterne' },
-  'reviews.recommend': '{percent} % würden dies empfehlen',
+  'reviews.recommend': '{percent} % empfehlen dieses Produkt',
   'reviews.sort.label': 'Bewertungen sortieren',
   'reviews.sort.helpful': 'Hilfreichste',
   'reviews.sort.newest': 'Neueste',
@@ -30,11 +30,11 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
     one: '{count}-Sterne-Bewertungen: {n}, Filter aktiv',
     other: '{count}-Sterne-Bewertungen: {n}, Filter aktiv',
   },
-  'reviews.topics.heading': 'Was Kunden erwähnen',
+  'reviews.topics.heading': 'Häufig erwähnt',
 
   'reviews.card.verified': 'Verifizierter Kauf',
-  'reviews.card.recommend': 'Würde empfehlen',
-  'reviews.card.notRecommend': 'Würde nicht empfehlen',
+  'reviews.card.recommend': 'Empfiehlt das Produkt',
+  'reviews.card.notRecommend': 'Empfiehlt das Produkt nicht',
   'reviews.card.photos': 'Kundenfotos',
   'reviews.card.openPhoto': 'Foto {n} von {total} öffnen',
   'reviews.card.photoTitle': 'Kundenfoto',
@@ -51,7 +51,7 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.pet.size': 'Größe {size} gekauft',
 
   'reviews.form.title': '{name} bewerten',
-  'reviews.form.rating': 'Ihre Bewertung',
+  'reviews.form.rating': 'Ihre Sternebewertung',
   'reviews.form.titleLabel': 'Titel',
   'reviews.form.bodyLabel': 'Ihre Bewertung',
   'reviews.form.bodyHint': 'Was haben Sie und Ihr Tier davon gehalten? 20 bis 2000 Zeichen.',
@@ -64,7 +64,8 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.form.photosToUpload': 'Hochzuladende Fotos',
   'reviews.form.photoPreview': 'Vorschau von {name}',
   'reviews.form.remove': 'Entfernen',
-  'reviews.form.uploadsOff': 'Der Foto-Upload ist in dieser Demo deaktiviert.',
+  'reviews.form.uploadsOff':
+    'Foto-Uploads kommen bald. Bis dahin erzählen Sie uns gern alles in Worten.',
   'reviews.form.note':
     'Bewertungen werden geprüft, bevor sie erscheinen. Bitte geben Sie darin keine persönlichen Daten an.',
   'reviews.form.submit': 'Bewertung absenden',

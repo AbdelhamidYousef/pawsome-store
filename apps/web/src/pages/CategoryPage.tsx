@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ApiError } from '../api/client';
 import { Breadcrumbs, type Crumb } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Spinner } from '../components/ui/Spinner';
 import { hasActiveFilters, useProductListParams } from '../features/catalog/list-params';
@@ -59,7 +59,8 @@ export default function CategoryPage() {
   // Page 2+ is its own page for search engines; filtered or sorted views are not worth indexing
   // (endless combinations of the same products), so they point back at the plain category.
   const variant = hasActiveFilters(query) || query.sort !== undefined;
-  const canonical = `/c/${category.slug}${!variant && query.page > 1 ? `?page=${query.page}` : ''}`;
+  const pageSuffix = !variant && query.page > 1 ? `?page=${query.page}` : '';
+  const canonical = `/c/${category.slug}${pageSuffix}`;
 
   return (
     <div data-pet={pet?.accent} data-testid={TEST_IDS.pageCategory}>
@@ -67,6 +68,7 @@ export default function CategoryPage() {
         title={category.name}
         {...(category.description && { description: category.description })}
         canonical={canonical}
+        alternates={slugAlternates('c', category.slugs, pageSuffix)}
         noindex={variant}
       />
       <Container className="py-6">

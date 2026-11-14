@@ -79,8 +79,8 @@ describe('ProductCard: colour swatches', () => {
     renderCard(makeCard({ swatches: [swatch('red'), swatch('blue')] }));
     const link = screen.getByTestId('product-card');
     expect(within(link).queryByRole('button')).not.toBeInTheDocument();
-    // two colour dots and the wishlist heart
-    expect(screen.getAllByRole('button')).toHaveLength(3);
+    // two colour dots, the add-to-cart button and the wishlist heart
+    expect(screen.getAllByRole('button')).toHaveLength(4);
   });
 
   it('previews a colour photo on hover and focus, and keeps it on click', async () => {

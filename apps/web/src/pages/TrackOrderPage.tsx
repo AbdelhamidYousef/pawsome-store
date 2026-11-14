@@ -53,40 +53,52 @@ export default function TrackOrderPage() {
   };
 
   return (
-    <Container className="py-8" data-testid={TEST_IDS.pageTrackOrder}>
+    <Container className="pb-16 pt-10 sm:pb-24 sm:pt-14" data-testid={TEST_IDS.pageTrackOrder}>
       <Seo
         title={t('account.tracking.seoTitle')}
         description={t('account.tracking.seoDescription')}
         noindex
       />
-      <h1 className="font-display text-3xl font-bold sm:text-4xl">
-        {t('account.tracking.seoTitle')}
-      </h1>
-      <p className="mt-2 max-w-prose text-muted">{t('account.tracking.intro')}</p>
-      <form onSubmit={submit} noValidate className="mt-5 flex max-w-md flex-col gap-4">
-        <FormAlert message={fieldError ?? (lookup.error ? messageFor(lookup.error, t) : null)} />
-        <Input
-          label={t('account.tracking.orderNumber')}
-          placeholder="PW-2026-000123"
-          autoComplete="off"
-          value={orderNumber}
-          onChange={(e) => setOrderNumber(e.target.value)}
-          data-testid={TEST_IDS.trackOrderNumber}
-        />
-        <Input
-          label={t('account.tracking.email')}
-          type="email"
-          autoComplete="email"
-          inputMode="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          data-testid={TEST_IDS.trackEmail}
-        />
-        <Button type="submit" loading={lookup.isPending} data-testid={TEST_IDS.trackSubmit}>
-          {t('account.tracking.submit')}
-        </Button>
-      </form>
-      {result && <TrackedOrderView order={result} />}
+      <div className="mx-auto max-w-xl">
+        <header className="text-center">
+          <h1 className="font-display text-4xl font-semibold sm:text-5xl">
+            {t('account.tracking.seoTitle')}
+          </h1>
+          <p className="mt-3 text-lg text-muted">{t('account.tracking.intro')}</p>
+        </header>
+        <form
+          onSubmit={submit}
+          noValidate
+          className="mt-8 flex flex-col gap-4 rounded-card bg-surface p-6 shadow-card sm:p-8"
+        >
+          <FormAlert message={fieldError ?? (lookup.error ? messageFor(lookup.error, t) : null)} />
+          <Input
+            label={t('account.tracking.orderNumber')}
+            placeholder="PW-2026-000123"
+            autoComplete="off"
+            value={orderNumber}
+            onChange={(e) => setOrderNumber(e.target.value)}
+            data-testid={TEST_IDS.trackOrderNumber}
+          />
+          <Input
+            label={t('account.tracking.email')}
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            data-testid={TEST_IDS.trackEmail}
+          />
+          <Button type="submit" loading={lookup.isPending} data-testid={TEST_IDS.trackSubmit}>
+            {t('account.tracking.submit')}
+          </Button>
+        </form>
+      </div>
+      {result && (
+        <div className="mx-auto mt-10 max-w-3xl">
+          <TrackedOrderView order={result} />
+        </div>
+      )}
     </Container>
   );
 }

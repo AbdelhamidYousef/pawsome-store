@@ -9,9 +9,11 @@ import { TEST_IDS } from '../../lib/test-ids';
 import { CartIcon, HeartIcon, MenuIcon, PawIcon } from '../icons';
 
 import { AccountMenu } from './AccountMenu';
+import { ANNOUNCEMENT_HEIGHT, AnnouncementBar } from './AnnouncementBar';
 import { Container } from './Container';
 import { MobileNav } from './MobileNav';
 import { SearchBox } from './SearchBox';
+import { useHideOnScroll } from './use-hide-on-scroll';
 
 // `cartCount` is a prop because components never fetch: the cart feature owns the number and
 // AppLayout passes it down. With `onOpenCart` the icon opens the mini cart drawer; without it
@@ -25,6 +27,11 @@ export function Header({
 }) {
   const { t, tn } = useT();
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrolledDown = useHideOnScroll();
+  // Keyboard focus inside the header always shows it whole (and a transform would also make the
+  // phone search overlay, a fixed box inside the header, measure itself against the header).
+  const [focusInside, setFocusInside] = useState(false);
+  const barHidden = scrolledDown && !focusInside;
   const cartIcon = (
     <>
       <CartIcon />
@@ -42,8 +49,23 @@ export function Header({
   const cartLabel = tn('shell.header.cartLabel', cartCount);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-surface" data-testid="header">
-      <Container className="flex flex-wrap items-center gap-x-3 gap-y-2 py-2 lg:flex-nowrap">
+    // The announcement bar rides on top of the sticky header. Scrolling down slides the whole
+    // header up by the bar's height (a transform: nothing below moves, so no layout shift);
+    // scrolling up or reaching the top slides it back.
+    <header
+      className="sticky top-0 z-30 border-b border-line bg-surface transition-transform duration-300 ease-out"
+      style={{ transform: barHidden ? `translateY(-${ANNOUNCEMENT_HEIGHT})` : 'none' }}
+      data-testid="header"
+      data-bar-hidden={barHidden}
+      onFocus={() => setFocusInside(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setFocusInside(false);
+      }}
+    >
+      <AnnouncementBar />
+      {/* Desktop top row is ~84 px: a bigger logo and a taller, wider search give the brand some
+          presence. Phones keep the compact two-row layout. */}
+      <Container className="flex flex-wrap items-center gap-x-3 gap-y-2 py-2 lg:flex-nowrap lg:gap-x-4 lg:py-4">
         <button
           type="button"
           aria-label={t('shell.header.openMenu')}
@@ -59,16 +81,16 @@ export function Header({
           to="/"
           aria-label={t('shell.header.home')}
           data-testid="logo"
-          className="mr-auto flex min-h-11 items-center gap-2 rounded-control font-display text-2xl font-bold text-primary-strong lg:mr-0"
+          className="mr-auto flex min-h-11 items-center gap-2 rounded-control font-display text-2xl font-bold text-primary-strong lg:mr-0 lg:gap-2.5 lg:text-[2rem]"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-bright text-ink">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-bright text-ink lg:h-12 lg:w-12 [&>svg]:lg:h-7 [&>svg]:lg:w-7">
             <PawIcon width={22} height={22} />
           </span>
           Pawsome
         </Link>
 
         {/* Desktop: search sits inline. Mobile: it wraps to its own full-width row (order-last). */}
-        <div className="order-last w-full lg:order-none lg:mx-4 lg:max-w-md lg:flex-1">
+        <div className="order-last w-full lg:order-none lg:mx-6 lg:max-w-xl lg:flex-1 lg:[&_input]:min-h-[3.25rem] lg:[&_input]:pl-5 lg:[&_button[type=submit]]:h-11 lg:[&_button[type=submit]]:w-11">
           <SearchBox idPrefix="header" />
         </div>
 
@@ -78,7 +100,7 @@ export function Header({
           </div>
           {/* Phones get the switcher in the footer: the header row is already full. */}
           <div className="hidden lg:block">
-            <StoreSwitcher />
+            <StoreSwitcher compact />
           </div>
           <Link
             to="/wishlist"
@@ -115,7 +137,7 @@ export function Header({
 
       <nav
         aria-label={t('shell.shopByPet')}
-        className="relative hidden border-t border-line lg:block"
+        className="relative hidden border-t border-line lg:block lg:[&_[data-testid=main-nav]]:py-2.5"
       >
         <Container>
           <MegaMenu />

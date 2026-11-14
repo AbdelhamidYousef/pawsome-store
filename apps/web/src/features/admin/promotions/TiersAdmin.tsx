@@ -13,7 +13,8 @@ import { FormAlert } from '../../auth/AuthCard';
 import { adminErrorMessage } from '../errors';
 import { centsToInput } from '../money-input';
 
-import { parseTierForm, type FieldErrors, type TierFormState } from './code-form';
+import { byCurrencyToText, parseTierForm, type FieldErrors, type TierFormState } from './code-form';
+import { CurrencyAmounts } from './CurrencyAmounts';
 import { useAdminTiers, useDeleteTier, useSaveTier } from './queries';
 
 function TierForm({ tier, onDone }: { tier: AdminBulkTier | undefined; onDone: () => void }) {
@@ -21,8 +22,13 @@ function TierForm({ tier, onDone }: { tier: AdminBulkTier | undefined; onDone: (
   const save = useSaveTier();
   const [form, setForm] = useState<TierFormState>(
     tier
-      ? { min: centsToInput(tier.minCents), percent: String(tier.percent), active: tier.active }
-      : { min: '', percent: '', active: true },
+      ? {
+          min: centsToInput(tier.minCents),
+          minBy: byCurrencyToText(tier.minByCurrency),
+          percent: String(tier.percent),
+          active: tier.active,
+        }
+      : { min: '', minBy: {}, percent: '', active: true },
   );
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverError, setServerError] = useState<string | null>(null);
@@ -63,6 +69,14 @@ function TierForm({ tier, onDone }: { tier: AdminBulkTier | undefined; onDone: (
         value={form.min}
         onChange={(e) => setForm((f) => ({ ...f, min: e.target.value }))}
         error={errors.min}
+      />
+      <CurrencyAmounts
+        label="Spend from"
+        field="minByCurrency"
+        hint="Empty: this tier does not apply in the {currency} store"
+        values={form.minBy}
+        errors={errors}
+        onChange={(minBy) => setForm((f) => ({ ...f, minBy }))}
       />
       <Input
         label="Percentage off"
@@ -137,7 +151,12 @@ export function TiersAdmin() {
             <tbody>
               {tiers.map((t) => (
                 <tr key={t.id} className="border-t border-line" data-testid="admin-tier-row">
-                  <td className="p-3 font-semibold">{formatMoney(t.minCents, 'EUR')}</td>
+                  <td className="p-3 font-semibold">
+                    {[
+                      formatMoney(t.minCents, 'EUR'),
+                      ...Object.entries(t.minByCurrency).map(([c, cents]) => formatMoney(cents, c)),
+                    ].join(' · ')}
+                  </td>
                   <td className="p-3">{t.percent}% off</td>
                   <td className="p-3">
                     <Badge tone={t.active ? 'success' : 'neutral'}>

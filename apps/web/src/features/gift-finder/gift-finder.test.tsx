@@ -12,6 +12,8 @@ describe('gift finder wizard', () => {
     const router = renderApp('/gift-finder');
     expect(await screen.findByTestId('gift-progress')).toHaveTextContent('Question 1 of 4');
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Who is the gift for?');
+    // First load leaves focus alone (no ring drawn around the question).
+    expect(screen.getByRole('heading', { level: 1 })).not.toHaveFocus();
 
     await userEvent.click(screen.getByTestId('gift-next'));
     expect(screen.getByTestId('gift-error')).toHaveTextContent('Pick one');

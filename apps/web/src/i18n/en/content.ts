@@ -6,7 +6,7 @@ export const content = {
   'content.guides.seoDescription':
     'Short, friendly guides for dog, cat, bird, fish and small pet owners.',
   'content.guides.intro':
-    'Short, friendly reads for happier pets. Written for a demo store, so treat them as inspiration and ask your vet about anything that worries you.',
+    'Practical, vet-aware advice from the Pawsome team: setting up a first tank, settling a new puppy, keeping an indoor cat busy and more. Grab a cuppa and dive in.',
   'content.guides.topics': 'Guide topics',
   'content.guides.all': 'All guides',
   'content.guides.list': 'Guides',
@@ -52,9 +52,10 @@ export const content = {
 
   // Legal pages (the Markdown bodies stay English)
   'content.legal.notice':
-    'Demo store, fictional company. This text is an example and is not legal advice.',
+    'Last updated November 2026. Questions about this page? Our customer care team is happy to help through the contact page.',
   'content.legal.about.title': 'About Pawsome',
-  'content.legal.about.description': 'Who is behind this demo pet shop.',
+  'content.legal.about.description':
+    'The story behind Pawsome and the people who pick every product.',
   'content.legal.shipping.title': 'Shipping',
   'content.legal.shipping.description': 'Delivery options, prices and times.',
   'content.legal.returns.title': 'Returns and withdrawal',
@@ -62,7 +63,7 @@ export const content = {
   'content.legal.privacy.title': 'Privacy notice',
   'content.legal.privacy.description': 'What data we collect and why.',
   'content.legal.terms.title': 'Terms and conditions',
-  'content.legal.terms.description': 'Sample terms for the demo store.',
+  'content.legal.terms.description': 'The terms that apply when you order from Pawsome.',
   'content.legal.cookies.title': 'Cookies',
   'content.legal.cookies.description': 'The cookies we set, and the ones we do not.',
   'content.legal.accessibility.title': 'Accessibility statement',
@@ -105,10 +106,10 @@ export const content = {
   // /developers
   'content.dev.seoTitle': 'For developers: agent tools',
   'content.dev.seoDescription':
-    'Pawsome offers structured WebMCP tools so browser AI agents can search the demo catalogue and fill a cart. Experimental, test data only.',
+    'Pawsome offers structured WebMCP tools so browser AI agents can search the catalogue and fill a cart for you. Experimental.',
   'content.dev.title': 'Shop with an AI agent',
   'content.dev.note':
-    'This is a demo store on test data, and WebMCP is an experimental browser feature. Nothing here is a stable public API.',
+    'WebMCP is an experimental browser feature, so these tools may change. Nothing here is a stable public API.',
   'content.dev.whatTitle': 'What is WebMCP?',
   'content.dev.whatText':
     'WebMCP is a draft from the W3C Web Machine Learning Community Group. A page registers tools with the browser, and an AI agent built into the browser calls them with JSON arguments instead of scraping the screen. The tools run in your tab, with your own session and cart, through the same API the site itself uses, so an agent can never do more than you can. In a browser without WebMCP this page, and the whole store, behave exactly as usual.',
@@ -143,4 +144,20 @@ export const content = {
   'msg.content.required': 'Required',
   'msg.content.emailInvalid': 'Enter a valid email address',
   'msg.content.messageShort': 'Tell us a little more (at least 10 characters)',
+  'content.guides.read': 'Read the guide',
+  'content.contact.eyebrow': 'We are here to help',
+  'content.contact.aboutTitle': 'Who reads your message',
+  'content.contact.about':
+    'Pawsome is a small team of pet people. A person reads every message and answers it properly: no bots, no copy-and-paste replies.',
+  'content.contact.replyLabel': 'Reply time',
+  'content.contact.replyValue': 'Within one working day',
+  'content.contact.hoursLabel': 'Opening hours',
+  'content.contact.hoursValue': 'Monday to Friday, 9:00 to 17:00 (Amsterdam time)',
+  'content.contact.emailLabel': 'By email',
+  'content.contact.emailValue': 'We answer at the address you give us in the form.',
+  'content.contact.quickTitle': 'Quick answers',
+  'content.contact.formTitle': 'Send us a message',
+  'content.help.moreTitle': 'Still need help?',
+  'content.help.moreBody': 'Write to us and a person will answer within one working day.',
+  'content.help.moreCta': 'Contact us',
 } satisfies Dictionary;

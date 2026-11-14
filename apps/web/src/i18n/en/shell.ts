@@ -34,10 +34,9 @@ export const shell = {
 
   // Footer
   'shell.footer.tagline':
-    'Happy-tail supplies for dogs, cats, birds, fish, reptiles and small pets.',
-  'shell.footer.paymentNote':
-    'Payments run in Stripe test mode: no real orders are taken and no card is ever charged.',
-  'shell.footer.copyright': '© {year} Pawsome demo store, a fictional company. Not legal advice.',
+    'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Tested at home by our own fussy panel.',
+  'shell.footer.paymentNote': 'Secure checkout by Stripe (test mode).',
+  'shell.footer.copyright': '© {year} Pawsome. All rights reserved.',
   'shell.footer.shop': 'Shop',
   'shell.footer.brands': 'Brands',
   'shell.footer.giftFinder': 'Gift finder',
@@ -115,7 +114,7 @@ export const shell = {
 
   // Home
   'shell.home.seoDescription':
-    'Colourful, tough and tail-wag-approved supplies for dogs, cats, birds, fish and small pets.',
+    'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Free delivery over {amount} and a happy-tail promise on every order.',
   'shell.home.h1': 'Happy tails start here',
   'shell.home.shopByPet': 'Shop by pet',
   'shell.home.bestsellers': 'Bestsellers',
@@ -132,7 +131,7 @@ export const shell = {
   'shell.home.offer': 'Offer',
   'shell.home.trust.label': 'Why shop with us',
   'shell.home.trust.deliveryTitle': 'Free delivery',
-  'shell.home.trust.deliveryText': 'On orders over 49 euros',
+  'shell.home.trust.deliveryText': 'On orders over {amount}',
   'shell.home.trust.promiseTitle': 'Happy-tail promise',
   'shell.home.trust.promiseText': 'Not a hit? We make it right',
   'shell.home.trust.safeTitle': 'Pet-safe picks',
@@ -150,15 +149,16 @@ export const shell = {
     other: '{average} out of 5, from {count} happy customers',
   },
   'shell.seasonal.seeAll': 'See the whole collection',
-  'shell.gallery.heading': '#RealPawsomePets',
-  'shell.gallery.intro': 'Real customers, real pets. Tap a photo to shop what they use.',
+  'shell.gallery.heading': 'Pawsome at home',
+  'shell.gallery.intro':
+    'Our favourite pieces, ready for real homes. Tap a photo to shop the look.',
   'shell.gallery.open': 'Open photo: {name}',
-  'shell.gallery.customerPhotoLower': 'customer photo',
-  'shell.gallery.customerPhoto': 'Customer photo',
+  'shell.gallery.customerPhotoLower': 'photo',
+  'shell.gallery.customerPhoto': 'Photo',
   'shell.gallery.aCustomer': 'A customer',
   'shell.gallery.petOf': "{name}'s pet",
   'shell.gallery.pictured': 'Pictured: {name}',
-  'shell.gallery.shop': 'Shop this photo',
+  'shell.gallery.shop': 'Shop the look',
   'shell.gallery.noProducts': 'No products are linked to this photo.',
   'shell.gallery.addAria': 'Add {name} to cart',
   'shell.gallery.add': 'Add to cart',
@@ -195,4 +195,22 @@ export const shell = {
   'shell.error.notFoundText': 'The page you asked for does not exist.',
   'shell.error.text': 'An unexpected error stopped this page from loading. Please try again.',
   'shell.error.reload': 'Reload the shop',
+  'shell.home.hero.eyebrow': 'Fresh picks for happy pets',
+  'shell.home.hero.secondary': 'Try the gift finder',
+  'shell.home.hero.rating': 'Rated {average} out of 5',
+  'shell.home.hero.delivery': 'Free delivery over {amount}',
+  'shell.home.hero.returns': '30-day returns',
+  'shell.gallery.more': 'Show more photos',
+  'shell.gallery.with': 'with {product}',
+  'shell.gallery.inPhoto': 'In this photo',
+  'shell.footer.charity': 'Our shelter partner',
+  'shell.storeSwitch.title': 'Switch to {store}?',
+  'shell.storeSwitch.text':
+    'These items have no price in {currency}, so they will be removed from your cart:',
+  'shell.storeSwitch.confirm': 'Switch and remove them',
+  'shell.storeSwitch.cancel': 'Stay in {store}',
+  'shell.announcement.freeDelivery': 'Free delivery on orders over {amount}',
+  'shell.home.whoFor': 'Who are you shopping for?',
+  'shell.home.brands.title': 'Shop by brand',
+  'shell.home.brands.view': 'View {brand}',
 } satisfies Dictionary;

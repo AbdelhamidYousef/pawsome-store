@@ -22,6 +22,7 @@ const item = (
     name: `Pack ${n}`,
     priceCents: 500 * n,
     saleCents: null,
+    referenceCents: null,
     currency: 'EUR',
     ...over,
   },
@@ -45,7 +46,17 @@ describe('Frequently bought together', () => {
     expect(within(block).getAllByTestId('bought-together-option')).toHaveLength(2);
     await userEvent.click(within(block).getByRole('checkbox', { name: /Item 2/ }));
     expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€15.99');
-    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent('Add all (2 items)');
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent(
+      'Add 2 items to cart',
+    );
+
+    // The page's own item can be left out too, and nothing in the block navigates away.
+    await userEvent.click(within(block).getByRole('checkbox', { name: /Rope Tug/ }));
+    expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€5.00');
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent(
+      'Add 1 item to cart',
+    );
+    expect(within(block).queryByRole('link')).toBeNull();
   });
 
   it('uses a running sale price for a suggestion, never a member price', async () => {
@@ -53,6 +64,15 @@ describe('Frequently bought together', () => {
     renderApp('/products/rope-tug');
     const block = await screen.findByTestId('bought-together');
     expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€18.99');
+  });
+
+  it('counts a suggestion\'s sale in "You save" only against its 30-day reference price', async () => {
+    server.use(
+      recs([item(2, { saleCents: 800, referenceCents: 950 }), item(3, { saleCents: 900 })]),
+    );
+    renderApp('/products/rope-tug');
+    const block = await screen.findByTestId('bought-together');
+    expect(within(block).getByText('You save €1.50')).toBeInTheDocument();
   });
 
   it('adds the chosen items in one request and says so', async () => {
@@ -76,6 +96,7 @@ describe('Frequently bought together', () => {
       ],
     });
     expect(await screen.findByText('Added 2 items to your cart')).toBeInTheDocument();
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent('Added to cart');
   });
 
   it('shows what went wrong line by line when the server refuses the whole add', async () => {
@@ -129,9 +150,12 @@ describe('Frequently bought together', () => {
     );
     renderApp('/products/rope-tug');
     const block = await screen.findByTestId('bought-together');
-    expect(block).toHaveTextContent('(not available)');
+    expect(block).toHaveTextContent('Not available');
+    expect(within(block).getByRole('checkbox', { name: /Rope Tug/ })).toBeDisabled();
     expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€5.00');
-    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent('Add all (1 item)');
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent(
+      'Add 1 item to cart',
+    );
   });
 });
 
@@ -140,7 +164,7 @@ describe('related and recently viewed on the product page', () => {
     server.use(recs([]));
     renderApp('/products/rope-tug');
     const strip = await screen.findByTestId('related');
-    expect(within(strip).getByText('Related One')).toBeInTheDocument();
+    expect(within(strip).getByRole('link', { name: /Related One/ })).toBeInTheDocument();
   });
 
   it('records the visit, and shows earlier visits (not the page itself) after a reload', async () => {
@@ -157,7 +181,7 @@ describe('related and recently viewed on the product page', () => {
     );
     renderApp('/products/rope-tug');
     const strip = await screen.findByTestId('recently-viewed');
-    expect(within(strip).getByText('Seen Before')).toBeInTheDocument();
+    expect(within(strip).getByRole('link', { name: /Seen Before/ })).toBeInTheDocument();
     expect(asked).toBe(other);
     // The page recorded its own id, first in the list.
     expect(window.localStorage.getItem('pawsome.recently-viewed')).toContain('p1');
@@ -190,7 +214,7 @@ describe('cart page and mini cart', () => {
     );
     renderApp('/cart');
     const strip = await screen.findByTestId('recently-viewed');
-    expect(within(strip).getByText('Seen Before')).toBeInTheDocument();
+    expect(within(strip).getByRole('link', { name: /Seen Before/ })).toBeInTheDocument();
   });
 
   it('suggests at most two things you might need, never what is already in the cart', async () => {

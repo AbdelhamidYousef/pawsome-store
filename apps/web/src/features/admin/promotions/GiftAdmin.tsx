@@ -9,7 +9,13 @@ import { FormAlert } from '../../auth/AuthCard';
 import { adminErrorMessage } from '../errors';
 import { centsToInput } from '../money-input';
 
-import { parseGiftForm, type FieldErrors } from './code-form';
+import {
+  byCurrencyToText,
+  parseGiftForm,
+  type ByCurrencyText,
+  type FieldErrors,
+} from './code-form';
+import { CurrencyAmounts } from './CurrencyAmounts';
 import { useAdminGift, useClearGift, useSetGift } from './queries';
 
 export function GiftAdmin() {
@@ -18,12 +24,17 @@ export function GiftAdmin() {
   const clear = useClearGift();
   const toast = useToast();
   // null = untouched: the inputs then show the saved rule.
-  const [draft, setDraft] = useState<{ threshold: string; variant: string } | null>(null);
+  const [draft, setDraft] = useState<{
+    threshold: string;
+    thresholdBy: ByCurrencyText;
+    variant: string;
+  } | null>(null);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverError, setServerError] = useState<string | null>(null);
 
   const form = draft ?? {
     threshold: rule ? centsToInput(rule.thresholdCents) : '',
+    thresholdBy: rule ? byCurrencyToText(rule.thresholdByCurrency) : {},
     variant: rule?.sku ?? '',
   };
 
@@ -70,7 +81,12 @@ export function GiftAdmin() {
         <>
           <p data-testid="gift-status" aria-live="polite" className="font-semibold">
             {rule
-              ? `On: a free ${rule.productName} (${rule.variantName}, ${rule.sku}) from ${formatMoney(rule.thresholdCents, 'EUR')}.`
+              ? `On: a free ${rule.productName} (${rule.variantName}, ${rule.sku}) from ${[
+                  formatMoney(rule.thresholdCents, 'EUR'),
+                  ...Object.entries(rule.thresholdByCurrency).map(([c, cents]) =>
+                    formatMoney(cents, c),
+                  ),
+                ].join(' / ')}.`
               : 'Off: no gift is given at the moment.'}
           </p>
           <form
@@ -87,6 +103,14 @@ export function GiftAdmin() {
               value={form.threshold}
               onChange={(e) => setDraft({ ...form, threshold: e.target.value })}
               error={errors.threshold}
+            />
+            <CurrencyAmounts
+              label="Spend from"
+              field="thresholdByCurrency"
+              hint="Empty: no gift in the {currency} store"
+              values={form.thresholdBy}
+              errors={errors}
+              onChange={(thresholdBy) => setDraft({ ...form, thresholdBy })}
             />
             <Input
               label="Gift variant SKU"

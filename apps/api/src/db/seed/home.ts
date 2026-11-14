@@ -8,21 +8,21 @@ import { homeContent } from '../schema/index.ts';
 export const HERO_SLIDE_SEEDS = HeroSlidesSchema.parse([
   {
     title: 'Happy tails start here',
-    text: 'Colourful, tough and tail-wag-approved supplies for every pet, from first walk to last nap.',
+    text: 'Tug ropes that survive the zoomies, beds to sink into and leads for every weather.',
     ctaLabel: 'Shop dogs',
     ctaHref: '/c/dogs',
     imageUrl: '/products/dog-toys/braided-tug-rope-1.webp',
   },
   {
     title: 'Purr-fect playtime',
-    text: 'Feather wands, crinkly mice and cosy caves for curious cats.',
+    text: 'Feather wands, crinkly mice and cosy caves, made for the way cats hunt, nap and hide.',
     ctaLabel: 'Shop cats',
     ctaHref: '/c/cats',
     imageUrl: '/products/cat-toys/feather-wand-teaser-1.webp',
   },
   {
     title: 'Little pets, big love',
-    text: 'Hay, hideaways and chews for the smallest members of the family.',
+    text: 'Meadow hay, chew-safe tunnels and snug hideaways for rabbits, guinea pigs and hamsters.',
     ctaLabel: 'Shop small pets',
     ctaHref: '/c/small-pets',
     imageUrl: '/products/small-food/meadow-hay-bundle-1.webp',
@@ -31,7 +31,7 @@ export const HERO_SLIDE_SEEDS = HeroSlidesSchema.parse([
 
 export const PROMO_TILE_SEED = PromoTileSchema.parse({
   enabled: true,
-  text: 'Free delivery on orders over 49 euros. Tails wag faster when the box arrives free.',
+  text: 'Free delivery on orders over 49 euros, packed and dispatched the same day when you order before 15:00.',
   linkLabel: 'See delivery details',
   linkHref: '/help',
 });

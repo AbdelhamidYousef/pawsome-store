@@ -27,7 +27,7 @@ import {
 } from '../schema/index.ts';
 
 import { HOUSE_BRAND, brands } from './brands.ts';
-import { seedBundles } from './bundles.ts';
+import { bundleSeeds, seedBundles } from './bundles.ts';
 import { categories } from './categories.ts';
 import { seedCharity } from './charity.ts';
 import { collections, windowDates } from './collections.ts';
@@ -35,6 +35,7 @@ import { loadContent, seedContent } from './content.ts';
 import { FORCED_STOCK, expandVariants, stockLevels } from './expand.ts';
 import { seedHomeContent } from './home.ts';
 import { imageRowsFor } from './images.ts';
+import { materialFacet } from './materials.ts';
 import { seedMenuPromos } from './menu-promos.ts';
 import { assertFeedingTablesTile, pdpFor, sizeGuides } from './pdp.ts';
 import { seedGbpPrices } from './prices.ts';
@@ -46,6 +47,7 @@ import {
   memberPriceCents,
   pickMemberVariants,
 } from './promotions.ts';
+import { boughtTogetherPlan, seedBoughtTogether } from './relations.ts';
 import { seedReviews } from './reviews.ts';
 import { seedRewards } from './rewards.ts';
 import { RETURNS_DEMO_EMAIL, seedSales } from './sales.ts';
@@ -53,7 +55,7 @@ import { validateSeed } from './schema.ts';
 import { shippingMethods } from './shipping.ts';
 import { tags } from './tags.ts';
 import { seedTranslations } from './translations.ts';
-import { DEMO_PASSWORD, demoUsers, hashDemoPassword } from './users.ts';
+import { DEMO_PASSWORD, demoUsers, hashDemoPassword, hashUnusablePassword } from './users.ts';
 
 // `excluded` is the row that failed to insert; `ON CONFLICT DO UPDATE` copies its values over the
 // existing row. This is what makes the seed safe to run again: definitions are refreshed in place
@@ -67,6 +69,7 @@ export async function runSeed(now = new Date()) {
   validateSeed(products);
   assertFeedingTablesTile(products);
   const passwordHash = await hashDemoPassword();
+  const lockedHash = await hashUnusablePassword();
   // Read and validated before the transaction opens: a bad Markdown file stops the seed up front.
   const content = loadContent();
 
@@ -130,6 +133,7 @@ export async function runSeed(now = new Date()) {
           tagline: excluded('tagline'),
           story: excluded('story'),
           accentColor: excluded('accent_color'),
+          logoUrl: excluded('logo_url'),
         },
       })
       .returning({ id: brandsTable.id, slug: brandsTable.slug });
@@ -166,7 +170,7 @@ export async function runSeed(now = new Date()) {
             status: 'active' as const,
             attributes: {
               pet: p.pet,
-              material: p.material,
+              material: materialFacet(p),
               ageStage: p.ageStage,
               optionKeys: p.axes.map((a) => a.key),
             },
@@ -407,6 +411,22 @@ export async function runSeed(now = new Date()) {
     // ---- kits (phase 16): built from the seeded products above ----
     await seedBundles(tx);
 
+    // ---- "frequently bought together" picks (same pet, complementary category, no kits) ----
+    const kitRows = await tx
+      .select({ id: productsTable.id, slug: productsTable.slug })
+      .from(productsTable)
+      .where(
+        inArray(
+          productsTable.slug,
+          bundleSeeds.map((b) => b.slug),
+        ),
+      );
+    await seedBoughtTogether(
+      tx,
+      boughtTogetherPlan(products, bundleSeeds),
+      new Map([...productId, ...kitRows.map((k) => [k.slug, k.id] as const)]),
+    );
+
     // ---- guides, help articles, testimonials (after products: guides link to them) ----
     await seedContent(tx, content, productId);
     await seedTranslations(tx);
@@ -507,7 +527,7 @@ export async function runSeed(now = new Date()) {
       });
 
     // ---- reviews and the customer gallery (phase 17): after the products and the users ----
-    await seedReviews(tx, { products, productId, passwordHash, now });
+    await seedReviews(tx, { products, productId, lockedHash, now });
 
     // ---- ~90 days of sales history and sample returns (phase 22): after products and users ----
     await seedSales(tx, { passwordHash, now });

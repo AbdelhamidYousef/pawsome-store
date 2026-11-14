@@ -10,6 +10,7 @@ import {
   giftRules,
   productVariants,
   products,
+  variantPrices,
 } from '../../db/schema/index.ts';
 
 // Admin-side queries for the promotion rules. The shopper-facing reads live in repo.ts.
@@ -30,6 +31,8 @@ const codeColumns = {
   kind: discountCodes.kind,
   value: discountCodes.value,
   minSpendCents: discountCodes.minSpendCents,
+  valueByCurrency: discountCodes.valueByCurrency,
+  minSpendByCurrency: discountCodes.minSpendByCurrency,
   startsAt: discountCodes.startsAt,
   endsAt: discountCodes.endsAt,
   maxUses: discountCodes.maxUses,
@@ -87,15 +90,20 @@ export async function deleteCode(id: string) {
 // ----- tiers -----
 export const listTiers = () => db.select().from(bulkTiers).orderBy(asc(bulkTiers.minCents));
 
-export async function insertTier(values: { minCents: number; percent: number; active: boolean }) {
+type TierValues = {
+  minCents: number;
+  // Left out: an update keeps the stored map.
+  minByCurrency?: Record<string, number> | undefined;
+  percent: number;
+  active: boolean;
+};
+
+export async function insertTier(values: TierValues) {
   const [row] = await db.insert(bulkTiers).values(values).returning();
   return row!;
 }
 
-export async function updateTier(
-  id: string,
-  values: { minCents: number; percent: number; active: boolean },
-) {
+export async function updateTier(id: string, values: TierValues) {
   const [row] = await db
     .update(bulkTiers)
     .set({ ...values, updatedAt: new Date() })
@@ -116,6 +124,7 @@ export async function deleteTier(id: string) {
 const giftColumns = {
   id: giftRules.id,
   thresholdCents: giftRules.thresholdCents,
+  thresholdByCurrency: giftRules.thresholdByCurrency,
   variantId: giftRules.variantId,
   sku: productVariants.sku,
   productName: products.name,
@@ -145,8 +154,22 @@ export async function findVariant(by: { id: string } | { sku: string }) {
   return row;
 }
 
+// The currencies a variant has a price in (EUR always, via the trigger; others only if set).
+export async function variantCurrencies(variantId: string): Promise<string[]> {
+  const rows = await db
+    .select({ currency: variantPrices.currency })
+    .from(variantPrices)
+    .where(eq(variantPrices.variantId, variantId));
+  return rows.map((r) => r.currency);
+}
+
 // Updates the one active rule, or creates it. The partial unique index decides a race.
-export async function setGiftRule(thresholdCents: number, variantId: string) {
+// `thresholdByCurrency` left out keeps the stored map (a new rule starts with none).
+export async function setGiftRule(
+  thresholdCents: number,
+  variantId: string,
+  thresholdByCurrency?: Record<string, number>,
+) {
   await db.transaction(async (tx) => {
     const [current] = await tx
       .select({ id: giftRules.id })
@@ -156,10 +179,12 @@ export async function setGiftRule(thresholdCents: number, variantId: string) {
     if (current) {
       await tx
         .update(giftRules)
-        .set({ thresholdCents, variantId, updatedAt: new Date() })
+        .set({ thresholdCents, variantId, thresholdByCurrency, updatedAt: new Date() })
         .where(eq(giftRules.id, current.id));
     } else {
-      await tx.insert(giftRules).values({ thresholdCents, variantId, active: true });
+      await tx
+        .insert(giftRules)
+        .values({ thresholdCents, variantId, thresholdByCurrency, active: true });
     }
   });
 }

@@ -4,6 +4,7 @@ import { alias } from 'drizzle-orm/pg-core';
 import { stockQuantity, stockReserved } from '../../db/available.ts';
 import { db } from '../../db/client.ts';
 import {
+  bundleItems,
   inventory,
   orderItems,
   orders,
@@ -86,6 +87,13 @@ export async function sameCategoryIds(ref: ProductRef, limit: number): Promise<s
         eq(products.status, 'active'),
         ne(products.id, ref.id),
         eq(products.categoryId, ref.categoryId),
+        // A kit made of the viewed product is not "something else you may like".
+        sql`not exists (
+          select 1 from ${bundleItems} bi
+          join ${productVariants} bv on bv.id = bi.bundle_variant_id
+          join ${productVariants} cv on cv.id = bi.component_variant_id
+          where bv.product_id = ${products.id} and cv.product_id = ${ref.id}
+        )`,
       ),
     )
     .orderBy(

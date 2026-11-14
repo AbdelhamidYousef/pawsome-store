@@ -25,7 +25,7 @@ interface Linked {
   name: string;
 }
 
-// #RealPawsomePets: customer photos that link to the products in them. Upload (or paste the path
+// "Pawsome at home" gallery: photos that link to the products in them. Upload (or paste the path
 // of a committed photo), say who is in it, link products with a name search, publish. Order is a
 // number the shop edits with the up/down buttons (the two neighbours swap numbers).
 export function GalleryAdmin() {

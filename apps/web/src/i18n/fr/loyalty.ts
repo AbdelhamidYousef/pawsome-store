@@ -20,16 +20,14 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   },
 
   // Footer note and charity page
-  'loyalty.charityNote.text':
-    '(un refuge imaginaire) a reçu {amount} jusqu’ici. Simple démo : aucun argent ne circule.',
   'loyalty.charity.seoTitle': 'Notre refuge',
   'loyalty.charity.seoDescription':
-    'Whisker Hollow Rescue, le refuge (fictif) soutenu par Pawsome. Une démo : aucun argent ne circule.',
+    'Whisker Hollow Rescue est le refuge que Pawsome soutient. Arrondissez votre total au paiement ou offrez vos points.',
   'loyalty.charity.note':
-    'Ceci est une boutique de démonstration et le refuge est imaginaire. Les dons sont comptabilisés ici, mais aucun argent ne circule.',
+    'Chaque arrondi au paiement et chaque point offert s’ajoutent au total ci-dessous.',
   'loyalty.charity.error': 'Nous n’avons pas pu charger le total pour le moment.',
   'loyalty.charity.given': 'Total des dons',
-  'loyalty.charity.donations': { one: 'issu de {count} don', other: 'issu de {count} dons' },
+  'loyalty.charity.donations': { one: 'grâce à {count} don', other: 'grâce à {count} dons' },
   'loyalty.charity.waysTitle': 'Deux façons de donner',
   'loyalty.charity.checkoutLabel': 'Au paiement :',
   'loyalty.charity.checkoutText':
@@ -62,11 +60,11 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.retry': 'Réessayer',
   'loyalty.rewards.balance': 'Votre solde',
   'loyalty.rewards.pointsUnit': 'points',
-  'loyalty.rewards.worth': 'Valeur de {amount} au paiement',
+  'loyalty.rewards.worth': 'Soit {amount} au paiement',
   'loyalty.rewards.earnRateOne': 'Vous gagnez 1 point par euro dépensé.',
   'loyalty.rewards.earnRatePercent': 'Vous gagnez {percent} % par euro dépensé.',
   'loyalty.rewards.nextTier': 'Encore {points} points gagnés pour atteindre {label}.',
-  'loyalty.rewards.topTier': 'Vous êtes au niveau le plus élevé. Bon chien !',
+  'loyalty.rewards.topTier': 'Vous êtes au niveau le plus élevé. Bravo, bon toutou !',
   'loyalty.rewards.spendTitle': 'Dépenser vos points',
   'loyalty.rewards.rewardsError': 'Nous n’avons pas pu charger les récompenses.',
   'loyalty.rewards.noRewards': 'Aucune récompense n’est disponible pour le moment.',
@@ -78,8 +76,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.redeem.failed': 'Nous n’avons pas pu effectuer cet échange.',
   'loyalty.rewards.giveAwayTitle': 'Ou les offrir',
   'loyalty.rewards.donate.giveTo': 'Donner des points à',
-  'loyalty.rewards.donate.aboutShelter':
-    ', un refuge imaginaire (1 point = 1 centime ; démo uniquement, aucun argent ne circule).',
+  'loyalty.rewards.donate.aboutShelter': ', le refuge que nous soutenons (1 point = 1 centime).',
   'loyalty.rewards.donate.label': 'Points à donner',
   'loyalty.rewards.donate.button': 'Donner',
   'loyalty.rewards.donate.thanks': 'Merci ! {points} points sont allés au refuge.',
@@ -103,7 +100,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.colPoints': 'Points',
   'loyalty.rewards.kind.earn': 'Gagnés',
   'loyalty.rewards.kind.redeem': 'Dépensés',
-  'loyalty.rewards.kind.reversal': 'Retournés ou repris',
+  'loyalty.rewards.kind.reversal': 'Restitués ou annulés',
   'loyalty.rewards.kind.bonus': 'Bonus',
   'loyalty.rewards.kind.donate': 'Donnés',
   'loyalty.rewards.kind.adjust': 'Ajustement',
@@ -150,11 +147,11 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
     'Je souhaite recevoir les actualités, offres et conseils de Pawsome pour mes animaux. Je peux me désabonner en un clic à tout moment.',
   'loyalty.newsletter.consentRequired': 'Veuillez cocher la case pour vous abonner',
   'loyalty.newsletter.honeypot': 'Laissez ce champ vide',
-  'loyalty.newsletter.submit': 'S’abonner et obtenir 10 %',
+  'loyalty.newsletter.submit': 'S’abonner et profiter de -10 %',
   'loyalty.newsletter.done':
     'Presque terminé ! Si cette adresse peut recevoir nos e-mails, un lien de confirmation est en route. Cliquez dessus et votre code de bienvenue suivra.',
   'loyalty.newsletter.tooMany':
-    'Trop d’inscriptions depuis cet endroit. Veuillez réessayer plus tard.',
+    'Trop d’inscriptions depuis cette connexion. Veuillez réessayer plus tard.',
   'loyalty.newsletter.failed':
     'Nous n’avons pas pu vous inscrire pour le moment. Veuillez réessayer dans un instant.',
   'loyalty.newsletter.token.incomplete':
@@ -173,13 +170,13 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
     'Vous êtes désabonné. Nous ne vous enverrons plus d’actualités.',
 
   // Stock alerts
-  'loyalty.stockAlerts.title': 'M’avertir par e-mail du retour en stock',
+  'loyalty.stockAlerts.title': 'M’avertir du retour en stock',
   'loyalty.stockAlerts.email': 'E-mail',
   'loyalty.stockAlerts.submit': 'M’avertir du retour',
   'loyalty.stockAlerts.done':
     'C’est noté. Nous écrirons une seule fois à {email}, dès que l’article sera de retour.',
   'loyalty.stockAlerts.inStock': 'L’article est en stock actuellement : actualisez la page.',
-  'loyalty.stockAlerts.limit': 'Vous pouvez attendre 5 articles au maximum à la fois.',
+  'loyalty.stockAlerts.limit': 'Vous pouvez suivre 5 articles au maximum à la fois.',
   'loyalty.stockAlerts.tooMany': 'Trop de demandes. Veuillez réessayer plus tard.',
   'loyalty.stockAlerts.failed':
     'Nous n’avons pas pu enregistrer cette demande. Veuillez réessayer.',
@@ -189,4 +186,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
 
   // Messages from outside (shared Zod rules)
   'msg.loyalty.emailInvalid': 'Saisissez une adresse e-mail valide',
+  'loyalty.newsletter.perkTips': 'Des conseils pour les animaux que vous choisissez',
+  'loyalty.newsletter.perkNew': 'Les nouveaux jouets et friandises en avant-première',
+  'loyalty.newsletter.perkEasy': 'Désabonnement en un clic, à tout moment',
 };

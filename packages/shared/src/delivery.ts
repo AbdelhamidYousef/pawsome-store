@@ -6,6 +6,9 @@
 // Netherlands. Edit here; there is no admin screen for them.
 export const STORE_ZONE = 'Europe/Amsterdam';
 export const CUTOFF = { hour: 15, minute: 0 } as const;
+/** Standard delivery is free from this subtotal, per store currency (the seed's shipping rates and
+ * the storefront's "free delivery over …" lines both read it). */
+export const FREE_DELIVERY_FROM_CENTS = { EUR: 4900, GBP: 4200 } as const;
 /** Non-working days (YYYY-MM-DD in the store zone), on top of Saturdays and Sundays. */
 export const STORE_HOLIDAYS: readonly string[] = [
   '2026-12-25',

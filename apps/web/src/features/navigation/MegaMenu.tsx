@@ -2,11 +2,12 @@ import type { NavPet } from '@store/shared';
 import { useEffect, useId, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
-import { ChevronDownIcon, PetGlyph } from '../../components/icons';
+import { ChevronDownIcon } from '../../components/icons';
 import { useT } from '../../i18n';
 import { PETS } from '../../lib/pets';
 
 import { petName } from './pet-names';
+import { PetAvatar } from './PetAvatar';
 import { PromoTile } from './PromoTile';
 import { useNavigation } from './queries';
 
@@ -74,9 +75,7 @@ export function MegaMenu() {
         ? PETS.map((pet) => (
             <li key={pet.slug} data-pet={pet.accent}>
               <NavLink to={`/c/${pet.slug}`} className={pillClass}>
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-pet-accent text-ink">
-                  <PetGlyph icon={pet.icon} width={18} height={18} />
-                </span>
+                <PetAvatar pet={pet} />
                 {petName(t, pet)}
               </NavLink>
             </li>
@@ -118,11 +117,7 @@ export function MegaMenu() {
                   }}
                   className={pillClass}
                 >
-                  {meta && (
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-pet-accent text-ink">
-                      <PetGlyph icon={meta.icon} width={18} height={18} />
-                    </span>
-                  )}
+                  {meta && <PetAvatar pet={meta} />}
                   {entry.name}
                   <ChevronDownIcon width={16} height={16} />
                 </button>

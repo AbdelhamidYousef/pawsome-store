@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { StoreLayout } from '../features/stores/StoreContext';
 import { renderApp } from '../test/render';
 
-import { Seo } from './Seo';
+import { Seo, slugAlternates } from './Seo';
 
 describe('Seo', () => {
   it('sets title, description, canonical and robots, and removes them on unmount', () => {
@@ -84,6 +84,35 @@ describe('Seo alternates', () => {
     ]);
     unmount();
     expect(document.head.querySelector('link[rel="alternate"][hreflang]')).toBeNull();
+  });
+
+  it('gives each store its own translated slug when the page passes paths per language', () => {
+    const { unmount } = render(
+      <Seo
+        title="Dogs"
+        canonical="/c/dogs?page=2"
+        alternates={slugAlternates('c', { en: 'dogs', de: 'hunde', fr: 'chiens' }, '?page=2')}
+      />,
+    );
+    const hrefs = [...document.head.querySelectorAll('link[rel="alternate"][hreflang]')].map(
+      (l) => {
+        const url = new URL(l.getAttribute('href')!);
+        return `${l.getAttribute('hreflang')} ${url.pathname}${url.search}`;
+      },
+    );
+    expect(hrefs).toEqual([
+      'en-IE /eu-en/c/dogs?page=2',
+      'de-DE /de-de/c/hunde?page=2',
+      'fr-FR /fr-fr/c/chiens?page=2',
+      'en-GB /uk-en/c/dogs?page=2',
+      'x-default /eu-en/c/dogs?page=2',
+    ]);
+    unmount();
+    expect(document.head.querySelector('link[rel="alternate"][hreflang]')).toBeNull();
+  });
+
+  it('falls back to the canonical path for every store without slugs (an older API)', () => {
+    expect(slugAlternates('products', undefined)).toBe(true);
   });
 
   it('skips alternates for noindex pages, absolute canonicals and alternates={false}', () => {

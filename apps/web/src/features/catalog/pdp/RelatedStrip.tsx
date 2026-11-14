@@ -9,13 +9,14 @@ export function RelatedStrip({ productSlug }: { productSlug: string }) {
   const { data } = useRecommendations(productSlug);
   if (!data || data.related.length === 0) return null;
   return (
-    <section aria-labelledby="related-heading" data-testid="related" className="mt-10">
-      <h2 id="related-heading" className="font-display text-2xl font-bold">
-        {t('pdp.related.heading')}
-      </h2>
-      <div className="mt-4">
-        <ProductRail cards={data.related} label={t('pdp.related.label')} testId="related-list" />
-      </div>
+    <section aria-labelledby="related-heading" data-testid="related" className="mt-16 sm:mt-20">
+      <ProductRail
+        cards={data.related}
+        label={t('pdp.related.label')}
+        testId="related-list"
+        heading={t('pdp.related.heading')}
+        headingId="related-heading"
+      />
     </section>
   );
 }

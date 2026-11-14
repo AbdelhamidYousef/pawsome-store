@@ -27,7 +27,7 @@ export const LEGAL_PAGES: readonly LegalPageDef[] = [
     titleKey: 'content.legal.about.title',
     descriptionKey: 'content.legal.about.description',
     title: 'About Pawsome',
-    description: 'Who is behind this demo pet shop.',
+    description: 'The story behind Pawsome and the people who pick every product.',
     body: about,
   },
   {
@@ -59,7 +59,7 @@ export const LEGAL_PAGES: readonly LegalPageDef[] = [
     titleKey: 'content.legal.terms.title',
     descriptionKey: 'content.legal.terms.description',
     title: 'Terms and conditions',
-    description: 'Sample terms for the demo store.',
+    description: 'The terms that apply when you order from Pawsome.',
     body: terms,
   },
   {

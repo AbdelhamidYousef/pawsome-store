@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { ToastProvider, useToast } from './Toast';
 
-function Trigger({ tone }: { tone?: 'info' | 'success' | 'error' }) {
+function Trigger({ tone }: { tone?: 'info' | 'success' | 'error' | 'love' }) {
   const { show } = useToast();
   return (
     <button type="button" onClick={() => show('Saved!', tone)}>
@@ -68,5 +68,36 @@ describe('Toast', () => {
     const spy = vi.spyOn(console, 'error').mockImplementation(() => undefined);
     expect(() => render(<Trigger />)).toThrow('useToast must be used inside <ToastProvider>');
     spy.mockRestore();
+  });
+
+  it('bursts hearts for the love tone, but not for visitors who asked for less motion', async () => {
+    const { unmount } = render(
+      <ToastProvider>
+        <Trigger tone="love" />
+      </ToastProvider>,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Fire' }));
+    expect(screen.getByTestId('toast')).toHaveAttribute('data-tone', 'love');
+    expect(screen.getByTestId('heart-burst')).toBeInTheDocument();
+    unmount();
+
+    vi.stubGlobal(
+      'matchMedia',
+      vi.fn().mockImplementation((query: string) => ({
+        matches: query.includes('reduce'),
+        media: query,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+      })),
+    );
+    render(
+      <ToastProvider>
+        <Trigger tone="love" />
+      </ToastProvider>,
+    );
+    await userEvent.click(screen.getByRole('button', { name: 'Fire' }));
+    expect(screen.getByTestId('toast')).toBeInTheDocument();
+    expect(screen.queryByTestId('heart-burst')).toBeNull();
+    vi.unstubAllGlobals();
   });
 });

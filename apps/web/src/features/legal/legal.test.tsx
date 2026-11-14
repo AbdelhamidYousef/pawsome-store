@@ -9,11 +9,11 @@ import { LEGAL_PAGES } from './pages';
 
 describe('legal pages', () => {
   it.each(LEGAL_PAGES.map((p) => [p.path, p.title] as const))(
-    '/%s renders its title, text and the demo notice',
+    '/%s renders its title, text and the update notice',
     async (path, title) => {
       renderApp(`/${path}`);
       expect(await screen.findByRole('heading', { level: 1, name: title })).toBeInTheDocument();
-      expect(screen.getByTestId('demo-notice')).toHaveTextContent('fictional company');
+      expect(screen.getByTestId('demo-notice')).toHaveTextContent('Last updated');
       expect(
         within(screen.getByTestId('page-legal')).getAllByRole('heading', { level: 2 }).length,
       ).toBeGreaterThan(0);

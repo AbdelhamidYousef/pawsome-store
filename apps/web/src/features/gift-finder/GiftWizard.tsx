@@ -35,8 +35,12 @@ export function GiftWizard() {
   const index = wantsStep ? Math.min(stepParam - 1, answered) : answered;
 
   const heading = useRef<HTMLHeadingElement>(null);
-  // Move focus to the new question's heading so a screen reader announces it.
+  // After a step change, move focus to the new question's heading so a screen reader announces it.
+  // Not on first load: the page's own title is announced then, and focus starts at the top.
+  const shownIndex = useRef(index);
   useEffect(() => {
+    if (shownIndex.current === index) return;
+    shownIndex.current = index;
     if (index < GIFT_KEYS.length) heading.current?.focus({ preventScroll: true });
   }, [index]);
 
@@ -91,7 +95,7 @@ export function GiftWizard() {
         canonical="/gift-finder"
       />
       <div className="mx-auto max-w-xl">
-        <p className="font-display text-sm font-bold text-muted" data-testid="gift-progress">
+        <p className="font-display text-sm font-semibold text-muted" data-testid="gift-progress">
           {t('pets.gift.progress', { current: index + 1, total: GIFT_KEYS.length })}
         </p>
         <div aria-hidden="true" className="mt-1 h-2 overflow-hidden rounded-full bg-line">
@@ -106,7 +110,7 @@ export function GiftWizard() {
               <h1
                 ref={heading}
                 tabIndex={-1}
-                className="font-display text-3xl font-bold focus:outline-none"
+                className="font-display text-3xl font-semibold focus:outline-none"
                 data-testid="gift-question"
               >
                 {t(QUESTION_KEYS[question.key].title)}

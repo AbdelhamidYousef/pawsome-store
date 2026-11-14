@@ -20,8 +20,8 @@ export const pdp = {
   'pdp.page.attr.size': 'Size',
   'pdp.page.attr.brand': 'Brand',
   'pdp.page.attr.goodFor': 'Good for',
-  'pdp.page.gallery.heading': 'Customers with this product',
-  'pdp.page.gallery.intro': 'Photos from real Pawsome pets. Tap one to shop what is in it.',
+  'pdp.page.gallery.heading': 'Seen at home',
+  'pdp.page.gallery.intro': 'See it styled at home. Tap a photo to shop the look.',
 
   // ---- tabs ----
   'pdp.tabs.label': 'Product information',
@@ -93,7 +93,7 @@ export const pdp = {
   'pdp.delivery.shipLink': 'shipping page',
   'pdp.delivery.shipOutro': 'for prices and times.',
   'pdp.delivery.cutoffNote':
-    'Orders placed before 15:00 Amsterdam time on a business day ship the same day. The dispatch schedule and the holiday list are invented for this demo shop.',
+    'Orders placed before 15:00 Amsterdam time on a business day ship the same day.',
   'pdp.delivery.returnsHeading': 'Returns',
   'pdp.delivery.returnsIntro':
     'Changed your mind? Unused items in their original packaging can be returned within 30 days. Opened food and hygiene items cannot be returned unless they are faulty. See',
@@ -122,20 +122,11 @@ export const pdp = {
 
   // ---- bought together ----
   'pdp.bought.heading': 'Frequently bought together',
-  'pdp.bought.thisItem': 'This item:',
-  'pdp.bought.notAvailable': '(not available)',
+  'pdp.bought.notAvailable': 'Not available',
   'pdp.bought.withVariant': '{name} ({variant})',
-  'pdp.bought.view': 'View',
-  'pdp.bought.viewLabel': 'View {name}',
   'pdp.bought.anItem': 'An item',
   'pdp.bought.problem': '{name}: {message}',
-  'pdp.bought.total': 'Total',
   'pdp.bought.beforeDiscounts': 'Before any discounts.',
-  'pdp.bought.addAll': 'Add all',
-  'pdp.bought.addAllCount': {
-    one: 'Add all ({count} item)',
-    other: 'Add all ({count} items)',
-  },
 
   // ---- bundles and kits ----
   'pdp.bundle.heading': 'What is in the kit',
@@ -148,4 +139,13 @@ export const pdp = {
   'pdp.related.heading': 'You may also like',
   'pdp.related.label': 'Related products',
   'pdp.recent.heading': 'Recently viewed',
+  'pdp.rail.prev': 'Previous products',
+  'pdp.rail.next': 'Next products',
+  'pdp.bought.thisItemBadge': 'This item',
+  'pdp.bought.variantSpoken': ', {variant}',
+  'pdp.bought.totalFor': { one: 'Total for {count} item', other: 'Total for {count} items' },
+  'pdp.bought.saving': 'You save {amount}',
+  'pdp.bought.addCount': { one: 'Add {count} item to cart', other: 'Add {count} items to cart' },
+  'pdp.bought.added': 'Added to cart',
+  'pdp.bought.chooseOne': 'Tick at least one item',
 } satisfies Dictionary;

@@ -126,7 +126,7 @@ describe('returns on the order page', () => {
     const cards = await screen.findAllByTestId('return-card');
     expect(cards).toHaveLength(2);
     expect(within(cards[0]!).getAllByText('Refunded').length).toBeGreaterThan(0);
-    expect(cards[0]).toHaveTextContent('Refunded €10.99 (demo: simulated, no money moved)');
+    expect(cards[0]).toHaveTextContent('Refunded €10.99');
     const steps = within(within(cards[0]!).getByTestId('return-timeline')).getAllByRole('listitem');
     expect(steps.map((s) => s.textContent?.split(' · ')[0])).toEqual([
       'Request sent',

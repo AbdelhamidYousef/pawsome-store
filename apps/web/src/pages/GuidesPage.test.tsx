@@ -76,6 +76,29 @@ describe('guide page', () => {
     expect(document.head.querySelector('meta[property="article:published_time"]')).toBeTruthy();
   });
 
+  it("sets a canonical and hreflang links with each language's slug", async () => {
+    server.use(
+      http.get(`${API}/guides/kauspielzeug-waehlen`, () =>
+        HttpResponse.json({
+          data: makeGuideDetail({
+            slug: 'kauspielzeug-waehlen',
+            slugs: { en: 'choosing-a-dog-toy', de: 'kauspielzeug-waehlen', fr: 'choisir-un-jouet' },
+          }),
+        }),
+      ),
+    );
+    renderApp('/de-de/guides/kauspielzeug-waehlen');
+    await screen.findByRole('heading', { level: 1 });
+    const href = (sel: string) => document.head.querySelector(sel)?.getAttribute('href') ?? '';
+    expect(href('link[rel="canonical"]')).toMatch(/\/de-de\/guides\/kauspielzeug-waehlen$/);
+    expect(href('link[rel="alternate"][hreflang="fr-FR"]')).toMatch(
+      /\/fr-fr\/guides\/choisir-un-jouet$/,
+    );
+    expect(href('link[rel="alternate"][hreflang="en-GB"]')).toMatch(
+      /\/uk-en\/guides\/choosing-a-dog-toy$/,
+    );
+  });
+
   it('does not render raw HTML written inside the Markdown', async () => {
     server.use(
       http.get(`${API}/guides/x`, () =>

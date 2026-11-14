@@ -5,11 +5,23 @@ import { DataSchema } from './common.ts';
 // Back-office contract for discount codes, bulk tiers and the gift rule. The database has check
 // constraints for the same rules; these schemas give a person the sentence before the database does.
 
-const Cents = z.number().int();
+// Every amount column is a Postgres `integer` (int4): a bigger number would fail at the database
+// with a 500 instead of a sentence.
+const INT4_MAX = 2_147_483_647;
+const Cents = z.number().int().max(INT4_MAX, 'That number is too large');
 const Iso = z.iso.datetime({ offset: true });
 
 export const DiscountKindSchema = z.enum(['percent', 'fixed', 'free_shipping']);
 export type DiscountKind = z.infer<typeof DiscountKindSchema>;
+
+// Amounts in the store currencies other than EUR (the plain cents fields are EUR): `{ GBP: 500 }`.
+// A currency left out means the rule is not offered there; nothing is ever converted. On input the
+// map is optional: left out, a PUT keeps what is stored; sent, it replaces the whole map.
+export const OtherCurrencySchema = z.enum(['GBP']);
+export type OtherCurrency = z.infer<typeof OtherCurrencySchema>;
+export const NON_EUR_CURRENCIES = OtherCurrencySchema.options;
+const ByCurrency = (amount: z.ZodNumber) => z.partialRecord(OtherCurrencySchema, amount);
+const ByCurrencyOut = z.partialRecord(OtherCurrencySchema, Cents);
 
 const optionalCap = (label: string) =>
   z
@@ -30,6 +42,8 @@ export const AdminDiscountCodeInputSchema = z
     // percent: 1..100. fixed: cents. free_shipping: 0.
     value: Cents,
     minSpendCents: Cents.min(0, 'The minimum spend cannot be negative').default(0),
+    valueByCurrency: ByCurrency(Cents.positive('The amount must be above 0')).optional(),
+    minSpendByCurrency: ByCurrency(Cents.min(0, 'The minimum spend cannot be negative')).optional(),
     startsAt: Iso.nullable().default(null),
     endsAt: Iso.nullable().default(null),
     maxUses: optionalCap('Total uses').default(null),
@@ -44,6 +58,13 @@ export const AdminDiscountCodeInputSchema = z
     }
     if (v.kind === 'fixed' && v.value <= 0) {
       ctx.addIssue({ code: 'custom', path: ['value'], message: 'The amount must be above 0' });
+    }
+    if (v.kind !== 'fixed' && v.valueByCurrency && Object.keys(v.valueByCurrency).length > 0) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['valueByCurrency'],
+        message: 'Only a fixed amount has a value per currency',
+      });
     }
     if (v.kind === 'free_shipping' && v.value !== 0) {
       ctx.addIssue({
@@ -69,6 +90,8 @@ export const AdminDiscountCodeSchema = z.object({
   kind: DiscountKindSchema,
   value: Cents,
   minSpendCents: Cents,
+  valueByCurrency: ByCurrencyOut,
+  minSpendByCurrency: ByCurrencyOut,
   startsAt: Iso.nullable(),
   endsAt: Iso.nullable(),
   maxUses: Cents.nullable(),
@@ -95,14 +118,17 @@ export type AdminDiscountCodeDeleteResponse = z.infer<typeof AdminDiscountCodeDe
 // ----- bulk tiers -----
 export const AdminBulkTierInputSchema = z.object({
   minCents: Cents.positive('The threshold must be above 0'),
+  minByCurrency: ByCurrency(Cents.positive('The threshold must be above 0')).optional(),
   percent: Cents.min(1, 'A percentage is 1 to 100').max(100, 'A percentage is 1 to 100'),
   active: z.boolean().default(true),
 });
 export type AdminBulkTierInput = z.input<typeof AdminBulkTierInputSchema>;
+export type AdminBulkTierParsed = z.output<typeof AdminBulkTierInputSchema>;
 
 export const AdminBulkTierSchema = z.object({
   id: z.string(),
   minCents: Cents,
+  minByCurrency: ByCurrencyOut,
   percent: Cents,
   active: z.boolean(),
 });
@@ -113,6 +139,7 @@ export const AdminBulkTierResponseSchema = DataSchema(AdminBulkTierSchema);
 // ----- gift rule -----
 export const AdminGiftRuleInputSchema = z.object({
   thresholdCents: Cents.positive('The threshold must be above 0'),
+  thresholdByCurrency: ByCurrency(Cents.positive('The threshold must be above 0')).optional(),
   // A SKU or a variant id.
   variant: z.string().trim().min(1, 'Enter the gift variant SKU').max(80),
 });
@@ -121,6 +148,7 @@ export type AdminGiftRuleInput = z.input<typeof AdminGiftRuleInputSchema>;
 export const AdminGiftRuleSchema = z.object({
   id: z.string(),
   thresholdCents: Cents,
+  thresholdByCurrency: ByCurrencyOut,
   variantId: z.string(),
   sku: z.string(),
   productName: z.string(),

@@ -55,8 +55,7 @@ test('the switcher keeps the page and query, and the pick is remembered for old 
 });
 
 test('every store view is announced to search engines with hreflang', async ({ page }) => {
-  // On the English store: the German and French stores have their own category slugs (`hunde`),
-  // and the alternates for them still carry the canonical's slug (follow-up in the handover).
+  // On the English store: the German and French alternates carry their own category slugs.
   await page.goto('/eu-en/c/dogs');
   await expect(page.getByTestId('header')).toBeVisible();
   const links = page.locator('link[rel="alternate"][hreflang]');
@@ -66,6 +65,15 @@ test('every store view is announced to search engines with hreflang', async ({ p
     'href',
     /\/eu-en\/c\/dogs$/,
   );
+  await expect(page.locator('link[hreflang="de-DE"]')).toHaveAttribute(
+    'href',
+    /\/de-de\/c\/hunde$/,
+  );
+  await expect(page.locator('link[hreflang="fr-FR"]')).toHaveAttribute(
+    'href',
+    /\/fr-fr\/c\/chiens$/,
+  );
+  await expect(page.locator('link[hreflang="en-GB"]')).toHaveAttribute('href', /\/uk-en\/c\/dogs$/);
 });
 
 // ---------------------------------------------------------------------------------------------

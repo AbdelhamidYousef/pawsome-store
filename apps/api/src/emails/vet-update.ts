@@ -16,8 +16,8 @@ export const VetEmailPayloadSchema = z.object({
 });
 export type VetEmailPayload = z.infer<typeof VetEmailPayloadSchema>;
 
-// The three messages of the (simulated) vet check. Demo shop: the text says so, and no vet is ever
-// emailed. The reject reason is free text from the admin, so it is escaped in the HTML.
+// The three messages of the (simulated) vet check. No vet is ever emailed; the test-mode notice
+// lives in the shared email footer, so the body reads like a real shop's. The reject reason is free text from the admin, so it is escaped in the HTML.
 export function vetUpdate(
   kind: VetEmailKind,
   rawPayload: Record<string, unknown> | null,

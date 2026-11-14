@@ -6,6 +6,7 @@ import {
 } from '@store/shared';
 
 import { notFound } from '../../lib/errors.ts';
+import { resolveSlug } from '../i18n/translations.ts';
 import { saleOffersForProducts } from '../promotions/service.ts';
 
 import * as repo from './recommendations-repo.ts';
@@ -32,7 +33,8 @@ function unique(ids: string[], exclude: ReadonlySet<string>): string[] {
 // Cards are built for the VIEWER like every catalog answer (a member sees member prices, a guest
 // never gets a member number), and only products that can be bought right now are shown.
 export async function getRecommendations(slug: string, viewer: Viewer): Promise<Recommendations> {
-  const ref = await repo.findActiveProductRef(slug);
+  // The PDP passes the URL's slug, which is the translated one on the de/fr stores.
+  const ref = await repo.findActiveProductRef(await resolveSlug('product', slug));
   if (!ref) throw notFound('Product not found');
 
   const [pickedTogether, pickedRelated, together, sameCategory] = await Promise.all([
@@ -64,6 +66,7 @@ export async function getRecommendations(slug: string, viewer: Viewer): Promise<
             priceCents: variant.priceCents,
             currency: variant.currency,
             saleCents: offers.byVariant.get(variant.id)?.priceCents ?? null,
+            referenceCents: offers.byVariant.get(variant.id)?.referenceCents ?? null,
           },
         },
       ];

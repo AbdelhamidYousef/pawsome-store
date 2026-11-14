@@ -17,7 +17,7 @@
     },
     "squeaky-fox-plush": {
       "name": "Quietschender Plüschfuchs",
-      "description": "Ein schlackeriger Fuchs mit verstecktem Quietscher und verstärkten Nähten. Weich genug zum Kuscheln, robust genug für kräftiges Schütteln. Am besten unter Aufsicht spielen.",
+      "description": "Ein weicher, schlappriger Fuchs mit verstecktem Quietscher und verstärkten Nähten. Weich genug zum Kuscheln, robust genug für kräftiges Schütteln. Nur unter Aufsicht spielen lassen.",
       "slug": "quietschender-plueschfuchs"
     },
     "bouncy-rubber-ball": {
@@ -52,7 +52,7 @@
     },
     "everyday-webbing-collar": {
       "name": "Gurtband-Halsband für jeden Tag",
-      "description": "Ein leichtes, verstellbares Halsband mit Schnellverschluss und einem stabilen Metallring für Anhänger. Sanft zum Hals, und die Farbe hält auch in der Wäsche.",
+      "description": "Ein leichtes, verstellbares Halsband mit Schnellverschluss und einem stabilen Metallring für Anhänger. Angenehm am Hals, und die Farbe hält auch in der Wäsche.",
       "slug": "gurtband-halsband-fuer-jeden-tag"
     },
     "reflective-walking-leash": {
@@ -101,7 +101,7 @@
       "slug": "leichte-fitness-haeppchen"
     },
     "sensitive-lamb-biscuits": {
-      "name": "Lammkekse für empfindliche Hunde",
+      "name": "Lammkekse Sensitive",
       "description": "Eine kurze Zutatenliste rund um Lamm und Hafer für Hunde, die auf gehaltvolleres Futter reagieren. Ohne Weizen, ohne künstliche Farbstoffe.",
       "slug": "lammkekse-fuer-empfindliche-hunde"
     },
@@ -206,7 +206,7 @@
       "slug": "kratz-lounger-aus-pappe"
     },
     "sunny-shelf-hammock": {
-      "name": "Sonnige Heizkörper-Hängematte",
+      "name": "Heizkörper-Hängematte",
       "description": "Eine Hängematte, die sich an Heizkörper oder Fensterbank einhängen lässt, für einen warmen Platz mit Blick auf die Straße. Trägt bis zu sechs Kilo.",
       "slug": "sonnige-heizkoerper-haengematte"
     },
@@ -271,7 +271,7 @@
       "slug": "seilsitzschaukel"
     },
     "bell-and-mirror-toy": {
-      "name": "Glöckchen-und-Spiegel-Spielzeug",
+      "name": "Spiegel mit Glöckchen",
       "description": "Ein klingelndes Glöckchen und ein kleiner Spiegel an einer Hängekette geben Ihrem Vogel etwas Glänzendes zum Plaudern. Sicheres Glöckchen mit geschlossenem Klöppel.",
       "slug": "gloeckchen-und-spiegel-spielzeug"
     },
@@ -282,7 +282,7 @@
     },
     "millet-spray-treats": {
       "name": "Kolbenhirse-Leckerli",
-      "description": "Ganze Hirsekolben für Beschäftigung beim Futtersuchen und eine beliebte Belohnung. Einen am Käfig befestigen und das Knabbern beginnt.",
+      "description": "Ganze Hirsekolben für Beschäftigung bei der Futtersuche und als beliebte Belohnung. Einfach einen Kolben am Käfig befestigen – und schon wird geknabbert.",
       "slug": "kolbenhirse-leckerli"
     },
     "dome-travel-cage": {
@@ -291,12 +291,12 @@
       "slug": "kuppel-reisekaefig"
     },
     "tabletop-play-stand": {
-      "name": "Spielständer für den Tisch",
+      "name": "Tisch-Spielständer",
       "description": "Ein kleiner Spielplatz für die Zeit außerhalb des Käfigs mit zwei Sitzstangen, zwei Näpfen und einer Leiter. Steht sicher auf Tisch oder Regal.",
       "slug": "spielstaender-fuer-den-tisch"
     },
     "hanging-seed-feeder": {
-      "name": "Hängender Futterspender für Samen",
+      "name": "Hänge-Futterspender",
       "description": "Ein Röhrenspender, der Futter sauber und trocken hält und zeigt, wann nachgefüllt werden muss. Wird am Käfig befestigt oder an einen Haken gehängt.",
       "slug": "haengender-futterspender-fuer-samen"
     },
@@ -367,7 +367,7 @@
     },
     "tunnel-chew-roll": {
       "name": "Kau-Tunnelrolle",
-      "description": "Ein geflochtener Weidentunnel zum Durchlaufen, Verstecken und Knabbern. Natürlich, unbedenklich zum Kauen und mit Spaß zum Umräumen.",
+      "description": "Ein geflochtener Weidentunnel zum Durchlaufen, Verstecken und Knabbern. Natürlich, unbedenklich zum Kauen und immer wieder neu platzierbar.",
       "slug": "kau-tunnelrolle"
     },
     "starter-tank-20l": {
@@ -407,7 +407,7 @@
     },
     "freeze-dried-bloodworms": {
       "name": "Gefriergetrocknete Mückenlarven",
-      "description": "Ein proteinreicher Leckerbissen, auf den Fische abfahren, dank Gefriertrocknung frei von Parasiten. Ein- bis zweimal pro Woche eine Prise füttern.",
+      "description": "Ein proteinreicher Leckerbissen, den Fische lieben, dank Gefriertrocknung frei von Parasiten. Ein- bis zweimal pro Woche eine Prise füttern.",
       "slug": "gefriergetrocknete-mueckenlarven"
     },
     "algae-wafers": {
@@ -572,7 +572,7 @@
     },
     "mealworm-dispenser": {
       "name": "Mehlwurm-Spender",
-      "description": "Ein Becher mit glatten Wänden, der Würmer festhält, wo sie nicht entkommen können. Haftet am Glas.",
+      "description": "Ein Becher mit glatten Wänden, aus dem Würmer nicht entkommen können. Haftet am Glas.",
       "slug": "mehlwurm-spender"
     },
     "gecko-gel-cup-set": {
@@ -587,7 +587,7 @@
     },
     "half-log-hide": {
       "name": "Halbrundes Korkversteck",
-      "description": "Ein gebogenes Stück Naturkorkrinde zum Daruntergehen. Die Formen variieren.",
+      "description": "Ein gebogenes Stück Naturkorkrinde zum Darunterverkriechen. Die Formen variieren.",
       "slug": "halbrundes-korkversteck"
     },
     "cork-bark-tube": {
@@ -611,7 +611,7 @@
       "slug": "schiefer-sonnenstein"
     },
     "gecko-meal-pellets": {
-      "name": "Gecko-Mahlzeit-Pellets",
+      "name": "Gecko-Futterpellets",
       "description": "Ein Pulverfutter zum Anrühren mit Wasser für Kronen- und Leopardgeckos. Eine ausgewogene Grundlage mit Kalzium.",
       "slug": "gecko-mahlzeit-pellets"
     },
@@ -626,8 +626,8 @@
       "slug": "kalziumpulver"
     },
     "dragon-salad-crumble": {
-      "name": "Bartagamen-Salat-Crunch",
-      "description": "Ein Crunch aus getrocknetem Gemüse und Kräutern, der für Bartagamen eingeweicht wird. Eine abwechslungsreiche Basis für die Salatschüssel.",
+      "name": "Bartagamen-Salatmix",
+      "description": "Eine krümelige Mischung aus getrocknetem Gemüse und Kräutern zum Einweichen, für Bartagamen. Eine abwechslungsreiche Basis für die Salatschüssel.",
       "slug": "bartagamen-salat-crunch"
     },
     "fetch-play-kit": {
@@ -636,7 +636,7 @@
       "slug": "zieh-und-apportier-spielset"
     },
     "dinner-time-kit": {
-      "name": "Essenszeit-Set",
+      "name": "Fütterungs-Set",
       "description": "Ein Stahlnapf für Mahlzeiten, ein Anti-Schling-Labyrinth für langsameres Fressen und zwei Beutel Leckerlis für Training und Belohnungen.",
       "slug": "essenszeit-set"
     }
@@ -644,207 +644,243 @@
   "categories": {
     "dogs": {
       "name": "Hunde",
-      "description": "Spielzeug, Betten, Leckerlis und Gassi-Ausrüstung für Hunde jeder Größe.",
+      "description": "Spielzeug, das jede Toberunde übersteht, Betten zum Heimkommen und Gassi-Ausrüstung für jedes Wetter. Egal wie groß Ihr Hund ist: Hier findet er alles.",
       "slug": "hunde"
     },
     "cats": {
       "name": "Katzen",
-      "description": "Spielzeug, gemütliche Ecken und Snacks für neugierige Katzen.",
+      "description": "Leise Spielzeuge für Mitternachtsjäger, weiche Verstecke für Sonnenanbeter und Snacks, für die sich das Aufwachen lohnt. Alles hier ist darauf ausgelegt, wie Katzen wirklich ticken.",
       "slug": "katzen"
     },
     "birds": {
       "name": "Vögel",
-      "description": "Sitzstangen, Spielzeug und frisches Futter für gefiederte Freunde.",
+      "description": "Sitzstangen, Schaukeln und frische Saatenmischungen für Wellensittiche, Kanarienvögel und Finken. Alles, was gefiederte Freunde für einen abwechslungsreichen Tag brauchen.",
       "slug": "voegel"
     },
     "fish": {
       "name": "Fische",
-      "description": "Aquarien, Futter und Dekoration für ein glückliches Aquarium.",
+      "description": "Starter-Aquarien, ausgewogenes Futter und beruhigende Deko für klares Wasser und entspannte Fische. Mit unseren Sets gelingt das erste Aquarium ganz einfach.",
       "slug": "fische"
     },
     "small-pets": {
       "name": "Kleintiere",
-      "description": "Heu, Verstecke und Knabberzeug für Kaninchen, Meerschweinchen und Co.",
+      "description": "Duftendes Wiesenheu, kausichere Tunnel und gemütliche Verstecke für Kaninchen, Meerschweinchen, Hamster und Co. Kleine Tiere, richtig verwöhnt.",
       "slug": "kleintiere"
     },
     "reptiles": {
       "name": "Reptilien",
-      "description": "Terrarien, Wärme, Licht und Futter für Eidechsen, Schlangen und Schildkröten.",
+      "description": "Terrarien, Wärme und Licht, Futter und Deko für Echsen, Schlangen und Schildkröten. Wenn das Klima stimmt, stimmt auch der Rest.",
       "slug": "reptilien"
     },
     "dog-toys": {
       "name": "Spielzeug",
-      "description": "Zerr-, Apportier- und Kauspielzeug.",
+      "description": "Zerrseile, Wurfbälle und Quietsche-Plüsch, ausgewählt für kräftige Kiefer und lange Spielrunden.",
       "slug": "hunde-spielzeug"
     },
     "dog-beds": {
       "name": "Betten & Liegeplätze",
-      "description": "Weiche Plätze zum Einkuscheln.",
+      "description": "Tiefe, weiche Betten und kuschelige Decken mit Bezügen, die direkt in die Waschmaschine dürfen.",
       "slug": "hunde-betten-liegeplaetze"
     },
     "dog-treats": {
       "name": "Futter & Leckerlis",
-      "description": "Trainingshäppchen und knusprige Kekse.",
+      "description": "Weiche Trainingshappen, knusprige Kekse und langanhaltende Kausnacks mit kurzen, verständlichen Zutatenlisten.",
       "slug": "hunde-futter-leckerlis"
     },
     "dog-bowls": {
       "name": "Näpfe & Futterstationen",
-      "description": "Langlebige Näpfe und Anti-Schling-Näpfe.",
+      "description": "Stabile Näpfe, Anti-Schling-Näpfe für hastige Fresser und Reisenäpfe für unterwegs.",
       "slug": "hunde-naepfe-futterstationen"
     },
     "dog-walk": {
       "name": "Gassi & Reise",
-      "description": "Halsbänder und Leinen für jeden Spaziergang.",
+      "description": "Halsbänder, Geschirre und reflektierende Leinen, die jeden Spaziergang sicherer und bequemer machen.",
       "slug": "hunde-gassi-reise"
     },
     "cat-toys": {
       "name": "Spielzeug",
-      "description": "Federangeln, Kicker und raschelnde Mäuse.",
+      "description": "Federangeln, Katzenminze-Kicker und Knistermäuse zum Anschleichen, Anspringen und Tatzeln.",
       "slug": "katzen-spielzeug"
     },
     "cat-beds": {
       "name": "Betten & Liegeplätze",
-      "description": "Höhlen, Aussichtsplätze und Kissen.",
+      "description": "Höhlen, Fensterplätze und Kissen für jede Art von Katzenschläfchen.",
       "slug": "katzen-betten-liegeplaetze"
     },
     "cat-treats": {
       "name": "Futter & Leckerlis",
-      "description": "Knusprige Leckerlis und schleckbare Beutel.",
+      "description": "Knusprige Leckerlis und Schlecksnacks zum Trainieren, Belohnen und für kleine Bestechungen.",
       "slug": "katzen-futter-leckerlis"
     },
     "cat-bowls": {
       "name": "Näpfe & Futterstationen",
-      "description": "Schnurrhaarfreundliche Näpfe und Wasserspender.",
+      "description": "Flache, schnurrhaarfreundliche Näpfe und Trinkbrunnen, die zum Trinken animieren.",
       "slug": "katzen-naepfe-futterstationen"
     },
     "cat-travel": {
       "name": "Gassi & Reise",
-      "description": "Transportboxen für Tierarztbesuche und Urlaub.",
+      "description": "Sichere, bequeme Transportboxen, die Tierarztbesuche und Reisen etwas entspannter machen.",
       "slug": "katzen-reise"
     },
     "bird-toys": {
       "name": "Spielzeug",
-      "description": "Schaukeln, Glöckchen und Spiegel.",
+      "description": "Schaukeln, Glöckchen und Spiegel, die neugierige Schnäbel zwischen den Mahlzeiten beschäftigen.",
       "slug": "voegel-spielzeug"
     },
     "bird-food": {
       "name": "Futter & Leckerlis",
-      "description": "Körnermischungen und Hirse-Leckerlis.",
+      "description": "Ausgewogene Saatenmischungen und Kolbenhirse für jeden Tag und besondere Momente.",
       "slug": "voegel-futter-leckerlis"
     },
     "bird-cages": {
       "name": "Käfige & Ständer",
-      "description": "Reisekäfige und Spielständer.",
+      "description": "Reisekäfige und Spielständer mit sicherem Gitterabstand und leicht zu reinigenden Schalen.",
       "slug": "voegel-kaefige-staender"
     },
     "bird-feeders": {
       "name": "Näpfe & Futterstationen",
-      "description": "Hänge- und Tischfutterspender.",
+      "description": "Hänge- und Standfutterspender, die das Futter sauber halten und Krümel reduzieren.",
       "slug": "voegel-naepfe-futterstationen"
     },
     "fish-food": {
       "name": "Futter & Leckerlis",
-      "description": "Flocken und Pellets.",
+      "description": "Flocken und Pellets, abgestimmt auf gängige Gesellschaftsfische, in Packungsgrößen, die frisch bleiben.",
       "slug": "fische-futter-leckerlis"
     },
     "fish-tanks": {
       "name": "Aquarien & Dekoration",
-      "description": "Aquarien, Beleuchtung, Pflanzen und Verstecke.",
+      "description": "Komplette Aquarien, sanfte LED-Beleuchtung, Seidenpflanzen und Verstecke für einen ruhigen, natürlichen Look.",
       "slug": "fische-aquarien-dekoration"
     },
     "small-toys": {
       "name": "Spielzeug",
-      "description": "Tunnel und Knabberzeug.",
+      "description": "Tunnel, Kauspielzeug und Beschäftigungsideen, die Zähne in Form und die Neugier wach halten.",
       "slug": "kleintiere-spielzeug"
     },
     "small-food": {
       "name": "Futter & Leckerlis",
-      "description": "Heu und knusprige Knabberstangen.",
+      "description": "Frisches Heu und knusprige Kausnacks, die Basis einer gesunden Ernährung für Kleintiere.",
       "slug": "kleintiere-futter-leckerlis"
     },
     "small-housing": {
       "name": "Betten & Liegeplätze",
-      "description": "Versteckhäuschen.",
+      "description": "Verstecke aus natürlichen Materialien, damit jedes Kleintier einen sicheren Rückzugsort hat.",
       "slug": "kleintiere-betten-liegeplaetze"
     },
     "small-bowls": {
       "name": "Näpfe & Futterstationen",
-      "description": "Näpfe und Trinkflaschen.",
+      "description": "Kippsichere Näpfe und tropffreie Trinkflaschen in der richtigen Größe für kleine Pfoten.",
       "slug": "kleintiere-naepfe-futterstationen"
     },
     "reptile-terrariums": {
       "name": "Terrarien",
-      "description": "Glas- und Gitterheime in jeder Größe.",
+      "description": "Glas- und Gazeterrarien in allen Größen, mit sicheren Deckeln und guter Belüftung.",
       "slug": "reptilien-terrarien"
     },
     "reptile-heat": {
       "name": "Wärme & Beleuchtung",
-      "description": "Lampen, Matten und Thermometer für ein gleichmäßiges Klima.",
+      "description": "Wärmelampen, Heizmatten und Thermometer für ein gleichmäßiges, sicheres Temperaturgefälle.",
       "slug": "reptilien-waerme-beleuchtung"
     },
     "reptile-feeders": {
       "name": "Fütterung & Näpfe",
-      "description": "Wassernäpfe, Fütterungszangen und Spender.",
+      "description": "Wasserschalen, Futterpinzetten und Spender für saubere Fütterungszeiten.",
       "slug": "reptilien-fuetterung-naepfe"
     },
     "reptile-decor": {
       "name": "Dekoration & Verstecke",
-      "description": "Höhlen, Äste und Pflanzen zum Erkunden.",
+      "description": "Höhlen, Äste und Pflanzen, in denen Ihr Reptil sich verstecken, klettern und auf Entdeckung gehen kann.",
       "slug": "reptilien-dekoration-verstecke"
     },
     "reptile-food": {
       "name": "Futter",
-      "description": "Pellets, Ergänzungsfutter und Leckerlis.",
+      "description": "Pellets, Ergänzungsfutter und Leckerlis für ausgewogene, artgerechte Mahlzeiten.",
       "slug": "reptilien-futter"
     }
   },
   "brands": {
     "pawsome": {
       "name": "Pawsome",
-      "tagline": "Alltagsbegleiter für jede Art von Haustier.",
-      "story": "Unsere eigene Marke: die vernünftigen, bunten Basics, zu denen wir selbst greifen, von Zerrseilen bis zu Trinkflaschen, getestet von einem sehr wählerischen Testteam aus Haustieren.",
+      "tagline": "Alltagsbasics, richtig gemacht.",
+      "story": "Pawsome ist unsere eigene Marke: Näpfe, Leinen, Spielzeug und Trinkflaschen, die wir uns schon immer ein bisschen besser gewünscht haben. Jedes Teil muss erst unser Testteam aus Hunden, Katzen und einem sehr eigenwilligen Kaninchen überzeugen, bevor es in den Shop kommt. Wir setzen auf waschbare Stoffe, robuste Nähte und Farben, die jeden Flur fröhlicher machen. Und wenn etwas nicht hält, sagen Sie es uns – wir kümmern uns darum.",
       "slug": "pawsome"
     },
     "burrow-and-biscuit": {
       "name": "Burrow & Biscuit",
-      "tagline": "Gemütliche Betten und ehrliches Gebäck für Hunde und Kleintiere.",
-      "story": "Angefangen hat alles mit einem Ofen und einem sehr geduldigen Beagle. Burrow & Biscuit stellt weiche Schlafplätze und einfache Leckerlis her, in kleinen Chargen gebacken, mit kurzen Zutatenlisten, die man laut vorlesen kann.",
+      "tagline": "Kuschelige Betten und kleine Backchargen für Hunde und Kleintiere.",
+      "story": "Burrow & Biscuit begann mit einem Ofen, einem Sofa und einem Beagle, der nirgendwo sonst schlafen wollte. Heute entstehen hier tiefe, weiche Betten mit abnehmbaren, waschbaren Bezügen und Leckerlis, die in kleinen Mengen aus wenigen Zutaten gebacken werden – so wenige, dass man sie laut vorlesen kann. Keine undefinierbaren Füllstoffe, keine künstlichen Farbstoffe. Nur die zwei Dinge, mit denen ein guter Tag endet: ein Snack und ein weicher Platz zum Einkuscheln.",
       "slug": "burrow-biscuit"
     },
     "moonbeam-mews": {
       "name": "Moonbeam Mews",
-      "tagline": "Verspielte, sanfte Produkte für neugierige Katzen.",
-      "story": "Moonbeam Mews ist für Katzen, die in Sonnenstrahlen dösen und um Mitternacht jagen. Leise Spielzeuge, weiche Verstecke und sanftes Futter, entworfen nach dem tatsächlichen Verhalten von Katzen.",
+      "tagline": "Leise Spielzeuge und weiche Verstecke für neugierige Katzen.",
+      "story": "Moonbeam Mews entwirft für Katzen, wie sie wirklich sind: mittags Sonnenanbeter, um Mitternacht furchtlose Jäger. Die Spielzeuge sind fürs Anschleichen, Anspringen und Tatzeln gemacht, passend für echte Pfoten und so genäht, dass sie auch den wilden Fünf Minuten um drei Uhr nachts standhalten. Die Verstecke sind weich, warm und ein bisschen geheim, denn jede Katze verdient einen Platz, von dem aus sie die Welt ungesehen beobachten kann. Ruhige Farben, sanfte Materialien und nichts, was Sie aus dem Schlaf klappert.",
       "slug": "moonbeam-mews"
     },
     "scaleby": {
       "name": "Scaleby",
-      "tagline": "Terrarienzubehör, das das Klima richtig hinbekommt.",
-      "story": "Scaleby baut Terrarien und Wärmetechnik für Halter, denen es wichtig ist, Temperatur und Luftfeuchtigkeit richtig einzustellen. Klare Anleitungen, robustes Glas und sichere, gleichmäßige Wärme.",
+      "tagline": "Terrarienzubehör, bei dem das Klima stimmt.",
+      "story": "Scaleby ist für Halterinnen und Halter, die morgens zuerst aufs Thermometer schauen. Das Sortiment reicht von Glasterrarien über Wärmelampen und Heizmatten bis zu den kleinen Teilen, die aus einem Becken ein echtes Zuhause machen. Jedem Wärmeprodukt liegt eine verständliche Anleitung bei, inklusive empfohlenem Temperaturgefälle für gängige Arten. Robust, zuverlässig und sicher, damit Ihr Reptil sich sonnen, verstecken und rundum wohlfühlen kann.",
       "slug": "scaleby"
     },
     "pebble-and-pine": {
       "name": "Pebble & Pine",
-      "tagline": "Natürliche Materialien, schonender für den Planeten.",
-      "story": "Pebble & Pine verwendet recycelte Fasern, unbehandeltes Holz und Farben auf Pflanzenbasis. Weniger Kunststoff, mehr Produkte, die dafür gemacht sind, gewaschen, nachgefüllt und jahrelang behalten zu werden.",
+      "tagline": "Natürliche Materialien, langlebig und schonender für den Planeten.",
+      "story": "Pebble & Pine fertigt Zubehör aus recycelten Fasern, unbehandeltem Holz und pflanzlichen Farben. Die Idee ist einfach: weniger Dinge, besser gemacht, länger genutzt. Die Betten haben Bezüge, die jahrelang waschbar bleiben, die Spielzeuge entstehen aus Stoffresten statt aus neuem Kunststoff, und die Verpackung ist Karton, den Sie zu Hause recyceln können. Die richtige Wahl für alle, die möchten, dass die Ecke ihres Tieres genauso ruhig und natürlich wirkt wie der Rest der Wohnung.",
       "slug": "pebble-pine"
     },
     "tidepool": {
       "name": "Tidepool",
-      "tagline": "Klares Wasser, ruhige Fische, einfache Pflege.",
-      "story": "Tidepool macht Aquarien einfach: ausgewogenes Futter, sanfte Beleuchtung und Dekoration, die Fischen einen Rückzugsort bietet. Alles ist so gemacht, dass es sowohl dem Wasser als auch dem Auge guttut.",
+      "tagline": "Klares Wasser, entspannte Fische, einfache Pflege.",
+      "story": "Tidepool nimmt der Aquaristik das Rätselraten. Die Starter-Aquarien kommen mit allem Nötigen in einem Karton, das Futter ist auf gängige Gesellschaftsfische abgestimmt, und das Licht ist sanft genug, um Farben zu zeigen, ohne die Fische zu stressen. Dekoration und Seidenpflanzen bieten Verstecke und Platz zum Erkunden. Zu jedem Produkt gibt es verständliche Tipps, denn ein gesundes Aquarium ist vor allem eine Frage guter Gewohnheiten.",
       "slug": "tidepool"
+    },
+    "feather-and-finch": {
+      "name": "Feather & Finch",
+      "tagline": "Futterstellen, Futter und Beschäftigung für glückliche, aktive Vögel.",
+      "story": "Feather & Finch begann an einem Küchentisch voller Kolbenhirse, Samenschalen und Skizzen für bessere Futterspender. Jedes Produkt ist darauf ausgelegt, wie Vögel wirklich fressen, klettern und nach Futter suchen, damit sich ein Käfig weniger wie eine Kiste und mehr wie ein Ast anfühlt. Die Futtermischungen entstehen in kleinen Chargen ohne künstliche Farbstoffe, und die Spielzeuge bestehen aus Holz, Glöckchen und Naturfasern, an denen bedenkenlos geknabbert werden darf. Fröhliche Morgen und volle Kröpfe – darum geht es.",
+      "slug": "feather-and-finch"
+    },
+    "hop-and-hay": {
+      "name": "Hop & Hay",
+      "tagline": "Heuraufen, Verstecke und gutes Futter für Kaninchen, Meerschweinchen und Hamster.",
+      "story": "Hop & Hay ist für die kleinen Haustiere, die vom Gehege aus den ganzen Haushalt regieren. Wir kümmern uns um das, was ihnen am wichtigsten ist: frisches Heu in Reichweite, ein sicheres Versteck und genug zum Knabbern. Pellets und Mischungen sind auf jede Tierart abgestimmt, denn ein Hamster braucht ein ganz anderes Abendessen als ein Kaninchen. Die Häuschen sind aus unbehandeltem Holz mit leicht zu reinigenden Schalen – Saubermachen dauert Minuten statt eines ganzen Nachmittags.",
+      "slug": "hop-and-hay"
+    },
+    "whiskerworks": {
+      "name": "Whiskerworks",
+      "tagline": "Durchdachte Näpfe, Trinkbrunnen und Reisezubehör für Katzen.",
+      "story": "Whiskerworks macht das Alltagszubehör, bei dem Katzen wählerisch sind: Näpfe, die die Schnurrhaare nicht stören, Brunnen, die das Wasser in Bewegung halten, und Transporttaschen, die sich sicher statt unheimlich anfühlen. Jedes Design wird von echten Katzen getestet – ehrliche Kritiker, die sehr schnell einfach weggehen. Wir mögen klare Linien, Materialien, die sich leicht reinigen lassen, und Details, die sich gut in jede Wohnung einfügen. Weniger Machtkämpfe beim Abendessen, entspanntere Fahrten zum Tierarzt.",
+      "slug": "whiskerworks"
+    },
+    "trailtail": {
+      "name": "Trailtail",
+      "tagline": "Geschirre, Leinen und Outdoor-Ausrüstung für Hunde, die lange Spaziergänge lieben.",
+      "story": "Trailtail ist gemacht für matschige Felder, verregnete Gehwege und den Spaziergang, der zum Abenteuer wird. Geschirre und Leinen bestehen aus robustem Gurtband mit gepolsterten Riemen und reflektierenden Details, damit Sie auch an dunklen Abenden gesehen werden. Reisenäpfe lassen sich flach falten und Bälle springen zuverlässig, denn zu einem guten Tag draußen gehören Wasser und ein Spiel. Jedes Teil wird gespült, getrocknet und noch einmal getestet, bevor es den Namen Trailtail tragen darf.",
+      "slug": "trailtail"
+    },
+    "nibble-lab": {
+      "name": "Nibble Lab",
+      "tagline": "Leckerlis für jedes Haustier, mit kurzen Zutatenlisten.",
+      "story": "Nibble Lab backt, trocknet und mischt Leckerlis für Hunde, Katzen, Kaninchen, Reptilien und Fische. Jedes Rezept beginnt mit einer Hauptzutat, und die Liste bleibt so kurz, dass man sie auf einen Blick lesen kann. Die Portionen sind fürs Training, als Belohnung oder einfach zur Begrüßung gedacht – so bleibt ein Leckerli ein Leckerli und wird nicht zum zweiten Abendessen. Jede Charge wird von einem Team sehr begeisterter Vorkoster geprüft, bevor sie ins Regal kommt.",
+      "slug": "nibble-lab"
+    },
+    "groomwell": {
+      "name": "Groomwell",
+      "tagline": "Fellpflege und Sauberkeit, die den Pflegetag leicht machen.",
+      "story": "Groomwell kümmert sich um die weniger glamouröse Seite der Tierpflege: Fell, Haut und das Aufräumen danach. Ergänzungen für das Fell sorgen von innen für gesunden Glanz, und ein feiner Sprühnebel hilft Reptilien bei einer sauberen Häutung. Einlagen, Schalen und kompostierbare Beutel machen die tägliche Routine schnell und hinterlassen weniger Abfall. Ein sauberes, zufriedenes Tier ist ein glückliches Tier – und der Mensch, der sich darum kümmert, auch.",
+      "slug": "groomwell"
     }
   },
   "collections": {
     "halloween": {
       "name": "Halloween",
-      "description": "Gruselige Spielzeuge, Kürbis-Leckerlis und kostümfreier Spaß für die Oktober-Crowd.",
+      "description": "Schaurige Spielzeuge, Kürbis-Leckerlis und Spaß ganz ohne Kostümzwang für die Oktober-Saison.",
       "slug": "halloween"
     },
     "christmas": {
       "name": "Weihnachten",
-      "description": "Kleine Geschenke für den Stiefel und festliche Leckerlis für Haustiere, die auf der Liste der Braven stehen.",
+      "description": "Kleine Geschenke für den Nikolausstiefel und festliche Leckerlis für alle Vierbeiner, die dieses Jahr brav waren.",
       "slug": "weihnachten"
     },
     "puppy-starter-kit": {
@@ -859,69 +895,69 @@
     },
     "under-10": {
       "name": "Unter 10 €",
-      "description": "Kleine Preise, große Schwanzwedler. Jedes Produkt hier hat eine Variante unter 10 €.",
+      "description": "Kleine Preise, viel Freude. Alles hier gibt es in mindestens einer Variante unter 10 €.",
       "slug": "unter-10-euro"
     }
   },
   "guides": {
     "a-simple-home-health-check": {
-      "title": "Ein einfacher Gesundheitscheck für zu Hause",
-      "summary": "Ein wöchentlicher Zwei-Minuten-Blick auf Augen, Fell, Appetit und Energie.",
-      "bodyMd": "Wenn Sie wissen, was für Ihr Tier normal ist, fallen Veränderungen leichter auf.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "title": "Ein einfacher wöchentlicher Gesundheitscheck für zu Hause",
+      "summary": "Fünf Minuten pro Woche für Augen, Ohren, Fell, Appetit und Energie: So bemerken Sie Veränderungen früh.",
+      "bodyMd": "Niemand kennt Ihr Tier so gut wie Sie. Ein kurzer, entspannter Check einmal pro Woche macht aus diesem Bauchgefühl eine Gewohnheit: Sie lernen, wie „normal“ bei Ihrem Hund, Ihrer Katze oder Ihrem Kaninchen aussieht, und merken schneller, wenn sich etwas verändert. Das dauert etwa fünf Minuten, klappt bei den meisten Fellnasen und ist ganz nebenbei eine Kuscheleinheit.\n\n## Den richtigen Moment wählen\n\nWählen Sie eine Zeit, in der Ihr Tier ohnehin entspannt ist, etwa nach dem Spaziergang oder dem Abendessen. Setzen Sie sich auf den Boden, statt sich über Ihr Tier zu beugen, legen Sie ein paar Leckerlis bereit und sprechen Sie ruhig und leise. Windet es sich weg, hören Sie auf und versuchen es morgen noch einmal. Ein Check, der gut endet, wird beim nächsten Mal gern wieder mitgemacht.\n\nGehen Sie jedes Mal in derselben Reihenfolge vor, von der Nase bis zum Schwanz. Eine feste Routine macht es für Sie schneller und für Ihr Tier vorhersehbar.\n\n## Augen, Ohren, Nase und Maul\n\n- **Augen** sollten klar und glänzend sein, ohne Rötung, Trübung oder dicken Ausfluss. Ein bisschen Schlaf im Augenwinkel ist normal, ständiges Tränen oder Blinzeln nicht.\n- **Ohren** sollten sauber aussehen und kaum riechen. Dunkles Ohrenschmalz, ein säuerlicher Geruch, Rötungen oder häufiges Kopfschütteln sind einen Anruf in der Tierarztpraxis wert.\n- **Nase**: Ob feucht oder trocken, wechselt im Laufe des Tages, darauf sollten Sie nicht zu viel geben. Achten Sie lieber auf Krusten, Blut oder laufenden Ausfluss.\n- **Maul**: Heben Sie die Lefze vorsichtig an. Das Zahnfleisch sollte rosa und feucht sein. Notieren Sie sich einen stark geröteten Zahnfleischrand, abgebrochene Zähne oder Mundgeruch, der plötzlich deutlich schlimmer ist als sonst.\n\n## Fell, Haut und Körper\n\nStreichen Sie langsam mit den Händen über den ganzen Körper, auch über Bauch, Achseln und Schwanz. Sie suchen nach allem, was neu ist: Knoten, Krusten, warme oder empfindliche Stellen und Bereiche, bei denen Ihr Tier zusammenzuckt.\n\nScheiteln Sie das Fell an ein paar Stellen und sehen Sie sich die Haut an. Sie sollte sauber sein, ohne Schuppen, Rötungen oder kleine dunkle Krümel, die auf Flöhe hindeuten können. Glänzendes Fell ist meist ein gutes Zeichen; wird es plötzlich stumpf oder lichtet sich, sollten Sie genauer hinsehen.\n\nWenn Ihre Hände schon dabei sind, prüfen Sie auch die Figur. Die Rippen sollten sich unter einer dünnen Polsterschicht ohne Druck ertasten lassen, und von oben sollte eine Taille zu sehen sein. Langsame Gewichtsveränderungen übersieht man leicht, wenn man sein Tier jeden Tag sieht. Einmal im Monat auf derselben Waage zu wiegen, ist deshalb eine gute Ergänzung.\n\n## Pfoten, Krallen und Po\n\nSchauen Sie zwischen den Zehen nach Grannen, kleinen Schnitten oder Rötungen und prüfen Sie die Ballen auf Risse. Die Krallen sollten auf hartem Boden nicht laut klackern und sich nicht zum Ballen hin biegen. Hunde, die vor allem auf Gras laufen, ältere Katzen und Wohnungskaninchen müssen oft häufiger gekürzt werden, als man denkt.\n\nZum Schluss ein kurzer Blick unter den Schwanz. Dort sollte alles sauber sein. Häufiges Rutschen auf dem Po, Lecken oder ein verschmutzter Po können auf Probleme mit den Analdrüsen oder dem Bauch hindeuten, bei Kaninchen auch auf ein Futterproblem.\n\n## Appetit, Durst und Energie\n\nNicht alles sieht man von außen. Behalten Sie im Laufe der Woche nebenbei im Blick:\n\n- **Fressen**: Frisst Ihr Tier im gewohnten Tempo auf? Lässt es länger als einen Tag das Futter stehen, rufen Sie in der Tierarztpraxis an. Bei Kaninchen und Meerschweinchen sind schon wenige Stunden ohne Fressen ein Notfall.\n- **Trinken**: Eine deutliche Veränderung in die eine oder andere Richtung ist wichtig. Mit einem Napf oder einem Spender mit durchsichtigem Tank, wie unserem Schwerkraft-Wasserspender, sehen Sie leicht, wie viel täglich getrunken wird.\n- **Toilettengewohnheiten**: veränderte Menge, Farbe oder Häufigkeit sowie Pressen.\n- **Energie und Stimmung**: häufigeres Verstecken, deutlich mehr Schlaf, Unlust zu springen oder Treppen zu steigen, oder neue Gereiztheit beim Anfassen.\n\n## Kurz notieren\n\nEine Notiz im Handy genügt: Datum, Gewicht, wenn Sie es haben, und alles, was neu ist. Ein Foto von einem Knoten neben einer Münze zeigt Ihnen, ob er wächst. Beim Tierarztbesuch sind ein paar Wochen Notizen viel hilfreicher als „Ich glaube, er ist in letzter Zeit etwas ruhiger“.\n\n## Kurze Checkliste\n\n- Augen klar, Ohren sauber, Zahnfleisch rosa\n- Keine neuen Knoten, Krusten oder empfindlichen Stellen\n- Haut sauber, Fell glänzend, kein Flohkot\n- Rippen gut tastbar, Taille sichtbar\n- Pfoten, Ballen und Krallen in gutem Zustand\n- Fressen, Trinken und Toilette wie gewohnt\n- Energie und Stimmung wie gewohnt\n\n## Wann Sie in die Tierarztpraxis sollten\n\nDieser Check hilft Ihnen, Veränderungen zu bemerken. Er ersetzt keine tierärztliche Untersuchung und ist kein Weg, zu Hause eine Diagnose zu stellen. Sieht etwas nicht richtig aus oder sagt Ihnen Ihr Gefühl, dass Ihr Tier nicht es selbst ist, rufen Sie Ihre Tierärztin oder Ihren Tierarzt an. Fahren Sie sofort hin bei Atemnot, Zusammenbruch, wiederholtem Erbrechen, einem aufgeblähten Bauch oder wenn ein kleines Heimtier nicht mehr frisst. Die meisten Praxen sehen ein Tier lieber zu früh als zu spät.",
       "slug": "ein-einfacher-gesundheitscheck-fuer-zu-hause"
     },
     "choosing-a-dog-toy": {
-      "title": "So wählen Sie Hundespielzeug aus",
-      "summary": "Zerren, Apportieren oder Kauen: Wählen Sie das Spielzeug passend dazu, wie Ihr Hund gern spielt.",
-      "bodyMd": "Hunde spielen auf unterschiedliche Weise, daher hängt das beste Spielzeug vom Hund ab.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "title": "So finden Sie das richtige Hundespielzeug",
+      "summary": "Zerren, Apportieren, Kauen oder Kuscheln: Passt das Spielzeug zum Spielstil Ihres Hundes, hält es länger und wird mehr geliebt.",
+      "bodyMd": "Jeder Hund hat seinen eigenen Spielstil. Die einen leben für die Jagd, die anderen suchen einen Partner fürs Zerrspiel, und manche wollen einfach etwas herumtragen und um sechs Uhr morgens darauf quietschen. Wählen Sie ein Spielzeug, das zur Art passt, wie Ihr Hund spielt, dann wird es jeden Tag benutzt, statt unter dem Sofa zu verstauben. So gehen wir bei der Auswahl vor.\n\n## Mit dem Spielstil Ihres Hundes anfangen\n\nBeobachten Sie Ihren Hund ein paar Tage lang und achten Sie darauf, wonach er von selbst greift.\n\n- **Der Jäger** rennt allem hinterher, was sich bewegt. Bälle und Wurfspielzeug sind für ihn das Größte.\n- **Der Zerrer** schnappt sich einen Ärmel, die Leine oder ein Handtuch und zieht. Seilspielzeug und lange, robuste Zerrspielzeuge geben dieser Energie ein gutes Ventil.\n- **Der Kauer** zieht sich mit etwas zum Nagen zurück, und das lange. Er braucht widerstandsfähigere Materialien und etwas mehr Aufsicht.\n- **Der Träger** trabt stolz mit einem Spielzeug im Maul herum, oft einem weichen, und schläft vielleicht auch daneben.\n\nDie meisten Hunde sind eine Mischung. Zwei oder drei verschiedene Spielzeugarten im Wechsel decken deshalb meist alles ab.\n\n## Die richtige Größe wählen\n\nBei der Sicherheit zählt die Größe mehr als alles andere. Ein Spielzeug sollte **zu groß zum Verschlucken** sein und auch nicht hinten im Maul stecken bleiben können. Als Faustregel gilt: Ein Ball sollte breiter sein als das geöffnete Maul Ihres Hundes, nicht nur als das geschlossene. Große Hunde brauchen große Spielzeuge, auch wenn ein kleines niedlicher aussieht. Welpen und sehr kleine Rassen wiederum sind frustriert, wenn sie ein Spielzeug nicht bequem tragen können.\n\nWächst Ihr Hund oder zieht ein größerer Hund mit ein, sehen Sie die ganze Spielzeugkiste noch einmal durch.\n\n## Das passende Material\n\n- **Seil** eignet sich hervorragend zum Zerren und für sanftes Kauen, und die Fasern reinigen beim Spielen ganz nebenbei die Zähne. Unser Geflochtenes Zerrseil hat an jedem Ende einen Knoten, damit Sie beide gut zupacken können. Entsorgen Sie es, sobald es sich in lange Fäden auflöst, denn die sollten nicht verschluckt werden.\n- **Gummi** passt zum Apportieren und Kauen. Achten Sie auf Natur- oder lebensmittelechten Gummi, der etwas nachgibt: Ein Spielzeug, das härter ist als die Zähne Ihres Hundes, kann sie beschädigen. Ein Ball, der unberechenbar springt, wie unser Springender Gummiball, macht das Apportieren viel spannender.\n- **Plüsch** ist zum Kuscheln, Herumtragen und für sanftes Spiel. Quietscher machen Plüschtiere unwiderstehlich. Wählen Sie Modelle mit verstärkten Nähten und nehmen Sie sie weg, sobald Ihr Hund anfängt, die Füllung herauszuoperieren.\n\n## Gemeinsam spielen, nicht nur allein\n\nSpielzeug wirkt am besten als Teil eines Spiels mit Ihnen. Beim Zerren lernt Ihr Hund Impulskontrolle, wenn Sie ein einfaches „Aus“ einführen und es mit einer weiteren Runde belohnen. Apportieren verbrennt schnell Energie und fördert einen zuverlässigen Rückruf. Kurze Einheiten von fünf bis zehn Minuten, ein paar Mal am Tag, sind besser als ein langer Marathon, besonders für Welpen und ältere Hunde mit steifen Gelenken.\n\nHalten Sie ein oder zwei **besondere Spielzeuge** bereit, die nur beim gemeinsamen Spiel herauskommen. So bleiben sie spannend und werden zur perfekten Belohnung im Training.\n\n## Wechseln, prüfen, ersetzen\n\nHunde langweilen sich mit immer denselben Spielzeugen. Lassen Sie drei oder vier draußen und tauschen Sie den Rest etwa jede Woche aus: Ein „altes“ Spielzeug aus dem Schrank fühlt sich oft wieder ganz neu an.\n\nWerfen Sie beim Tauschen einen kurzen Blick auf jedes Spielzeug. Alles mit Rissen, losen Teilen, offenen Nähten oder fehlenden Stücken kommt weg. Waschen Sie Seil- und Plüschspielzeug regelmäßig (das meiste darf in die Waschmaschine) und spülen Sie Gummispielzeug in warmem Seifenwasser ab.\n\n## Kurze Checkliste\n\n- Das Spielzeug passt zum Spielstil Ihres Hundes\n- Zu groß zum Verschlucken, mit Luft nach oben\n- Das Material passt zum Spiel: Seil zum Zerren, Gummi zum Apportieren und Kauen, Plüsch zum Kuscheln\n- Zwei oder drei Arten im Wechsel, wöchentlich getauscht\n- Kaputtes Spielzeug kommt in den Müll, nicht zurück in die Kiste\n- Unbeaufsichtigt nur mit Spielzeug, das Ihr Hund nicht zerlegen kann\n\n## Ein Wort zur Sicherheit\n\nKein Spielzeug ist wirklich unzerstörbar, und jeder Hund kaut anders. Beaufsichtigen Sie neue Spielzeuge, bis Sie wissen, wie Ihr Hund damit umgeht. Hat Ihr Hund ein Stück Spielzeug verschluckt oder zeigt er Anzeichen wie Erbrechen, Würgen, einen empfindlichen Bauch oder Pressen beim Kotabsatz, rufen Sie sofort Ihre Tierärztin oder Ihren Tierarzt an, statt abzuwarten.",
       "slug": "so-waehlen-sie-hundespielzeug-aus"
     },
     "cosy-spots-for-cats": {
       "title": "Gemütliche Plätze, die Katzen lieben",
-      "summary": "Katzen verstecken sich gern und beobachten gern: Bieten Sie von beidem etwas an.",
-      "bodyMd": "Eine Katze mit sicherem Versteck und guter Aussicht ist eine entspannte Katze.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "summary": "Katzen wollen sich verstecken und Ausschau halten. Bieten Sie beides an, und Ihre Katze wird ruhiger und zufriedener.",
+      "bodyMd": "Katzen schlafen bis zu 16 Stunden am Tag, und wo sie schlafen, verrät viel darüber, wie sicher sie sich fühlen. In freier Natur ist eine Katze Jägerin und Beute zugleich. Der perfekte Ruheplatz erlaubt es ihr deshalb, sich zu verstecken oder Wache zu halten, am besten beides. Bieten Sie Ihrer Katze ein paar gut gewählte Plätze, und Sie werden mehr ausgestreckte Nickerchen sehen, weniger Stress und seltener eine Katze auf Ihrer Laptop-Tastatur.\n\n## Warum Katzen ein Versteck und einen Aussichtsplatz brauchen\n\nKatzen entspannen sich, wenn sie ihre Umgebung im Griff haben. Ein **Versteck** ist fast rundum geschlossen, sodass sie nichts von hinten überraschen kann. Ein **Aussichtsplatz** liegt erhöht, damit sie sehen, was kommt, lange bevor es da ist. Schüchterne Katzen, Neuankömmlinge und Katzen in trubeligen Haushalten setzen auf Verstecke; selbstbewusste Katzen und leidenschaftliche Vogelbeobachter lieben einen Aussichtsplatz. Die meisten nutzen beides, je nach Laune und Tageszeit.\n\n## So gelingt das Versteck\n\n- **Geschlossen, mit einem klaren Eingang.** Ein überdachtes Bett funktioniert gut. Unsere Gemütliche Kuschelhöhle hat innen ein weiches, tiefes Kissen und ein gewölbtes Dach, das die Wärme hält.\n- **Abseits vom Trubel.** Eine ruhige Ecke, der Platz neben dem Sofa oder unter dem Schreibtisch ist besser als die Mitte des Flurs.\n- **Weg von Futter und Katzenklo.** Katzen fressen, schlafen und erledigen ihr Geschäft nicht gern am selben Ort. Stellen Sie Betten ein gutes Stück entfernt von Näpfen und Toilette auf.\n- **Niemals eine Falle.** Ziehen Sie Ihre Katze nicht aus ihrem Versteck und nutzen Sie es nicht für Unangenehmes, etwa um sie für die Transportbox einzufangen. Es muss ein garantiert sicherer Ort bleiben.\n\nAuch ein Karton mit einer Decke darin ist ein völlig gutes Versteck. Wenn Ihre Katze den Karton dem Bett vorzieht, nehmen Sie das als nützlichen Hinweis, nicht als Beleidigung.\n\n## So gelingt der Aussichtsplatz\n\nHöhe bedeutet Sicherheit und Unterhaltung. Fensterbänke, die Oberseite eines Bücherregals oder ein Wandbrett zählen alle, solange der Platz stabil und gut erreichbar ist. Ein Kissen, das am Fenster befestigt wird, wie unser Fensterliegekissen, verwandelt eine schmale Fensterbank in eine sonnige Beobachtungsplattform mit Blick auf Vögel, Blätter und vorbeilaufende Hunde.\n\nMachen Sie den Aufstieg leicht. Ältere Katzen und Kitten freuen sich über eine „Treppe“ aus Stuhl, niedrigem Regal und dann dem Liegeplatz. Bei mehreren Katzen sollte es mehr als einen erhöhten Platz geben, damit niemand anstehen oder um die beste Aussicht kämpfen muss.\n\n## Wärme, Material und Jahreszeiten\n\nKatzen lieben Wärme, deshalb wandern sie den Sonnenflecken durch die Wohnung hinterher. Stellen Sie im Winter ein Bett in die Nähe (nicht auf) die Heizung, legen Sie eine Fleecedecke hinein oder wählen Sie einen Platz, an dem die Nachmittagssonne hinfällt. Im Sommer mögen sie vielleicht lieber kühle Fliesen oder ein schattiges Plätzchen. Lassen Sie diese Möglichkeiten offen, statt Türen zu schließen.\n\nAuch das Material zählt. Manche Katzen lieben tiefen, flauschigen Stoff, andere eine flachere, festere Fläche zum Treteln. Wird ein neues Bett ignoriert, wechseln Sie erst einmal den Bezug, bevor Sie es aufgeben.\n\n## Wie Ihre Katze ein neues Bett annimmt\n\nKatzen misstrauen neuen Dingen, die nach Geschäft riechen. Machen Sie den Einstieg leicht:\n\n1. Stellen Sie das Bett dorthin, wo Ihre Katze schon gern schläft, nicht dorthin, wo es am schönsten aussieht.\n2. Legen Sie etwas hinein, das nach Zuhause riecht, etwa ein altes T-Shirt oder ihre gewohnte Decke.\n3. Verstreuen Sie ein paar Leckerlis darin oder spielen Sie daneben mit einer Federangel, damit das Bett Teil von etwas Schönem wird.\n4. Geben Sie ihr Zeit. Viele Katzen brauchen eine Woche, um einzuziehen, und wollen danach nicht mehr heraus.\n\n## Kurze Checkliste\n\n- Mindestens ein geschlossenes Versteck in einer ruhigen Ecke\n- Mindestens ein erhöhter, stabiler Aussichtsplatz mit Blick\n- Betten weg von Futternäpfen und Katzenklo\n- Ein warmer Platz für den Winter, ein kühler für den Sommer\n- Ein Ruheplatz pro Katze plus einer extra\n- Neue Betten dort, wo Ihre Katze schon schläft\n\n## Wann Sie genauer hinsehen sollten\n\nVerändert sich, wo oder wie viel Ihre Katze schläft, kann das ein Hinweis sein. Versteckt sie sich plötzlich deutlich mehr als sonst, springt sie nicht mehr auf ihren erhöhten Lieblingsplatz oder wirkt sie unruhig und findet keine Ruhe, stecken vielleicht Schmerzen oder eine Krankheit dahinter und kein neuer Geschmack. Sprechen Sie dann mit Ihrer Tierärztin oder Ihrem Tierarzt.",
       "slug": "gemuetliche-plaetze-die-katzen-lieben"
     },
     "first-week-with-a-puppy": {
       "title": "Die erste Woche Ihres Welpen zu Hause",
-      "summary": "Eine ruhige Routine, ein gemütliches Bett und kleine Belohnungen erleichtern die ersten Tage.",
-      "bodyMd": "In der ersten Woche geht es mehr um Routine als um Regeln.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "summary": "Eine ruhige Routine, ein gemütliches Bett und viele kleine Belohnungen: So werden die ersten sieben Tage für alle leichter.",
+      "bodyMd": "Ein Welpe zieht ein: pure Freude, mit einer Prise Chaos. Ihr Welpe hat gerade seine Mutter, seine Geschwister und alles Vertraute verlassen. In der ersten Woche geht es deshalb weniger darum, Regeln beizubringen, als darum, ihm Sicherheit zu geben. Stimmt die Routine jetzt, klappen Stubenreinheit, Schlaf und gute Manieren später viel leichter.\n\n## Bevor er einzieht\n\nEin wenig Vorbereitung erspart am ersten Tag viel Stress.\n\n- **Erst einen Raum welpensicher machen.** Kabel, Schuhe, Zimmerpflanzen und alles Kaubare kommen vom Boden. Einem Welpen einen sicheren Raum zu geben, ist leichter, als das ganze Haus im Blick zu behalten.\n- **Eine Rückzugsecke einrichten.** Wählen Sie eine ruhige Ecke, nicht den belebten Flur, mit Bett, Wassernapf und einem weichen Spielzeug. Ein bequemes, waschbares Bett mit erhöhtem Rand, wie unser Wolken-Komfortbett, gibt ihm etwas zum Ankuscheln.\n- **Um einen vertrauten Geruch bitten.** Bringen Sie, wenn möglich, ein paar Tage vorher eine Decke zur Züchterin oder ins Tierheim und nehmen Sie sie mit dem Welpen wieder mit nach Hause. Vertraute Gerüche beruhigen enorm.\n- **Das Nötigste bereithalten:** dasselbe Futter, das er bisher bekommt, Halsband und Leine, Kotbeutel, einen Enzymreiniger für kleine Missgeschicke und ein paar Kauspielzeuge.\n\n## Der erste Tag: ruhig angehen\n\nEs ist verlockend, alle einzuladen, um das neue Familienmitglied kennenzulernen. Warten Sie damit. Halten Sie Besuch in den ersten Tagen möglichst gering und lassen Sie Ihren Welpen in seinem Tempo erkunden. Zeigen Sie ihm seine Ecke, sein Wasser und seinen Löseplatz, und lassen Sie ihn dann schlafen. Das wird er viel tun: 18 bis 20 Stunden am Tag sind normal.\n\nKinder setzen sich am besten auf den Boden und lassen den Welpen zu sich kommen, statt ihn hochzuheben oder ihm hinterherzulaufen.\n\n## Eine einfache Routine aufbauen\n\nWelpen fühlen sich sicher, wenn das Leben vorhersehbar ist. Halten Sie jeden Tag denselben Rhythmus ein:\n\n1. Aufwachen, dann sofort nach draußen zum Löseplatz.\n2. Frühstück, danach wieder raus.\n3. Eine kurze Spiel- oder Trainingseinheit, dann ein Nickerchen.\n4. Über den Tag wiederholen: lösen, spielen, schlafen, mit Mahlzeiten zu festen Zeiten.\n5. Ein ruhiger letzter Gang nach draußen vor dem Schlafengehen.\n\nHängen Sie den Plan an den Kühlschrank, damit sich alle im Haushalt daran halten.\n\n## Grundlagen der Stubenreinheit\n\nBringen Sie Ihren Welpen **nach jedem Schlafen, Fressen und Spielen** nach draußen, und solange er wach ist, mindestens alle ein bis zwei Stunden. Stellen Sie sich ruhig an dieselbe Stelle und warten Sie. Sobald er sich löst, loben Sie ihn herzlich und geben sofort, innerhalb von ein, zwei Sekunden, eine winzige Belohnung.\n\nMissgeschicke passieren. Schimpfen Sie nie und drücken Sie seine Nase nicht hinein: Das lehrt ihn nur, sich zum Lösen zu verstecken. Reinigen Sie mit einem Enzymreiniger, damit der Geruch ihn nicht zurücklockt, und gehen Sie etwas häufiger mit ihm hinaus.\n\n## Schlaf und die ersten Nächte\n\nDie ersten Nächte können laut werden. Viele Welpen kommen besser zur Ruhe, wenn ihr Bett anfangs in Ihrer Nähe steht, sodass sie Sie hören und riechen können. In den folgenden Wochen können Sie es nach und nach an seinen festen Platz rücken. Rechnen Sie mit einem nächtlichen Gang nach draußen. Halten Sie ihn langweilig (kein Spiel, gedämpftes Licht) und dann direkt zurück ins Bett.\n\n## Sanftes Training beginnt jetzt\n\nTraining in der ersten Woche dient der Bindung, nicht perfektem Gehorsam. Üben Sie seinen Namen, „Sitz“ und das Herkommen, in Einheiten von zwei, drei Minuten. Nutzen Sie kleine, weiche Belohnungen, die Ihr Welpe in einer Sekunde fressen kann; unsere Weichen Trainingshäppchen lassen sich für kleine Mäuler noch weiter teilen. Rechnen Sie Leckerlis in die tägliche Futtermenge ein, damit der Bauch zufrieden bleibt.\n\nAuch die Sozialisierung beginnt jetzt, behutsam. Lassen Sie Ihren Welpen Neues aus sicherer Entfernung sehen, hören und beschnuppern: den Staubsauger, die Türklingel, Menschen mit Hut. Ruhig, kurz und positiv ist das Ziel. Bis Ihre Tierarztpraxis die Impfungen für abgeschlossen erklärt, tragen Sie ihn draußen lieber, statt ihn dort laufen zu lassen, wo fremde Hunde unterwegs sind.\n\n## Kurze Checkliste\n\n- Ein welpensicherer Raum und eine ruhige Rückzugsecke\n- Vorerst dasselbe Futter wie bisher\n- Nach draußen nach jedem Schlafen, Fressen und Spielen\n- Lob und ein winziges Leckerli im Moment des Erfolgs\n- Ein aufgeschriebener Tagesablauf, an den sich alle halten\n- Kurzes, fröhliches Training: Name, Sitz, Hier\n- Besuch und Ausflüge ruhig und kurz halten\n\n## Der erste Tierarztbesuch\n\nVereinbaren Sie in der ersten Woche einen Termin zum Check-up. Ihre Tierärztin oder Ihr Tierarzt untersucht Ihren Welpen, bespricht mit Ihnen Impfungen, Entwurmung, Flohschutz und Mikrochip und beantwortet Fragen zu Futter und Wachstum. Rufen Sie früher an, wenn Ihr Welpe schlapp ist, nicht frisst, Durchfall hat oder mehr als einmal erbricht: Bei jungen Welpen kann es schnell bergab gehen, deshalb lieber einmal zu oft nachfragen.",
       "slug": "die-erste-woche-ihres-welpen-zu-hause"
     },
     "happy-rabbits-and-guinea-pigs": {
       "title": "Glückliche Kaninchen und Meerschweinchen",
-      "summary": "Heu, Verstecke und etwas zum Kauen: die drei Bedürfnisse von Kleintieren.",
-      "bodyMd": "Kleintiere sind Beutetiere, deshalb steht das Gefühl von Sicherheit an erster Stelle.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "summary": "Heu, Verstecke, Gesellschaft und etwas zum Knabbern: die täglichen Bedürfnisse, die Kleintiere gesund und zufrieden halten.",
+      "bodyMd": "Kaninchen und Meerschweinchen sind neugierig, gesprächig und echte Charaktere, aber sie sind auch Beutetiere. Ihr ganzes Verhalten dreht sich darum, sicher zu bleiben: Sie fressen wenig und oft, verstecken sich, wenn sie beunruhigt sind, und verbergen auch Krankheiten. Stimmen die Grundlagen, zeigen sie sich von ihrer besten Seite: mit Freudensprüngen, Popcornen, zufriedenem Brummeln und genüsslichem Mümmeln.\n\n## Heu ist die Hauptmahlzeit, keine Beilage\n\nDas Wichtigste, was Sie einem Kaninchen oder Meerschweinchen geben können, ist **unbegrenzt frisches Heu**. Es sollte jeden Tag den Großteil der Nahrung ausmachen. Heu hält die Verdauung in Gang und, genauso wichtig, nutzt die Zähne ab, die ein Leben lang nachwachsen. Eine gute Faustregel: ein Heuhaufen, mindestens so groß wie Ihr Tier, jeden Tag erneuert.\n\nGutes Heu ist grün, duftet süßlich und ist trocken, nie staubig oder schimmelig. Lange Halme wie in unserem Wiesenheu-Bündel fördern das richtige Kauen. Bieten Sie Heu an mehreren Stellen an, auch neben der Toilettenecke, denn beide Arten fressen gern, während sie ihr Geschäft erledigen.\n\n## Frisches Grün und ein wenig Pellets\n\nZum Heu gehört täglich eine Portion frisches Blattgrün und Kräuter, etwa Römersalat, Koriander, Petersilie oder Löwenzahnblätter. Führen Sie neues Grün einzeln und in kleinen Mengen ein, damit sich der Bauch daran gewöhnen kann. Obst und Karotten sind Leckerlis, kein Grundnahrungsmittel: Sie enthalten viel Zucker.\n\nEine kleine Menge schlichter, faserreicher Pellets schließt eventuelle Lücken. Verzichten Sie auf Müslimischungen, bei denen sich die Tiere die süßen Stücke herauspicken und den Rest liegen lassen.\n\n**Meerschweinchen brauchen jeden Tag Vitamin C**, denn sie können es nicht selbst bilden. Paprika, Grünkohl und Petersilie sind gute Quellen; zu Ergänzungen berät Sie Ihre Tierarztpraxis.\n\n## Ein Platz zum Verstecken\n\nEin Kaninchen oder Meerschweinchen ohne Versteck lebt in ständigem leisem Stress. Geben Sie jedem Tier mindestens ein eigenes Versteck, möglichst mit zwei Ausgängen, damit niemand von einem Artgenossen in die Enge getrieben wird. Ein Holzhaus wie unser Gemütliches Versteckhaus dient zugleich als Aussichtsplattform für Kaninchen, die gern obendrauf sitzen und ihr Reich überblicken.\n\nAuch Tunnel sind beliebt: Sie bieten einen sicheren Weg über offene Flächen, und besonders Meerschweinchen flitzen begeistert hindurch.\n\n## Platz zum Bewegen und etwas zum Knabbern\n\nBeide Arten brauchen viel mehr Platz, als ein klassischer Stall oder Käfig bietet. Kaninchen sollten mehrere Hoppelsprünge hintereinander machen, sich ganz aufrichten und lang ausstrecken können. Meerschweinchen brauchen Raum für ihre Runden, die sie mit erstaunlichem Tempo drehen, wenn sie glücklich sind. Ideal ist ein großes Gehege mit sicherem Unterschlupf oder ein kaninchensicherer Raum.\n\nBieten Sie sichere Dinge zum Nagen und Erkunden an: unbehandeltes Holz, Weide, Kartons und geflochtenes Heuspielzeug. Unsere Kau-Tunnelrolle erfüllt beides, als Versteck zum Durchlaufen und als Knabberspaß. Tauschen Sie das Spielzeug wöchentlich, damit neugierige Köpfe beschäftigt bleiben.\n\n## Gesellschaft ist wichtig\n\nKaninchen und Meerschweinchen sind gesellige Tiere und am glücklichsten mit mindestens einem Artgenossen. Kastrierte Paare oder kleine Gruppen funktionieren am besten. Machen Sie neue Partner langsam und auf neutralem Boden miteinander bekannt und holen Sie sich vor der Vergesellschaftung Rat in der Tierarztpraxis oder beim Tierschutzverein. Kaninchen und Meerschweinchen sollten nicht zusammen gehalten werden: Sie verständigen sich unterschiedlich und haben verschiedene Futterbedürfnisse.\n\n## Kurze Checkliste\n\n- Unbegrenzt frisches Heu, täglich nachgefüllt\n- Täglich Blattgrün, Obst nur als Leckerli\n- Vitamin C für Meerschweinchen\n- Frisches Wasser in Napf oder Flasche, täglich geprüft\n- Ein Versteck pro Tier, am besten mit zwei Ausgängen\n- Platz zum Rennen, Strecken und Aufrichten\n- Sichere Kauartikel und Spielzeug, wöchentlich getauscht\n- Mindestens ein Artgenosse\n\n## Wann Sie in die Tierarztpraxis müssen\n\nKleintiere verbergen Krankheiten gut, deshalb zählen auch kleine Veränderungen. **Ein Kaninchen oder Meerschweinchen, das nicht mehr frisst oder keinen Kot mehr absetzt, muss noch am selben Tag zur Tierärztin oder zum Tierarzt**, denn ihr Verdauungssystem kann schnell zum Stillstand kommen. Melden Sie sich auch bei Speicheln, Gewichtsverlust, tränenden Augen oder laufender Nase, einem verschmutzten Po, zu langen Zähnen oder Krallen oder wenn ein sonst lebhaftes Tier zusammengekauert und regungslos dasitzt. Es lohnt sich, eine Praxis mit Erfahrung bei Kaninchen und Meerschweinchen zu suchen, bevor Sie sie brauchen.",
       "slug": "glueckliche-kaninchen-und-meerschweinchen"
     },
     "keeping-an-indoor-cat-busy": {
-      "title": "So beschäftigen Sie eine Wohnungskatze",
-      "summary": "Kurze Spielrunden mit dem richtigen Spielzeug halten Wohnungskatzen fit und neugierig.",
-      "bodyMd": "Wohnungskatzen müssen genauso anschleichen, anspringen und jagen wie Freigänger.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "title": "Wohnungskatzen richtig beschäftigen",
+      "summary": "Kurze Jagdspiele, ein paar clevere Spielzeuge und ein Platz mit Aussicht halten Wohnungskatzen fit, ausgeglichen und neugierig.",
+      "bodyMd": "Wohnungskatzen leben länger und sicherer, doch der Jagdinstinkt bleibt. Eine Katze, die nichts zum Anschleichen, Jagen oder Erkunden hat, sucht sich ihre Unterhaltung selbst: die Vorhänge, Ihre Knöchel um vier Uhr morgens oder einfach ein bisschen zu viel Schlaf und Futter. Die gute Nachricht: Eine Wohnungskatze glücklich zu machen, kostet weniger Zeit, als viele denken. Ein paar kurze Spieleinheiten am Tag und ein katzenfreundlich eingerichtetes Zuhause machen den Unterschied.\n\n## Spielen wie auf der Jagd\n\nKatzen spielen nicht einfach so. Spielen ist Jagdtraining, und die besten Einheiten folgen immer demselben Ablauf: **anschleichen, verfolgen, springen, fangen, fressen**. Diesen Rhythmus können Sie in zehn Minuten nachstellen.\n\n- Bewegen Sie das Spielzeug von Ihrer Katze weg, nie auf sie zu. Beute flieht und versteckt sich, sie greift den Jäger nicht an.\n- Lassen Sie das Spielzeug hinter einem Stuhl oder unter einer Decke verschwinden und wieder hervorlugen. Die Pause vor dem Sprung ist die halbe Freude.\n- Wechseln Sie schnelle Sprints mit langsamen, zuckenden Bewegungen am Boden ab.\n- Lassen Sie Ihre Katze oft genug Erfolg haben, damit sie dranbleibt, und die letzte Runde gewinnt immer sie.\n\nEine Spielangel wie unsere Federangel ist dafür ideal: Ihre Hand bleibt weit weg von den Krallen, und die „Beute“ kann fliegen, flattern und landen. Räumen Sie Spielangeln nach jeder Runde weg. So bleiben sie etwas Besonderes, und eine herumliegende Schnur ist ein Risiko, wenn die Katze daran kaut.\n\n## Lieber oft und kurz als selten und lang\n\nDie meisten Katzen sind Sprinter. Zwei oder drei Einheiten von je 5 bis 15 Minuten passen viel besser zu ihnen als ein langes Training. Gute Zeitpunkte sind früh am Morgen, am frühen Abend und kurz bevor Sie selbst schlafen gehen, wenn viele Katzen ohnehin ihren Energieschub haben.\n\nBeenden Sie jede Einheit mit einer kleinen Mahlzeit oder ein paar Leckerlis. Jagen, fangen, fressen, putzen, schlafen: Das ist der natürliche Kreislauf, und wenn er abgeschlossen ist, kommen viele Katzen nachts zur Ruhe, statt durch den Flur zu rasen.\n\n## Spielzeug für allein\n\nSie können nicht den ganzen Tag spielen, also lassen Sie ein paar Spielzeuge liegen, mit denen sich Ihre Katze allein beschäftigen kann. Leichte Spielzeuge, die über glatten Boden flitzen, eignen sich gut, ebenso weiche Kickkissen, die Ihre Katze mit den Vorderpfoten packen und mit den Hinterbeinen bearbeiten kann. Unsere Knistermäuse im Dreierpack und der Katzenminze-Bananenkicker sind genau dafür gemacht.\n\nSo bleibt Spielzeug spannend:\n\n- **Abwechseln.** Bewahren Sie die meisten Spielzeuge in einer Schublade auf und legen Sie nur zwei oder drei hin. Tauschen Sie sie alle paar Tage, dann wirken alte Lieblinge wieder neu.\n- **Duft auffrischen.** In einer Dose mit etwas getrockneter Katzenminze oder Matatabi gelagert, wird Spielzeug verlockender. Nicht jede Katze reagiert auf Katzenminze, etwa ein Drittel bleibt gelassen, und das ist völlig in Ordnung.\n- **Regelmäßig prüfen.** Entsorgen Sie alles mit losen Fäden, kleinen Teilen oder offenen Nähten.\n\n## Futter als Rätsel\n\nIn freier Natur frisst eine Katze viele kleine Mahlzeiten und muss für jede etwas tun. Fummelbretter, Futterbälle und Schnüffelteppiche bringen etwas von dieser Arbeit zurück. Beginnen Sie mit einem einfachen Modell, damit Ihre Katze schnell Erfolg hat, und steigern Sie den Schwierigkeitsgrad nach und nach. Sie können auch ein paar Trockenfutterstücke im Zimmer verstecken und eine kleine Schatzsuche daraus machen. Rechnen Sie Leckerlis zur Tagesration, damit das Spielen nicht heimlich auf die Waage schlägt.\n\n## In die Höhe denken und Aussicht bieten\n\nKatzen erleben einen Raum dreidimensional. Regalbretter, ein stabiler Kratzbaum oder eine freigeräumte Fensterbank schaffen Revier, ohne dass Sie mehr Quadratmeter brauchen. Ein Platz am Fenster ist oft die beste Unterhaltung im ganzen Haus: Vögel, Menschen und vorbeiwehende Blätter sind Fernsehen zum Nulltarif. Ein Futterhäuschen vor dem Fenster, an einer für Vögel sicheren Stelle, macht das Programm noch besser.\n\nGeben Sie Ihrer Katze nicht nur Kletter-, sondern auch Versteckmöglichkeiten. Ein Karton, eine Kuschelhöhle oder ein Spalt unter dem Sofa lassen sie den Raum beobachten, ohne gesehen zu werden, und das beruhigt viele Katzen enorm.\n\n## Anzeichen, dass Ihre Katze mehr Beschäftigung braucht\n\nLangeweile sieht manchmal aus wie schlechtes Benehmen. Achten Sie auf:\n\n- Nächtliche Rennanfälle, lautes Miauen oder Wecken, um Aufmerksamkeit zu bekommen\n- Kratzen an Möbeln oder Knabbern an Pflanzen und Kabeln\n- Übermäßiges Putzen oder eine Katze, die fast den ganzen Tag schläft und sich für kaum etwas interessiert\n- Langsam steigendes Gewicht\n\nDiese Anzeichen können auch eine medizinische Ursache haben. Übermäßiges Putzen, plötzliche Veränderungen bei Aktivität oder Appetit und jede Veränderung beim Toilettengang gehören in die Tierarztpraxis, bevor Sie sie auf Langeweile schieben.\n\n## Kurze Checkliste\n\n- Zwei oder drei kurze Spieleinheiten am Tag, danach etwas Futter\n- Spielangeln nach dem Spielen wegräumen, Spielzeug für allein alle paar Tage tauschen\n- Mindestens ein Fummelbrett oder eine Futtersuche\n- Ein Fensterplatz, etwas zum Klettern und ein Versteck\n- Ab zur Tierärztin oder zum Tierarzt, wenn sich Verhalten oder Appetit plötzlich ändern",
       "slug": "so-beschaeftigen-sie-eine-wohnungskatze"
     },
     "seed-blends-and-treats-for-birds": {
       "title": "Körnermischungen und Leckerlis für Vögel",
-      "summary": "Eine ausgewogene Körnermischung mit gelegentlichen Leckerlis hält Vögel gesund.",
-      "bodyMd": "Körner sind die Grundlage, Leckerlis dienen dem Training und der Bindung.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "summary": "Körner sind ein guter Anfang, aber nicht das ganze Menü: So gelingt eine abwechslungsreiche Ernährung mit klug eingesetzten Leckerlis.",
+      "bodyMd": "Eine Schale Körner wirkt wie das naheliegende Vogelfutter, und für viele kleine Käfigvögel ist sie auch eine gute Grundlage. Doch nur Körner sind ein bisschen wie ein Leben von Frühstücksflocken: lecker, sättigend, aber es fehlt so einiges. Mit ein paar einfachen Gewohnheiten bekommt Ihr Wellensittich, Kanarienvogel oder Fink eine abwechslungsreiche, ausgewogene Ernährung, die das Gefieder glänzen lässt und für Energie sorgt.\n\n## Wissen, was Ihr Vogel in der Natur frisst\n\nVerschiedene Vögel brauchen verschiedene Speisepläne, also beginnen Sie bei der Art.\n\n- **Wellensittiche und andere kleine Sittiche** fressen in freier Natur Grassamen, dazu Triebe und Grünes. Sie fühlen sich mit einer hochwertigen Körnermischung plus Pellets und frischem Gemüse wohl.\n- **Kanarienvögel und Finken** sind ebenfalls Körnerfresser, freuen sich aber über Weichfutter, Grünes und ab und zu etwas Eifutter, vor allem in der Mauser.\n- **Größere Papageien** wie Nymphen- und Sonnensittiche brauchen noch mehr Abwechslung, und viele vogelkundige Tierärztinnen und Tierärzte empfehlen Pellets als Hauptbestandteil.\n\nWenn Sie unsicher sind, was zu Ihrem Vogel passt, fragen Sie in einer vogelkundigen Tierarztpraxis oder bei der Züchterin bzw. dem Züchter nach der aktuellen Empfehlung für die Art.\n\n## Eine gute Körnermischung erkennen\n\nEine gute Mischung ist sauber, frisch und passt zur Schnabelgröße. Achten Sie auf:\n\n- Pralle, glänzende Körner, nicht staubig, matt oder verklumpt\n- Mehrere Saatsorten statt hauptsächlich eines Füllstoffs\n- Ein klares Mindesthaltbarkeitsdatum und eine Verpackung, die sich gut verschließen lässt\n\nUnsere Gartensaaten-Mischung ist für kleine Käfigvögel gemacht und deckt den Körneranteil des Speiseplans gut ab. Lagern Sie Körner luftdicht in einem kühlen, trockenen Schrank. Riecht das Futter muffig, zeigt Gespinste oder winzige krabbelnde Punkte, gehört es in den Müll.\n\nEin Klassiker: Vögel schälen ihre Körner und lassen die leeren Hülsen im Napf. Ein Napf kann voll aussehen, obwohl fast nur Spelzen darin liegen. Pusten Sie die Hülsen täglich weg oder leeren und befüllen Sie den Napf einfach neu.\n\n## Pellets, Grünes und etwas Obst ergänzen\n\nKörner sind fettreich und arm an manchen Vitaminen und Mineralstoffen. Die Lücken füllen Sie mit:\n\n- **Pellets**, langsam neben den gewohnten Körnern eingeführt. Viele Vögel sind neuem Futter gegenüber misstrauisch, also haben Sie Geduld, das kann Wochen dauern.\n- **Frischem Gemüse** jeden Tag: Blattgrün, geraspelte Möhre, Brokkoli, Paprika, Zucchini. Alles gründlich waschen.\n- **Obst** als kleinere Ergänzung, etwa Apfel (ohne Kerne), Beeren oder Melone, denn es enthält viel Zucker.\n- **Einer Mineralquelle** wie Sepiaschale oder Mineralstein, an der viele kleine Vögel gern knabbern.\n\nKlemmen Sie Grünes an die Gitterstäbe oder bieten Sie es in einem eigenen Napf an, und entfernen Sie Frischfutter nach ein paar Stunden, damit nichts verdirbt.\n\n## Leckerlis: klein, besonders und nützlich\n\nLeckerlis sind großartig für Bindung und Training. Eine Kolbenhirse ist der Liebling vieler Wellensittiche und Finken, und unsere Kolbenhirse-Leckerli sind eine einfache Art, sie anzubieten. Brechen Sie ein kurzes Stück ab, statt den ganzen Kolben aufzuhängen, und halten Sie Leckerlis bei einem kleinen Teil der Tagesration.\n\nSetzen Sie Leckerlis gezielt ein: um einen schüchternen Vogel auf die Hand zu locken, um das Aufsteigen auf eine Sitzstange zu belohnen oder um ein neues Spielzeug interessant zu machen. Ein Leckerli, das immer da ist, ist nichts Besonderes mehr.\n\n## Was niemals in den Napf gehört\n\nManche Lebensmittel sind für Vögel giftig, schon in kleinen Mengen. Bieten Sie niemals an:\n\n- Avocado, in keiner Form\n- Schokolade, Kaffee, Tee oder andere koffeinhaltige Lebensmittel\n- Alkohol sowie sehr salzige, süße oder fettige Snacks\n- Zwiebel, Knoblauch, Obststeine und Apfelkerne\n\nAuch Dämpfe zählen. Überhitztes antihaftbeschichtetes Kochgeschirr kann Gase freisetzen, die für Vögel binnen Minuten tödlich sind. Halten Sie Vögel deshalb von der Küche fern und lassen Sie eine beschichtete Pfanne nie unbeaufsichtigt auf dem Herd. Sprays, Duftkerzen und Rauch haben in der Nähe des Käfigs ebenfalls nichts verloren.\n\n## Wasser und feste Abläufe\n\nFrisches Wasser jeden Tag ist Pflicht. Waschen Sie Näpfe und Tränken täglich, denn Körner und Kot landen schnell darin. Füttern Sie ungefähr zu denselben Zeiten und achten Sie darauf, wie viel Ihr Vogel frisst. So wissen Sie bald, was für ihn „normal“ ist.\n\nEin Vogel, der weniger frisst, sich aufplustert und still dasitzt oder dessen Kot sich verändert, kann krank sein. Vögel verbergen Krankheiten sehr gut, also warten Sie nicht: Rufen Sie noch am selben Tag eine vogelkundige Tierarztpraxis an.\n\n## Kurze Checkliste\n\n- Eine frische, artgerechte Körnermischung, Hülsen täglich entfernen\n- Pellets langsam einführen, dazu täglich frisches Gemüse\n- Obst und Hirse als kleine Extras, nicht als Hauptmahlzeit\n- Keine Avocado, Schokolade, kein Koffein oder Alkohol und keine Dämpfe aus beschichteten Pfannen\n- Täglich frisches Wasser und eine vogelkundige Tierarztpraxis, wenn Ihr Vogel nicht fit wirkt",
       "slug": "koernermischungen-und-leckerlis-fuer-voegel"
     },
     "setting-up-a-bird-cage": {
-      "title": "Einen Vogelkäfig einrichten",
-      "summary": "Sitzstangen in verschiedenen Höhen, ein Futterspender und Platz zum Flügelstrecken.",
-      "bodyMd": "Ein guter Käfig bedeutet Platz, Sicherheit und Abwechslung.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "title": "Den Vogelkäfig richtig einrichten",
+      "summary": "Platz zum Fliegen, Sitzstangen auf verschiedenen Höhen und eine durchdachte Aufteilung: So richten Sie einen Käfig ein, in dem sich Ihr Vogel wohlfühlt.",
+      "bodyMd": "Ein Käfig ist Schlafzimmer, Küche und Spielplatz Ihres Vogels in einem. Gut eingerichtet fühlt sich Ihr Vogel sicher, bleibt aktiv und ist leichter zu versorgen. In Eile eingerichtet haben Sie womöglich einen gestressten, gelangweilten Vogel, der ständig Körner über den Boden verteilt. So gelingt es vom ersten Tag an.\n\n## Die richtige Größe\n\nDer beste Käfig ist der größte, den Sie unterbringen und sauber halten können. Ihr Vogel sollte beide Flügel ganz ausbreiten können, ohne die Seiten zu berühren, und idealerweise von Stange zu Stange hüpfen und flattern.\n\n- **Breite ist wichtiger als Höhe** für die meisten kleinen Vögel, denn sie fliegen eher seitwärts als auf und ab.\n- **Der Gitterabstand** muss zur Art passen. Kleine Vögel wie Wellensittiche, Kanarienvögel und Finken brauchen einen engen Abstand von etwa 1 bis 1,2 cm, damit sie den Kopf nicht zwischen die Stäbe stecken können.\n- **Die Form**: Rechteckige Käfige bieten Ecken zum Zurückziehen und lassen sich leichter einrichten. Runde Käfige sehen hübsch aus, bieten aber weniger nutzbaren Platz.\n\nHalten Sie für Tierarztbesuche und Reisen einen separaten, kleineren Käfig bereit. Unser Kuppel-Reisekäfig ist genau dafür gemacht, und ein vertrauter Transportkäfig macht solche Termine deutlich entspannter.\n\n## Ein guter Platz im Raum\n\nVögel sind gesellig und gern dort, wo die Familie ist, aber nicht mitten im Trubel.\n\n- Stellen Sie den Käfig an eine Wand, damit eine Seite geschützt wirkt, ungefähr auf Brust- oder Augenhöhe.\n- Keine direkte Sonne, keine Zugluft, keine Heizung in der Nähe.\n- Nicht in die Küche. Kochdämpfe, besonders von überhitzten beschichteten Pfannen, können für Vögel tödlich sein.\n- Meiden Sie Plätze direkt am Fenster, an denen Katzen, Hunde oder Greifvögel von draußen hereinstarren können.\n\n## Sitzstangen: Abwechslung ist alles\n\nVögel stehen Tag und Nacht auf ihren Füßen, deshalb sind Sitzstangen wichtiger, als man denkt. Bieten Sie mehrere Stangen in **unterschiedlichen Durchmessern und Materialien** an: Naturholzäste, Seil und eine flache Stange zum Ausruhen. Verschiedene Oberflächen trainieren die Füße und beugen Druckstellen vor.\n\nBringen Sie die Stangen auf verschiedenen Höhen an, aber nicht direkt übereinander, sonst landet Kot auf den unteren. Lassen Sie in der Mitte genug Platz für kurze Flüge.\n\nEine Schaukel ist bei vielen kleinen Vögeln heiß begehrt. Unsere Seilsitzschaukel bringt Bewegung und guten Halt, und viele Wellensittiche machen sie zu ihrem Abendplatz.\n\n## Futter- und Wasserstellen\n\nPlatzieren Sie Futter und Wasser in der Nähe der Sitzstangen, damit Ihr Vogel gut herankommt, aber nie direkt darunter. Viele Halterinnen und Halter mögen einen hängenden Futterspender, der die Körner sauberer hält und verhindert, dass alles herausgeschleudert wird. Unser Hänge-Futterspender lässt sich direkt an die Gitterstäbe hängen.\n\nBieten Sie mindestens zwei Näpfe an, einen für Körner oder Pellets und einen für Frischfutter, dazu Wasser. Leben mehrere Vögel zusammen, richten Sie eine zusätzliche Futterstelle ein, damit kein schüchterner Vogel verdrängt wird.\n\n## Spielzeug und Beschäftigung\n\nVögel sind klug und brauchen etwas zu tun. Bieten Sie eine Mischung aus Spielzeug zum Knabbern, Zerfasern, Klettern und Läuten an und tauschen Sie jede Woche ein paar Teile aus. Überladen Sie den Käfig aber nicht, Ihr Vogel braucht Bewegungsfreiheit. Die beste Beschäftigung überhaupt ist Freiflug in einem sicheren, vogelgerechten Raum, am besten täglich.\n\n## Reinigungsroutine\n\nEin sauberer Käfig ist ein gesunder Käfig. Ein einfacher Rhythmus hat sich bewährt:\n\n- **Täglich:** Wasser wechseln, Futter auffrischen, Frischfutterreste entfernen und Bodeneinlage oder Papier tauschen.\n- **Wöchentlich:** Näpfe und Sitzstangen mit heißem Wasser und einem milden, vogelverträglichen Reiniger waschen und gut abspülen.\n- **Monatlich:** den ganzen Käfig gründlich reinigen und Gitter, Spielzeug und Stangen auf Schäden prüfen.\n\nWerfen Sie beim Saubermachen einen Blick auf den Kot. Veränderungen bei Farbe, Konsistenz oder Menge können das erste Anzeichen einer Krankheit sein, und Vögel verbergen Unwohlsein sehr gut. Wirkt etwas ungewöhnlich oder sitzt Ihr Vogel aufgeplustert und still da, wenden Sie sich sofort an eine vogelkundige Tierarztpraxis.\n\n## Kurze Checkliste\n\n- Ein Käfig, breit genug zum Ausbreiten der Flügel, mit artgerechtem Gitterabstand\n- Ein ruhiger, zugfreier Platz fern von Küche und direkter Sonne\n- Sitzstangen in verschiedenen Stärken und Materialien, nicht übereinander\n- Futter und Wasser nahe den Stangen, aber nie darunter\n- Ein paar Spielzeuge, wöchentlich getauscht, und täglicher Freiflug\n- Eine einfache tägliche und wöchentliche Reinigungsroutine",
       "slug": "einen-vogelkaefig-einrichten"
     },
     "starting-a-small-fish-tank": {
-      "title": "Ein kleines Aquarium starten",
-      "summary": "Lassen Sie das Aquarium sich einfahren, bevor die Fische einziehen, und setzen Sie sie dann langsam ein.",
-      "bodyMd": "Geduld ist die Geheimzutat eines gesunden Aquariums.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "title": "Das erste kleine Aquarium",
+      "summary": "Erst einrichten, dann einfahren, dann Fische nach und nach einsetzen: der entspannte Weg zum gesunden ersten Aquarium.",
+      "bodyMd": "Ein kleines Aquarium gehört zu den entspannendsten Dingen, die man zu Hause haben kann. Es ist aber auch ein kleines lebendiges Ökosystem, und der häufigste Anfängerfehler ist zu viel Tempo: Aquarium am Samstag aufbauen, Fische am Sonntag einsetzen. Geben Sie ihm ein paar Wochen und etwas Geduld, dann haben Sie jahrelang klares Wasser und gesunde Fische.\n\n## Becken und Standort wählen\n\nGrößere Becken sind tatsächlich leichter stabil zu halten, weil sich das Wasser langsamer verändert. Für das erste Aquarium sind rund 20 Liter ein sinnvolles Minimum für ein paar kleine Fische oder Garnelen. Unser Starter-Aquarium 20 L kommt als Komplettset, Sie müssen also keine Einzelteile zusammensuchen.\n\nWo das Becken steht, ist genauso wichtig wie das, was darin ist:\n\n- **Eine stabile, ebene Fläche.** Wasser wiegt etwa ein Kilo pro Liter, ein volles 20-Liter-Becken also deutlich über 20 kg.\n- **Keine direkte Sonne**, sie heizt das Wasser auf und fördert Algen.\n- **Abstand zu Heizung und Zugluft**, dafür eine Steckdose in der Nähe.\n- **Ein Platz, an dem Sie es genießen**, aber nicht direkt neben einer knallenden Tür.\n\n## Die Grundausstattung aufbauen\n\nSpülen Sie Kies oder Sand mit klarem Wasser (ohne Spülmittel), bis es sauber abläuft. Füllen Sie den Bodengrund ein und platzieren Sie dann Deko, Steine und Pflanzen. Fische fühlen sich mit Versteckmöglichkeiten viel sicherer. Unser Seidenpflanzen-Set bietet sofort Deckung ohne Pflegeaufwand, und später können Sie ein paar pflegeleichte echte Pflanzen ergänzen.\n\nFüllen Sie das Becken mit Leitungswasser, das Sie mit einem Wasseraufbereiter behandelt haben, der Chlor entfernt. Bauen Sie den Filter und für tropische Fische den Heizstab ein und schalten Sie beides an. Eine Beleuchtung wie unsere LED-Leiste mit sanftem Licht setzt das Becken schön in Szene. Lassen Sie sie etwa 8 Stunden am Tag per Zeitschaltuhr laufen, denn mehr Licht bedeutet vor allem mehr Algen.\n\n## Das Becken einfahren, bevor Fische kommen\n\nDieser Schritt entscheidet über Erfolg oder Misserfolg. Fische scheiden Ammoniak aus, und das ist giftig. In einem eingefahrenen Aquarium wandeln nützliche Bakterien, die vor allem im Filter leben, Ammoniak in Nitrit und dann in das viel harmlosere Nitrat um. Das ist der **Stickstoffkreislauf**, und einem ganz neuen Becken fehlen diese Bakterien noch.\n\nSo bauen Sie sie auf:\n\n- Lassen Sie den Filter **vier bis sechs Wochen** laufen, bevor Fische einziehen, und geben Sie eine kleine Ammoniakquelle hinzu (alle paar Tage eine Prise Fischfutter oder ein Ammoniakpräparat speziell für Aquarien).\n- Messen Sie Ammoniak, Nitrit und Nitrat mit einem **Tröpfchentest**.\n- Das Becken ist bereit, wenn Ammoniak und Nitrit beide bei null liegen und Nitrat nachweisbar wird.\n\nStarterbakterien aus der Flasche können den Prozess beschleunigen, aber nur der Test zeigt sicher, dass das Becken bereit ist.\n\n## Fische sorgfältig auswählen und langsam einsetzen\n\nKleine Becken passen zu kleinen, friedlichen Arten. Fragen Sie im Aquaristik-Fachhandel, welche Fische zu Ihrer Beckengröße, Ihrem Wasser und zueinander passen, und erkundigen Sie sich, wie groß sie ausgewachsen werden.\n\n- **Nicht überbesetzen.** Starten Sie mit wenigen Fischen und planen Sie den endgültigen Besatz so, dass Sie deutlich unter der Kapazität des Beckens bleiben.\n- **Setzen Sie Fische in kleinen Gruppen ein**, mit ein paar Wochen Abstand, damit die Bakterien mithalten können.\n- **Gewöhnen Sie neue Fische an**: Lassen Sie den geschlossenen Beutel etwa 15 Minuten schwimmen, damit sich die Temperatur angleicht, und keschern Sie die Fische dann ins Becken. Gießen Sie das Wasser aus dem Laden nicht mit hinein.\n- Manche Fische, etwa viele Salmler und Bärblinge, brauchen eine Gruppe, um sich sicher zu fühlen.\n\n## Füttern und wöchentliche Pflege\n\nÜberfüttern ist der zweite klassische Fehler. Geben Sie nur so viel, wie Ihre Fische in ein bis zwei Minuten fressen, ein- oder zweimal am Tag. Futterreste verrotten und belasten das Wasser.\n\nEine einfache Wochenroutine hält das Becken gesund:\n\n- Wechseln Sie **10 bis 20 Prozent des Wassers** gegen aufbereitetes Wasser mit derselben Temperatur.\n- Saugen Sie einen Teil des Bodengrunds ab, um Schmutz zu entfernen.\n- Wischen Sie Algen von der Scheibe.\n- Spülen Sie Filtermaterial nur in altem Beckenwasser aus, nie unter dem Wasserhahn, damit die guten Bakterien erhalten bleiben.\n\n## Auf Warnzeichen achten\n\nGesunde Fische schwimmen aktiv, fressen gierig und haben klare Augen und Flossen. Schnappen an der Oberfläche, angelegte Flossen, weiße Punkte oder Fische, die sich verstecken und nicht fressen, sind Warnsignale. Testen Sie zuerst das Wasser, denn dort beginnen die meisten Probleme, und machen Sie einen Teilwasserwechsel, wenn ein Wert erhöht ist. Wirken die Fische weiterhin krank, fragen Sie im Fachhandel oder in einer Tierarztpraxis mit Erfahrung bei Fischen nach, bevor Sie ein Mittel ins Wasser geben.\n\n## Kurze Checkliste\n\n- Ein stabiler Platz ohne direkte Sonne, auf einer tragfähigen Fläche\n- Bodengrund gespült, Deko drin, Wasser aufbereitet, Filter läuft\n- Vier bis sechs Wochen einfahren, per Wassertest bestätigt\n- Wenige kleine, verträgliche Fische auf einmal, keine Überbesetzung\n- Sparsam füttern und wöchentlich 10 bis 20 Prozent des Wassers wechseln",
       "slug": "ein-kleines-aquarium-starten"
     },
     "walking-gear-basics": {
-      "title": "Die Grundlagen der Gassi-Ausrüstung",
-      "summary": "Ein gut sitzendes Halsband und eine leuchtende Leine machen jeden Spaziergang sicherer und schöner.",
-      "bodyMd": "Gute Gassi-Ausrüstung sitzt eng und ist auch nach Einbruch der Dunkelheit gut zu sehen.\n\n## Worauf es ankommt\n\nDies ist Platzhaltertext für den Demo-Shop. Er beschreibt die Idee in wenigen Worten, und der echte Artikel wird ihn ersetzen.\n\n- Beginnen Sie klein und beobachten Sie, wie Ihr Tier reagiert.\n- Halten Sie die Einheiten kurz und positiv.\n- Ändern Sie Dinge langsam, eins nach dem anderen.\n\n## Ein kurzer Tipp\n\nJedes Tier ist anders. Wenn Sie etwas beunruhigt, sprechen Sie mit Ihrer Tierärztin oder Ihrem Tierarzt.",
+      "title": "Gassi-Ausrüstung: das Wichtigste",
+      "summary": "Halsband, Geschirr, Leine und die paar Extras, die jeden Spaziergang sicherer, leichter und schöner machen.",
+      "bodyMd": "Der Spaziergang ist für die meisten Hunde der Höhepunkt des Tages. Die richtige Ausrüstung erzieht Ihren Hund nicht für Sie, aber sie macht Spaziergänge sicherer, bequemer und für beide Enden der Leine deutlich entspannter. Sie brauchen keinen Schrank voller Zubehör: Ein paar gut gewählte, richtig angepasste Teile decken fast alles ab.\n\n## Halsband oder Geschirr?\n\nDie meisten Hunde profitieren von beidem.\n\n- **Ein Halsband** trägt die Hundemarke und ist praktisch für kurze Momente, etwa um an der Tür die Leine einzuhaken. Ein flaches, verstellbares Gurtband-Halsband wie unser Gurtband-Halsband für jeden Tag ist bequem für jeden Tag.\n- **Ein Geschirr** verteilt den Druck auf die Brust statt auf den Hals. Es ist die bessere Wahl für Hunde, die ziehen, für Welpen, die noch lernen, für kleine und kurzköpfige Rassen und für jeden Hund mit Problemen an Hals, Rücken oder Atmung.\n\nAchten Sie auf ein Geschirr mit **Y-förmiger Front**, das auf dem Brustbein aufliegt und die Schultern frei bewegen lässt. Gurte, die quer über die Schultern laufen, können den natürlichen Bewegungsablauf einschränken.\n\n## Die richtige Passform\n\nDie Passform ist wichtiger als jedes Extra.\n\n- **Halsband:** Zwei Finger sollten flach darunter passen. Zu locker, und es rutscht über den Kopf; zu eng, und es scheuert.\n- **Geschirr:** Zwei Finger unter jedem Gurt, nichts scheuert hinter den Vorderbeinen, und es verdreht sich nicht, wenn Ihr Hund sich bewegt.\n- **Welpen wachsen schnell.** Prüfen Sie die Passform alle ein bis zwei Wochen und kaufen Sie nicht für die Größe in sechs Monaten.\n\nKontrollieren Sie nach den ersten Spaziergängen, ob sich gerötete oder kahle Stellen zeigen. Dann muss etwas nachjustiert werden.\n\n## Die passende Leine\n\nFür den Alltag gibt Ihnen eine normale Leine von etwa 1,2 bis 2 Metern Kontrolle, ohne dass sie sich verheddert. Wählen Sie eine mit bequemer Schlaufe und einem robusten Karabiner, der sich auch mit kalten Fingern leicht öffnen lässt.\n\nAn dunklen Morgen und Winterabenden zählt Sichtbarkeit. Eine Leine mit reflektierenden Nähten wie unsere reflektierende Spazierleine fängt Scheinwerferlicht ein und macht Sie beide besser sichtbar. Ein Leuchtanhänger fürs Halsband ist ein günstiges, nützliches Extra.\n\nEin paar Worte zu anderen Leinen:\n\n- **Schleppleinen** (5 bis 10 Meter) sind ideal für Rückruftraining und zum Schnüffeln im offenen Gelände. Nutzen Sie sie aber mit Geschirr, nie mit Halsband, und halten Sie Abstand zu Straßen.\n- **Rollleinen** meiden Sie besser im Verkehr und an belebten Orten. Die dünne Schnur kann Verbrennungen verursachen, und Hunde lernen damit, dass Ziehen mehr Leine bringt.\n\n## Kennzeichnung und kleine Extras\n\nIn vielen Ländern, auch in weiten Teilen Europas, müssen Hunde gechippt sein, und vielerorts ist zusätzlich eine Marke mit Ihren Kontaktdaten Pflicht, wenn Ihr Hund unterwegs ist. Halten Sie die Registrierung des Chips aktuell, sobald Sie umziehen oder eine neue Telefonnummer haben.\n\nFür die Gassitasche:\n\n- Kotbeutel und ein Spender, den Sie an die Leine klippen\n- Ein paar kleine, weiche Leckerlis als Belohnung für schönes Laufen\n- Wasser und ein faltbarer Napf für lange oder warme Runden\n- Ein Handtuch im Auto für matschige Tage\n\n## Lockere Leine üben\n\nAusrüstung hilft, doch eine lockere Leine entsteht durch Übung. Belohnen Sie Ihren Hund großzügig, wenn er mit lockerer Leine neben Ihnen läuft. Zieht er, bleiben Sie stehen und warten, bis die Leine durchhängt, dann geht es weiter. Am Anfang ist das mühsam, wird aber schnell besser. Kurze, häufige Trainingsrunden funktionieren besser als ein langer Kampf.\n\nUnd denken Sie daran: Ein Spaziergang ist nicht nur Bewegung. Schnüffeln ist Kopfarbeit, die Ihren Hund auf gute Weise müde macht.\n\n## Ausrüstung (und Pfoten) pflegen\n\nPrüfen Sie Halsbänder, Geschirre und Leinen regelmäßig auf ausgefranste Stellen, gesprungene Karabiner oder lose Nähte, und ersetzen Sie Verschlissenes. Die meisten Gurtbänder lassen sich von Hand waschen und liegend trocknen.\n\nIm Sommer testen Sie den Asphalt mit dem Handrücken: Können Sie ihn keine fünf Sekunden dort lassen, ist er zu heiß für Pfoten. Im Winter spülen Sie Streusalz und Splitt nach dem Spaziergang ab. Lahmen, wunde Ballen oder Unlust beim Laufen sollten Sie kurz in der Tierarztpraxis abklären lassen.\n\n## Kurze Checkliste\n\n- Ein flaches Halsband mit Hundemarke und ein gut sitzendes Geschirr\n- Zwei Finger unter jedem Gurt, bei Welpen regelmäßig nachprüfen\n- Eine Leine von 1,2 bis 2 Metern, reflektierend für dunkle Tage\n- Chip-Registrierung auf dem neuesten Stand\n- Kotbeutel, Leckerlis und Wasser in der Gassitasche\n- Ausrüstung und Pfoten regelmäßig kontrollieren",
       "slug": "die-grundlagen-der-gassi-ausruestung"
     }
   }

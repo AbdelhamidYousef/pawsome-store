@@ -16,6 +16,8 @@ const code = (over: Record<string, unknown> = {}) => ({
   kind: 'percent',
   value: 10,
   minSpendCents: 3000,
+  valueByCurrency: {},
+  minSpendByCurrency: {},
   startsAt: null,
   endsAt: null,
   maxUses: 100,
@@ -94,6 +96,7 @@ describe('discount codes screen', () => {
     await userEvent.selectOptions(within(form).getByLabelText('Type'), 'fixed');
     await userEvent.type(within(form).getByLabelText('Amount off (EUR)'), '5,5');
     await userEvent.type(within(form).getByLabelText('Minimum spend (EUR)'), '19.99');
+    await userEvent.type(within(form).getByLabelText('Amount off (GBP)'), '4.50');
     await waitFor(() => expect(preview).toHaveTextContent('€5.50 off, min €19.99'));
     await userEvent.click(within(form).getByLabelText('First order only'));
     expect(preview).toHaveTextContent('€5.50 off, min €19.99, first order only');
@@ -105,6 +108,9 @@ describe('discount codes screen', () => {
         kind: 'fixed',
         value: 550,
         minSpendCents: 1999,
+        // The GBP minimum was left blank: with a EUR minimum the code is not offered in GBP.
+        valueByCurrency: { GBP: 450 },
+        minSpendByCurrency: {},
         maxUses: null,
         firstOrderOnly: true,
       }),
@@ -168,12 +174,16 @@ describe('bulk tiers screen', () => {
     let posted: unknown;
     server.use(
       http.get(`${API}/admin/bulk-tiers`, () =>
-        HttpResponse.json({ data: [{ id: 't1', minCents: 7500, percent: 5, active: true }] }),
+        HttpResponse.json({
+          data: [
+            { id: 't1', minCents: 7500, minByCurrency: { GBP: 6500 }, percent: 5, active: true },
+          ],
+        }),
       ),
       http.post(`${API}/admin/bulk-tiers`, async ({ request }) => {
         posted = await request.json();
         return HttpResponse.json(
-          { data: { id: 't2', minCents: 10000, percent: 10, active: true } },
+          { data: { id: 't2', minCents: 10000, minByCurrency: {}, percent: 10, active: true } },
           { status: 201 },
         );
       }),
@@ -181,13 +191,22 @@ describe('bulk tiers screen', () => {
     renderApp('/admin/promotions/tiers');
     const rows = await screen.findAllByTestId('admin-tier-row');
     expect(rows[0]).toHaveTextContent('€75.00');
+    expect(rows[0]).toHaveTextContent('£65.00');
     expect(rows[0]).toHaveTextContent('5% off');
     await userEvent.click(screen.getByRole('button', { name: 'New tier' }));
     const form = await screen.findByTestId('admin-tier-form');
     await userEvent.type(within(form).getByLabelText('Spend from (EUR)'), '100');
+    await userEvent.type(within(form).getByLabelText('Spend from (GBP)'), '85');
     await userEvent.type(within(form).getByLabelText('Percentage off'), '10');
     await userEvent.click(within(form).getByRole('button', { name: 'Create tier' }));
-    await waitFor(() => expect(posted).toEqual({ minCents: 10000, percent: 10, active: true }));
+    await waitFor(() =>
+      expect(posted).toEqual({
+        minCents: 10000,
+        minByCurrency: { GBP: 8500 },
+        percent: 10,
+        active: true,
+      }),
+    );
   });
 
   it('shows the overlapping-threshold 409', async () => {
@@ -226,6 +245,7 @@ describe('gift screen', () => {
             : {
                 id: 'g1',
                 thresholdCents: 4000,
+                thresholdByCurrency: { GBP: 3500 },
                 variantId: 'v1',
                 sku: 'BISC-1',
                 productName: 'Peanut Crunch Biscuits',
@@ -240,9 +260,10 @@ describe('gift screen', () => {
     );
     renderApp('/admin/promotions/gift');
     expect(await screen.findByTestId('gift-status')).toHaveTextContent(
-      'a free Peanut Crunch Biscuits (200 g, BISC-1) from €40.00',
+      'a free Peanut Crunch Biscuits (200 g, BISC-1) from €40.00 / £35.00',
     );
     expect(screen.getByLabelText('Spend from (EUR)')).toHaveValue('40.00');
+    expect(screen.getByLabelText('Spend from (GBP)')).toHaveValue('35.00');
     await userEvent.click(screen.getByRole('button', { name: 'Switch off' }));
     await waitFor(() => expect(screen.getByTestId('gift-status')).toHaveTextContent('Off'));
   });
@@ -276,7 +297,7 @@ describe('gift screen', () => {
     expect(
       await within(screen.getByTestId('admin-gift-form')).findByTestId('form-error'),
     ).toHaveTextContent('No variant has that SKU');
-    expect(put).toEqual({ thresholdCents: 4000, variant: 'NOPE' });
+    expect(put).toEqual({ thresholdCents: 4000, thresholdByCurrency: {}, variant: 'NOPE' });
   });
 });
 

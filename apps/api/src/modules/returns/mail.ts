@@ -1,6 +1,8 @@
 import type { Tx } from '../../db/client.ts';
+import { storeFor } from '../../emails/i18n/index.ts';
 import type { ReturnEmailKind, ReturnEmailPayload } from '../../emails/return-update.ts';
 import type * as checkoutRepo from '../checkout/repo.ts';
+import { productNamesByVariant } from '../i18n/translations.ts';
 import { enqueueEmail } from '../mail/outbox.ts';
 
 import type { ReturnItemWithLine, ReturnRow } from './repo.ts';
@@ -35,11 +37,21 @@ export async function queueReturnEmail(
   ret: ReturnRow,
   items: ReturnItemWithLine[],
 ): Promise<void> {
+  // Line names in the order's language (the lines keep the English snapshot).
+  const names = await productNamesByVariant(
+    items.map((i) => i.variantId),
+    storeFor(order.storeView).lang,
+    tx,
+  );
+  const localized = items.map((i) => {
+    const name = i.variantId ? names.get(i.variantId) : undefined;
+    return name ? { ...i, productName: name } : i;
+  });
   await enqueueEmail(tx, {
     kind,
     to: order.email,
     orderId: order.id,
-    payload: returnEmailPayload(order, ret, items),
+    payload: returnEmailPayload(order, ret, localized),
     dedupeKey: `${kind}:${ret.id}`,
   });
 }

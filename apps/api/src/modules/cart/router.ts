@@ -4,6 +4,8 @@ import {
   BulkAddCartItemsSchema,
   CartItemParamsSchema,
   CartResponseSchema,
+  StoreSwitchPreviewQuerySchema,
+  StoreSwitchPreviewResponseSchema,
   UpdateCartItemSchema,
 } from '@store/shared';
 import { Router as ExpressRouter, type Router } from 'express';
@@ -26,6 +28,20 @@ cartRouter.get('/cart', withExistingCart, async (req, res) => {
     data: req.cartId ? await service.getCart(req.cartId) : service.emptyCart(),
   });
 });
+// Before the shopper switches store: which lines have no price in the new store's currency.
+// A read like GET /cart, so it never creates a cart.
+const switchPreview = { query: StoreSwitchPreviewQuerySchema };
+cartRouter.get(
+  '/cart/switch-preview',
+  withExistingCart,
+  validate(switchPreview),
+  async (req, res) => {
+    const { query } = valid(req, switchPreview);
+    respond(res, StoreSwitchPreviewResponseSchema, {
+      data: await service.previewStoreSwitch(req.cartId, query.store),
+    });
+  },
+);
 cartRouter.use('/cart', withCart);
 
 const add = { body: AddCartItemSchema };

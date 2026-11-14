@@ -16,13 +16,11 @@ export const loyalty = {
   'loyalty.earn.points': { one: 'Earn {count} point', other: 'Earn {count} points' },
 
   // Footer note and charity page
-  'loyalty.charityNote.text':
-    '(a pretend shelter) has received {amount} so far. Demo only: no money moves.',
   'loyalty.charity.seoTitle': 'Our shelter',
   'loyalty.charity.seoDescription':
-    'Whisker Hollow Rescue, the (fictional) shelter Pawsome supports. A demo: no money moves.',
+    'Whisker Hollow Rescue is the shelter Pawsome supports. Round up at checkout or give your points.',
   'loyalty.charity.note':
-    'This is a demo store and the shelter is made up. Donations here are counted, but no money moves anywhere.',
+    'Every round-up at checkout and every point you give is added to the total below.',
   'loyalty.charity.error': 'We could not load the total just now.',
   'loyalty.charity.given': 'Given so far',
   'loyalty.charity.donations': { one: 'from {count} donation', other: 'from {count} donations' },
@@ -73,8 +71,7 @@ export const loyalty = {
   'loyalty.rewards.redeem.failed': 'We could not redeem that.',
   'loyalty.rewards.giveAwayTitle': 'Or give them away',
   'loyalty.rewards.donate.giveTo': 'Give points to',
-  'loyalty.rewards.donate.aboutShelter':
-    ', a pretend shelter (1 point = 1 cent; demo only, no money moves).',
+  'loyalty.rewards.donate.aboutShelter': ', the shelter we support (1 point = 1 cent).',
   'loyalty.rewards.donate.label': 'Points to donate',
   'loyalty.rewards.donate.button': 'Donate',
   'loyalty.rewards.donate.thanks': 'Thank you! {points} points went to the shelter.',
@@ -172,4 +169,7 @@ export const loyalty = {
 
   // Messages from outside (shared Zod rules)
   'msg.loyalty.emailInvalid': 'Enter a valid email address',
+  'loyalty.newsletter.perkTips': 'Care tips for the pets you pick',
+  'loyalty.newsletter.perkNew': 'First word on new toys and treats',
+  'loyalty.newsletter.perkEasy': 'One-click unsubscribe, any time',
 } satisfies Dictionary;

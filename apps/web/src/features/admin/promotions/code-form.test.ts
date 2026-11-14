@@ -134,9 +134,9 @@ describe('preview sentence', () => {
 
 describe('tier and gift forms', () => {
   it('parses euros and percent', () => {
-    expect(parseTierForm({ min: '75', percent: '5', active: true })).toEqual({
+    expect(parseTierForm({ min: '75', minBy: {}, percent: '5', active: true })).toEqual({
       ok: true,
-      input: { minCents: 7500, percent: 5, active: true },
+      input: { minCents: 7500, minByCurrency: {}, percent: 5, active: true },
     });
   });
   it.each([
@@ -145,16 +145,51 @@ describe('tier and gift forms', () => {
     [{ min: 'x', percent: '5' }, 'min'],
     [{ min: '75', percent: '' }, 'percent'],
   ])('refuses %j', (over, field) => {
-    const parsed = parseTierForm({ active: true, ...over });
+    const parsed = parseTierForm({ active: true, minBy: {}, ...over });
     expect(parsed.ok).toBe(false);
     if (!parsed.ok) expect(parsed.errors[field]).toBeTruthy();
   });
   it('needs a threshold above 0 and a SKU for the gift', () => {
-    expect(parseGiftForm({ threshold: '40', variant: ' SKU-1 ' })).toMatchObject({
+    expect(parseGiftForm({ threshold: '40', thresholdBy: {}, variant: ' SKU-1 ' })).toMatchObject({
       ok: true,
       input: { thresholdCents: 4000 },
     });
-    expect(parseGiftForm({ threshold: '0', variant: 'SKU-1' })).toMatchObject({ ok: false });
-    expect(parseGiftForm({ threshold: '40', variant: ' ' })).toMatchObject({ ok: false });
+    expect(parseGiftForm({ threshold: '0', thresholdBy: {}, variant: 'SKU-1' })).toMatchObject({
+      ok: false,
+    });
+    expect(parseGiftForm({ threshold: '40', thresholdBy: {}, variant: ' ' })).toMatchObject({
+      ok: false,
+    });
+  });
+});
+
+describe('amounts in the other store currencies (GBP)', () => {
+  it('sends a fixed code with its GBP amount and minimum, blank ones left out', () => {
+    const parsed = parseCodeForm(
+      form({ kind: 'fixed', value: '5', valueBy: { GBP: '4.50' }, minSpendBy: { GBP: '' } }),
+    );
+    expect(parsed).toMatchObject({
+      ok: true,
+      input: { value: 500, valueByCurrency: { GBP: 450 }, minSpendByCurrency: {} },
+    });
+  });
+  it('drops a GBP amount typed before switching the code to a percentage', () => {
+    const parsed = parseCodeForm(form({ kind: 'percent', valueBy: { GBP: '4' } }));
+    expect(parsed).toMatchObject({ ok: true, input: { valueByCurrency: {} } });
+  });
+  it('puts errors on the currency input', () => {
+    const bad = parseCodeForm(form({ kind: 'fixed', value: '5', valueBy: { GBP: 'x' } }));
+    expect(bad.ok || bad.errors['valueByCurrency.GBP']).toMatch(/GBP/);
+    const zero = parseCodeForm(form({ kind: 'fixed', value: '5', valueBy: { GBP: '0' } }));
+    expect(zero.ok || zero.errors['valueByCurrency.GBP']).toMatch(/above 0/);
+    const tier = parseTierForm({ min: '75', minBy: { GBP: '0' }, percent: '5', active: true });
+    expect(tier.ok || tier.errors['minByCurrency.GBP']).toBeTruthy();
+    const gift = parseGiftForm({ threshold: '40', thresholdBy: { GBP: '0' }, variant: 'SKU' });
+    expect(gift.ok || gift.errors['thresholdByCurrency.GBP']).toBeTruthy();
+  });
+  it('round-trips stored GBP amounts into the form', () => {
+    expect(
+      parseTierForm({ min: '75', minBy: { GBP: '65' }, percent: '5', active: true }),
+    ).toMatchObject({ ok: true, input: { minByCurrency: { GBP: 6500 } } });
   });
 });

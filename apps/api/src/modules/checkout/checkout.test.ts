@@ -352,9 +352,68 @@ describe('POST /checkout', () => {
       expect(res.status).toBe(409);
       expect(await allOrders()).toHaveLength(1);
     });
+
+    it.each(['processing', 'requires_capture', 'succeeded'])(
+      'leaves the pending order untouched when another tab confirmed the payment (%s)',
+      async (status) => {
+        const { variants } = await createProduct({ variants: [{ priceCents: 1000, stock: 10 }] });
+        const shopper = makeShopper(app);
+        await shopper.addToCart(variants[0]!.id, 1);
+        await shopper.call('post', '/checkout', checkoutBody());
+        const before = (await allOrders())[0]!;
+        // Tab A confirmed with Stripe; the webhook has not arrived. Tab B grows the cart and pays.
+        stripe.setStatus('pi_fake_1', status);
+        await shopper.call('post', '/cart/items', { variantId: variants[0]!.id, quantity: 2 });
+        const res = await shopper.call(
+          'post',
+          '/checkout',
+          checkoutBody({ shippingMethodCode: 'express' }),
+        );
+        expect(res.status).toBe(409);
+        expect(errorOf(res).code).toBe('CONFLICT');
+        // Nothing was re-totalled, so the late webhook still matches the order.
+        const after = (await allOrders())[0]!;
+        expect(after.totalCents).toBe(before.totalCents);
+        expect(after.shippingMethodCode).toBe('standard');
+        expect(await db.select().from(orderItems)).toMatchObject([{ quantity: 1 }]);
+        expect(await stockOf(variants[0]!.id)).toEqual({ quantity: 10, reserved: 1 });
+        expect(stripe.callsTo('update')).toHaveLength(0);
+      },
+    );
+
+    it('still re-prices while the shopper is in a 3-D Secure challenge (requires_action)', async () => {
+      const { variants } = await createProduct({ variants: [{ priceCents: 1000, stock: 10 }] });
+      const shopper = makeShopper(app);
+      await shopper.addToCart(variants[0]!.id, 1);
+      await shopper.call('post', '/checkout', checkoutBody());
+      stripe.setStatus('pi_fake_1', 'requires_action');
+      await shopper.call('post', '/cart/items', { variantId: variants[0]!.id, quantity: 2 });
+      const res = await shopper.call('post', '/checkout', checkoutBody());
+      expect(res.status).toBe(200);
+      expect(stripe.intents.get('pi_fake_1')?.amountCents).toBe((await allOrders())[0]!.totalCents);
+    });
   });
 
   describe('when Stripe fails', () => {
+    it('aborts before any write when the pre-check cannot reach Stripe', async () => {
+      const { variants } = await createProduct({ variants: [{ priceCents: 1000, stock: 10 }] });
+      const shopper = makeShopper(app);
+      await shopper.addToCart(variants[0]!.id, 1);
+      await shopper.call('post', '/checkout', checkoutBody());
+      const before = (await allOrders())[0]!;
+      await shopper.call('post', '/cart/items', { variantId: variants[0]!.id, quantity: 2 });
+
+      stripe.failNext('retrieve');
+      const res = await shopper.call('post', '/checkout', checkoutBody());
+      expect(res.status).toBe(502);
+      // The pending order, its lines, the stock hold and the intent are exactly as they were.
+      expect(await allOrders()).toEqual([before]);
+      expect(await db.select().from(orderItems)).toMatchObject([{ quantity: 1 }]);
+      expect(await stockOf(variants[0]!.id)).toEqual({ quantity: 10, reserved: 1 });
+      expect(stripe.callsTo('update')).toHaveLength(0);
+      expect(stripe.callsTo('create')).toHaveLength(1);
+    });
+
     it('cancels the new order, releases the stock and answers 502; a retry then works', async () => {
       const { variants } = await createProduct({ variants: [{ stock: 4 }] });
       const shopper = makeShopper(app);

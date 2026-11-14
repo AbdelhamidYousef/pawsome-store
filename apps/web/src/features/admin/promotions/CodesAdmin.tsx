@@ -21,6 +21,7 @@ import {
   type CodeFormState,
   type FieldErrors,
 } from './code-form';
+import { CurrencyAmounts } from './CurrencyAmounts';
 import { useAdminCodes, useDeleteCode, useSaveCode } from './queries';
 
 const KIND_LABEL: Record<DiscountKind, string> = {
@@ -112,6 +113,16 @@ function CodeForm({ code, onDone }: { code: AdminDiscountCode | undefined; onDon
           error={errors.value}
         />
       )}
+      {form.kind === 'fixed' && (
+        <CurrencyAmounts
+          label="Amount off"
+          field="valueByCurrency"
+          hint="Empty: this code does not work in the {currency} store"
+          values={form.valueBy}
+          errors={errors}
+          onChange={(valueBy) => setForm((f) => ({ ...f, valueBy }))}
+        />
+      )}
       <Input
         label="Minimum spend (EUR)"
         inputMode="decimal"
@@ -119,6 +130,14 @@ function CodeForm({ code, onDone }: { code: AdminDiscountCode | undefined; onDon
         value={form.minSpend}
         onChange={text('minSpend')}
         error={errors.minSpendCents ?? errors.minSpend}
+      />
+      <CurrencyAmounts
+        label="Minimum spend"
+        field="minSpendByCurrency"
+        hint="Empty: no minimum if the EUR one is empty, otherwise not offered in {currency}"
+        values={form.minSpendBy}
+        errors={errors}
+        onChange={(minSpendBy) => setForm((f) => ({ ...f, minSpendBy }))}
       />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Input

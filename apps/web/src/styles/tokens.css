@@ -29,6 +29,9 @@
   --color-success-soft: #dcfce7;
   --color-danger: #b91c1c;
   --color-danger-soft: #fee2e2;
+  /* Wishlist ("love") toast: a pink tint and its heart colour. */
+  --color-love: #db2777;
+  --color-love-soft: #fce7f3;
 
   /* Default pet theme (no data-pet) is the brand coral. */
   --pet-accent: var(--color-primary-bright);
@@ -41,6 +44,27 @@
 
   --font-display: 'Fredoka Variable', ui-rounded, 'Nunito Sans Variable', system-ui, sans-serif;
   --font-body: 'Nunito Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Weights. Fredoka is a chunky rounded face: at 700 every heading shouts, so the heaviest weight
+     in the shop is 600. Both fonts are variable, so 550 is a real in-between weight, not a fallback.
+     globals.css points Tailwind's font-bold / font-semibold at these. */
+  --weight-bold: 600;
+  --weight-semibold: 550;
+  --weight-body: 400;
+
+  /* Vertical gap between homepage sections. Generous on purpose: each section gets room to be
+     looked at on its own, like a modern DTC store. Phones get a little over half of it. */
+  --space-section: 4.5rem;
+
+  /* Scrollbars: a thin rounded pill in the brand coral on a transparent track. */
+  --scrollbar-thumb: #f3a08c;
+  --scrollbar-thumb-hover: var(--color-primary-bright);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --space-section: 8rem;
+  }
 }
 
 [data-pet='dog'] {

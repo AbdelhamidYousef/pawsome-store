@@ -9,7 +9,7 @@ export const returns = {
   'returns.asked': 'Asked {date} · {reason}',
   'returns.whyDeclined': 'Why we declined:',
   'returns.refunded': 'Refunded {amount}',
-  'returns.refundedSimulated': 'Refunded {amount} (demo: simulated, no money moved)',
+  'returns.refundedSimulated': 'Refunded {amount}',
   'returns.noRefund': 'No refund for this request.',
   'returns.expectedRefund': 'Expected refund {amount}',
   'returns.progress': 'Return progress',

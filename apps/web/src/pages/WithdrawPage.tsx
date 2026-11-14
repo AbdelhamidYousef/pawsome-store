@@ -67,11 +67,11 @@ export default function WithdrawPage() {
 
   if (receipt) {
     return (
-      <Container className="py-8" data-testid={TEST_IDS.pageWithdraw}>
+      <Container className="py-16 sm:py-24" data-testid={TEST_IDS.pageWithdraw}>
         <Seo title={t('returns.withdraw.doneSeo')} noindex />
         <section
           aria-labelledby="withdraw-done"
-          className="max-w-xl rounded-card border-2 border-success bg-success-soft p-5"
+          className="mx-auto max-w-xl rounded-card border-2 border-success bg-success-soft p-6 sm:p-8"
           data-testid={TEST_IDS.withdrawSuccess}
         >
           <h1 id="withdraw-done" className="font-display text-2xl font-bold">
@@ -97,57 +97,61 @@ export default function WithdrawPage() {
   }
 
   return (
-    <Container className="py-8" data-testid={TEST_IDS.pageWithdraw}>
+    <Container className="pb-16 pt-10 sm:pb-24 sm:pt-14" data-testid={TEST_IDS.pageWithdraw}>
       <Seo title={t('returns.withdraw.title')} description={t('returns.withdraw.seoDescription')} />
-      <h1 className="font-display text-3xl font-bold sm:text-4xl">{t('returns.withdraw.title')}</h1>
-      <p className="mt-2 max-w-prose text-muted">
-        {t('returns.withdraw.intro')}{' '}
-        <Link to="/returns" className="font-semibold text-primary-strong underline">
-          {t('returns.withdraw.returnsLink')}
-        </Link>
-        .
-      </p>
-      <form
-        onSubmit={submit}
-        noValidate
-        data-testid={TEST_IDS.withdrawForm}
-        className="mt-5 flex max-w-xl flex-col gap-4"
-      >
-        <FormAlert message={fieldError ?? (send.error ? messageFor(send.error, t, tm) : null)} />
-        <Input
-          label={t('returns.withdraw.orderNumber')}
-          placeholder="PW-2026-000123"
-          autoComplete="off"
-          value={orderNumber}
-          onChange={(e) => setOrderNumber(e.target.value)}
-        />
-        <Input
-          label={t('returns.withdraw.email')}
-          type="email"
-          autoComplete="email"
-          inputMode="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Textarea
-          label={t('returns.withdraw.items')}
-          hint={t('returns.withdraw.itemsHint')}
-          rows={3}
-          maxLength={500}
-          value={itemsText}
-          onChange={(e) => setItemsText(e.target.value)}
-        />
-        <Textarea
-          label={t('returns.withdraw.reason')}
-          rows={3}
-          maxLength={1000}
-          value={reason}
-          onChange={(e) => setReason(e.target.value)}
-        />
-        <Button type="submit" loading={send.isPending}>
+      <div className="mx-auto max-w-xl">
+        <h1 className="text-center font-display text-4xl font-semibold sm:text-5xl">
           {t('returns.withdraw.title')}
-        </Button>
-      </form>
+        </h1>
+        <p className="mt-3 text-center text-lg text-muted">
+          {t('returns.withdraw.intro')}{' '}
+          <Link to="/returns" className="font-semibold text-primary-strong underline">
+            {t('returns.withdraw.returnsLink')}
+          </Link>
+          .
+        </p>
+        <form
+          onSubmit={submit}
+          noValidate
+          data-testid={TEST_IDS.withdrawForm}
+          className="mt-8 flex flex-col gap-4 rounded-card bg-surface p-6 shadow-card sm:p-8"
+        >
+          <FormAlert message={fieldError ?? (send.error ? messageFor(send.error, t, tm) : null)} />
+          <Input
+            label={t('returns.withdraw.orderNumber')}
+            placeholder="PW-2026-000123"
+            autoComplete="off"
+            value={orderNumber}
+            onChange={(e) => setOrderNumber(e.target.value)}
+          />
+          <Input
+            label={t('returns.withdraw.email')}
+            type="email"
+            autoComplete="email"
+            inputMode="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Textarea
+            label={t('returns.withdraw.items')}
+            hint={t('returns.withdraw.itemsHint')}
+            rows={3}
+            maxLength={500}
+            value={itemsText}
+            onChange={(e) => setItemsText(e.target.value)}
+          />
+          <Textarea
+            label={t('returns.withdraw.reason')}
+            rows={3}
+            maxLength={1000}
+            value={reason}
+            onChange={(e) => setReason(e.target.value)}
+          />
+          <Button type="submit" loading={send.isPending}>
+            {t('returns.withdraw.title')}
+          </Button>
+        </form>
+      </div>
     </Container>
   );
 }

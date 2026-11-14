@@ -118,7 +118,7 @@ describe('summary', () => {
     expect(await screen.findByTestId('cart-total-estimate')).toHaveTextContent('€14.24');
     expect(screen.getByText(/Shipping \(estimate, standard delivery\)/)).toBeVisible();
     expect(screen.getByText('€4.90')).toBeVisible();
-    expect(screen.getByText('Demo store: no tax is charged.')).toBeVisible();
+    expect(screen.getByText('Prices include VAT where it applies.')).toBeVisible();
     expect(screen.queryByText(/worked out at checkout/)).not.toBeInTheDocument();
   });
 

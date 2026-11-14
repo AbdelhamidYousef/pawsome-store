@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 import { ApiError } from '../api/client';
 import { sendContactMessage } from '../api/contact';
+import { ChevronRightIcon } from '../components/icons';
 import { Container } from '../components/layout/Container';
 import { Seo } from '../components/Seo';
 import { Button } from '../components/ui/Button';
@@ -32,6 +33,19 @@ const TOPIC_KEYS: Record<ContactTopic, StringKey> = {
   privacy: 'content.contact.topic.privacy',
   other: 'content.contact.topic.other',
 };
+
+const INFO: readonly (readonly [StringKey, StringKey])[] = [
+  ['content.contact.replyLabel', 'content.contact.replyValue'],
+  ['content.contact.hoursLabel', 'content.contact.hoursValue'],
+  ['content.contact.emailLabel', 'content.contact.emailValue'],
+];
+
+const QUICK_LINKS: readonly (readonly [string, StringKey])[] = [
+  ['/help', 'shell.footer.helpCentre'],
+  ['/track-order', 'shell.footer.trackOrder'],
+  ['/returns', 'shell.footer.legalReturns'],
+  ['/shipping', 'shell.footer.legalShipping'],
+];
 
 function messageFor(error: unknown, t: TFunction): string {
   if (error instanceof ApiError && error.status === 429) {
@@ -94,14 +108,14 @@ export default function ContactPage() {
 
   if (receipt) {
     return (
-      <Container className="py-8" data-testid={TEST_IDS.pageContact}>
+      <Container className="py-16 sm:py-24" data-testid={TEST_IDS.pageContact}>
         <Seo title={t('content.contact.sentTitle')} noindex />
         <section
           aria-labelledby="contact-done"
-          className="max-w-xl rounded-card border-2 border-success bg-success-soft p-5"
+          className="mx-auto max-w-xl rounded-card border-2 border-success bg-success-soft p-6 text-center sm:p-10"
           data-testid={TEST_IDS.contactSuccess}
         >
-          <h1 id="contact-done" className="font-display text-2xl font-bold">
+          <h1 id="contact-done" className="font-display text-3xl font-semibold">
             {t('content.contact.thanks')}
           </h1>
           <p className="mt-2">
@@ -119,92 +133,145 @@ export default function ContactPage() {
   }
 
   return (
-    <Container className="py-8" data-testid={TEST_IDS.pageContact}>
+    <Container className="pb-16 pt-10 sm:pb-24 sm:pt-14" data-testid={TEST_IDS.pageContact}>
       <Seo title={t('content.contact.title')} description={t('content.contact.seoDescription')} />
-      <h1 className="font-display text-3xl font-bold sm:text-4xl">{t('content.contact.title')}</h1>
-      <p className="mt-2 max-w-prose text-muted">
-        {t('content.contact.intro')}{' '}
-        <Link to="/help" className="font-semibold text-primary-strong underline">
-          {t('content.contact.helpLink')}
-        </Link>
-        .
-      </p>
-      <form
-        onSubmit={submit}
-        noValidate
-        data-testid={TEST_IDS.contactForm}
-        className="relative mt-5 flex max-w-xl flex-col gap-4"
-      >
-        <FormAlert message={send.error ? messageFor(send.error, t) : null} />
-        <Input
-          ref={nameRef}
-          label={t('content.contact.name')}
-          autoComplete="name"
-          value={values.name}
-          onChange={set('name')}
-          error={errors.name}
-        />
-        <Input
-          ref={emailRef}
-          label={t('content.contact.email')}
-          type="email"
-          autoComplete="email"
-          inputMode="email"
-          hint={t('content.contact.emailHint')}
-          value={values.email}
-          onChange={set('email')}
-          error={errors.email}
-        />
-        <Select
-          ref={topicRef}
-          label={t('content.contact.topic')}
-          value={values.topic}
-          onChange={set('topic')}
-          error={errors.topic}
-        >
-          <option value="">{t('content.contact.topicChoose')}</option>
-          {CONTACT_TOPICS.map((topic) => (
-            <option key={topic} value={topic}>
-              {t(TOPIC_KEYS[topic])}
-            </option>
-          ))}
-        </Select>
-        <Input
-          label={t('content.contact.order')}
-          placeholder="PW-2026-000123"
-          autoComplete="off"
-          value={values.orderNumber}
-          onChange={set('orderNumber')}
-        />
-        <Textarea
-          ref={messageRef}
-          label={t('content.contact.message')}
-          rows={6}
-          maxLength={2000}
-          value={values.message}
-          onChange={set('message')}
-          error={errors.message}
-        />
-        {/* Honeypot: out of sight and out of the tab order for people; a script that fills every
-            input fills this one too, and the API then drops the message silently. */}
-        <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
-          <label>
-            {t('content.contact.honeypot')}
-            <input
-              type="text"
-              name="website"
-              tabIndex={-1}
-              autoComplete="off"
-              value={values.website}
-              onChange={set('website')}
-              data-testid={TEST_IDS.contactHoneypot}
-            />
-          </label>
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-16">
+        <div className="min-w-0">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary-strong">
+            {t('content.contact.eyebrow')}
+          </p>
+          <h1 className="mt-2 font-display text-4xl font-semibold sm:text-5xl">
+            {t('content.contact.title')}
+          </h1>
+          <p className="mt-4 text-lg text-muted">
+            {t('content.contact.intro')}{' '}
+            <Link to="/help" className="font-semibold text-primary-strong underline">
+              {t('content.contact.helpLink')}
+            </Link>
+            .
+          </p>
+
+          <section aria-labelledby="contact-about" className="mt-10">
+            <h2 id="contact-about" className="font-display text-xl font-semibold">
+              {t('content.contact.aboutTitle')}
+            </h2>
+            <p className="mt-2 leading-relaxed">{t('content.contact.about')}</p>
+          </section>
+
+          <dl className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            {INFO.map(([label, value]) => (
+              <div key={label} className="rounded-card bg-primary-soft p-4">
+                <dt className="text-sm font-semibold text-primary-strong">{t(label)}</dt>
+                <dd className="mt-1 text-sm leading-snug">{t(value)}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <nav aria-labelledby="contact-quick" className="mt-10">
+            <h2 id="contact-quick" className="font-display text-xl font-semibold">
+              {t('content.contact.quickTitle')}
+            </h2>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              {QUICK_LINKS.map(([to, label]) => (
+                <li key={to}>
+                  <Link
+                    to={to}
+                    className="group flex min-h-12 items-center justify-between gap-2 rounded-control border border-line bg-surface px-4 font-semibold transition-colors hover:border-primary-strong hover:text-primary-strong"
+                  >
+                    {t(label)}
+                    <ChevronRightIcon className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-        <Button type="submit" loading={send.isPending}>
-          {t('content.contact.send')}
-        </Button>
-      </form>
+
+        <section
+          aria-labelledby="contact-form-title"
+          className="min-w-0 self-start rounded-card bg-surface p-6 shadow-card sm:p-8 lg:sticky lg:top-24"
+        >
+          <h2 id="contact-form-title" className="font-display text-2xl font-semibold">
+            {t('content.contact.formTitle')}
+          </h2>
+          <form
+            onSubmit={submit}
+            noValidate
+            data-testid={TEST_IDS.contactForm}
+            className="relative mt-6 flex flex-col gap-4"
+          >
+            <FormAlert message={send.error ? messageFor(send.error, t) : null} />
+            <Input
+              ref={nameRef}
+              label={t('content.contact.name')}
+              autoComplete="name"
+              value={values.name}
+              onChange={set('name')}
+              error={errors.name}
+            />
+            <Input
+              ref={emailRef}
+              label={t('content.contact.email')}
+              type="email"
+              autoComplete="email"
+              inputMode="email"
+              hint={t('content.contact.emailHint')}
+              value={values.email}
+              onChange={set('email')}
+              error={errors.email}
+            />
+            <Select
+              ref={topicRef}
+              label={t('content.contact.topic')}
+              value={values.topic}
+              onChange={set('topic')}
+              error={errors.topic}
+            >
+              <option value="">{t('content.contact.topicChoose')}</option>
+              {CONTACT_TOPICS.map((topic) => (
+                <option key={topic} value={topic}>
+                  {t(TOPIC_KEYS[topic])}
+                </option>
+              ))}
+            </Select>
+            <Input
+              label={t('content.contact.order')}
+              placeholder="PW-2026-000123"
+              autoComplete="off"
+              value={values.orderNumber}
+              onChange={set('orderNumber')}
+            />
+            <Textarea
+              ref={messageRef}
+              label={t('content.contact.message')}
+              rows={6}
+              maxLength={2000}
+              value={values.message}
+              onChange={set('message')}
+              error={errors.message}
+            />
+            {/* Honeypot: out of sight and out of the tab order for people; a script that fills every
+            input fills this one too, and the API then drops the message silently. */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+              <label>
+                {t('content.contact.honeypot')}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={values.website}
+                  onChange={set('website')}
+                  data-testid={TEST_IDS.contactHoneypot}
+                />
+              </label>
+            </div>
+            <Button type="submit" loading={send.isPending}>
+              {t('content.contact.send')}
+            </Button>
+          </form>
+        </section>
+      </div>
     </Container>
   );
 }

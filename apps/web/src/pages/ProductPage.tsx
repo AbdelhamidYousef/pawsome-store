@@ -5,7 +5,7 @@ import { useLocation, useNavigate, useParams, useSearchParams } from 'react-rout
 import { ApiError } from '../api/client';
 import { Breadcrumbs, type Crumb } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { MemberPrice, MemberTeaser, memberBeatsSale } from '../components/ui/MemberPrice';
@@ -129,7 +129,7 @@ function ProductView({ product }: { product: ProductDetail }) {
   ];
   const attributes = ATTRIBUTE_LABELS.flatMap(([key, label]) => {
     const value = product.attributes[key];
-    return value ? [{ label: t(label), value: formatFacetValue(key, value) }] : [];
+    return value ? [{ label: t(label), value: formatFacetValue(key, value, t) }] : [];
   });
 
   return (
@@ -138,6 +138,7 @@ function ProductView({ product }: { product: ProductDetail }) {
         title={product.name}
         description={product.description.slice(0, 155)}
         canonical={`/products/${product.slug}`}
+        alternates={slugAlternates('products', product.slugs)}
         {...(jsonLdFor(product) && { jsonLd: jsonLdFor(product) })}
       />
       <Container className="py-6">
@@ -323,7 +324,12 @@ function ProductView({ product }: { product: ProductDetail }) {
           intro={t('pdp.page.gallery.intro')}
         />
         <KitsBlock kits={product.kits} currency={product.price.currency} />
-        <BoughtTogether productSlug={product.slug} productName={product.name} variant={variant} />
+        <BoughtTogether
+          productSlug={product.slug}
+          productName={product.name}
+          variant={variant}
+          image={product.images.find((i) => i.variantId === variantId) ?? product.images[0] ?? null}
+        />
         <RelatedStrip productSlug={product.slug} />
         <RecentlyViewed excludeId={product.id} />
       </Container>

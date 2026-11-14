@@ -238,7 +238,7 @@ describe('review form', () => {
   it('hides the photo picker when uploads are switched off', async () => {
     const form = await openForm(makeReviewList([], { uploadsEnabled: false }));
     expect(within(form).queryByLabelText(/Photos/)).not.toBeInTheDocument();
-    expect(within(form).getByText(/switched off in this demo/)).toBeInTheDocument();
+    expect(within(form).getByText(/Photo uploads are coming soon/)).toBeInTheDocument();
   });
 
   it('shows a server error such as a duplicate review', async () => {

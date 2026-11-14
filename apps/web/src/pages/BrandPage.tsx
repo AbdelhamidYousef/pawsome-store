@@ -4,11 +4,12 @@ import { useParams } from 'react-router-dom';
 import { ApiError } from '../api/client';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Spinner } from '../components/ui/Spinner';
 import { hasActiveFilters, useProductListParams } from '../features/catalog/list-params';
 import { ProductListing } from '../features/catalog/ProductListing';
+import { BrandMark } from '../features/merchandising/BrandMark';
 import { useBrand } from '../features/merchandising/queries';
 import { useCanonicalSlug } from '../features/stores/useCanonicalSlug';
 import { useT } from '../i18n';
@@ -53,11 +54,12 @@ export default function BrandPage() {
 
   const variant = hasActiveFilters(query) || query.sort !== undefined;
   return (
-    <Container className="py-6" data-testid={TEST_IDS.pageBrand}>
+    <Container className="pb-16 pt-6 sm:pb-24" data-testid={TEST_IDS.pageBrand}>
       <Seo
         title={brand.name}
         description={brand.tagline}
         canonical={`/brands/${brand.slug}`}
+        alternates={slugAlternates('brands', brand.slugs)}
         noindex={variant}
       />
       <Breadcrumbs
@@ -67,15 +69,40 @@ export default function BrandPage() {
           { label: brand.name },
         ]}
       />
-      <div
-        className="mt-4 rounded-card border-l-8 bg-surface p-6 shadow-card sm:p-8"
-        style={{ borderLeftColor: brand.accentColor }}
+      <section
+        aria-labelledby="brand-title"
+        className="mt-6 rounded-card p-6 sm:p-10"
+        style={{ backgroundColor: `color-mix(in srgb, ${brand.accentColor} 14%, white)` }}
       >
-        <h1 className="break-words font-display text-3xl font-bold sm:text-4xl">{brand.name}</h1>
-        <p className="mt-1 font-semibold text-muted">{brand.tagline}</p>
-        {brand.story && <p className="mt-3 max-w-prose">{brand.story}</p>}
-      </div>
-      <div className="mt-6">
+        <div className="grid items-center gap-6 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[15rem_minmax(0,1fr)]">
+          <BrandMark
+            name={brand.name}
+            accentColor={brand.accentColor}
+            logoUrl={brand.logoUrl}
+            eager
+            className="aspect-square w-28 rounded-card shadow-card sm:w-36 md:w-full"
+            initialsClassName="text-5xl md:text-7xl"
+          />
+          <div className="min-w-0">
+            <h1
+              id="brand-title"
+              className="break-words font-display text-4xl font-semibold sm:text-5xl"
+            >
+              {brand.name}
+            </h1>
+            <p className="mt-2 text-lg font-semibold text-ink/80">{brand.tagline}</p>
+            {brand.story && (
+              <>
+                <h2 className="mt-6 text-sm font-semibold uppercase tracking-wider text-muted">
+                  {t('catalog.brand.storyTitle')}
+                </h2>
+                <p className="mt-2 max-w-prose text-lg leading-relaxed">{brand.story}</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+      <div className="mt-10 sm:mt-14">
         <ProductListing listId={`brand-${brand.slug}`} brand={brand.slug} />
       </div>
     </Container>

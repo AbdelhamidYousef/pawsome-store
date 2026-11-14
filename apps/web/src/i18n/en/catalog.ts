@@ -138,7 +138,7 @@ export const catalog = {
   'catalog.brands.description': 'The Pawsome house brands: bakes, beds, habitat gear and more.',
   'catalog.brands.title': 'Our brands',
   'catalog.brands.intro':
-    'Every brand here is our own, made up by us and tested by a very fussy panel of pets.',
+    'Six labels, one standard: every product is tested at home by our fussy panel of pets before it reaches the shop.',
   'catalog.brands.loadError': 'We could not load the brands.',
   'catalog.collection.loadError': 'We could not load this collection',
   'catalog.collection.loading': 'Loading collection',
@@ -146,4 +146,28 @@ export const catalog = {
 
   // Messages from outside
   'msg.catalog.priceFormat': 'Enter a price like 12.50',
+  'catalog.brands.shop': 'Shop the brand',
+  'catalog.brand.storyTitle': 'Our story',
+  'catalog.quickAdd.add': 'Add to cart',
+  'catalog.quickAdd.added': 'Added',
+  'catalog.quickAdd.notify': 'Notify me',
+  'catalog.quickAdd.notifyLabel': 'Notify me when {name} is back',
+  'catalog.quickAdd.details': 'View full details',
+  'catalog.quickAdd.soldOutNote':
+    'This option is sold out. Leave your email and we will tell you when it is back.',
+  'catalog.quickAdd.loadError': 'We could not load this product. Please try again.',
+  'catalog.quickAdd.addShort': 'Add to cart',
+  'catalog.quickAdd.forProduct': '{name}',
+  'catalog.material.cotton': 'Cotton',
+  'catalog.material.rope': 'Rope',
+  'catalog.material.rubber': 'Rubber & silicone',
+  'catalog.material.plush': 'Plush',
+  'catalog.material.fabric': 'Fleece & fabric',
+  'catalog.material.nylon': 'Nylon',
+  'catalog.material.metal': 'Metal',
+  'catalog.material.ceramic': 'Ceramic',
+  'catalog.material.plastic': 'Plastic',
+  'catalog.material.glass': 'Glass',
+  'catalog.material.wood': 'Wood & bamboo',
+  'catalog.material.natural': 'Natural materials',
 } satisfies Dictionary;

@@ -23,12 +23,31 @@ const PET_LABELS: Record<string, StringKey> = {
   reptile: 'catalog.facet.petReptile',
 };
 
+// The seed's material vocabulary (apps/api/src/db/seed/materials.ts). A value an admin typed by
+// hand has no entry and is shown as typed.
+const MATERIAL_LABELS: Record<string, StringKey> = {
+  cotton: 'catalog.material.cotton',
+  rope: 'catalog.material.rope',
+  rubber: 'catalog.material.rubber',
+  plush: 'catalog.material.plush',
+  fabric: 'catalog.material.fabric',
+  nylon: 'catalog.material.nylon',
+  metal: 'catalog.material.metal',
+  ceramic: 'catalog.material.ceramic',
+  plastic: 'catalog.material.plastic',
+  glass: 'catalog.material.glass',
+  wood: 'catalog.material.wood',
+  natural: 'catalog.material.natural',
+};
+
 // Facet values are raw data ("small", "all", "baked meat and oat treats"); this makes them
 // readable without hardcoding which values exist.
 export function formatFacetValue(key: string, value: string, t: TFunction = defaultT): string {
   const petKey = PET_LABELS[value];
   if (key === 'pet') return petKey ? t(petKey) : capitalise(value);
   if (key === 'ageStage' && value === 'all') return t('catalog.facet.allAges');
+  const materialKey = key === 'material' ? MATERIAL_LABELS[value] : undefined;
+  if (materialKey) return t(materialKey);
   return capitalise(value);
 }
 

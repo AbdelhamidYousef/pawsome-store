@@ -9,24 +9,29 @@ Written by the build sessions for the owner and for the next session.
   (stores `/eu-en/`, `/uk-en/` in GBP, `/de-de/`, `/fr-fr/`), repo
   <https://github.com/AbdelhamidYousef/pawsome-store>. CI green on `main` (typecheck/lint/format,
   unit + integration, e2e, gitleaks, audit). No worktree or lane is open; `feat/*` branches are merged.
-- Counts on the final tree: shared 338, web 969, API 1,462 + 2 skipped (live Stripe), e2e 79 + 1
-  skipped (real card).
+- Counts on the final tree (after the polish pass, below): shared 338, web 1,015, API 1,504 + 2
+  skipped (live Stripe), e2e 83 + 1 skipped (real card).
+- **Polish pass shipped 2026-11-14**: new design, quick add, bought-together picks, 12 brands,
+  35,751 reviews, 118 Gemini images. Details and what is still open: "Polish pass" below.
 - Deploy: one Vercel project (web static + Express as a function on the same origin), Neon
   Frankfurt, Stripe sandbox (test mode), hourly jobs via GitHub Actions. See `docs/DEPLOYMENT.md`.
   A schema change must be migrated on Neon (direct URL, from a shell) **before** the push that needs
   it; the seed is an upsert and safe to re-run on Neon.
 - Leftovers and known issues (none blocks the demo):
-  1. Checkout race across tabs while a payment is confirming (details under Known follow-ups).
-  2. Admin edits EUR promotion/shipping amounts only; GBP ones are seeded.
-  3. No confirm dialog when switching store with a full cart (lines without a price in the new
-     currency drop out).
-  4. hreflang alternates carry the English slug (works via redirect; proper fix in the 21 notes).
-  5. Product names inside emails are English snapshots.
-  6. A free gift without a GBP price is still given in the UK store (recorded at 0).
+  1. ~~Checkout race across tabs while a payment is confirming~~ fixed 2026-11-14 (`fix/leftovers`): Stripe is asked before re-pricing.
+  2. ~~Admin edits EUR promotion/shipping amounts only~~ fixed: code/tier/gift forms edit GBP too. There is still no admin screen for shipping-method rates (EUR or GBP).
+  3. ~~No confirm dialog when switching store with a full cart~~ fixed: the switcher names the lines
+     that would drop (`GET /cart/switch-preview`); no e2e step for the dialog yet.
+  4. ~~hreflang alternates carry the English slug~~ fixed: detail endpoints return `slugs`, `<Seo>` takes per-language paths (guides still set no canonical, so no hreflang).
+  5. ~~Product names inside emails are English snapshots~~ fixed for order and return mails (translated at send time); stock-alert and review mails still English.
+  6. ~~A free gift without a GBP price is still given in the UK store~~ fixed: no gift in a currency the gift has no price in.
   7. German/French text was written by the build agent: a native read is worth it (a French block
      had leaked into the German seed and was fixed on 2026-11-14; a test now guards that case).
   8. Emails are skipped on the demo until a Resend key is added; review photo upload is off there.
   9. README statement-coverage figures are from phase 11.
+  10. Checkout race, residual window: between Stripe's status answer in the pre-check and phase 1's
+      commit there are a few milliseconds in which another tab could confirm; phase 2's re-check and
+      the webhook's amount check cover it, but it is not closed.
 
 ## Where things stand
 
@@ -59,6 +64,42 @@ Written by the build sessions for the owner and for the next session.
 6. **13.7** → tag `v1.0.0` on your go.
 7. **Licence holder** in `LICENSE` is your GitHub handle; change it if you want your name.
 8. **Screen reader** pass (NVDA/VoiceOver) on PDP and checkout — couldn't be done here.
+
+## Polish pass (2026-11-14) — shipped
+
+`polish/integration` was merged into `main` and is live. What it did:
+
+- **Design**: a calmer 2026 DTC look (Fredoka 600 headings, 128 px section rhythm, one card style),
+  full-bleed dots-only hero, EN·€ store switcher, hide-on-scroll free-delivery bar, "Who are you
+  shopping for?" pet photo circles, Shop by brand, illustrated USP strip, nav pet avatars, love toast
+  with a heart burst, centred legal pages, carousels with scroll-snap and arrows.
+- **Shopping**: product-card quick add, picture-row "Frequently bought together" with editor picks per
+  product (same pet, complementary categories), "You save" counting a suggestion's sale against its
+  30-day reference, "You may also like" never showing a kit made of the product, demo helper panel
+  (register / login / checkout with the test card).
+- **Data**: 12 invented brands with stories in en/de/fr, 35,751 crowd reviews (100–999 per product,
+  reviewer accounts cannot sign in and are hidden from the admin customer list), a 12-value Material
+  facet, de/fr hero/promo/menu/testimonial copy.
+- **Images (Gemini)**: 12 brand logos, 6 pet portraits, 5 USP illustrations, 10 guide covers and 85
+  product photos: every product now has a real photo.
+- **Copy**: an en/de/fr copy pass and 17 QA fixes (`work/polish/qa-findings.md`, untracked).
+- **Tests**: API tests empty the database with DELETE instead of TRUNCATE (the suite went from a
+  40-minute hang to ~7 minutes).
+
+Still open after the polish pass (none blocks the demo):
+
+1. **de/fr content with no translation path** (English on those stores): help answers, the legal and
+   about pages, PDP specs and FAQs, gallery captions, the charity description. A real fix is
+   per-language columns or translation tables.
+2. Admin analytics counts days in `Europe/Riga` (`STORE_TIME_ZONE` in shared) while the shop's
+   dispatch zone is `Europe/Amsterdam`; align them (tests pin the Riga boundary).
+3. Guide covers were upscaled from 1024 px to 1600×900; regenerate at full size if they look soft.
+4. Low findings left from the QA pass: page headers mix centred (help) and left (guides, brands,
+   account); PDP text column leaves the right half empty; no sticky add-to-cart on mobile PDP; no
+   payment/social icons in the footer; mobile menu lacks account/guides/store links; mega-menu has no
+   scrim; account sidebar buttons look heavy.
+5. Stock-alert and review emails still carry English product names.
+6. Crowd reviews are English on every store (the reviews table has no language column).
 
 ## Known limits (also in the README)
 

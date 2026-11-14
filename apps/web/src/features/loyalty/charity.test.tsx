@@ -23,22 +23,23 @@ const total = (totalCents: number, donations = 3) =>
   );
 
 describe('charity', () => {
-  it('shows the running total and the demo disclaimer on /charity', async () => {
+  it('shows the running total and how it grows on /charity', async () => {
     server.use(total(12_350));
     renderApp('/charity');
     expect(await screen.findByTestId('charity-amount')).toHaveTextContent('€123.50');
     expect(screen.getByText(/from 3 donations/)).toBeInTheDocument();
-    expect(screen.getByRole('note')).toHaveTextContent('no money moves');
+    expect(screen.getByRole('note')).toHaveTextContent('added to the total');
   });
 
-  it('shows the total in the footer of every page, with the demo wording', async () => {
+  it('links the shelter page from the footer of every page, without a running total', async () => {
     server.use(total(500, 1));
     renderApp('/help');
     const footer = await screen.findByTestId('footer');
-    const note = await within(footer).findByTestId('charity-total');
-    expect(note).toHaveTextContent('Whisker Hollow Rescue');
-    expect(note).toHaveTextContent('€5.00');
-    expect(note).toHaveTextContent('Demo only');
+    expect(within(footer).getByRole('link', { name: 'Our shelter partner' })).toHaveAttribute(
+      'href',
+      '/charity',
+    );
+    expect(within(footer).queryByTestId('charity-total')).not.toBeInTheDocument();
   });
 
   it('sends the round-up choice with the order only when ticked', async () => {
