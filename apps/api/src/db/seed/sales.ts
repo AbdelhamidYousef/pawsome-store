@@ -74,6 +74,7 @@ export async function seedSales(tx: Tx, opts: { passwordHash: string; now: Date 
       name: productVariants.name,
       priceCents: productVariants.priceCents,
       productName: products.name,
+      pet: sql<string>`${products.attributes}->>'pet'`,
     })
     .from(productVariants)
     .innerJoin(products, eq(products.id, productVariants.productId))
@@ -93,6 +94,8 @@ export async function seedSales(tx: Tx, opts: { passwordHash: string; now: Date 
   const pick = <T>(xs: readonly T[]): T => xs[Math.floor(next() * xs.length)] as T;
   // A few products sell far more than the rest, so "top products" is a real ranking.
   const popular = variants.slice(0, Math.max(6, Math.floor(variants.length / 10)));
+  const byPet = new Map<string, typeof variants>();
+  for (const v of variants) byPet.set(v.pet, [...(byPet.get(v.pet) ?? []), v]);
 
   const plan: {
     placedAt: Date;
@@ -117,8 +120,12 @@ export async function seedSales(tx: Tx, opts: { passwordHash: string; now: Date 
             : next() < 0.07
               ? 'refunded'
               : 'delivered';
-      const lines = Array.from({ length: 1 + Math.floor(next() * 3) }, () => ({
-        variant: next() < 0.45 ? pick(popular) : pick(variants),
+      // One household, one pet: the first line sets the pet and the rest of the basket follows it,
+      // so "bought together" history never pairs a dog toy with bird seed.
+      const first = next() < 0.45 ? pick(popular) : pick(variants);
+      const samePet = byPet.get(first.pet) ?? [first];
+      const lines = Array.from({ length: 1 + Math.floor(next() * 3) }, (_, i) => ({
+        variant: i === 0 ? first : pick(samePet),
         quantity: 1 + Math.floor(next() * 3),
       }));
       const guest = 1 + Math.floor(next() * GUESTS);
@@ -139,14 +146,15 @@ export async function seedSales(tx: Tx, opts: { passwordHash: string; now: Date 
     { age: 40, status: 'delivered' as const },
   ];
   for (const c of caseyOrders) {
+    const first = pick(popular);
     plan.push({
       placedAt: new Date(opts.now.getTime() - c.age * DAY_MS),
       status: c.status,
       email: RETURNS_DEMO_EMAIL,
       userId: casey?.id ?? null,
       lines: [
-        { variant: pick(popular), quantity: 2 },
-        { variant: pick(variants), quantity: 1 },
+        { variant: first, quantity: 2 },
+        { variant: pick(byPet.get(first.pet) ?? variants), quantity: 1 },
       ],
     });
   }

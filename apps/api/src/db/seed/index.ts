@@ -27,7 +27,7 @@ import {
 } from '../schema/index.ts';
 
 import { HOUSE_BRAND, brands } from './brands.ts';
-import { seedBundles } from './bundles.ts';
+import { bundleSeeds, seedBundles } from './bundles.ts';
 import { categories } from './categories.ts';
 import { seedCharity } from './charity.ts';
 import { collections, windowDates } from './collections.ts';
@@ -46,6 +46,7 @@ import {
   memberPriceCents,
   pickMemberVariants,
 } from './promotions.ts';
+import { boughtTogetherPlan, seedBoughtTogether } from './relations.ts';
 import { seedReviews } from './reviews.ts';
 import { seedRewards } from './rewards.ts';
 import { RETURNS_DEMO_EMAIL, seedSales } from './sales.ts';
@@ -408,6 +409,22 @@ export async function runSeed(now = new Date()) {
 
     // ---- kits (phase 16): built from the seeded products above ----
     await seedBundles(tx);
+
+    // ---- "frequently bought together" picks (same pet, complementary category, no kits) ----
+    const kitRows = await tx
+      .select({ id: productsTable.id, slug: productsTable.slug })
+      .from(productsTable)
+      .where(
+        inArray(
+          productsTable.slug,
+          bundleSeeds.map((b) => b.slug),
+        ),
+      );
+    await seedBoughtTogether(
+      tx,
+      boughtTogetherPlan(products, bundleSeeds),
+      new Map([...productId, ...kitRows.map((k) => [k.slug, k.id] as const)]),
+    );
 
     // ---- guides, help articles, testimonials (after products: guides link to them) ----
     await seedContent(tx, content, productId);

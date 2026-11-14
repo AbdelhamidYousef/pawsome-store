@@ -11,7 +11,7 @@ import {
 
 // Three kits built from products that are already seeded (components are their default variant).
 // The kit price is 12% under the parts, in integer cents, so "Save" is always a real saving.
-interface BundleSeed {
+export interface BundleSeed {
   slug: string;
   name: string;
   description: string;
