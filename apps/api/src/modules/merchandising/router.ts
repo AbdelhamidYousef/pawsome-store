@@ -12,7 +12,7 @@ import { Router as ExpressRouter, type Router } from 'express';
 
 import { respond, valid, validate } from '../../lib/validate.ts';
 import { publicCache } from '../../middleware/cache.ts';
-import { overlay, pick, resolveSlug } from '../i18n/translations.ts';
+import { overlay, pick, resolveSlug, slugsByLang } from '../i18n/translations.ts';
 
 import * as service from './service.ts';
 
@@ -49,7 +49,11 @@ const bySlug = { params: SlugParamsSchema };
 merchandisingRouter.get('/brands/:slug', validate(bySlug), async (req, res) => {
   const { params } = valid(req, bySlug);
   const brand = await service.getBrand(await resolveSlug('brand', params.slug));
-  respond(res, BrandResponseSchema, { data: (await translateBrands([brand]))[0] as Brand });
+  const [[translated], slugs] = await Promise.all([
+    translateBrands([brand]),
+    slugsByLang('brand', brand.slug),
+  ]);
+  respond(res, BrandResponseSchema, { data: { ...(translated as Brand), slugs } });
 });
 
 merchandisingRouter.get('/collections', async (_req, res) => {
@@ -61,9 +65,11 @@ merchandisingRouter.get('/collections', async (_req, res) => {
 merchandisingRouter.get('/collections/:slug', validate(bySlug), async (req, res) => {
   const { params } = valid(req, bySlug);
   const collection = await service.getLiveCollection(await resolveSlug('collection', params.slug));
-  respond(res, CollectionResponseSchema, {
-    data: (await translateCollections([collection]))[0] as Collection,
-  });
+  const [[translated], slugs] = await Promise.all([
+    translateCollections([collection]),
+    slugsByLang('collection', collection.slug),
+  ]);
+  respond(res, CollectionResponseSchema, { data: { ...(translated as Collection), slugs } });
 });
 
 merchandisingRouter.get('/tags', async (_req, res) => {

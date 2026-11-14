@@ -204,4 +204,9 @@ export const shell = {
   'shell.gallery.with': 'with {product}',
   'shell.gallery.inPhoto': 'In this photo',
   'shell.footer.charity': 'Our shelter partner',
+  'shell.storeSwitch.title': 'Switch to {store}?',
+  'shell.storeSwitch.text':
+    'These items have no price in {currency}, so they will be removed from your cart:',
+  'shell.storeSwitch.confirm': 'Switch and remove them',
+  'shell.storeSwitch.cancel': 'Stay in {store}',
 } satisfies Dictionary;

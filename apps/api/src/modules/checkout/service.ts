@@ -113,9 +113,34 @@ export async function placeOrder(
   input: CheckoutRequest,
   user: AuthUser | null,
 ): Promise<PlacedOrder> {
+  await assertNoPaymentUnderway(gateway, cartId);
   const { order, payment } = await reserveAndSave(cartId, input, user);
   const clientSecret = await attachPaymentIntent(gateway, log, order, payment);
   return { orderNumber: order.number, clientSecret, totals: totalsOf(order) };
+}
+
+// Intent states in which money is moving or has moved: the amount must not change under them.
+// (`requires_action` is left out on purpose: an abandoned 3-D Secure window would otherwise lock
+// the cart until the sweeper, and an amount update there simply makes the challenge charge the new
+// total, which the order then matches.)
+const UNDERWAY = new Set(['processing', 'requires_capture', 'succeeded']);
+
+// The cross-tab race: tab A confirms its payment in the browser (Stripe only, our server hears
+// nothing until the webhook), then tab B, or a switch to another store, checks the same cart out
+// again. Without this check phase 1 re-totals the pending order, phase 2 only then sees the intent
+// is paid, and the late webhook fails the amount check (a manual refund). So Stripe is asked FIRST,
+// before any row is touched and without holding a lock during the network call. What is left is
+// the few milliseconds between this answer and phase 1's commit; phase 2 re-checks as a backstop.
+async function assertNoPaymentUnderway(gateway: PaymentGateway, cartId: string): Promise<void> {
+  const payment = await db.transaction(async (tx) => {
+    const pending = await repo.findPendingOrderByCart(tx, cartId);
+    return pending ? repo.findPaymentByOrder(tx, pending.id) : undefined;
+  });
+  if (!payment?.providerPaymentIntentId) return;
+  const intent = await gateway.retrievePaymentIntent(payment.providerPaymentIntentId);
+  if (UNDERWAY.has(intent.status)) {
+    throw conflict(ErrorCode.CONFLICT, 'A payment for this cart is already in progress');
+  }
 }
 
 async function reserveAndSave(
@@ -442,7 +467,7 @@ async function attachPaymentIntent(
     }
 
     let intent = await gateway.retrievePaymentIntent(payment.providerPaymentIntentId);
-    if (intent.status === 'succeeded' || intent.status === 'processing') {
+    if (UNDERWAY.has(intent.status)) {
       throw conflict(ErrorCode.CONFLICT, 'A payment for this cart is already in progress');
     }
     // The shopper switched store (currency) after the intent was made: an intent's currency can

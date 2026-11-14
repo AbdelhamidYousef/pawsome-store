@@ -19,7 +19,7 @@ import {
 
 import { db } from '../../db/client.ts';
 import { notFound } from '../../lib/errors.ts';
-import { loadTranslations, overlay, pick, resolveSlug } from '../i18n/translations.ts';
+import { loadTranslations, overlay, pick, resolveSlug, slugsByLang } from '../i18n/translations.ts';
 import {
   memberPricesForProducts,
   saleOffersForProducts,
@@ -94,13 +94,16 @@ export async function getCategory(slugFromUrl: string): Promise<CategoryNode> {
   const rows = await repo.getCategoryBySlug(slug);
   const self = rows.find((r) => r.slug === slug);
   if (!self) throw notFound('Category not found');
-  const [node] = await translateNodes([
-    toNode(
-      self,
-      rows.filter((r) => r.parentId === self.id),
-    ),
+  const [[node], slugs] = await Promise.all([
+    translateNodes([
+      toNode(
+        self,
+        rows.filter((r) => r.parentId === self.id),
+      ),
+    ]),
+    slugsByLang('category', slug),
   ]);
-  return node as CategoryNode;
+  return { ...(node as CategoryNode), slugs };
 }
 
 // ---------- product list ----------
@@ -461,10 +464,11 @@ export async function getProduct(
   const badges = (await getBadgeIndex()).get(rows.product.id) ?? [];
 
   // Translated name, slug, description, category/brand names; each falls back to English alone.
-  const [pt, ct, bt] = await Promise.all([
+  const [pt, ct, bt, slugs] = await Promise.all([
     loadTranslations('product', [rows.product.slug]),
     loadTranslations('category', [rows.category.slug, ...(rows.parent ? [rows.parent.slug] : [])]),
     rows.brand ? loadTranslations('brand', [rows.brand.slug]) : Promise.resolve(undefined),
+    slugsByLang('product', rows.product.slug),
   ]);
   const tr = pt.get(rows.product.slug);
   const nameOf = <T extends { slug: string; name: string }>(c: T): T => {
@@ -481,6 +485,7 @@ export async function getProduct(
   return {
     id: rows.product.id,
     slug: pick(tr, 'slug', rows.product.slug),
+    slugs,
     name: pick(tr, 'name', rows.product.name),
     description: pick(tr, 'description', rows.product.description),
     category,

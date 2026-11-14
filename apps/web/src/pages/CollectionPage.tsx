@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { ApiError } from '../api/client';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Spinner } from '../components/ui/Spinner';
 import { hasActiveFilters, useProductListParams } from '../features/catalog/list-params';
@@ -77,6 +77,7 @@ export default function CollectionPage() {
         title={collection.name}
         description={collection.description}
         canonical={`/collections/${collection.slug}`}
+        alternates={slugAlternates('collections', collection.slugs)}
         noindex={variant}
       />
       <Breadcrumbs

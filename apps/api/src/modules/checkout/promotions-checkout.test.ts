@@ -131,6 +131,34 @@ describe('checkout through the promotions engine', () => {
     expect(order.totalCents).toBe(5090);
   });
 
+  it('gives no gift in a store whose currency has no price for it, and prices it where it has one', async () => {
+    // The gift variant is sold in EUR only; the item bought has both prices.
+    const gift = await variant(549, 5);
+    await db
+      .insert(giftRules)
+      .values({ thresholdCents: 4000, thresholdByCurrency: { GBP: 3500 }, variantId: gift });
+    const { variants } = await createProduct({
+      variants: [{ priceCents: 4500, gbpCents: 4000, weightGrams: 500, stock: 10 }],
+    });
+    const uk = makeShopper(app, undefined, 'uk-en');
+    const cart = (await uk.addToCart(variants[0]!.id)).body as {
+      data: { pricing: { gift: unknown; progress: { gift: unknown } } };
+    };
+    expect(cart.data.pricing.gift).toBeNull();
+    expect(cart.data.pricing.progress.gift).toBeNull();
+    const res = await uk.call('post', '/checkout', {
+      ...body(),
+      shippingAddress: { ...body().shippingAddress, country: 'GB', postalCode: 'SW1A 1AA' },
+    });
+    expect(res.status).toBe(200);
+    const order = await onlyOrder();
+    const lines = await db.select().from(orderItems).where(eq(orderItems.orderId, order.id));
+    expect(lines.map((l) => l.variantId)).toEqual([variants[0]!.id]);
+    expect(await db.select().from(orderPromotions)).toEqual([]);
+    const [stock] = await db.select().from(inventory).where(eq(inventory.variantId, gift));
+    expect(stock?.reserved).toBe(0);
+  });
+
   it('refuses a guest whose email already used a once-per-customer code', async () => {
     const [code] = await db
       .insert(discountCodes)

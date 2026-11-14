@@ -8,6 +8,9 @@ import {
   type CartWarning,
   type CartPricing,
   type OutOfStockDetails,
+  type StoreCode,
+  type StoreSwitchPreview,
+  storeFromCode,
 } from '@store/shared';
 
 import { db, type Tx } from '../../db/client.ts';
@@ -263,6 +266,30 @@ const EMPTY_PRICING: CartPricing = {
 
 export async function getCart(cartId: string): Promise<Cart> {
   return db.transaction((tx) => loadCart(tx, cartId));
+}
+
+// The lines that would drop if the shopper switched to `storeCode`: still buyable, but with no price
+// in that store's currency. Read-only (no lock, no repair), so asking changes nothing; the store
+// switcher shows the answer and the shopper decides. A switch within one currency drops nothing.
+export async function previewStoreSwitch(
+  cartId: string | undefined,
+  storeCode: StoreCode,
+): Promise<StoreSwitchPreview> {
+  const target = storeFromCode(storeCode);
+  if (!cartId || !target) return { dropped: [] };
+  const lines = await db.transaction((tx) => repo.listLines(tx, cartId, target.currency));
+  return {
+    dropped: lines
+      .filter(
+        (l) =>
+          l.priceCents === null && l.variantStatus === 'active' && l.productStatus === 'active',
+      )
+      .map((l) => ({
+        variantId: l.variantId,
+        productName: l.productName,
+        variantName: l.variantName,
+      })),
+  };
 }
 
 // ---------- mutations ----------

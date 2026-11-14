@@ -211,4 +211,9 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.gallery.with': 'mit {product}',
   'shell.gallery.inPhoto': 'Auf diesem Foto',
   'shell.footer.charity': 'Unser Partner-Tierheim',
+  'shell.storeSwitch.title': 'Zu {store} wechseln?',
+  'shell.storeSwitch.text':
+    'Diese Artikel gibt es nicht in {currency}. Sie werden aus Ihrem Warenkorb entfernt:',
+  'shell.storeSwitch.confirm': 'Wechseln und entfernen',
+  'shell.storeSwitch.cancel': 'In {store} bleiben',
 };

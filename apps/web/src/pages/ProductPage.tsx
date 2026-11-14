@@ -5,7 +5,7 @@ import { useLocation, useNavigate, useParams, useSearchParams } from 'react-rout
 import { ApiError } from '../api/client';
 import { Breadcrumbs, type Crumb } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Badge } from '../components/ui/Badge';
 import { Button } from '../components/ui/Button';
 import { MemberPrice, MemberTeaser, memberBeatsSale } from '../components/ui/MemberPrice';
@@ -138,6 +138,7 @@ function ProductView({ product }: { product: ProductDetail }) {
         title={product.name}
         description={product.description.slice(0, 155)}
         canonical={`/products/${product.slug}`}
+        alternates={slugAlternates('products', product.slugs)}
         {...(jsonLdFor(product) && { jsonLd: jsonLdFor(product) })}
       />
       <Container className="py-6">

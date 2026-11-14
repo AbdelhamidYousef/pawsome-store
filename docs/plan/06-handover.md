@@ -16,13 +16,13 @@ Written by the build sessions for the owner and for the next session.
   A schema change must be migrated on Neon (direct URL, from a shell) **before** the push that needs
   it; the seed is an upsert and safe to re-run on Neon.
 - Leftovers and known issues (none blocks the demo):
-  1. Checkout race across tabs while a payment is confirming (details under Known follow-ups).
-  2. Admin edits EUR promotion/shipping amounts only; GBP ones are seeded.
-  3. No confirm dialog when switching store with a full cart (lines without a price in the new
-     currency drop out).
-  4. hreflang alternates carry the English slug (works via redirect; proper fix in the 21 notes).
-  5. Product names inside emails are English snapshots.
-  6. A free gift without a GBP price is still given in the UK store (recorded at 0).
+  1. ~~Checkout race across tabs while a payment is confirming~~ fixed 2026-11-14 (`fix/leftovers`): Stripe is asked before re-pricing.
+  2. ~~Admin edits EUR promotion/shipping amounts only~~ fixed: code/tier/gift forms edit GBP too. There is still no admin screen for shipping-method rates (EUR or GBP).
+  3. ~~No confirm dialog when switching store with a full cart~~ fixed: the switcher names the lines
+     that would drop (`GET /cart/switch-preview`); no e2e step for the dialog yet.
+  4. ~~hreflang alternates carry the English slug~~ fixed: detail endpoints return `slugs`, `<Seo>` takes per-language paths (guides still set no canonical, so no hreflang).
+  5. ~~Product names inside emails are English snapshots~~ fixed for order and return mails (translated at send time); stock-alert and review mails still English.
+  6. ~~A free gift without a GBP price is still given in the UK store~~ fixed: no gift in a currency the gift has no price in.
   7. German/French text was written by the build agent: a native read is worth it (a French block
      had leaked into the German seed and was fixed on 2026-11-14; a test now guards that case).
   8. Emails are skipped on the demo until a Resend key is added; review photo upload is off there.

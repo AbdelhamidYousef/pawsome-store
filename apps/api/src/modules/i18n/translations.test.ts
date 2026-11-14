@@ -6,10 +6,16 @@ import { db } from '../../db/client.ts';
 import {
   brandTranslations,
   categoryTranslations,
+  collectionTranslations,
   productTranslations,
 } from '../../db/schema/index.ts';
 import { makeTestApp } from '../../test/app.ts';
-import { createBrand, createCategory, createProduct } from '../../test/factories.ts';
+import {
+  createBrand,
+  createCategory,
+  createCollection,
+  createProduct,
+} from '../../test/factories.ts';
 import { bodyOf } from '../../test/http.ts';
 
 const app = makeTestApp();
@@ -134,5 +140,39 @@ describe('catalogue translations', () => {
   it('sets Vary: X-Store-View', async () => {
     const res = await get('/api/v1/categories', 'de-de');
     expect(res.headers['vary']).toMatch(/X-Store-View/i);
+  });
+
+  it('detail pages carry their slug in every language, English where none is translated', async () => {
+    const { product, category, brand } = await seed();
+    const collection = await createCollection({ slug: 'cosy-nights' }, [product.id]);
+    await db.insert(productTranslations).values([
+      { productId: product.id, locale: 'de', slug: 'quietschknochen' },
+      { productId: product.id, locale: 'fr', name: 'Os qui couine' },
+    ]);
+    await db
+      .insert(categoryTranslations)
+      .values({ categoryId: category.id, locale: 'fr', slug: 'jouets-chien' });
+    await db.insert(brandTranslations).values({ brandId: brand.id, locale: 'de', slug: 'wackel' });
+    await db
+      .insert(collectionTranslations)
+      .values({ collectionId: collection.id, locale: 'de', slug: 'kuschelnaechte' });
+
+    // The same answer from every store and whatever slug the URL used.
+    for (const [path, store] of [
+      ['/api/v1/products/squeaky-bone', undefined],
+      ['/api/v1/products/quietschknochen', 'de-de'],
+    ] as const) {
+      expect(bodyOf<{ data: ProductDetail }>(await get(path, store)).data.slugs).toEqual({
+        en: 'squeaky-bone',
+        de: 'quietschknochen',
+        fr: 'squeaky-bone',
+      });
+    }
+    const cat = bodyOf<{ data: CategoryNode }>(await get('/api/v1/categories/dog-toys', 'fr-fr'));
+    expect(cat.data.slugs).toEqual({ en: 'dog-toys', de: 'dog-toys', fr: 'jouets-chien' });
+    const br = bodyOf<{ data: { slugs: unknown } }>(await get('/api/v1/brands/waggle'));
+    expect(br.data.slugs).toEqual({ en: 'waggle', de: 'wackel', fr: 'waggle' });
+    const co = bodyOf<{ data: { slugs: unknown } }>(await get('/api/v1/collections/cosy-nights'));
+    expect(co.data.slugs).toEqual({ en: 'cosy-nights', de: 'kuschelnaechte', fr: 'cosy-nights' });
   });
 });
