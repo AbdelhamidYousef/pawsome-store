@@ -63,6 +63,22 @@ describe('cart page', () => {
     expect(await screen.findByText('Add €9.01 more for free standard shipping.')).toBeVisible();
   });
 
+  // The API refuses a country the store does not ship to (it used to always ask for DE).
+  it('asks for the hint in a country the store ships to', async () => {
+    serveCart(makeCart([tug, ball]));
+    const asked: (string | null)[] = [];
+    server.use(
+      http.get(`${API}/checkout/shipping-methods`, ({ request }) => {
+        asked.push(new URL(request.url).searchParams.get('country'));
+        return HttpResponse.json({ data: [makeQuote({ freeOverCents: 3000 })] });
+      }),
+    );
+    renderApp('/uk-en/cart');
+    await screen.findAllByTestId('cart-line');
+    await waitFor(() => expect(asked).toContain('GB'));
+    expect(asked).not.toContain('DE');
+  });
+
   it('hides the hint when no shipping method is ever free', async () => {
     serveCart(makeCart([tug, ball]));
     server.use(

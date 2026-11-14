@@ -4,6 +4,7 @@ import { fetchShippingQuotes, placeOrder } from '../../api/checkout';
 import { ApiError } from '../../api/client';
 import { keys } from '../../lib/query-client';
 import { useCart } from '../cart/queries';
+import { useStore } from '../stores/StoreContext';
 
 // Quotes for the caller's current cart. The key carries the numbers the server prices from
 // (subtotal and weight), so adding to the cart gives a fresh quote instead of a stale cached one.
@@ -20,14 +21,13 @@ export function useShippingQuotes(country: string | null) {
   });
 }
 
-// Every supported country is one shipping zone today, so any of them gives the same thresholds.
-const HINT_COUNTRY = 'DE';
-
 // The subtotal from which standard shipping is free, read from the API's own rules (null while
 // loading, or when no method is ever free). The cart only uses it for a hint; checkout charges
-// whatever the server computes.
+// whatever the server computes. Every country a store ships to is one zone today, so the store's
+// first country gives its thresholds (and the API refuses a country the store does not ship to).
 export function useFreeShippingThreshold(): number | null {
-  const { data } = useShippingQuotes(HINT_COUNTRY);
+  const { shipCountries } = useStore();
+  const { data } = useShippingQuotes(shipCountries[0] ?? null);
   const thresholds = (data ?? []).flatMap((q) =>
     q.freeOverCents === null ? [] : [q.freeOverCents],
   );
