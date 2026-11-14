@@ -9,6 +9,7 @@ import type { z } from 'zod';
 
 import { db } from '../../db/client.ts';
 import { notFound, validation } from '../../lib/errors.ts';
+import { translateCaptions } from '../i18n/content-translations.ts';
 
 import * as repo from './repo.ts';
 
@@ -48,7 +49,8 @@ export async function listPublic(productId?: string): Promise<GalleryPhoto[]> {
     };
   };
 
-  return photos.map((p) => ({
+  const captioned = await translateCaptions(photos);
+  return captioned.map((p) => ({
     id: p.id,
     path: p.path,
     caption: p.caption,

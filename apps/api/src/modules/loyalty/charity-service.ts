@@ -7,6 +7,7 @@ import { db, type Tx } from '../../db/client.ts';
 import { charities, donations } from '../../db/schema/index.ts';
 import { conflict, notFound } from '../../lib/errors.ts';
 import * as checkoutRepo from '../checkout/repo.ts';
+import { translateCharity } from '../i18n/content-translations.ts';
 import { currentStore } from '../i18n/context.ts';
 import {
   onOrderCancelled,
@@ -49,8 +50,9 @@ export async function getTotal(): Promise<CharityTotal> {
     .where(
       and(eq(donations.charityId, charity.id), eq(donations.currency, currentStore().currency)),
     );
+  const shown = await translateCharity(charity);
   return {
-    charity: { slug: charity.slug, name: charity.name, description: charity.description },
+    charity: { slug: shown.slug, name: shown.name, description: shown.description },
     totalCents: Math.max(0, row?.total ?? 0),
     donations: row?.count ?? 0,
   };

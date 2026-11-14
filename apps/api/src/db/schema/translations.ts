@@ -35,6 +35,8 @@ export const productTranslations = pgTable(
       .references(() => products.id, { onDelete: 'cascade' }),
     name: text('name'),
     description: text('description'),
+    // The "ships separately" style note under the delivery tab (products.delivery_note).
+    deliveryNote: text('delivery_note'),
     ...common,
   },
   (t) => [
