@@ -20,7 +20,6 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   },
 
   // Footer note and charity page
-  'loyalty.charityNote.text': 'a reçu {amount} de la part des clients Pawsome jusqu’ici.',
   'loyalty.charity.seoTitle': 'Notre refuge',
   'loyalty.charity.seoDescription':
     'Whisker Hollow Rescue est le refuge que Pawsome soutient. Arrondissez votre total au paiement ou offrez vos points.',

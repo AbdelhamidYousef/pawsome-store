@@ -17,7 +17,6 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.earn.points': { one: '{count} Punkt sammeln', other: '{count} Punkte sammeln' },
 
   // Footer note and charity page
-  'loyalty.charityNote.text': 'hat von Pawsome-Kundinnen und -Kunden bisher {amount} erhalten.',
   'loyalty.charity.seoTitle': 'Unser Tierheim',
   'loyalty.charity.seoDescription':
     'Whisker Hollow Rescue ist das Tierheim, das Pawsome unterstützt. Runden Sie an der Kasse auf oder spenden Sie Ihre Punkte.',

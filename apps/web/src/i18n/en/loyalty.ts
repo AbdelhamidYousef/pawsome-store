@@ -16,7 +16,6 @@ export const loyalty = {
   'loyalty.earn.points': { one: 'Earn {count} point', other: 'Earn {count} points' },
 
   // Footer note and charity page
-  'loyalty.charityNote.text': 'has received {amount} from Pawsome customers so far.',
   'loyalty.charity.seoTitle': 'Our shelter',
   'loyalty.charity.seoDescription':
     'Whisker Hollow Rescue is the shelter Pawsome supports. Round up at checkout or give your points.',
