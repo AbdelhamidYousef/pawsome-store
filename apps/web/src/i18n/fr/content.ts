@@ -7,7 +7,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.guides.seoDescription':
     'Des guides courts et conviviaux pour les propriétaires de chiens, de chats, d’oiseaux, de poissons et de petits animaux.',
   'content.guides.intro':
-    'Des conseils pratiques de l’équipe Pawsome, validés par le bon sens vétérinaire : installer un premier aquarium, accueillir un chiot, occuper un chat d’intérieur et bien plus. Installez-vous confortablement et bonne lecture.',
+    'Des conseils pratiques de l’équipe Pawsome, dans le respect des recommandations vétérinaires : installer un premier aquarium, accueillir un chiot, occuper un chat d’intérieur et bien plus. Installez-vous confortablement et bonne lecture.',
   'content.guides.topics': 'Thèmes des guides',
   'content.guides.all': 'Tous les guides',
   'content.guides.list': 'Guides',
@@ -44,7 +44,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.help.noArticles': 'Pas encore d’article dans ce thème.',
   'content.help.tryDifferent': 'Essayez d’autres mots, ou',
   'content.help.browseAll': 'parcourez tous les thèmes',
-  'content.help.stuck': '. Toujours bloqué ?',
+  'content.help.stuck': '. Besoin d’aide supplémentaire ?',
   'content.help.contact': 'Contactez-nous',
   'content.help.contactRest': 'et une vraie personne vous répondra.',
   'content.help.results': {

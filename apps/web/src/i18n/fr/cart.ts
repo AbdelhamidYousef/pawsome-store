@@ -17,7 +17,7 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   // ---------- drawer ----------
   'cart.drawer.loadErrorRetry': 'Nous n’avons pas pu charger votre panier. Réessayer',
   'cart.drawer.viewCart': 'Voir le panier',
-  'cart.mightNeed.title': 'Vous pourriez aussi avoir besoin de',
+  'cart.mightNeed.title': 'Pensez aussi à',
   'cart.mightNeed.add': 'Ajouter',
   'cart.mightNeed.addAria': 'Ajouter {name}',
 
@@ -52,7 +52,7 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   'cart.summary.subtotal': 'Sous-total',
   'cart.summary.discountsApplied': 'Réductions appliquées',
   'cart.summary.freeDelivery': 'Livraison offerte',
-  'cart.summary.shippingEstimate': 'Expédition (estimation, livraison standard)',
+  'cart.summary.shippingEstimate': 'Livraison (estimation, standard)',
   'cart.summary.free': 'Gratuit',
   'cart.summary.estimatedTotal': 'Total estimé',
   'cart.summary.noTax': 'Prix TTC, TVA incluse le cas échéant.',
@@ -89,7 +89,7 @@ export const cart: Record<keyof typeof enNs, Entry> = {
     'Votre {tier} vous fait économiser plus que {code}, nous l’avons donc utilisé.',
   'cart.promo.bulkFallback': 'remise sur quantité',
   'cart.promo.creditCapped':
-    'Votre crédit a été plafonné pour que vous payiez au moins 0,50 € (le minimum par carte).',
+    'Votre crédit a été plafonné pour que vous payiez au moins 0,50 (le minimum par carte).',
 
   // ---------- how discounts combine ----------
   'cart.rules.title': 'Comment les réductions se combinent',

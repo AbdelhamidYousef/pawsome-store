@@ -37,7 +37,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.details.city': 'Ville',
   'checkout.details.region': 'Région (facultatif)',
   'checkout.details.country': 'Pays',
-  'checkout.details.countryHint': 'Nous livrons partout en Europe.',
+  'checkout.details.countryHint': 'Nous livrons en Europe.',
   'checkout.details.phone': 'Téléphone (facultatif)',
   'checkout.details.phoneHint': 'Uniquement pour le livreur.',
   'checkout.details.saveAddress': 'Enregistrer cette adresse dans mon compte',
@@ -106,7 +106,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.summary.shippingNext': 'Étape suivante',
   'checkout.summary.discount': 'Réduction',
   'checkout.summary.donation': 'Don',
-  'checkout.summary.tax': 'Taxe',
+  'checkout.summary.tax': 'TVA',
   'checkout.summary.free': 'Gratuit',
   'checkout.summary.total': 'Total',
   'checkout.summary.totalPending': 'Confirmé au paiement',
@@ -125,7 +125,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.pending.body':
     'Cela ne prend généralement que quelques secondes. Veuillez garder cette page ouverte.',
   'checkout.confirmation.paid.title': 'Merci, votre commande est payée !',
-  'checkout.confirmation.paid.body': 'Une confirmation est en route vers votre adresse e-mail.',
+  'checkout.confirmation.paid.body': 'Un e-mail de confirmation est en route.',
   'checkout.confirmation.timeout.title': 'Nous confirmons encore votre paiement',
   'checkout.confirmation.timeout.body':
     'Cela prend plus de temps que d’habitude, ce qui peut arriver quand le prestataire de paiement tarde à nous répondre. Merci de ne pas payer une seconde fois. Inutile d’attendre ici : vous recevrez un e-mail dès que le paiement sera confirmé, et vous pouvez revenir sur cette page pour vérifier.',
@@ -133,8 +133,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.failed.body':
     'Vous n’avez pas été débité. Votre panier est toujours là, vous pouvez donc réessayer.',
   'checkout.confirmation.cancelled.title': 'Cette commande a été annulée',
-  'checkout.confirmation.cancelled.body':
-    'Si vous avez payé, l’argent est en route pour vous être remboursé.',
+  'checkout.confirmation.cancelled.body': 'Si vous avez payé, le remboursement est en cours.',
   'checkout.confirmation.notFound.title': 'Nous ne trouvons pas cette commande ici',
   'checkout.confirmation.notFound.body':
     'Une commande ne peut être ouverte que depuis le navigateur ou le compte qui l’a passée.',
