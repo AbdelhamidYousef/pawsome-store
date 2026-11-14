@@ -195,4 +195,9 @@ export const shell = {
   'shell.error.notFoundText': 'The page you asked for does not exist.',
   'shell.error.text': 'An unexpected error stopped this page from loading. Please try again.',
   'shell.error.reload': 'Reload the shop',
+  'shell.storeSwitch.title': 'Switch to {store}?',
+  'shell.storeSwitch.text':
+    'These items have no price in {currency}, so they will be removed from your cart:',
+  'shell.storeSwitch.confirm': 'Switch and remove them',
+  'shell.storeSwitch.cancel': 'Stay in {store}',
 } satisfies Dictionary;

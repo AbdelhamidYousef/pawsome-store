@@ -4,8 +4,11 @@ import {
   CartSchema,
   CartWarningSchema,
   OutOfStockDetailsSchema,
+  StoreSwitchPreviewResponseSchema,
   UpdateCartItemSchema,
   type OutOfStockDetails,
+  type StoreCode,
+  type StoreSwitchPreview,
 } from '@store/shared';
 import { z } from 'zod';
 
@@ -25,6 +28,15 @@ export const CartResponse = z.object({ data: WebCartSchema });
 
 export async function fetchCart(signal?: AbortSignal): Promise<WebCart> {
   return (await apiFetch('/cart', { schema: CartResponse, ...(signal && { signal }) })).data;
+}
+
+// Which lines a switch to `store` would drop (no price in its currency). Read-only.
+export async function fetchSwitchPreview(store: StoreCode): Promise<StoreSwitchPreview> {
+  return (
+    await apiFetch(`/cart/switch-preview?store=${encodeURIComponent(store)}`, {
+      schema: StoreSwitchPreviewResponseSchema,
+    })
+  ).data;
 }
 
 export async function addCartItem(input: z.input<typeof AddCartItemSchema>): Promise<WebCart> {

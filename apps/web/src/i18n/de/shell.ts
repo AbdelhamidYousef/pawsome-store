@@ -204,4 +204,9 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.error.text':
     'Ein unerwarteter Fehler hat das Laden dieser Seite verhindert. Bitte versuchen Sie es erneut.',
   'shell.error.reload': 'Shop neu laden',
+  'shell.storeSwitch.title': 'Zu {store} wechseln?',
+  'shell.storeSwitch.text':
+    'Diese Artikel gibt es nicht in {currency}. Sie werden aus Ihrem Warenkorb entfernt:',
+  'shell.storeSwitch.confirm': 'Wechseln und entfernen',
+  'shell.storeSwitch.cancel': 'In {store} bleiben',
 };

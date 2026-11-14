@@ -200,4 +200,9 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.error.text':
     'Une erreur inattendue a empêché le chargement de cette page. Veuillez réessayer.',
   'shell.error.reload': 'Recharger la boutique',
+  'shell.storeSwitch.title': 'Passer à {store} ?',
+  'shell.storeSwitch.text':
+    'Ces articles n’ont pas de prix en {currency} et seront retirés de votre panier :',
+  'shell.storeSwitch.confirm': 'Changer et les retirer',
+  'shell.storeSwitch.cancel': 'Rester sur {store}',
 };

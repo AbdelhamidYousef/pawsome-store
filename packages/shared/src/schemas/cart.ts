@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { storeCodeSchema } from '../stores.ts';
+
 import { IdParamsSchema } from './account.ts';
 import { DataSchema } from './common.ts';
 import { CartPricingSchema } from './promotions.ts';
@@ -102,3 +104,15 @@ export const OutOfStockDetailsSchema = z.object({
   requested: z.number().int().min(0),
 });
 export type OutOfStockDetails = z.infer<typeof OutOfStockDetailsSchema>;
+
+// What switching to another store view would drop from the cart: the lines with no price in that
+// store's currency (nothing is ever converted). A read, so the shopper can be asked first; the
+// lines only really drop when the cart is next read in the new store.
+export const StoreSwitchPreviewQuerySchema = z.object({ store: storeCodeSchema });
+export const StoreSwitchPreviewSchema = z.object({
+  dropped: z.array(
+    z.object({ variantId: z.string(), productName: z.string(), variantName: z.string() }),
+  ),
+});
+export type StoreSwitchPreview = z.infer<typeof StoreSwitchPreviewSchema>;
+export const StoreSwitchPreviewResponseSchema = DataSchema(StoreSwitchPreviewSchema);

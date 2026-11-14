@@ -111,6 +111,7 @@ Added by the expansion phases; shapes follow the same Zod-in-shared rule. New er
 | GET/POST | `/products/:slug/reviews`; POST `/reviews/:id/helpful`; GET `/gallery` | public / auth | multipart photos on POST | 17 |
 | GET/POST/DELETE | `/admin/reviews` (+ `POST /:id/approve\|reject`), `/admin/gallery` | admin | | 17 |
 | POST/DELETE | `/cart/code` | cart identity | apply or remove code; `GET /cart` now returns the `priceCart` output | 18 |
+| GET | `/cart/switch-preview?store=` | cart identity (read, never creates a cart) | `{dropped:[{variantId,productName,variantName}]}`: lines with no price in that store's currency; read-only | polish |
 | GET | `/promotions/banner`, `/promotions/rules` | — | banner includes `serverNow` | 18 |
 | CRUD | `/admin/discount-codes`, `/admin/flash-sales`, `/admin/bulk-tiers`, `/admin/gift-rule` | admin | | 18 |
 | POST | `/internal/jobs/run` | secret header | cron entry point | 19 |
