@@ -62,7 +62,9 @@ export async function activeTiers(run: Run, currency: string = currentStore().cu
 }
 
 // The active gift rule with what the cart needs to show the gift, and whether one can be given:
-// the variant and product must be on sale and at least one unit free to reserve.
+// the variant and product must be on sale and at least one unit free to reserve. A gift with no
+// price in the currency is not sold in that store, so it is not given there either (it would be
+// recorded at 0 and the "worth X" line would be wrong): no rule in that currency.
 export async function activeGift(run: Run, currency: string = currentStore().currency) {
   const [row] = await run
     .select({
@@ -74,7 +76,7 @@ export async function activeGift(run: Run, currency: string = currentStore().cur
       productName: products.name,
       variantName: productVariants.name,
       sku: productVariants.sku,
-      priceCents: sql<number>`coalesce(${priceIn(currency)}, 0)`,
+      priceCents: sql<number | null>`${priceIn(currency)}`,
       variantStatus: productVariants.status,
       productStatus: products.status,
       stock: inventory.quantity,
@@ -90,6 +92,8 @@ export async function activeGift(run: Run, currency: string = currentStore().cur
   // No threshold in this currency: no gift rule here.
   const thresholdCents = amountIn(row.thresholdCents, row.thresholdByCurrency, currency);
   if (thresholdCents === undefined) return undefined;
+  const priceCents = row.priceCents;
+  if (priceCents === null) return undefined;
   const [image] = await run
     .select({ url: productImages.url })
     .from(productImages)
@@ -100,7 +104,7 @@ export async function activeGift(run: Run, currency: string = currentStore().cur
     row.variantStatus === 'active' &&
     row.productStatus === 'active' &&
     (row.stock ?? 0) - (row.reserved ?? 0) > 0;
-  return { ...row, thresholdCents, available, imageUrl: image?.url ?? null };
+  return { ...row, priceCents, thresholdCents, available, imageUrl: image?.url ?? null };
 }
 
 // Live (not released) redemptions of a code, in total and for one customer.
