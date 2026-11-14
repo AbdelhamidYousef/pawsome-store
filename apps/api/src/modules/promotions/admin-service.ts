@@ -31,6 +31,10 @@ const toCode = (r: CodeRowShape): AdminDiscountCode => ({
 
 const toValues = (input: AdminDiscountCodeParsed): repo.CodeValues => ({
   ...input,
+  // Only a fixed amount has a value per currency. A PUT that turns a fixed code into a percent or
+  // free-shipping one usually leaves the map out ("keep it"), which would keep a stale GBP amount
+  // that a later switch back to fixed would silently revive: clear it instead.
+  valueByCurrency: input.kind === 'fixed' ? input.valueByCurrency : {},
   startsAt: input.startsAt ? new Date(input.startsAt) : null,
   endsAt: input.endsAt ? new Date(input.endsAt) : null,
 });
@@ -138,6 +142,24 @@ export async function setGiftRule(input: {
     throw validation({
       formErrors: [],
       fieldErrors: { variant: ['That variant is not active, so it cannot be given away'] },
+    });
+  }
+  // A threshold in a currency the gift has no price in would never give it (the engine skips such
+  // a gift, see the decisions log): say so now instead of saving a rule that silently does nothing.
+  // A PUT that leaves the map out keeps the stored one, so that is the map to check.
+  const thresholds =
+    input.thresholdByCurrency ?? (await repo.activeGiftRule())?.thresholdByCurrency ?? {};
+  const priced = new Set(await repo.variantCurrencies(variant.id));
+  const unpriced = Object.keys(thresholds).filter((c) => !priced.has(c));
+  if (unpriced.length > 0) {
+    const list = unpriced.join(', ');
+    throw validation({
+      formErrors: [],
+      fieldErrors: {
+        thresholdByCurrency: [
+          `The gift has no ${list} price, so it would never be given there. Add a ${list} price to the variant, or leave the ${list} threshold empty.`,
+        ],
+      },
     });
   }
   await mapDuplicate(

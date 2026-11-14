@@ -40,8 +40,12 @@ beforeEach(async () => {
 });
 
 // The factory generates SKUs; the gift form takes a typed one, so give the variant a known SKU.
-async function variantWithSku(sku: string, status: 'active' | 'archived' = 'active') {
-  const { variants } = await createProduct({ variants: [{ status }] });
+async function variantWithSku(
+  sku: string,
+  status: 'active' | 'archived' = 'active',
+  gbpCents?: number,
+) {
+  const { variants } = await createProduct({ variants: [{ status, gbpCents }] });
   await db.update(productVariants).set({ sku }).where(eq(productVariants.id, variants[0]!.id));
   return variants[0]!.id;
 }
@@ -363,7 +367,7 @@ describe('amounts per currency (GBP next to EUR)', () => {
     await admin.call('put', `/admin/bulk-tiers/${id}`, { minCents: 6000, percent: 6 });
     expect((await db.select().from(bulkTiers))[0]?.minByCurrency).toEqual({ GBP: 4500 });
 
-    await variantWithSku('GIFT-GB');
+    await variantWithSku('GIFT-GB', 'active', 300);
     const gift = await admin.call('put', '/admin/gift-rule', {
       thresholdCents: 4000,
       thresholdByCurrency: { GBP: 3500 },
@@ -375,5 +379,67 @@ describe('amounts per currency (GBP next to EUR)', () => {
       thresholdCents: 4500,
       thresholdByCurrency: { GBP: 3500 },
     });
+  });
+
+  it('refuses a GBP gift threshold when the gift has no GBP price, also when the map is kept', async () => {
+    await variantWithSku('EUR-ONLY');
+    const res = await admin.call('put', '/admin/gift-rule', {
+      thresholdCents: 4000,
+      thresholdByCurrency: { GBP: 3500 },
+      variant: 'EUR-ONLY',
+    });
+    expect(res.status).toBe(400);
+    expect(errorOf(res).details).toMatchObject({
+      fieldErrors: { thresholdByCurrency: [expect.stringContaining('no GBP price')] },
+    });
+    // A stored GBP threshold, then a PUT that keeps it but points at a EUR-only gift.
+    await variantWithSku('GIFT-GB2', 'active', 300);
+    await admin.call('put', '/admin/gift-rule', {
+      thresholdCents: 4000,
+      thresholdByCurrency: { GBP: 3500 },
+      variant: 'GIFT-GB2',
+    });
+    const kept = await admin.call('put', '/admin/gift-rule', {
+      thresholdCents: 4000,
+      variant: 'EUR-ONLY',
+    });
+    expect(kept.status).toBe(400);
+    expect((await db.select().from(giftRules))[0]?.thresholdByCurrency).toEqual({ GBP: 3500 });
+  });
+
+  it('clears the GBP value when a fixed code becomes a percent one', async () => {
+    const res = await admin.call(
+      'post',
+      '/admin/discount-codes',
+      codeBody({ code: 'FLIP', kind: 'fixed', value: 600, valueByCurrency: { GBP: 450 } }),
+    );
+    const { id } = data<{ id: string }>(res);
+    const put = await admin.call(
+      'put',
+      `/admin/discount-codes/${id}`,
+      codeBody({ code: 'FLIP', kind: 'percent', value: 10 }),
+    );
+    expect(put.status).toBe(200);
+    expect(data<{ valueByCurrency: object }>(put).valueByCurrency).toEqual({});
+  });
+
+  it('refuses an amount beyond the integer column', async () => {
+    const res = await admin.call(
+      'post',
+      '/admin/discount-codes',
+      codeBody({ code: 'HUGE', kind: 'fixed', value: 2_147_483_648 }),
+    );
+    expect(res.status).toBe(400);
+    const gbp = await admin.call(
+      'post',
+      '/admin/discount-codes',
+      codeBody({
+        code: 'HUGE',
+        kind: 'fixed',
+        value: 500,
+        valueByCurrency: { GBP: 3_000_000_000 },
+      }),
+    );
+    expect(gbp.status).toBe(400);
   });
 });

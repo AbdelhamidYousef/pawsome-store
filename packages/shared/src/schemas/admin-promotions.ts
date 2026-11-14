@@ -5,7 +5,10 @@ import { DataSchema } from './common.ts';
 // Back-office contract for discount codes, bulk tiers and the gift rule. The database has check
 // constraints for the same rules; these schemas give a person the sentence before the database does.
 
-const Cents = z.number().int();
+// Every amount column is a Postgres `integer` (int4): a bigger number would fail at the database
+// with a 500 instead of a sentence.
+const INT4_MAX = 2_147_483_647;
+const Cents = z.number().int().max(INT4_MAX, 'That number is too large');
 const Iso = z.iso.datetime({ offset: true });
 
 export const DiscountKindSchema = z.enum(['percent', 'fixed', 'free_shipping']);

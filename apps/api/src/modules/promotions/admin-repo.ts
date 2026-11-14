@@ -10,6 +10,7 @@ import {
   giftRules,
   productVariants,
   products,
+  variantPrices,
 } from '../../db/schema/index.ts';
 
 // Admin-side queries for the promotion rules. The shopper-facing reads live in repo.ts.
@@ -151,6 +152,15 @@ export async function findVariant(by: { id: string } | { sku: string }) {
     .innerJoin(products, eq(products.id, productVariants.productId))
     .where('id' in by ? eq(productVariants.id, by.id) : eq(productVariants.sku, by.sku));
   return row;
+}
+
+// The currencies a variant has a price in (EUR always, via the trigger; others only if set).
+export async function variantCurrencies(variantId: string): Promise<string[]> {
+  const rows = await db
+    .select({ currency: variantPrices.currency })
+    .from(variantPrices)
+    .where(eq(variantPrices.variantId, variantId));
+  return rows.map((r) => r.currency);
 }
 
 // Updates the one active rule, or creates it. The partial unique index decides a race.
