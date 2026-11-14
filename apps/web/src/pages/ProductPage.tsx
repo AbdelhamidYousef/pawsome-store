@@ -324,7 +324,12 @@ function ProductView({ product }: { product: ProductDetail }) {
           intro={t('pdp.page.gallery.intro')}
         />
         <KitsBlock kits={product.kits} currency={product.price.currency} />
-        <BoughtTogether productSlug={product.slug} productName={product.name} variant={variant} />
+        <BoughtTogether
+          productSlug={product.slug}
+          productName={product.name}
+          variant={variant}
+          image={product.images.find((i) => i.variantId === variantId) ?? product.images[0] ?? null}
+        />
         <RelatedStrip productSlug={product.slug} />
         <RecentlyViewed excludeId={product.id} />
       </Container>

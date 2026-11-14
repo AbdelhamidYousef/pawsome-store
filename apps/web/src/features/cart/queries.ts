@@ -186,11 +186,17 @@ export function useAddToCartAction(product: { id: string; name: string }) {
   const navigate = useNavigate();
   return {
     pending: add.isPending,
-    add: (variant: Pick<Variant, 'id' | 'sku' | 'priceCents'>, quantity: number) =>
+    // `onAdded` lets the caller react too (a card's "Added" tick, a quick-add sheet closing).
+    add: (
+      variant: Pick<Variant, 'id' | 'sku' | 'priceCents'>,
+      quantity: number,
+      options: { onAdded?: () => void } = {},
+    ) =>
       add.mutate(
         { variantId: variant.id, quantity },
         {
           onSuccess: () => {
+            options.onAdded?.();
             track({
               name: 'add_to_cart',
               item: {

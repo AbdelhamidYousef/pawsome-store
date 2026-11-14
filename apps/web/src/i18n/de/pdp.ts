@@ -124,20 +124,11 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
 
   // ---- bought together ----
   'pdp.bought.heading': 'Oft zusammen gekauft',
-  'pdp.bought.thisItem': 'Dieser Artikel:',
-  'pdp.bought.notAvailable': '(nicht verfügbar)',
+  'pdp.bought.notAvailable': 'Nicht verfügbar',
   'pdp.bought.withVariant': '{name} ({variant})',
-  'pdp.bought.view': 'Ansehen',
-  'pdp.bought.viewLabel': '{name} ansehen',
   'pdp.bought.anItem': 'Ein Artikel',
   'pdp.bought.problem': '{name}: {message}',
-  'pdp.bought.total': 'Gesamt',
   'pdp.bought.beforeDiscounts': 'Vor Rabatten.',
-  'pdp.bought.addAll': 'Alle hinzufügen',
-  'pdp.bought.addAllCount': {
-    one: 'Alle hinzufügen ({count} Artikel)',
-    other: 'Alle hinzufügen ({count} Artikel)',
-  },
 
   // ---- bundles and kits ----
   'pdp.bundle.heading': 'Das ist im Set enthalten',
@@ -152,4 +143,14 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.recent.heading': 'Zuletzt angesehen',
   'pdp.rail.prev': 'Vorherige Produkte',
   'pdp.rail.next': 'Weitere Produkte',
+  'pdp.bought.thisItemBadge': 'Dieser Artikel',
+  'pdp.bought.variantSpoken': ', {variant}',
+  'pdp.bought.totalFor': { one: 'Gesamt für {count} Artikel', other: 'Gesamt für {count} Artikel' },
+  'pdp.bought.saving': 'Du sparst {amount}',
+  'pdp.bought.addCount': {
+    one: '{count} Artikel in den Warenkorb',
+    other: '{count} Artikel in den Warenkorb',
+  },
+  'pdp.bought.added': 'Im Warenkorb',
+  'pdp.bought.chooseOne': 'Wähle mindestens einen Artikel',
 };

@@ -45,7 +45,17 @@ describe('Frequently bought together', () => {
     expect(within(block).getAllByTestId('bought-together-option')).toHaveLength(2);
     await userEvent.click(within(block).getByRole('checkbox', { name: /Item 2/ }));
     expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€15.99');
-    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent('Add all (2 items)');
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent(
+      'Add 2 items to cart',
+    );
+
+    // The page's own item can be left out too, and nothing in the block navigates away.
+    await userEvent.click(within(block).getByRole('checkbox', { name: /Rope Tug/ }));
+    expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€5.00');
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent(
+      'Add 1 item to cart',
+    );
+    expect(within(block).queryByRole('link')).toBeNull();
   });
 
   it('uses a running sale price for a suggestion, never a member price', async () => {
@@ -76,6 +86,7 @@ describe('Frequently bought together', () => {
       ],
     });
     expect(await screen.findByText('Added 2 items to your cart')).toBeInTheDocument();
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent('Added to cart');
   });
 
   it('shows what went wrong line by line when the server refuses the whole add', async () => {
@@ -129,9 +140,12 @@ describe('Frequently bought together', () => {
     );
     renderApp('/products/rope-tug');
     const block = await screen.findByTestId('bought-together');
-    expect(block).toHaveTextContent('(not available)');
+    expect(block).toHaveTextContent('Not available');
+    expect(within(block).getByRole('checkbox', { name: /Rope Tug/ })).toBeDisabled();
     expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€5.00');
-    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent('Add all (1 item)');
+    expect(within(block).getByTestId('bought-together-add')).toHaveTextContent(
+      'Add 1 item to cart',
+    );
   });
 });
 

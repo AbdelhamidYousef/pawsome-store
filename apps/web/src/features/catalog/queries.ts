@@ -1,4 +1,5 @@
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { keepPreviousData, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useCallback, useMemo } from 'react';
 
 import {
   fetchCategories,
@@ -67,4 +68,26 @@ export function useProductsByIds(ids: readonly string[]) {
     queryFn: ({ signal }) => fetchProductsByIds(ids, signal),
     enabled: ids.length > 0,
   });
+}
+
+// A card's "Add to cart" needs the product's variants, which a card does not carry. This reads
+// them on demand through the same cache entry the product page uses, so a later visit to the page
+// is instant. `prefetch` runs on hover/focus, which usually hides the request entirely.
+export function useProductLoader() {
+  const queryClient = useQueryClient();
+  const options = useCallback(
+    (slug: string) => ({
+      queryKey: keys.products.detail(slug),
+      queryFn: ({ signal }: { signal: AbortSignal }) => fetchProduct(slug, signal),
+      staleTime: 60_000,
+    }),
+    [],
+  );
+  return useMemo(
+    () => ({
+      prefetch: (slug: string) => void queryClient.prefetchQuery(options(slug)),
+      load: (slug: string) => queryClient.fetchQuery(options(slug)),
+    }),
+    [queryClient, options],
+  );
 }

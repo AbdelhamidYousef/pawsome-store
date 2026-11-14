@@ -148,4 +148,14 @@ export const catalog = {
   'msg.catalog.priceFormat': 'Enter a price like 12.50',
   'catalog.brands.shop': 'Shop the brand',
   'catalog.brand.storyTitle': 'Our story',
+  'catalog.quickAdd.add': 'Add to cart',
+  'catalog.quickAdd.added': 'Added',
+  'catalog.quickAdd.notify': 'Notify me',
+  'catalog.quickAdd.notifyLabel': 'Notify me when {name} is back',
+  'catalog.quickAdd.details': 'View full details',
+  'catalog.quickAdd.soldOutNote':
+    'This option is sold out. Leave your email and we will tell you when it is back.',
+  'catalog.quickAdd.loadError': 'We could not load this product. Please try again.',
+  'catalog.quickAdd.addShort': 'Add to cart',
+  'catalog.quickAdd.forProduct': '{name}',
 } satisfies Dictionary;
