@@ -14,6 +14,17 @@ describe('topicsOfText', () => {
     expect(t).not.toContain('foam it');
   });
 
+  it('skips filler words that say nothing about the product', () => {
+    const t = topicsOfText(
+      'Light enough to carry. Picked it up every day, looks great, works well.',
+    );
+    for (const w of ['enough', 'picked', 'every', 'looks', 'great', 'well', 'day']) {
+      expect(t).not.toContain(w);
+    }
+    expect(t).toContain('carry');
+    expect(t).toContain('light');
+  });
+
   it('never builds a pair across a sentence break', () => {
     const t = topicsOfText('Great foam. Soft cover.');
     expect(t).not.toContain('foam soft');

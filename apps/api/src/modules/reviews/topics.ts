@@ -15,7 +15,10 @@ const STOPWORDS = new Set(
   was we were what when where which while who whom why will with would you your yours yourself
   dont didnt doesnt isnt wasnt cant couldnt wont wouldnt ive im youre theyre thats its got get gets
   bought buy buying one really quite bit lot much many even still ever always never will
-  product item order ordered arrived item items thing things`
+  product item order ordered arrived item items thing things
+  enough every well like looks look looked made took picked since time times day days week weeks
+  second first little needs exactly quickly already around away back again great good nice perfect
+  lovely brilliant fine pet pets nothing better everything friend friends actually`
     .split(/\s+/)
     .filter(Boolean),
 );
