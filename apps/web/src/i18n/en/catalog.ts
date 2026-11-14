@@ -149,7 +149,6 @@ export const catalog = {
   'catalog.brands.shop': 'Shop the brand',
   'catalog.brand.storyTitle': 'Our story',
   'catalog.quickAdd.add': 'Add to cart',
-  'catalog.quickAdd.addLabel': 'Add to cart: {name}',
   'catalog.quickAdd.added': 'Added',
   'catalog.quickAdd.notify': 'Notify me',
   'catalog.quickAdd.notifyLabel': 'Notify me when {name} is back',
@@ -157,4 +156,6 @@ export const catalog = {
   'catalog.quickAdd.soldOutNote':
     'This option is sold out. Leave your email and we will tell you when it is back.',
   'catalog.quickAdd.loadError': 'We could not load this product. Please try again.',
+  'catalog.quickAdd.addShort': 'Add to cart',
+  'catalog.quickAdd.forProduct': '{name}',
 } satisfies Dictionary;

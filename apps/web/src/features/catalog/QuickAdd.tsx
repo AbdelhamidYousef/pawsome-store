@@ -92,11 +92,9 @@ export function CardQuickAdd({ product }: { product: ProductCard }) {
         type="button"
         data-testid="card-add"
         aria-busy={busy || undefined}
-        aria-label={
-          soldOut
-            ? t('catalog.quickAdd.notifyLabel', { name: product.name })
-            : t('catalog.quickAdd.addLabel', { name: product.name })
-        }
+        // "Notify me" names its product in the label; "Add to cart" does it with a hidden suffix
+        // below, so the spoken name always starts with the words on the button (label in name).
+        aria-label={soldOut ? t('catalog.quickAdd.notifyLabel', { name: product.name }) : undefined}
         aria-haspopup={soldOut ? 'dialog' : undefined}
         onPointerEnter={() => loader.prefetch(product.slug)}
         onFocus={() => loader.prefetch(product.slug)}
@@ -105,7 +103,7 @@ export function CardQuickAdd({ product }: { product: ProductCard }) {
         }}
         className={cn(
           buttonClasses(soldOut ? 'ghost' : 'secondary', 'md'),
-          'w-full text-sm sm:text-base',
+          'w-full gap-1.5 px-3 text-sm sm:text-[0.9375rem]',
           busy && 'cursor-progress',
           soldOut && 'border-2 border-line text-muted hover:bg-bg',
           added && 'border-success bg-success-soft text-success hover:bg-success-soft',
@@ -118,11 +116,22 @@ export function CardQuickAdd({ product }: { product: ProductCard }) {
         ) : (
           !soldOut && <PlusGlyph className="h-4 w-4 shrink-0" />
         )}
-        {soldOut
-          ? t('catalog.quickAdd.notify')
-          : added
-            ? t('catalog.quickAdd.added')
-            : t('catalog.quickAdd.add')}
+        {soldOut ? (
+          t('catalog.quickAdd.notify')
+        ) : added ? (
+          t('catalog.quickAdd.added')
+        ) : (
+          <>
+            {/* Grid cards are 150-220px wide below xl: "In den Warenkorb" would wrap there. */}
+            <span className="xl:hidden">{t('catalog.quickAdd.addShort')}</span>
+            <span className="hidden xl:inline">{t('catalog.quickAdd.add')}</span>
+          </>
+        )}
+        {!soldOut && (
+          <span className="sr-only">
+            {t('catalog.quickAdd.forProduct', { name: product.name })}
+          </span>
+        )}
       </button>
       {sheet && (
         <QuickAddSheet

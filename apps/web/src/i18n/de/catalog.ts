@@ -154,7 +154,6 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.brands.shop': 'Zur Marke',
   'catalog.brand.storyTitle': 'Unsere Geschichte',
   'catalog.quickAdd.add': 'In den Warenkorb',
-  'catalog.quickAdd.addLabel': 'In den Warenkorb: {name}',
   'catalog.quickAdd.added': 'Hinzugefügt',
   'catalog.quickAdd.notify': 'Benachrichtigen',
   'catalog.quickAdd.notifyLabel': 'Benachrichtigen, wenn {name} wieder da ist',
@@ -163,4 +162,6 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
     'Diese Variante ist ausverkauft. Hinterlasse deine E-Mail-Adresse, dann sagen wir dir Bescheid, sobald sie wieder da ist.',
   'catalog.quickAdd.loadError':
     'Das Produkt konnte nicht geladen werden. Bitte versuche es noch einmal.',
+  'catalog.quickAdd.addShort': 'Hinzufügen',
+  'catalog.quickAdd.forProduct': '{name}',
 };

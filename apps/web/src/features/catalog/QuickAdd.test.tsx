@@ -42,7 +42,7 @@ describe('ProductCard: quick add', () => {
     const bodies = captureAdds();
     renderCard();
 
-    const button = screen.getByRole('button', { name: 'Add to cart: Rope Tug' });
+    const button = screen.getByRole('button', { name: /Add to cart ?Rope Tug$/ });
     await userEvent.click(button);
 
     expect(await screen.findByText('Added')).toBeInTheDocument();
@@ -56,7 +56,7 @@ describe('ProductCard: quick add', () => {
     const bodies = captureAdds();
     renderCard();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Add to cart: Rope Tug' }));
+    await userEvent.click(screen.getByRole('button', { name: /Add to cart ?Rope Tug$/ }));
     const sheet = await screen.findByTestId('quick-add');
     expect(bodies).toEqual([]);
 
@@ -66,7 +66,7 @@ describe('ProductCard: quick add', () => {
 
     await waitFor(() => expect(bodies).toEqual([{ variantId: 'v2', quantity: 1 }]));
     await waitFor(() => expect(screen.queryByTestId('quick-add')).not.toBeInTheDocument());
-    expect(screen.getByRole('button', { name: 'Add to cart: Rope Tug' })).toHaveFocus();
+    expect(screen.getByRole('button', { name: /Add to cart ?Rope Tug$/ })).toHaveFocus();
   });
 
   it('offers a back-in-stock email instead of adding when the product is sold out', async () => {
