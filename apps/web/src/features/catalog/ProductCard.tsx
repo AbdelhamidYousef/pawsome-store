@@ -16,6 +16,8 @@ import { formatRating } from '../reviews/format';
 import { RatingStars } from '../reviews/RatingStars';
 import { WishlistHeart } from '../wishlist/WishlistHeart';
 
+import { CardQuickAdd } from './QuickAdd';
+
 interface ProductCardProps {
   product: ProductCardData;
   /** First-row cards load eagerly (they are above the fold); the rest are lazy. */
@@ -31,8 +33,8 @@ const MAX_SWATCHES = 4;
 
 const titleCase = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
 
-// The image and text are one link (a big tap target, one tab stop). The colour dots are NOT inside
-// that link, because a button inside a link is invalid and unreachable by keyboard; they sit below
+// The image and text are one link (a big tap target, one tab stop). The colour dots and the
+// "Add to cart" button are NOT inside that link, because a button inside a link is invalid and unreachable by keyboard; they sit below
 // it in the same card. Hovering or focusing a dot previews that colour's photo, and a click (a
 // tap, on touch) keeps it.
 export function ProductCard({
@@ -178,6 +180,9 @@ export function ProductCard({
             )}
           </div>
         )}
+        <div className="px-3 pb-3 sm:px-4 sm:pb-4">
+          <CardQuickAdd product={product} />
+        </div>
         {/* Last in the DOM (after the link and the colour dots), pinned top right by CSS. */}
         <WishlistHeart
           productId={product.id}

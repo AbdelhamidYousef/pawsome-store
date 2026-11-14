@@ -166,7 +166,7 @@ test.describe('stock', () => {
     const shopper = await browser.newContext();
     const shop = await shopper.newPage();
     await shop.goto(`/products/${product.slug}`);
-    await expect(shop.getByRole('button', { name: 'Add to cart' })).toBeEnabled();
+    await expect(shop.getByRole('button', { name: 'Add to cart', exact: true })).toBeEnabled();
     await shopper.close();
 
     await page.goto(`/admin/products/${product.id}`);

@@ -113,3 +113,25 @@ test('every filter group on a short desktop screen can be reached with its optio
     expect(await groups.nth(i).locator('input').count()).toBeGreaterThan(0);
   }
 });
+
+test('quick add from a card: one variant goes straight in, options open a sheet', async ({
+  page,
+}) => {
+  await page.goto('/c/dogs');
+  const count = page.getByTestId('cart-count');
+
+  // Walkies Starter Kit is a kit with one variant: one click, no sheet.
+  await page.getByRole('button', { name: 'Add to cart: Walkies Starter Kit' }).click();
+  await expect(count).toHaveText('1');
+  await expect(page.getByTestId('quick-add')).toHaveCount(0);
+
+  // Braided Tug Rope has colours and sizes: the sheet opens with them, Add closes it.
+  const rope = page.getByRole('button', { name: 'Add to cart: Braided Tug Rope' });
+  await rope.click();
+  const sheet = page.getByTestId('quick-add');
+  await expect(sheet.getByTestId('variant-picker')).toBeVisible();
+  await sheet.getByTestId('quick-add-submit').click();
+  await expect(count).toHaveText('2');
+  await expect(sheet).toHaveCount(0);
+  await expect(rope).toBeFocused();
+});
