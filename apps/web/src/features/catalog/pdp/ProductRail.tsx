@@ -7,6 +7,15 @@ import { cn } from '../../../lib/cn';
 import { track } from '../../../lib/track';
 import { ProductCard } from '../ProductCard';
 
+// From sm up the row stops at the page container, so the peeking card would be sliced by a hard
+// edge; a soft fade on the side(s) that still have cards turns that cut into a "more this way" cue.
+// Phones need none: there the row runs to the screen edge.
+const FADE = {
+  end: 'sm:[mask-image:linear-gradient(to_right,#000_calc(100%-4rem),transparent)]',
+  start: 'sm:[mask-image:linear-gradient(to_right,transparent,#000_4rem)]',
+  both: 'sm:[mask-image:linear-gradient(to_right,transparent,#000_4rem,#000_calc(100%-4rem),transparent)]',
+} as const;
+
 const arrow =
   'inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-ink shadow-card transition hover:border-ink disabled:cursor-default disabled:opacity-40 disabled:hover:border-line';
 
@@ -124,6 +133,9 @@ export function ProductRail({
           // Negative margin + padding keep the cards' shadows and hover lift from being clipped.
           '-mx-4 -my-3 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 py-3 sm:-mx-2 sm:scroll-px-2 sm:gap-6 sm:px-2',
           '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
+          !edges.start && !edges.end && FADE.both,
+          edges.start && !edges.end && FADE.end,
+          !edges.start && edges.end && FADE.start,
           '[&>li]:shrink-0 [&>li]:snap-start [&>li]:basis-[76%] sm:[&>li]:basis-[calc((100%-1.5rem)/2.25)] lg:[&>li]:basis-[calc((100%-3rem)/2.75)]',
         )}
       >
