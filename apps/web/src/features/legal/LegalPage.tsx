@@ -3,13 +3,15 @@ import { Seo } from '../../components/Seo';
 import { useT } from '../../i18n';
 import { TEST_IDS } from '../../lib/test-ids';
 import { MarkdownBody } from '../guides/MarkdownBody';
+import { useStore } from '../stores/StoreContext';
 
-import type { LegalPageDef } from './pages';
+import { legalBody, type LegalPageDef } from './pages';
 
 // One component for every static page: the Markdown is the copy, this is the frame. The notice
 // is part of the frame (not of each file) so no page can lose it when its text is rewritten.
 export function LegalPage({ page }: { page: LegalPageDef }) {
   const { t } = useT();
+  const { lang } = useStore();
   const title = t(page.titleKey);
   return (
     <Container className="py-10 sm:py-16" data-testid={TEST_IDS.pageLegal}>
@@ -24,7 +26,7 @@ export function LegalPage({ page }: { page: LegalPageDef }) {
           {t('content.legal.notice')}
         </p>
         <div className="mt-8">
-          <MarkdownBody source={page.body} className="max-w-none" />
+          <MarkdownBody source={legalBody(page, lang)} className="max-w-none" />
         </div>
       </article>
     </Container>
