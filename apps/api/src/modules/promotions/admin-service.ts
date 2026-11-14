@@ -2,7 +2,7 @@ import {
   ErrorCode,
   formatMoney,
   type AdminBulkTier,
-  type AdminBulkTierInput,
+  type AdminBulkTierParsed,
   type AdminDiscountCode,
   type AdminDiscountCodeParsed,
   type AdminFlashSale,
@@ -90,11 +90,13 @@ const DUPLICATE_TIER = 'There is already a tier for that spend. Edit it instead.
 const toTier = (r: {
   id: string;
   minCents: number;
+  minByCurrency: Record<string, number>;
   percent: number;
   active: boolean;
 }): AdminBulkTier => ({
   id: r.id,
   minCents: r.minCents,
+  minByCurrency: r.minByCurrency,
   percent: r.percent,
   active: r.active,
 });
@@ -102,10 +104,10 @@ const toTier = (r: {
 export async function listTiers() {
   return (await repo.listTiers()).map(toTier);
 }
-export async function createTier(input: Required<AdminBulkTierInput>) {
+export async function createTier(input: AdminBulkTierParsed) {
   return toTier(await mapDuplicate(() => repo.insertTier(input), DUPLICATE_TIER));
 }
-export async function updateTier(id: string, input: Required<AdminBulkTierInput>) {
+export async function updateTier(id: string, input: AdminBulkTierParsed) {
   const row = await mapDuplicate(() => repo.updateTier(id, input), DUPLICATE_TIER);
   if (!row) throw notFound('Tier not found');
   return toTier(row);
@@ -120,6 +122,7 @@ export const getGiftRule = async (): Promise<AdminGiftRule | null> =>
 
 export async function setGiftRule(input: {
   thresholdCents: number;
+  thresholdByCurrency?: Record<string, number> | undefined;
   variant: string;
 }): Promise<AdminGiftRule> {
   const variant = await repo.findVariant(
@@ -138,7 +141,7 @@ export async function setGiftRule(input: {
     });
   }
   await mapDuplicate(
-    () => repo.setGiftRule(input.thresholdCents, variant.id),
+    () => repo.setGiftRule(input.thresholdCents, variant.id, input.thresholdByCurrency),
     'Another admin just set a gift rule. Reload and try again.',
   );
   const rule = await repo.activeGiftRule();
