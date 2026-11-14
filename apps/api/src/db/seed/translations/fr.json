@@ -2,7 +2,7 @@
   "products": {
     "basking-lamp-dome": {
       "slug": "dome-de-lampe-chauffante",
-      "name": "Dôme de lampe chauffante",
+      "name": "Dôme pour lampe chauffante",
       "description": "Un dôme réfléchissant qui concentre la chaleur sur la zone de bain de soleil, avec pince de fixation et câble résistant à la chaleur."
     },
     "walkies-starter-kit": {
@@ -12,18 +12,18 @@
     },
     "braided-tug-rope": {
       "slug": "corde-de-traction-tressee",
-      "name": "Corde de traction tressée",
+      "name": "Corde à tirer tressée",
       "description": "Une épaisse corde de coton tressée avec un nœud à chaque extrémité, conçue pour les jeux de traction et le mâchouillage tout en douceur. Les fibres aident à nettoyer les dents pendant que votre chien joue. Lavable en machine."
     },
     "squeaky-fox-plush": {
       "slug": "peluche-renard-couineur",
-      "name": "Peluche renard couineur",
+      "name": "Renard en peluche couineur",
       "description": "Un renard tout mou avec un couineur caché et des coutures renforcées. Assez doux pour les câlins, assez solide pour une secouée énergique. À utiliser sous surveillance."
     },
     "bouncy-rubber-ball": {
       "slug": "balle-en-caoutchouc-rebondissante",
       "name": "Balle en caoutchouc rebondissante",
-      "description": "Une balle vive en caoutchouc naturel aux rebonds imprévisibles, pour des parties de rapport toujours palpitantes. Elle flotte sur l'eau : aussi à l'aise au bord du lac qu'au parc."
+      "description": "Une balle aux couleurs vives en caoutchouc naturel, aux rebonds imprévisibles, pour des parties de rapport toujours palpitantes. Elle flotte sur l'eau : aussi à l'aise au bord du lac qu'au parc."
     },
     "cloud-comfort-bed": {
       "slug": "panier-nuage-confort",
@@ -97,7 +97,7 @@
     },
     "light-lean-bites": {
       "slug": "bouchees-legeres-et-maigres",
-      "name": "Bouchées légères et maigres",
+      "name": "Bouchées légères",
       "description": "Des friandises d'éducation peu caloriques, riches en fibres, pour que les récompenses ne se voient pas sur la balance. Assez tendres pour être coupées en deux."
     },
     "sensitive-lamb-biscuits": {
@@ -117,7 +117,7 @@
     },
     "ceramic-paw-bowl": {
       "slug": "gamelle-en-ceramique-patte",
-      "name": "Gamelle en céramique Patte",
+      "name": "Gamelle patte en céramique",
       "description": "Une lourde gamelle émaillée ornée d'une empreinte de patte à l'intérieur, trop pesante pour être poussée sur le sol. Compatible lave-vaisselle et micro-ondes."
     },
     "comfort-harness": {
@@ -138,27 +138,27 @@
     "feather-wand-teaser": {
       "slug": "canne-a-plumes",
       "name": "Canne à plumes",
-      "description": "Une canne souple avec un bouquet de plumes au bout d'une longue ficelle, qui volette comme une vraie proie. Parfaite pour s'entraîner à bondir et pour dépenser les crises de folie du soir."
+      "description": "Une canne souple avec un bouquet de plumes au bout d'une longue ficelle, qui volette comme une vraie proie. Parfaite pour s'entraîner à bondir et pour canaliser les folies du soir."
     },
     "crinkle-mouse-trio": {
       "slug": "trio-de-souris-froissables",
-      "name": "Trio de souris froissables",
-      "description": "Trois petites souris en tissu à la doublure froissable qui crépite quand on les chahute. Assez légères pour glisser sur le sol, assez solides pour être transportées."
+      "name": "Trio de souris crépitantes",
+      "description": "Trois petites souris en tissu à la doublure crépitante qui bruisse quand on les chahute. Assez légères pour glisser sur le sol, assez solides pour être transportées."
     },
     "catnip-banana-kicker": {
       "slug": "banane-a-ruer-a-lherbe-a-chat",
-      "name": "Banane à ruer à l'herbe à chat",
-      "description": "Une banane à ruer remplie d'herbe à chat parfumée, idéale pour les câlins et les coups de pattes arrière. Ravivez le parfum en la pressant avant de jouer."
+      "name": "Banane à l'herbe à chat",
+      "description": "Une banane remplie d'herbe à chat parfumée, idéale à enlacer et à bourrer de coups de pattes arrière. Ravivez le parfum en la pressant avant de jouer."
     },
     "cosy-cave-bed": {
       "slug": "panier-grotte-douillet",
       "name": "Panier grotte douillet",
-      "description": "Une grotte en feutre à capuche pour les chats qui aiment se cacher et dormir. Le coussin intérieur doux s'enlève pour le lavage et les parois rigides gardent leur forme."
+      "description": "Une grotte couverte en feutre pour les chats qui aiment se cacher pour dormir. Le coussin intérieur tout doux s'enlève pour le lavage et les parois rigides gardent leur forme."
     },
     "window-perch-cushion": {
       "slug": "coussin-perchoir-pour-fenetre",
       "name": "Coussin perchoir pour fenêtre",
-      "description": "Un coussin plat et chaud qui se fixe à un rebord de fenêtre avec de solides ventouses, pour offrir à votre chat une place au premier rang sur le quartier. Matelassé pour plus de confort sur les articulations plus âgées."
+      "description": "Un coussin plat et chaud qui se fixe à un rebord de fenêtre avec de solides ventouses, pour offrir à votre chat une vue imprenable sur le quartier. Matelassé pour plus de confort sur les articulations plus âgées."
     },
     "salmon-crunch-treats": {
       "slug": "friandises-croquantes-au-saumon",
@@ -172,12 +172,12 @@
     },
     "ceramic-whisker-bowl": {
       "slug": "gamelle-en-ceramique-pour-moustaches",
-      "name": "Gamelle en céramique pour moustaches",
+      "name": "Gamelle large en céramique",
       "description": "Une gamelle en céramique peu profonde et large pour que les moustaches ne touchent jamais les bords. La base lourde reste en place, et l'émail va au lave-vaisselle."
     },
     "gravity-water-dispenser": {
       "slug": "fontaine-a-eau-a-gravite",
-      "name": "Fontaine à eau à gravité",
+      "name": "Distributeur d'eau à gravité",
       "description": "Une tour à eau rechargeable qui remplit la gamelle au fur et à mesure que votre chat boit, pour avoir toujours de l'eau fraîche sans pompe ni prise. Facile à remplir et à rincer."
     },
     "soft-travel-carrier": {
@@ -187,7 +187,7 @@
     },
     "crinkle-play-tunnel": {
       "slug": "tunnel-de-jeu-froissable",
-      "name": "Tunnel de jeu froissable",
+      "name": "Tunnel de jeu crépitant",
       "description": "Un tunnel qui crépite quand un chat le traverse en trombe, avec un trou d'observation pour les embuscades. Se plie à plat pour le rangement."
     },
     "spooky-bat-teaser": {
@@ -207,7 +207,7 @@
     },
     "sunny-shelf-hammock": {
       "slug": "hamac-etagere-ensoleillee",
-      "name": "Hamac étagère ensoleillée",
+      "name": "Hamac de radiateur",
       "description": "Un hamac qui s'accroche à un radiateur ou à un rebord de fenêtre pour un coin chaud d'où observer la rue. Supporte jusqu'à six kilos."
     },
     "dental-crunch-bites": {
@@ -232,8 +232,8 @@
     },
     "whisper-drinking-fountain": {
       "slug": "fontaine-a-boire-silencieuse",
-      "name": "Fontaine à boire silencieuse",
-      "description": "Une fontaine discrète qui garde l'eau en mouvement et fraîche, ce que beaucoup de chats préfèrent. Un filtre remplaçable préserve un goût propre."
+      "name": "Fontaine à eau silencieuse",
+      "description": "Une fontaine silencieuse qui garde l'eau en mouvement et fraîche, ce que beaucoup de chats préfèrent. Un filtre remplaçable garde une eau au goût pur."
     },
     "snuffle-feeding-mat": {
       "slug": "tapis-de-fouille-pour-repas",
@@ -283,16 +283,16 @@
     "millet-spray-treats": {
       "slug": "grappes-de-millet-gourmandes",
       "name": "Grappes de millet gourmandes",
-      "description": "Des grappes de millet entières pour le plaisir de la recherche et une récompense préférée. Clipsez-en une à la cage et regardez le grignotage commencer."
+      "description": "Des grappes de millet entières pour le plaisir de la recherche et une récompense très appréciée. Clipsez-en une à la cage : le grignotage commence aussitôt."
     },
     "dome-travel-cage": {
       "slug": "cage-de-voyage-dome",
-      "name": "Cage de voyage dôme",
+      "name": "Cage de transport dôme",
       "description": "Une cage en dôme avec poignée de transport, deux perchoirs et tiroir amovible, idéale pour les visites chez le vétérinaire et les courts trajets. L'espacement large des barreaux convient aux petits oiseaux."
     },
     "tabletop-play-stand": {
       "slug": "aire-de-jeu-de-table",
-      "name": "Aire de jeu de table",
+      "name": "Aire de jeu à poser",
       "description": "Un petit terrain de jeu pour les moments hors de la cage, avec deux perchoirs, deux coupelles et une échelle. Se pose fermement sur une table ou une étagère."
     },
     "hanging-seed-feeder": {
@@ -312,7 +312,7 @@
     },
     "foraging-wheel": {
       "slug": "roue-de-recherche-de-nourriture",
-      "name": "Roue de recherche de nourriture",
+      "name": "Roue de fouille",
       "description": "Une roue avec des poches cachées où glisser des friandises, pour que les oiseaux travaillent pour leur collation. Garnitures en papier remplaçables."
     },
     "fruit-and-nut-mix": {
@@ -328,7 +328,7 @@
     "sprouting-seed-mix": {
       "slug": "melange-de-graines-a-germer",
       "name": "Mélange de graines à germer",
-      "description": "Un mélange de graines et de légumineuses qui donnent de frais germes en trois jours, pour un apport de verdure dans la gamelle. Céréales biologiques."
+      "description": "Un mélange de graines et de légumineuses qui donnent des germes frais en trois jours, pour un apport de verdure dans la gamelle. Céréales biologiques."
     },
     "starter-flight-cage": {
       "slug": "cage-de-vol-pour-debuter",
@@ -348,7 +348,7 @@
     "seed-catcher-tray": {
       "slug": "jupe-pare-graines",
       "name": "Jupe pare-graines",
-      "description": "Une jupe en maille qui se clipse autour de la cage et retient les écorces et les graines avant qu'elles ne touchent le sol. Lavable."
+      "description": "Une jupe en maille qui se clipse autour de la cage et retient les enveloppes et les graines avant qu'elles ne touchent le sol. Lavable."
     },
     "drip-water-cup": {
       "slug": "abreuvoir-a-goutte",
@@ -392,7 +392,7 @@
     },
     "coral-cave-hideout": {
       "slug": "grotte-corail-cachette",
-      "name": "Grotte corail cachette",
+      "name": "Grotte cachette en corail",
       "description": "Une grotte rocheuse surmontée de formes de corail, qui offre aux poissons timides un endroit où se retirer et explorer. Convient aux aquariums d'eau douce et d'eau de mer."
     },
     "silk-plant-pack": {
@@ -458,7 +458,7 @@
     "chew-stick-hanger": {
       "slug": "suspension-de-batons-a-ronger",
       "name": "Suspension de bâtons à ronger",
-      "description": "Un fagot de bâtons de pommier sur une corde à suspendre, pour garder les dents usées et les cerveaux occupés."
+      "description": "Un fagot de bâtons de pommier sur une corde à suspendre, pour user les dents et occuper les esprits."
     },
     "activity-cube": {
       "slug": "cube-dactivites",
@@ -527,7 +527,7 @@
     },
     "nano-glass-box": {
       "slug": "nano-boite-en-verre",
-      "name": "Nano boîte en verre",
+      "name": "Boîte nano en verre",
       "description": "Une petite boîte en verre pour geckos et nouveau-nés, ou comme bac de quarantaine. Couvercle coulissant ventilé."
     },
     "tortoise-table": {
@@ -593,7 +593,7 @@
     "cork-bark-tube": {
       "slug": "tube-en-ecorce-de-liege",
       "name": "Tube en écorce de liège",
-      "description": "Un épais tube de liège pour grimper à travers et s'y cacher. Existe en formes uniques."
+      "description": "Un épais tube de liège à traverser et où se cacher. Chaque pièce est unique."
     },
     "vine-climbing-set": {
       "slug": "set-de-lianes-descalade",
@@ -613,7 +613,7 @@
     "gecko-meal-pellets": {
       "slug": "granules-repas-pour-geckos",
       "name": "Granulés repas pour geckos",
-      "description": "Une poudre en granulés à simplement mélanger à l'eau pour geckos à crête et léopards. Une base équilibrée avec du calcium."
+      "description": "Une poudre à mélanger simplement à l'eau pour geckos à crête et geckos léopards. Une base équilibrée avec du calcium."
     },
     "tortoise-greens-mix": {
       "slug": "melange-de-verdure-pour-tortues",
@@ -627,17 +627,17 @@
     },
     "dragon-salad-crumble": {
       "slug": "emiette-de-salade-pour-dragons",
-      "name": "Émietté de salade pour dragons",
-      "description": "Un émietté de légumes et d'herbes séchés à réhydrater pour dragons barbus. Une base variée pour un bol de salade."
+      "name": "Salade déshydratée pour agames",
+      "description": "Un mélange émietté de légumes et d'herbes séchés à réhydrater pour les agames barbus. Une base variée pour leur salade."
     },
     "fetch-play-kit": {
       "slug": "kit-de-jeu-rapport-et-traction",
-      "name": "Kit de jeu rapport et traction",
-      "description": "Tout pour une bonne partie de rapport et de traction dans une seule boîte : une corde tressée, une balle en caoutchouc rebondissante et un renard couineur à câliner ensuite."
+      "name": "Kit de jeu balle et corde",
+      "description": "Tout pour de belles parties de lancer et de tir à la corde dans une seule boîte : une corde tressée, une balle en caoutchouc rebondissante et un renard couineur à câliner ensuite."
     },
     "dinner-time-kit": {
       "slug": "kit-heure-du-diner",
-      "name": "Kit heure du dîner",
+      "name": "Kit repas",
       "description": "Une gamelle en inox pour les repas, un labyrinthe anti-glouton pour manger plus lentement, et deux sachets de friandises pour l'éducation et les récompenses."
     }
   },
@@ -700,7 +700,7 @@
     "cat-toys": {
       "slug": "jouets-chat",
       "name": "Jouets",
-      "description": "Cannes à plumes, coussins à l'herbe à chat et souris froissables pour guetter, bondir et attraper."
+      "description": "Cannes à plumes, coussins à l'herbe à chat et souris crépitantes pour guetter, bondir et attraper."
     },
     "cat-beds": {
       "slug": "paniers-logements-chat",
@@ -868,13 +868,13 @@
       "slug": "un-bilan-de-sante-simple-a-la-maison",
       "title": "Un bilan de santé hebdomadaire simple à la maison",
       "summary": "Cinq minutes par semaine pour observer les yeux, les oreilles, le pelage, l'appétit et l'énergie, et repérer tôt ce qui change.",
-      "bodyMd": "Personne ne connaît votre animal mieux que vous. Un petit contrôle détendu, une fois par semaine, transforme cet instinct en habitude : vous apprenez à quoi ressemble la « normale » pour votre chien, votre chat ou votre lapin, et vous repérez vite ce qui change. Comptez environ cinq minutes. Cela fonctionne pour la plupart des animaux à poils, et c'est aussi un joli moment de câlins.\n\n## Choisir un moment calme\n\nChoisissez un moment où votre animal est déjà détendu, après une promenade ou le repas du soir par exemple. Asseyez-vous par terre plutôt que de vous pencher au-dessus de lui, gardez quelques friandises à portée de main et parlez d'une voix douce et posée. S'il se dérobe, arrêtez et réessayez demain. Un contrôle qui se termine bien, c'est un contrôle qu'il acceptera la prochaine fois.\n\nProcédez toujours dans le même ordre, du museau à la queue. Une routine rend l'exercice plus rapide pour vous et prévisible pour lui.\n\n## Yeux, oreilles, nez et gueule\n\n- **Les yeux** doivent être brillants et clairs, sans rougeur, voile ni écoulement épais. Un peu de chassie au coin de l'œil est normal ; des larmes en continu ou un œil plissé, non.\n- **Les oreilles** doivent être propres et ne presque rien sentir. Un cérumen foncé, une odeur aigre, des rougeurs ou des secouements de tête fréquents justifient un appel chez le vétérinaire.\n- **Le nez** : humide ou sec, cela varie au fil de la journée, inutile d'y voir un signe. Cherchez plutôt des croûtes, du sang ou un écoulement.\n- **La gueule** : soulevez doucement la babine. Les gencives doivent être roses et humides. Notez une ligne de gencive très rouge, une dent cassée ou une haleine soudain bien plus forte que d'habitude.\n\n## Pelage, peau et silhouette\n\nPassez lentement les mains sur tout le corps, ventre, aisselles et queue compris. Vous cherchez tout ce qui est nouveau : grosseurs, croûtes, zones chaudes ou sensibles, endroits où votre animal sursaute.\n\nÉcartez les poils à quelques endroits pour regarder la peau. Elle doit être propre, sans pellicules, rougeurs ni petits points noirs, qui peuvent trahir la présence de puces. Un poil brillant est généralement bon signe ; un pelage soudain terne ou clairsemé mérite votre attention.\n\nProfitez-en pour vérifier la silhouette. Vous devez sentir les côtes sous une fine couche de gras sans appuyer, et voir la taille vue de dessus. Les variations de poids lentes passent facilement inaperçues quand on voit son animal tous les jours : une pesée mensuelle, toujours sur la même balance, est un bon complément.\n\n## Pattes, griffes et arrière-train\n\nRegardez entre les doigts à la recherche d'épillets, de petites coupures ou de rougeurs, et vérifiez que les coussinets ne sont pas crevassés. Les griffes ne doivent ni claquer bruyamment sur un sol dur, ni se recourber vers le coussinet. Les chiens qui marchent surtout sur l'herbe, les chats âgés et les lapins d'intérieur ont souvent besoin d'une coupe plus souvent qu'on ne le pense.\n\nEnfin, un coup d'œil sous la queue. Tout doit être propre. Un animal qui se frotte le derrière au sol, se lèche beaucoup ou a l'arrière-train sale peut avoir un souci de glandes anales ou de digestion, et chez le lapin, souvent d'alimentation.\n\n## Appétit, soif et énergie\n\nTout ne se voit pas de l'extérieur. Au fil de la semaine, gardez un œil sur :\n\n- **L'appétit** : votre animal finit-il ses repas à son rythme habituel ? Au-delà d'une journée sans manger, appelez votre vétérinaire. Chez le lapin et le cochon d'Inde, quelques heures sans manger constituent déjà une urgence.\n- **La soif** : un changement net, dans un sens comme dans l'autre, compte. Une gamelle ou une fontaine à réservoir transparent, comme notre fontaine à eau à gravité, permet de voir facilement la quantité bue chaque jour.\n- **Les besoins** : quantité, couleur ou fréquence qui changent, ou efforts pour faire.\n- **L'énergie et l'humeur** : il se cache davantage, dort beaucoup plus, rechigne à sauter ou à monter l'escalier, ou se montre grognon quand on le touche.\n\n## Tenir un petit carnet\n\nUne note sur votre téléphone suffit : la date, le poids si vous l'avez et tout ce qui est nouveau. Une photo d'une grosseur à côté d'une pièce de monnaie vous montre si elle grossit. Chez le vétérinaire, quelques semaines de notes valent bien mieux que « je crois qu'il est un peu calme ces temps-ci ».\n\n## Check-list express\n\n- Yeux clairs, oreilles propres, gencives roses\n- Aucune nouvelle grosseur, croûte ou zone sensible\n- Peau propre, poil brillant, pas de déjections de puces\n- Côtes faciles à sentir, taille visible\n- Pattes, coussinets et griffes en bon état\n- Appétit, soif et besoins comme d'habitude\n- Énergie et humeur comme d'habitude\n\n## Quand appeler le vétérinaire\n\nCe contrôle vous aide à remarquer les changements. Il ne remplace pas un examen vétérinaire et ne permet pas de poser un diagnostic à la maison. Si quelque chose vous semble anormal, ou si votre instinct vous dit que votre animal n'est pas dans son assiette, appelez votre vétérinaire. Consultez immédiatement en cas de difficultés respiratoires, d'effondrement, de vomissements répétés, de ventre gonflé, ou si un petit mammifère a cessé de manger. La plupart des vétérinaires préfèrent voir un animal trop tôt que trop tard."
+      "bodyMd": "Personne ne connaît votre animal mieux que vous. Un petit contrôle détendu, une fois par semaine, transforme cet instinct en habitude : vous apprenez à quoi ressemble la « normale » pour votre chien, votre chat ou votre lapin, et vous repérez vite ce qui change. Comptez environ cinq minutes. Cela fonctionne pour la plupart des animaux à poils, et c'est aussi un joli moment de câlins.\n\n## Choisir un moment calme\n\nChoisissez un moment où votre animal est déjà détendu, après une promenade ou le repas du soir par exemple. Asseyez-vous par terre plutôt que de vous pencher au-dessus de lui, gardez quelques friandises à portée de main et parlez d'une voix douce et posée. S'il se dérobe, arrêtez et réessayez demain. Un contrôle qui se termine bien, c'est un contrôle qu'il acceptera la prochaine fois.\n\nProcédez toujours dans le même ordre, du museau à la queue. Une routine rend l'exercice plus rapide pour vous et prévisible pour lui.\n\n## Yeux, oreilles, nez et gueule\n\n- **Les yeux** doivent être brillants et clairs, sans rougeur, voile ni écoulement épais. Un peu de chassie au coin de l'œil est normal ; des larmes en continu ou un œil plissé, non.\n- **Les oreilles** doivent être propres et ne presque rien sentir. Un cérumen foncé, une odeur aigre, des rougeurs ou des secouements de tête fréquents justifient un appel chez le vétérinaire.\n- **Le nez** : humide ou sec, cela varie au fil de la journée, inutile d'y voir un signe. Cherchez plutôt des croûtes, du sang ou un écoulement.\n- **La gueule** : soulevez doucement la babine. Les gencives doivent être roses et humides. Notez une ligne de gencive très rouge, une dent cassée ou une haleine soudain bien plus forte que d'habitude.\n\n## Pelage, peau et silhouette\n\nPassez lentement les mains sur tout le corps, ventre, aisselles et queue compris. Vous cherchez tout ce qui est nouveau : grosseurs, croûtes, zones chaudes ou sensibles, endroits où votre animal sursaute.\n\nÉcartez les poils à quelques endroits pour regarder la peau. Elle doit être propre, sans pellicules, rougeurs ni petits points noirs, qui peuvent trahir la présence de puces. Un poil brillant est généralement bon signe ; un pelage soudain terne ou clairsemé mérite votre attention.\n\nProfitez-en pour vérifier la silhouette. Vous devez sentir les côtes sous une fine couche de gras sans appuyer, et voir la taille vue de dessus. Les variations de poids lentes passent facilement inaperçues quand on voit son animal tous les jours : une pesée mensuelle, toujours sur la même balance, est un bon complément.\n\n## Pattes, griffes et arrière-train\n\nRegardez entre les doigts à la recherche d'épillets, de petites coupures ou de rougeurs, et vérifiez que les coussinets ne sont pas crevassés. Les griffes ne doivent ni claquer bruyamment sur un sol dur, ni se recourber vers le coussinet. Les chiens qui marchent surtout sur l'herbe, les chats âgés et les lapins d'intérieur ont souvent besoin d'une coupe plus souvent qu'on ne le pense.\n\nEnfin, un coup d'œil sous la queue. Tout doit être propre. Un animal qui se frotte le derrière au sol, se lèche beaucoup ou a l'arrière-train sale peut avoir un souci de glandes anales ou de digestion, et chez le lapin, souvent d'alimentation.\n\n## Appétit, soif et énergie\n\nTout ne se voit pas de l'extérieur. Au fil de la semaine, gardez un œil sur :\n\n- **L'appétit** : votre animal finit-il ses repas à son rythme habituel ? Au-delà d'une journée sans manger, appelez votre vétérinaire. Chez le lapin et le cochon d'Inde, quelques heures sans manger constituent déjà une urgence.\n- **La soif** : un changement net, dans un sens comme dans l'autre, compte. Une gamelle ou une fontaine à réservoir transparent, comme notre distributeur d'eau à gravité, permet de voir facilement la quantité bue chaque jour.\n- **Les besoins** : quantité, couleur ou fréquence qui changent, ou efforts pour faire.\n- **L'énergie et l'humeur** : il se cache davantage, dort beaucoup plus, rechigne à sauter ou à monter l'escalier, ou se montre grognon quand on le touche.\n\n## Tenir un petit carnet\n\nUne note sur votre téléphone suffit : la date, le poids si vous l'avez et tout ce qui est nouveau. Une photo d'une grosseur à côté d'une pièce de monnaie vous montre si elle grossit. Chez le vétérinaire, quelques semaines de notes valent bien mieux que « je crois qu'il est un peu calme ces temps-ci ».\n\n## Check-list express\n\n- Yeux clairs, oreilles propres, gencives roses\n- Aucune nouvelle grosseur, croûte ou zone sensible\n- Peau propre, poil brillant, pas de déjections de puces\n- Côtes faciles à sentir, taille visible\n- Pattes, coussinets et griffes en bon état\n- Appétit, soif et besoins comme d'habitude\n- Énergie et humeur comme d'habitude\n\n## Quand appeler le vétérinaire\n\nCe contrôle vous aide à remarquer les changements. Il ne remplace pas un examen vétérinaire et ne permet pas de poser un diagnostic à la maison. Si quelque chose vous semble anormal, ou si votre instinct vous dit que votre animal n'est pas dans son assiette, appelez votre vétérinaire. Consultez immédiatement en cas de difficultés respiratoires, d'effondrement, de vomissements répétés, de ventre gonflé, ou si un petit mammifère a cessé de manger. La plupart des vétérinaires préfèrent voir un animal trop tôt que trop tard."
     },
     "choosing-a-dog-toy": {
       "slug": "comment-choisir-un-jouet-pour-chien",
       "title": "Bien choisir un jouet pour chien",
       "summary": "Tirer, rapporter, mâchouiller ou câliner : un jouet adapté au style de jeu de votre chien dure plus longtemps et sert davantage.",
-      "bodyMd": "Chaque chien a sa façon de jouer. Certains vivent pour la course-poursuite, d'autres cherchent un partenaire de tir à la corde, et quelques-uns veulent simplement promener un jouet partout et le faire couiner à six heures du matin. Choisissez un jouet adapté à la manière de jouer de votre chien : il servira tous les jours au lieu de prendre la poussière sous le canapé. Voici comment nous faisons notre choix.\n\n## Partir du style de jeu de votre chien\n\nObservez votre chien pendant quelques jours et notez ce vers quoi il va spontanément.\n\n- **Le coureur** fonce après tout ce qui bouge. Les balles et les jouets à lancer sont son bonheur absolu.\n- **Le tireur** attrape une manche, une laisse ou une serviette et tire. Les cordes et les jouets de traction longs et solides donnent à cette énergie un vrai exutoire.\n- **Le mâchouilleur** s'installe longuement avec quelque chose à ronger. Il lui faut des matières plus résistantes et un peu plus de surveillance.\n- **Le porteur** trottine fièrement avec un jouet dans la gueule, souvent une peluche, et dort parfois à côté.\n\nLa plupart des chiens sont un mélange : deux ou trois types de jouets en rotation suffisent généralement à tout couvrir.\n\n## Choisir la bonne taille\n\nPour la sécurité, la taille compte plus que tout. Un jouet doit être **trop gros pour être avalé** et ne pas pouvoir se coincer au fond de la gueule. En règle générale, une balle doit être plus large que la gueule ouverte de votre chien, pas seulement que sa gueule fermée. Un grand chien a besoin de grands jouets, même si un petit semble plus mignon. À l'inverse, les chiots et les très petites races se lassent des jouets qu'ils ne peuvent pas porter facilement.\n\nSi votre chien grandit ou qu'un chien plus grand rejoint la famille, refaites le tour du coffre à jouets.\n\n## Adapter la matière à l'usage\n\n- **La corde** est idéale pour le tir à la corde et le mâchouillage en douceur, et ses fibres nettoient légèrement les dents pendant le jeu. Notre corde de traction tressée a un nœud à chaque extrémité pour que vous ayez tous les deux une bonne prise. Jetez-la dès qu'elle s'effiloche en longs brins, qui ne doivent pas être avalés.\n- **Le caoutchouc** convient au rapport et au mâchouillage. Privilégiez un caoutchouc naturel ou de qualité alimentaire, avec un peu de souplesse : un jouet plus dur que les dents de votre chien peut les abîmer. Une balle aux rebonds imprévisibles, comme notre balle en caoutchouc rebondissante, rend le rapport bien plus excitant.\n- **La peluche** est faite pour les câlins, le transport et le jeu doux. Les couineurs la rendent irrésistible : choisissez des coutures renforcées et retirez-la dès que votre chien entreprend d'en opérer le rembourrage.\n\n## Jouer ensemble, pas seulement seul\n\nUn jouet fonctionne mieux dans un jeu partagé avec vous. Le tir à la corde apprend la maîtrise de soi si vous ajoutez un simple « lâche » récompensé par une nouvelle manche. Le rapport dépense vite l'énergie et renforce le rappel. Des séances courtes de cinq à dix minutes, plusieurs fois par jour, valent mieux qu'un long marathon, surtout pour les chiots et les chiens âgés aux articulations raides.\n\nGardez un ou deux **jouets spéciaux** qui ne sortent que pour jouer avec vous. Ils restent passionnants et deviennent une excellente récompense pendant l'éducation.\n\n## Alterner, vérifier, remplacer\n\nLes chiens se lassent des mêmes jouets. Laissez-en trois ou quatre en accès libre et échangez le reste chaque semaine environ : un « vieux » jouet ressorti du placard paraît souvent tout neuf.\n\nÀ chaque échange, inspectez rapidement chaque jouet. Jetez tout ce qui présente des fissures, des pièces qui se détachent, des coutures déchirées ou des morceaux manquants. Lavez régulièrement cordes et peluches (la plupart passent en machine) et rincez les jouets en caoutchouc à l'eau chaude savonneuse.\n\n## Check-list express\n\n- Le jouet correspond au style de jeu de votre chien\n- Trop gros pour être avalé, avec de la marge\n- La matière convient au jeu : corde pour tirer, caoutchouc pour rapporter et mâchouiller, peluche pour les câlins\n- Deux ou trois types en rotation, échangés chaque semaine\n- Un jouet abîmé part à la poubelle, pas dans le coffre\n- Sans surveillance, uniquement des jouets que votre chien ne peut pas détruire\n\n## Un mot sur la sécurité\n\nAucun jouet n'est vraiment indestructible, et chaque chien mâchouille à sa façon. Surveillez les nouveaux jouets jusqu'à savoir comment votre chien les traite. S'il avale un morceau de jouet, ou s'il présente des vomissements, des haut-le-cœur, un ventre sensible ou des efforts pour faire ses besoins, appelez immédiatement votre vétérinaire plutôt que d'attendre."
+      "bodyMd": "Chaque chien a sa façon de jouer. Certains vivent pour la course-poursuite, d'autres cherchent un partenaire de tir à la corde, et quelques-uns veulent simplement promener un jouet partout et le faire couiner à six heures du matin. Choisissez un jouet adapté à la manière de jouer de votre chien : il servira tous les jours au lieu de prendre la poussière sous le canapé. Voici comment nous faisons notre choix.\n\n## Partir du style de jeu de votre chien\n\nObservez votre chien pendant quelques jours et notez ce vers quoi il va spontanément.\n\n- **Le coureur** fonce après tout ce qui bouge. Les balles et les jouets à lancer sont son bonheur absolu.\n- **Le tireur** attrape une manche, une laisse ou une serviette et tire. Les cordes et les jouets de traction longs et solides donnent à cette énergie un vrai exutoire.\n- **Le mâchouilleur** s'installe longuement avec quelque chose à ronger. Il lui faut des matières plus résistantes et un peu plus de surveillance.\n- **Le porteur** trottine fièrement avec un jouet dans la gueule, souvent une peluche, et dort parfois à côté.\n\nLa plupart des chiens sont un mélange : deux ou trois types de jouets en rotation suffisent généralement à tout couvrir.\n\n## Choisir la bonne taille\n\nPour la sécurité, la taille compte plus que tout. Un jouet doit être **trop gros pour être avalé** et ne pas pouvoir se coincer au fond de la gueule. En règle générale, une balle doit être plus large que la gueule ouverte de votre chien, pas seulement que sa gueule fermée. Un grand chien a besoin de grands jouets, même si un petit semble plus mignon. À l'inverse, les chiots et les très petites races se lassent des jouets qu'ils ne peuvent pas porter facilement.\n\nSi votre chien grandit ou qu'un chien plus grand rejoint la famille, refaites le tour du coffre à jouets.\n\n## Adapter la matière à l'usage\n\n- **La corde** est idéale pour le tir à la corde et le mâchouillage en douceur, et ses fibres nettoient légèrement les dents pendant le jeu. Notre corde à tirer tressée a un nœud à chaque extrémité pour que vous ayez tous les deux une bonne prise. Jetez-la dès qu'elle s'effiloche en longs brins, qui ne doivent pas être avalés.\n- **Le caoutchouc** convient au rapport et au mâchouillage. Privilégiez un caoutchouc naturel ou de qualité alimentaire, avec un peu de souplesse : un jouet plus dur que les dents de votre chien peut les abîmer. Une balle aux rebonds imprévisibles, comme notre balle en caoutchouc rebondissante, rend le rapport bien plus excitant.\n- **La peluche** est faite pour les câlins, le transport et le jeu doux. Les couineurs la rendent irrésistible : choisissez des coutures renforcées et retirez-la dès que votre chien entreprend d'en opérer le rembourrage.\n\n## Jouer ensemble, pas seulement seul\n\nUn jouet fonctionne mieux dans un jeu partagé avec vous. Le tir à la corde apprend la maîtrise de soi si vous ajoutez un simple « lâche » récompensé par une nouvelle manche. Le rapport dépense vite l'énergie et renforce le rappel. Des séances courtes de cinq à dix minutes, plusieurs fois par jour, valent mieux qu'un long marathon, surtout pour les chiots et les chiens âgés aux articulations raides.\n\nGardez un ou deux **jouets spéciaux** qui ne sortent que pour jouer avec vous. Ils restent passionnants et deviennent une excellente récompense pendant l'éducation.\n\n## Alterner, vérifier, remplacer\n\nLes chiens se lassent des mêmes jouets. Laissez-en trois ou quatre en accès libre et échangez le reste chaque semaine environ : un « vieux » jouet ressorti du placard paraît souvent tout neuf.\n\nÀ chaque échange, inspectez rapidement chaque jouet. Jetez tout ce qui présente des fissures, des pièces qui se détachent, des coutures déchirées ou des morceaux manquants. Lavez régulièrement cordes et peluches (la plupart passent en machine) et rincez les jouets en caoutchouc à l'eau chaude savonneuse.\n\n## Check-list express\n\n- Le jouet correspond au style de jeu de votre chien\n- Trop gros pour être avalé, avec de la marge\n- La matière convient au jeu : corde pour tirer, caoutchouc pour rapporter et mâchouiller, peluche pour les câlins\n- Deux ou trois types en rotation, échangés chaque semaine\n- Un jouet abîmé part à la poubelle, pas dans le coffre\n- Sans surveillance, uniquement des jouets que votre chien ne peut pas détruire\n\n## Un mot sur la sécurité\n\nAucun jouet n'est vraiment indestructible, et chaque chien mâchouille à sa façon. Surveillez les nouveaux jouets jusqu'à savoir comment votre chien les traite. S'il avale un morceau de jouet, ou s'il présente des vomissements, des haut-le-cœur, un ventre sensible ou des efforts pour faire ses besoins, appelez immédiatement votre vétérinaire plutôt que d'attendre."
     },
     "cosy-spots-for-cats": {
       "slug": "les-coins-douillets-que-les-chats-adorent",
@@ -898,7 +898,7 @@
       "slug": "occuper-un-chat-dinterieur",
       "title": "Occuper un chat d'intérieur",
       "summary": "De courtes séances de chasse, quelques jouets bien choisis et une fenêtre sur le monde gardent un chat d'intérieur en forme, serein et curieux.",
-      "bodyMd": "Les chats d'intérieur vivent plus longtemps et plus en sécurité, mais ils gardent leur instinct de chasseur. Un chat qui n'a rien à guetter, poursuivre ou explorer trouve vite ses propres distractions : les rideaux, vos chevilles à 4 heures du matin, ou tout simplement un peu trop de sommeil et de grignotage. Bonne nouvelle : rendre un chat d'intérieur heureux demande moins de temps qu'on ne le croit. Quelques courtes séances par jour et un intérieur pensé pour lui font toute la différence.\n\n## Jouer comme on chasse\n\nLe chat ne joue pas pour rien : le jeu, c'est l'entraînement à la chasse. Les meilleures séances suivent toujours le même schéma : **guetter, poursuivre, bondir, attraper, manger**. Dix minutes suffisent pour reproduire ce rythme.\n\n- Éloignez le jouet de votre chat, ne le dirigez jamais vers lui. Une proie fuit et se cache, elle ne fonce pas sur le prédateur.\n- Faites disparaître le jouet derrière une chaise ou sous une couverture, puis faites-le réapparaître. L'attente avant le bond, c'est la moitié du plaisir.\n- Alternez les sprints rapides et les petits mouvements saccadés au sol.\n- Laissez votre chat attraper le jouet assez souvent pour qu'il reste motivé, et laissez-lui toujours gagner la dernière manche.\n\nUne canne à plumes comme notre canne à plumes est idéale : votre main reste loin des griffes, et la « proie » peut voler, voleter et se poser. Rangez les cannes après chaque séance. Elles restent ainsi un moment à part, et une ficelle qui traîne est dangereuse si votre chat la mâchonne.\n\n## Souvent et court plutôt qu'une longue séance\n\nLa plupart des chats sont des sprinteurs. Deux ou trois séances de 5 à 15 minutes leur conviennent bien mieux qu'un long entraînement. Les meilleurs moments : tôt le matin, en début de soirée et juste avant votre coucher, quand beaucoup de chats ont de toute façon un regain d'énergie.\n\nTerminez chaque séance par un petit repas ou quelques friandises. Chasser, attraper, manger, faire sa toilette, dormir : c'est le cycle naturel, et le boucler aide beaucoup de chats à se poser pour la nuit au lieu de galoper dans le couloir.\n\n## Des jouets pour s'amuser seul\n\nVous ne pouvez pas jouer toute la journée : laissez donc à disposition quelques jouets que votre chat peut manipuler seul. Les petits jouets légers qui glissent sur un sol lisse fonctionnent bien, tout comme les coussins à mordiller que votre chat attrape avec les pattes avant et laboure avec les pattes arrière. Notre trio de souris froissables et notre banane à ruer à l'herbe à chat sont faits pour ça.\n\nPour que les jouets restent attrayants :\n\n- **Faites tourner.** Gardez la plupart des jouets dans un tiroir et n'en sortez que deux ou trois à la fois. Changez-les tous les quelques jours, et les anciens favoris redeviennent nouveaux.\n- **Ravivez l'odeur.** Rangés dans une boîte avec une pincée d'herbe à chat séchée ou de matatabi, les jouets deviennent plus tentants. Tous les chats ne réagissent pas à l'herbe à chat : environ un tiers y reste indifférent, et c'est tout à fait normal.\n- **Vérifiez-les régulièrement.** Jetez tout jouet avec des fils qui dépassent, de petites pièces ou des coutures ouvertes.\n\n## Faire du repas un jeu\n\nDans la nature, un chat fait de nombreux petits repas et travaille pour chacun d'eux. Les gamelles puzzle, les balles distributrices et les tapis de fouille lui rendent un peu de cet effort. Commencez par un modèle facile pour qu'il réussisse vite, puis augmentez la difficulté peu à peu. Vous pouvez aussi cacher quelques croquettes dans la pièce pour une petite chasse au trésor. Comptez les friandises dans la ration du jour, pour que le jeu ne fasse pas grimper la balance en douce.\n\n## Penser en hauteur et offrir une vue\n\nLe chat vit une pièce en trois dimensions. Des étagères, un arbre à chat stable ou un rebord de fenêtre dégagé lui offrent du territoire sans mètres carrés en plus. Un poste d'observation près d'une fenêtre est souvent la meilleure distraction de la maison : oiseaux, passants et feuilles qui volent, c'est la télévision gratuite. Une mangeoire installée dehors, à un endroit sûr pour les oiseaux, rend le spectacle encore meilleur.\n\nOffrez-lui aussi des cachettes, pas seulement des perchoirs. Un carton, un lit couvert ou l'espace sous le canapé lui permettent d'observer la pièce sans être vu, ce qui rassure énormément beaucoup de chats.\n\n## Les signes qu'il s'ennuie\n\nL'ennui peut ressembler à de la bêtise. Soyez attentif à :\n\n- Des courses folles la nuit, des miaulements ou des réveils pour réclamer de l'attention\n- Des griffades sur les meubles, des plantes ou des câbles mâchonnés\n- Une toilette excessive, ou un chat qui dort presque toute la journée et ne s'intéresse plus à grand-chose\n- Une prise de poids lente mais régulière\n\nCes signes peuvent aussi avoir une cause médicale. Une toilette excessive, un changement soudain d'activité ou d'appétit, ou tout changement dans l'utilisation de la litière méritent une visite chez le vétérinaire avant de conclure à l'ennui.\n\n## Check-list express\n\n- Deux ou trois courtes séances de jeu par jour, suivies d'un peu de nourriture\n- Cannes rangées après usage, jouets en libre accès renouvelés tous les quelques jours\n- Au moins une gamelle puzzle ou une chasse aux croquettes\n- Un poste près de la fenêtre, de quoi grimper et un endroit où se cacher\n- Une visite chez le vétérinaire si le comportement ou l'appétit change soudainement"
+      "bodyMd": "Les chats d'intérieur vivent plus longtemps et plus en sécurité, mais ils gardent leur instinct de chasseur. Un chat qui n'a rien à guetter, poursuivre ou explorer trouve vite ses propres distractions : les rideaux, vos chevilles à 4 heures du matin, ou tout simplement un peu trop de sommeil et de grignotage. Bonne nouvelle : rendre un chat d'intérieur heureux demande moins de temps qu'on ne le croit. Quelques courtes séances par jour et un intérieur pensé pour lui font toute la différence.\n\n## Jouer comme on chasse\n\nLe chat ne joue pas pour rien : le jeu, c'est l'entraînement à la chasse. Les meilleures séances suivent toujours le même schéma : **guetter, poursuivre, bondir, attraper, manger**. Dix minutes suffisent pour reproduire ce rythme.\n\n- Éloignez le jouet de votre chat, ne le dirigez jamais vers lui. Une proie fuit et se cache, elle ne fonce pas sur le prédateur.\n- Faites disparaître le jouet derrière une chaise ou sous une couverture, puis faites-le réapparaître. L'attente avant le bond, c'est la moitié du plaisir.\n- Alternez les sprints rapides et les petits mouvements saccadés au sol.\n- Laissez votre chat attraper le jouet assez souvent pour qu'il reste motivé, et laissez-lui toujours gagner la dernière manche.\n\nUne canne à plumes comme notre canne à plumes est idéale : votre main reste loin des griffes, et la « proie » peut voler, voleter et se poser. Rangez les cannes après chaque séance. Elles restent ainsi un moment à part, et une ficelle qui traîne est dangereuse si votre chat la mâchonne.\n\n## Souvent et court plutôt qu'une longue séance\n\nLa plupart des chats sont des sprinteurs. Deux ou trois séances de 5 à 15 minutes leur conviennent bien mieux qu'un long entraînement. Les meilleurs moments : tôt le matin, en début de soirée et juste avant votre coucher, quand beaucoup de chats ont de toute façon un regain d'énergie.\n\nTerminez chaque séance par un petit repas ou quelques friandises. Chasser, attraper, manger, faire sa toilette, dormir : c'est le cycle naturel, et le boucler aide beaucoup de chats à se poser pour la nuit au lieu de galoper dans le couloir.\n\n## Des jouets pour s'amuser seul\n\nVous ne pouvez pas jouer toute la journée : laissez donc à disposition quelques jouets que votre chat peut manipuler seul. Les petits jouets légers qui glissent sur un sol lisse fonctionnent bien, tout comme les coussins à mordiller que votre chat attrape avec les pattes avant et laboure avec les pattes arrière. Notre trio de souris crépitantes et notre banane à l'herbe à chat sont faits pour ça.\n\nPour que les jouets restent attrayants :\n\n- **Faites tourner.** Gardez la plupart des jouets dans un tiroir et n'en sortez que deux ou trois à la fois. Changez-les tous les quelques jours, et les anciens favoris redeviennent nouveaux.\n- **Ravivez l'odeur.** Rangés dans une boîte avec une pincée d'herbe à chat séchée ou de matatabi, les jouets deviennent plus tentants. Tous les chats ne réagissent pas à l'herbe à chat : environ un tiers y reste indifférent, et c'est tout à fait normal.\n- **Vérifiez-les régulièrement.** Jetez tout jouet avec des fils qui dépassent, de petites pièces ou des coutures ouvertes.\n\n## Faire du repas un jeu\n\nDans la nature, un chat fait de nombreux petits repas et travaille pour chacun d'eux. Les gamelles puzzle, les balles distributrices et les tapis de fouille lui rendent un peu de cet effort. Commencez par un modèle facile pour qu'il réussisse vite, puis augmentez la difficulté peu à peu. Vous pouvez aussi cacher quelques croquettes dans la pièce pour une petite chasse au trésor. Comptez les friandises dans la ration du jour, pour que le jeu ne fasse pas grimper la balance en douce.\n\n## Penser en hauteur et offrir une vue\n\nLe chat vit une pièce en trois dimensions. Des étagères, un arbre à chat stable ou un rebord de fenêtre dégagé lui offrent du territoire sans mètres carrés en plus. Un poste d'observation près d'une fenêtre est souvent la meilleure distraction de la maison : oiseaux, passants et feuilles qui volent, c'est la télévision gratuite. Une mangeoire installée dehors, à un endroit sûr pour les oiseaux, rend le spectacle encore meilleur.\n\nOffrez-lui aussi des cachettes, pas seulement des perchoirs. Un carton, un lit couvert ou l'espace sous le canapé lui permettent d'observer la pièce sans être vu, ce qui rassure énormément beaucoup de chats.\n\n## Les signes qu'il s'ennuie\n\nL'ennui peut ressembler à de la bêtise. Soyez attentif à :\n\n- Des courses folles la nuit, des miaulements ou des réveils pour réclamer de l'attention\n- Des griffades sur les meubles, des plantes ou des câbles mâchonnés\n- Une toilette excessive, ou un chat qui dort presque toute la journée et ne s'intéresse plus à grand-chose\n- Une prise de poids lente mais régulière\n\nCes signes peuvent aussi avoir une cause médicale. Une toilette excessive, un changement soudain d'activité ou d'appétit, ou tout changement dans l'utilisation de la litière méritent une visite chez le vétérinaire avant de conclure à l'ennui.\n\n## Check-list express\n\n- Deux ou trois courtes séances de jeu par jour, suivies d'un peu de nourriture\n- Cannes rangées après usage, jouets en libre accès renouvelés tous les quelques jours\n- Au moins une gamelle puzzle ou une chasse aux croquettes\n- Un poste près de la fenêtre, de quoi grimper et un endroit où se cacher\n- Une visite chez le vétérinaire si le comportement ou l'appétit change soudainement"
     },
     "seed-blends-and-treats-for-birds": {
       "slug": "melanges-de-graines-et-friandises-pour-oiseaux",
@@ -910,7 +910,7 @@
       "slug": "amenager-une-cage-doiseau",
       "title": "Bien aménager une cage à oiseaux",
       "summary": "De la place pour voler, des perchoirs à différentes hauteurs et un agencement malin : comment préparer une cage où votre oiseau se sentira bien.",
-      "bodyMd": "La cage, c'est à la fois la chambre, la cuisine et l'aire de jeux de votre oiseau. Bien aménagée, elle lui permet de se sentir en sécurité, de rester actif et de recevoir des soins plus facilement. Installée à la hâte, elle risque de donner un oiseau stressé, qui s'ennuie ou qui éparpille ses graines partout. Voici comment bien faire dès le premier jour.\n\n## Choisir la bonne taille\n\nLa meilleure cage est la plus grande que vous puissiez installer et entretenir. Votre oiseau doit pouvoir déployer entièrement ses deux ailes sans toucher les parois et, idéalement, sautiller et voleter d'un perchoir à l'autre.\n\n- **La largeur compte plus que la hauteur** pour la plupart des petits oiseaux, qui volent d'un côté à l'autre plutôt que de haut en bas.\n- **L'espacement des barreaux** doit être adapté à l'espèce. Les petits oiseaux comme les perruches ondulées, les canaris et les pinsons ont besoin d'un écart étroit, environ 1 à 1,2 cm, pour ne pas pouvoir passer la tête entre les barreaux.\n- **La forme** : une cage rectangulaire offre des coins où se réfugier et s'aménage plus facilement. Une cage ronde est jolie, mais l'espace utile y est plus réduit.\n\nPrévoyez une cage plus petite pour les visites chez le vétérinaire et les déplacements. Notre cage de voyage dôme est pensée pour ça, et une cage de transport familière rend ces sorties bien plus sereines.\n\n## Trouver le bon emplacement\n\nLes oiseaux sont sociables et aiment être là où vit la famille, mais pas au cœur de l'agitation.\n\n- Placez la cage contre un mur, pour qu'un côté soit protégé, à peu près à hauteur de poitrine ou des yeux.\n- Évitez le soleil direct, les courants d'air et les radiateurs.\n- Jamais dans la cuisine : les vapeurs de cuisson, surtout celles d'une poêle antiadhésive qui surchauffe, peuvent être mortelles pour les oiseaux.\n- Évitez les endroits collés à une fenêtre, où chats, chiens ou rapaces peuvent le fixer depuis l'extérieur.\n\n## Les perchoirs : misez sur la variété\n\nUn oiseau est sur ses pattes jour et nuit : les perchoirs comptent donc plus qu'on ne le pense. Proposez plusieurs perchoirs de **diamètres et de matières différents** : branches de bois naturel, corde et un perchoir plat pour se reposer. Des surfaces variées font travailler les pattes et aident à prévenir les points de pression.\n\nInstallez-les à différentes hauteurs, mais pas directement les uns au-dessus des autres, sinon ceux du bas recevront les fientes. Laissez assez d'espace au centre pour de courts vols.\n\nLa balançoire fait le bonheur de nombreux petits oiseaux. Notre balançoire perchoir en corde apporte du mouvement et une bonne prise, et beaucoup de perruches en font leur coin du soir.\n\n## Les postes de nourriture et d'eau\n\nPlacez nourriture et eau près des perchoirs, pour qu'elles soient faciles d'accès, mais jamais juste en dessous. Beaucoup de propriétaires apprécient une mangeoire suspendue, qui garde les graines plus propres et évite qu'elles soient projetées partout ; notre mangeoire à graines suspendue s'accroche directement aux barreaux.\n\nPrévoyez au moins deux coupelles, une pour les graines ou granulés et une pour les aliments frais, plus l'eau. Si vous avez plusieurs oiseaux, ajoutez un poste de nourrissage pour qu'aucun oiseau timide ne soit mis à l'écart.\n\n## Jouets et occupations\n\nLes oiseaux sont intelligents et ont besoin de s'occuper. Proposez un mélange de jouets à mâchouiller, à déchiqueter, à escalader et à faire sonner, et changez-en quelques-uns chaque semaine. Sans surcharger la cage pour autant : votre oiseau doit pouvoir bouger. La meilleure occupation reste un moment hors de la cage, dans une pièce sécurisée pour les oiseaux, idéalement tous les jours.\n\n## La routine de nettoyage\n\nUne cage propre, c'est une cage saine. Un rythme simple suffit :\n\n- **Chaque jour :** changer l'eau, renouveler la nourriture, retirer les restes d'aliments frais et changer le fond de cage ou le papier.\n- **Chaque semaine :** laver coupelles et perchoirs à l'eau chaude avec un nettoyant doux, sans danger pour les oiseaux, puis bien rincer.\n- **Chaque mois :** nettoyer la cage à fond et vérifier l'état des barreaux, des jouets et des perchoirs.\n\nJetez un œil aux fientes pendant le nettoyage. Un changement de couleur, de consistance ou de quantité peut être le premier signe d'une maladie, et les oiseaux cachent très bien leur malaise. Si quelque chose vous semble anormal, ou si votre oiseau reste gonflé et silencieux, contactez sans attendre un vétérinaire aviaire.\n\n## Check-list express\n\n- Une cage assez large pour déployer les ailes, avec un espacement des barreaux adapté à l'espèce\n- Un endroit calme, sans courants d'air, loin de la cuisine et du soleil direct\n- Des perchoirs de diamètres et matières variés, pas superposés\n- Nourriture et eau près des perchoirs, mais jamais en dessous\n- Quelques jouets renouvelés chaque semaine et une sortie quotidienne hors de la cage\n- Une routine de nettoyage simple, quotidienne et hebdomadaire"
+      "bodyMd": "La cage, c'est à la fois la chambre, la cuisine et l'aire de jeux de votre oiseau. Bien aménagée, elle lui permet de se sentir en sécurité, de rester actif et de recevoir des soins plus facilement. Installée à la hâte, elle risque de donner un oiseau stressé, qui s'ennuie ou qui éparpille ses graines partout. Voici comment bien faire dès le premier jour.\n\n## Choisir la bonne taille\n\nLa meilleure cage est la plus grande que vous puissiez installer et entretenir. Votre oiseau doit pouvoir déployer entièrement ses deux ailes sans toucher les parois et, idéalement, sautiller et voleter d'un perchoir à l'autre.\n\n- **La largeur compte plus que la hauteur** pour la plupart des petits oiseaux, qui volent d'un côté à l'autre plutôt que de haut en bas.\n- **L'espacement des barreaux** doit être adapté à l'espèce. Les petits oiseaux comme les perruches ondulées, les canaris et les pinsons ont besoin d'un écart étroit, environ 1 à 1,2 cm, pour ne pas pouvoir passer la tête entre les barreaux.\n- **La forme** : une cage rectangulaire offre des coins où se réfugier et s'aménage plus facilement. Une cage ronde est jolie, mais l'espace utile y est plus réduit.\n\nPrévoyez une cage plus petite pour les visites chez le vétérinaire et les déplacements. Notre cage de transport dôme est pensée pour ça, et une cage de transport familière rend ces sorties bien plus sereines.\n\n## Trouver le bon emplacement\n\nLes oiseaux sont sociables et aiment être là où vit la famille, mais pas au cœur de l'agitation.\n\n- Placez la cage contre un mur, pour qu'un côté soit protégé, à peu près à hauteur de poitrine ou des yeux.\n- Évitez le soleil direct, les courants d'air et les radiateurs.\n- Jamais dans la cuisine : les vapeurs de cuisson, surtout celles d'une poêle antiadhésive qui surchauffe, peuvent être mortelles pour les oiseaux.\n- Évitez les endroits collés à une fenêtre, où chats, chiens ou rapaces peuvent le fixer depuis l'extérieur.\n\n## Les perchoirs : misez sur la variété\n\nUn oiseau est sur ses pattes jour et nuit : les perchoirs comptent donc plus qu'on ne le pense. Proposez plusieurs perchoirs de **diamètres et de matières différents** : branches de bois naturel, corde et un perchoir plat pour se reposer. Des surfaces variées font travailler les pattes et aident à prévenir les points de pression.\n\nInstallez-les à différentes hauteurs, mais pas directement les uns au-dessus des autres, sinon ceux du bas recevront les fientes. Laissez assez d'espace au centre pour de courts vols.\n\nLa balançoire fait le bonheur de nombreux petits oiseaux. Notre balançoire perchoir en corde apporte du mouvement et une bonne prise, et beaucoup de perruches en font leur coin du soir.\n\n## Les postes de nourriture et d'eau\n\nPlacez nourriture et eau près des perchoirs, pour qu'elles soient faciles d'accès, mais jamais juste en dessous. Beaucoup de propriétaires apprécient une mangeoire suspendue, qui garde les graines plus propres et évite qu'elles soient projetées partout ; notre mangeoire à graines suspendue s'accroche directement aux barreaux.\n\nPrévoyez au moins deux coupelles, une pour les graines ou granulés et une pour les aliments frais, plus l'eau. Si vous avez plusieurs oiseaux, ajoutez un poste de nourrissage pour qu'aucun oiseau timide ne soit mis à l'écart.\n\n## Jouets et occupations\n\nLes oiseaux sont intelligents et ont besoin de s'occuper. Proposez un mélange de jouets à mâchouiller, à déchiqueter, à escalader et à faire sonner, et changez-en quelques-uns chaque semaine. Sans surcharger la cage pour autant : votre oiseau doit pouvoir bouger. La meilleure occupation reste un moment hors de la cage, dans une pièce sécurisée pour les oiseaux, idéalement tous les jours.\n\n## La routine de nettoyage\n\nUne cage propre, c'est une cage saine. Un rythme simple suffit :\n\n- **Chaque jour :** changer l'eau, renouveler la nourriture, retirer les restes d'aliments frais et changer le fond de cage ou le papier.\n- **Chaque semaine :** laver coupelles et perchoirs à l'eau chaude avec un nettoyant doux, sans danger pour les oiseaux, puis bien rincer.\n- **Chaque mois :** nettoyer la cage à fond et vérifier l'état des barreaux, des jouets et des perchoirs.\n\nJetez un œil aux fientes pendant le nettoyage. Un changement de couleur, de consistance ou de quantité peut être le premier signe d'une maladie, et les oiseaux cachent très bien leur malaise. Si quelque chose vous semble anormal, ou si votre oiseau reste gonflé et silencieux, contactez sans attendre un vétérinaire aviaire.\n\n## Check-list express\n\n- Une cage assez large pour déployer les ailes, avec un espacement des barreaux adapté à l'espèce\n- Un endroit calme, sans courants d'air, loin de la cuisine et du soleil direct\n- Des perchoirs de diamètres et matières variés, pas superposés\n- Nourriture et eau près des perchoirs, mais jamais en dessous\n- Quelques jouets renouvelés chaque semaine et une sortie quotidienne hors de la cage\n- Une routine de nettoyage simple, quotidienne et hebdomadaire"
     },
     "starting-a-small-fish-tank": {
       "slug": "lancer-un-petit-aquarium",

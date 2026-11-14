@@ -17,7 +17,7 @@
     },
     "squeaky-fox-plush": {
       "name": "Quietschender Plüschfuchs",
-      "description": "Ein schlackeriger Fuchs mit verstecktem Quietscher und verstärkten Nähten. Weich genug zum Kuscheln, robust genug für kräftiges Schütteln. Am besten unter Aufsicht spielen.",
+      "description": "Ein weicher, schlappriger Fuchs mit verstecktem Quietscher und verstärkten Nähten. Weich genug zum Kuscheln, robust genug für kräftiges Schütteln. Nur unter Aufsicht spielen lassen.",
       "slug": "quietschender-plueschfuchs"
     },
     "bouncy-rubber-ball": {
@@ -52,7 +52,7 @@
     },
     "everyday-webbing-collar": {
       "name": "Gurtband-Halsband für jeden Tag",
-      "description": "Ein leichtes, verstellbares Halsband mit Schnellverschluss und einem stabilen Metallring für Anhänger. Sanft zum Hals, und die Farbe hält auch in der Wäsche.",
+      "description": "Ein leichtes, verstellbares Halsband mit Schnellverschluss und einem stabilen Metallring für Anhänger. Angenehm am Hals, und die Farbe hält auch in der Wäsche.",
       "slug": "gurtband-halsband-fuer-jeden-tag"
     },
     "reflective-walking-leash": {
@@ -101,7 +101,7 @@
       "slug": "leichte-fitness-haeppchen"
     },
     "sensitive-lamb-biscuits": {
-      "name": "Lammkekse für empfindliche Hunde",
+      "name": "Lammkekse Sensitive",
       "description": "Eine kurze Zutatenliste rund um Lamm und Hafer für Hunde, die auf gehaltvolleres Futter reagieren. Ohne Weizen, ohne künstliche Farbstoffe.",
       "slug": "lammkekse-fuer-empfindliche-hunde"
     },
@@ -206,7 +206,7 @@
       "slug": "kratz-lounger-aus-pappe"
     },
     "sunny-shelf-hammock": {
-      "name": "Sonnige Heizkörper-Hängematte",
+      "name": "Heizkörper-Hängematte",
       "description": "Eine Hängematte, die sich an Heizkörper oder Fensterbank einhängen lässt, für einen warmen Platz mit Blick auf die Straße. Trägt bis zu sechs Kilo.",
       "slug": "sonnige-heizkoerper-haengematte"
     },
@@ -271,7 +271,7 @@
       "slug": "seilsitzschaukel"
     },
     "bell-and-mirror-toy": {
-      "name": "Glöckchen-und-Spiegel-Spielzeug",
+      "name": "Spiegel mit Glöckchen",
       "description": "Ein klingelndes Glöckchen und ein kleiner Spiegel an einer Hängekette geben Ihrem Vogel etwas Glänzendes zum Plaudern. Sicheres Glöckchen mit geschlossenem Klöppel.",
       "slug": "gloeckchen-und-spiegel-spielzeug"
     },
@@ -282,7 +282,7 @@
     },
     "millet-spray-treats": {
       "name": "Kolbenhirse-Leckerli",
-      "description": "Ganze Hirsekolben für Beschäftigung beim Futtersuchen und eine beliebte Belohnung. Einen am Käfig befestigen und das Knabbern beginnt.",
+      "description": "Ganze Hirsekolben für Beschäftigung bei der Futtersuche und als beliebte Belohnung. Einfach einen Kolben am Käfig befestigen – und schon wird geknabbert.",
       "slug": "kolbenhirse-leckerli"
     },
     "dome-travel-cage": {
@@ -291,12 +291,12 @@
       "slug": "kuppel-reisekaefig"
     },
     "tabletop-play-stand": {
-      "name": "Spielständer für den Tisch",
+      "name": "Tisch-Spielständer",
       "description": "Ein kleiner Spielplatz für die Zeit außerhalb des Käfigs mit zwei Sitzstangen, zwei Näpfen und einer Leiter. Steht sicher auf Tisch oder Regal.",
       "slug": "spielstaender-fuer-den-tisch"
     },
     "hanging-seed-feeder": {
-      "name": "Hängender Futterspender für Samen",
+      "name": "Hänge-Futterspender",
       "description": "Ein Röhrenspender, der Futter sauber und trocken hält und zeigt, wann nachgefüllt werden muss. Wird am Käfig befestigt oder an einen Haken gehängt.",
       "slug": "haengender-futterspender-fuer-samen"
     },
@@ -367,7 +367,7 @@
     },
     "tunnel-chew-roll": {
       "name": "Kau-Tunnelrolle",
-      "description": "Ein geflochtener Weidentunnel zum Durchlaufen, Verstecken und Knabbern. Natürlich, unbedenklich zum Kauen und mit Spaß zum Umräumen.",
+      "description": "Ein geflochtener Weidentunnel zum Durchlaufen, Verstecken und Knabbern. Natürlich, unbedenklich zum Kauen und immer wieder neu platzierbar.",
       "slug": "kau-tunnelrolle"
     },
     "starter-tank-20l": {
@@ -407,7 +407,7 @@
     },
     "freeze-dried-bloodworms": {
       "name": "Gefriergetrocknete Mückenlarven",
-      "description": "Ein proteinreicher Leckerbissen, auf den Fische abfahren, dank Gefriertrocknung frei von Parasiten. Ein- bis zweimal pro Woche eine Prise füttern.",
+      "description": "Ein proteinreicher Leckerbissen, den Fische lieben, dank Gefriertrocknung frei von Parasiten. Ein- bis zweimal pro Woche eine Prise füttern.",
       "slug": "gefriergetrocknete-mueckenlarven"
     },
     "algae-wafers": {
@@ -572,7 +572,7 @@
     },
     "mealworm-dispenser": {
       "name": "Mehlwurm-Spender",
-      "description": "Ein Becher mit glatten Wänden, der Würmer festhält, wo sie nicht entkommen können. Haftet am Glas.",
+      "description": "Ein Becher mit glatten Wänden, aus dem Würmer nicht entkommen können. Haftet am Glas.",
       "slug": "mehlwurm-spender"
     },
     "gecko-gel-cup-set": {
@@ -587,7 +587,7 @@
     },
     "half-log-hide": {
       "name": "Halbrundes Korkversteck",
-      "description": "Ein gebogenes Stück Naturkorkrinde zum Daruntergehen. Die Formen variieren.",
+      "description": "Ein gebogenes Stück Naturkorkrinde zum Darunterverkriechen. Die Formen variieren.",
       "slug": "halbrundes-korkversteck"
     },
     "cork-bark-tube": {
@@ -611,7 +611,7 @@
       "slug": "schiefer-sonnenstein"
     },
     "gecko-meal-pellets": {
-      "name": "Gecko-Mahlzeit-Pellets",
+      "name": "Gecko-Futterpellets",
       "description": "Ein Pulverfutter zum Anrühren mit Wasser für Kronen- und Leopardgeckos. Eine ausgewogene Grundlage mit Kalzium.",
       "slug": "gecko-mahlzeit-pellets"
     },
@@ -626,8 +626,8 @@
       "slug": "kalziumpulver"
     },
     "dragon-salad-crumble": {
-      "name": "Bartagamen-Salat-Crunch",
-      "description": "Ein Crunch aus getrocknetem Gemüse und Kräutern, der für Bartagamen eingeweicht wird. Eine abwechslungsreiche Basis für die Salatschüssel.",
+      "name": "Bartagamen-Salatmix",
+      "description": "Eine krümelige Mischung aus getrocknetem Gemüse und Kräutern zum Einweichen, für Bartagamen. Eine abwechslungsreiche Basis für die Salatschüssel.",
       "slug": "bartagamen-salat-crunch"
     },
     "fetch-play-kit": {
@@ -636,7 +636,7 @@
       "slug": "zieh-und-apportier-spielset"
     },
     "dinner-time-kit": {
-      "name": "Essenszeit-Set",
+      "name": "Fütterungs-Set",
       "description": "Ein Stahlnapf für Mahlzeiten, ein Anti-Schling-Labyrinth für langsameres Fressen und zwei Beutel Leckerlis für Training und Belohnungen.",
       "slug": "essenszeit-set"
     }
@@ -909,7 +909,7 @@
     "setting-up-a-bird-cage": {
       "title": "Den Vogelkäfig richtig einrichten",
       "summary": "Platz zum Fliegen, Sitzstangen auf verschiedenen Höhen und eine durchdachte Aufteilung: So richten Sie einen Käfig ein, in dem sich Ihr Vogel wohlfühlt.",
-      "bodyMd": "Ein Käfig ist Schlafzimmer, Küche und Spielplatz Ihres Vogels in einem. Gut eingerichtet fühlt sich Ihr Vogel sicher, bleibt aktiv und ist leichter zu versorgen. In Eile eingerichtet haben Sie womöglich einen gestressten, gelangweilten Vogel, der ständig Körner über den Boden verteilt. So gelingt es vom ersten Tag an.\n\n## Die richtige Größe\n\nDer beste Käfig ist der größte, den Sie unterbringen und sauber halten können. Ihr Vogel sollte beide Flügel ganz ausbreiten können, ohne die Seiten zu berühren, und idealerweise von Stange zu Stange hüpfen und flattern.\n\n- **Breite ist wichtiger als Höhe** für die meisten kleinen Vögel, denn sie fliegen eher seitwärts als auf und ab.\n- **Der Gitterabstand** muss zur Art passen. Kleine Vögel wie Wellensittiche, Kanarienvögel und Finken brauchen einen engen Abstand von etwa 1 bis 1,2 cm, damit sie den Kopf nicht zwischen die Stäbe stecken können.\n- **Die Form**: Rechteckige Käfige bieten Ecken zum Zurückziehen und lassen sich leichter einrichten. Runde Käfige sehen hübsch aus, bieten aber weniger nutzbaren Platz.\n\nHalten Sie für Tierarztbesuche und Reisen einen separaten, kleineren Käfig bereit. Unser Kuppel-Reisekäfig ist genau dafür gemacht, und ein vertrauter Transportkäfig macht solche Termine deutlich entspannter.\n\n## Ein guter Platz im Raum\n\nVögel sind gesellig und gern dort, wo die Familie ist, aber nicht mitten im Trubel.\n\n- Stellen Sie den Käfig an eine Wand, damit eine Seite geschützt wirkt, ungefähr auf Brust- oder Augenhöhe.\n- Keine direkte Sonne, keine Zugluft, keine Heizung in der Nähe.\n- Nicht in die Küche. Kochdämpfe, besonders von überhitzten beschichteten Pfannen, können für Vögel tödlich sein.\n- Meiden Sie Plätze direkt am Fenster, an denen Katzen, Hunde oder Greifvögel von draußen hereinstarren können.\n\n## Sitzstangen: Abwechslung ist alles\n\nVögel stehen Tag und Nacht auf ihren Füßen, deshalb sind Sitzstangen wichtiger, als man denkt. Bieten Sie mehrere Stangen in **unterschiedlichen Durchmessern und Materialien** an: Naturholzäste, Seil und eine flache Stange zum Ausruhen. Verschiedene Oberflächen trainieren die Füße und beugen Druckstellen vor.\n\nBringen Sie die Stangen auf verschiedenen Höhen an, aber nicht direkt übereinander, sonst landet Kot auf den unteren. Lassen Sie in der Mitte genug Platz für kurze Flüge.\n\nEine Schaukel ist bei vielen kleinen Vögeln heiß begehrt. Unsere Seilsitzschaukel bringt Bewegung und guten Halt, und viele Wellensittiche machen sie zu ihrem Abendplatz.\n\n## Futter- und Wasserstellen\n\nPlatzieren Sie Futter und Wasser in der Nähe der Sitzstangen, damit Ihr Vogel gut herankommt, aber nie direkt darunter. Viele Halterinnen und Halter mögen einen hängenden Futterspender, der die Körner sauberer hält und verhindert, dass alles herausgeschleudert wird. Unser hängender Futterspender für Samen lässt sich direkt an die Gitterstäbe hängen.\n\nBieten Sie mindestens zwei Näpfe an, einen für Körner oder Pellets und einen für Frischfutter, dazu Wasser. Leben mehrere Vögel zusammen, richten Sie eine zusätzliche Futterstelle ein, damit kein schüchterner Vogel verdrängt wird.\n\n## Spielzeug und Beschäftigung\n\nVögel sind klug und brauchen etwas zu tun. Bieten Sie eine Mischung aus Spielzeug zum Knabbern, Zerfasern, Klettern und Läuten an und tauschen Sie jede Woche ein paar Teile aus. Überladen Sie den Käfig aber nicht, Ihr Vogel braucht Bewegungsfreiheit. Die beste Beschäftigung überhaupt ist Freiflug in einem sicheren, vogelgerechten Raum, am besten täglich.\n\n## Reinigungsroutine\n\nEin sauberer Käfig ist ein gesunder Käfig. Ein einfacher Rhythmus hat sich bewährt:\n\n- **Täglich:** Wasser wechseln, Futter auffrischen, Frischfutterreste entfernen und Bodeneinlage oder Papier tauschen.\n- **Wöchentlich:** Näpfe und Sitzstangen mit heißem Wasser und einem milden, vogelverträglichen Reiniger waschen und gut abspülen.\n- **Monatlich:** den ganzen Käfig gründlich reinigen und Gitter, Spielzeug und Stangen auf Schäden prüfen.\n\nWerfen Sie beim Saubermachen einen Blick auf den Kot. Veränderungen bei Farbe, Konsistenz oder Menge können das erste Anzeichen einer Krankheit sein, und Vögel verbergen Unwohlsein sehr gut. Wirkt etwas ungewöhnlich oder sitzt Ihr Vogel aufgeplustert und still da, wenden Sie sich sofort an eine vogelkundige Tierarztpraxis.\n\n## Kurze Checkliste\n\n- Ein Käfig, breit genug zum Ausbreiten der Flügel, mit artgerechtem Gitterabstand\n- Ein ruhiger, zugfreier Platz fern von Küche und direkter Sonne\n- Sitzstangen in verschiedenen Stärken und Materialien, nicht übereinander\n- Futter und Wasser nahe den Stangen, aber nie darunter\n- Ein paar Spielzeuge, wöchentlich getauscht, und täglicher Freiflug\n- Eine einfache tägliche und wöchentliche Reinigungsroutine",
+      "bodyMd": "Ein Käfig ist Schlafzimmer, Küche und Spielplatz Ihres Vogels in einem. Gut eingerichtet fühlt sich Ihr Vogel sicher, bleibt aktiv und ist leichter zu versorgen. In Eile eingerichtet haben Sie womöglich einen gestressten, gelangweilten Vogel, der ständig Körner über den Boden verteilt. So gelingt es vom ersten Tag an.\n\n## Die richtige Größe\n\nDer beste Käfig ist der größte, den Sie unterbringen und sauber halten können. Ihr Vogel sollte beide Flügel ganz ausbreiten können, ohne die Seiten zu berühren, und idealerweise von Stange zu Stange hüpfen und flattern.\n\n- **Breite ist wichtiger als Höhe** für die meisten kleinen Vögel, denn sie fliegen eher seitwärts als auf und ab.\n- **Der Gitterabstand** muss zur Art passen. Kleine Vögel wie Wellensittiche, Kanarienvögel und Finken brauchen einen engen Abstand von etwa 1 bis 1,2 cm, damit sie den Kopf nicht zwischen die Stäbe stecken können.\n- **Die Form**: Rechteckige Käfige bieten Ecken zum Zurückziehen und lassen sich leichter einrichten. Runde Käfige sehen hübsch aus, bieten aber weniger nutzbaren Platz.\n\nHalten Sie für Tierarztbesuche und Reisen einen separaten, kleineren Käfig bereit. Unser Kuppel-Reisekäfig ist genau dafür gemacht, und ein vertrauter Transportkäfig macht solche Termine deutlich entspannter.\n\n## Ein guter Platz im Raum\n\nVögel sind gesellig und gern dort, wo die Familie ist, aber nicht mitten im Trubel.\n\n- Stellen Sie den Käfig an eine Wand, damit eine Seite geschützt wirkt, ungefähr auf Brust- oder Augenhöhe.\n- Keine direkte Sonne, keine Zugluft, keine Heizung in der Nähe.\n- Nicht in die Küche. Kochdämpfe, besonders von überhitzten beschichteten Pfannen, können für Vögel tödlich sein.\n- Meiden Sie Plätze direkt am Fenster, an denen Katzen, Hunde oder Greifvögel von draußen hereinstarren können.\n\n## Sitzstangen: Abwechslung ist alles\n\nVögel stehen Tag und Nacht auf ihren Füßen, deshalb sind Sitzstangen wichtiger, als man denkt. Bieten Sie mehrere Stangen in **unterschiedlichen Durchmessern und Materialien** an: Naturholzäste, Seil und eine flache Stange zum Ausruhen. Verschiedene Oberflächen trainieren die Füße und beugen Druckstellen vor.\n\nBringen Sie die Stangen auf verschiedenen Höhen an, aber nicht direkt übereinander, sonst landet Kot auf den unteren. Lassen Sie in der Mitte genug Platz für kurze Flüge.\n\nEine Schaukel ist bei vielen kleinen Vögeln heiß begehrt. Unsere Seilsitzschaukel bringt Bewegung und guten Halt, und viele Wellensittiche machen sie zu ihrem Abendplatz.\n\n## Futter- und Wasserstellen\n\nPlatzieren Sie Futter und Wasser in der Nähe der Sitzstangen, damit Ihr Vogel gut herankommt, aber nie direkt darunter. Viele Halterinnen und Halter mögen einen hängenden Futterspender, der die Körner sauberer hält und verhindert, dass alles herausgeschleudert wird. Unser Hänge-Futterspender lässt sich direkt an die Gitterstäbe hängen.\n\nBieten Sie mindestens zwei Näpfe an, einen für Körner oder Pellets und einen für Frischfutter, dazu Wasser. Leben mehrere Vögel zusammen, richten Sie eine zusätzliche Futterstelle ein, damit kein schüchterner Vogel verdrängt wird.\n\n## Spielzeug und Beschäftigung\n\nVögel sind klug und brauchen etwas zu tun. Bieten Sie eine Mischung aus Spielzeug zum Knabbern, Zerfasern, Klettern und Läuten an und tauschen Sie jede Woche ein paar Teile aus. Überladen Sie den Käfig aber nicht, Ihr Vogel braucht Bewegungsfreiheit. Die beste Beschäftigung überhaupt ist Freiflug in einem sicheren, vogelgerechten Raum, am besten täglich.\n\n## Reinigungsroutine\n\nEin sauberer Käfig ist ein gesunder Käfig. Ein einfacher Rhythmus hat sich bewährt:\n\n- **Täglich:** Wasser wechseln, Futter auffrischen, Frischfutterreste entfernen und Bodeneinlage oder Papier tauschen.\n- **Wöchentlich:** Näpfe und Sitzstangen mit heißem Wasser und einem milden, vogelverträglichen Reiniger waschen und gut abspülen.\n- **Monatlich:** den ganzen Käfig gründlich reinigen und Gitter, Spielzeug und Stangen auf Schäden prüfen.\n\nWerfen Sie beim Saubermachen einen Blick auf den Kot. Veränderungen bei Farbe, Konsistenz oder Menge können das erste Anzeichen einer Krankheit sein, und Vögel verbergen Unwohlsein sehr gut. Wirkt etwas ungewöhnlich oder sitzt Ihr Vogel aufgeplustert und still da, wenden Sie sich sofort an eine vogelkundige Tierarztpraxis.\n\n## Kurze Checkliste\n\n- Ein Käfig, breit genug zum Ausbreiten der Flügel, mit artgerechtem Gitterabstand\n- Ein ruhiger, zugfreier Platz fern von Küche und direkter Sonne\n- Sitzstangen in verschiedenen Stärken und Materialien, nicht übereinander\n- Futter und Wasser nahe den Stangen, aber nie darunter\n- Ein paar Spielzeuge, wöchentlich getauscht, und täglicher Freiflug\n- Eine einfache tägliche und wöchentliche Reinigungsroutine",
       "slug": "einen-vogelkaefig-einrichten"
     },
     "starting-a-small-fish-tank": {
