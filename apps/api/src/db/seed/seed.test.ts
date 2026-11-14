@@ -1,9 +1,12 @@
 import { sql } from 'drizzle-orm';
+import request from 'supertest';
 import { describe, expect, it, vi } from 'vitest';
 
+import { makeTestApp, TEST_ORIGIN } from '../../test/app.ts';
 import { db } from '../client.ts';
 
 import { runSeed } from './index.ts';
+import { DEMO_PASSWORD, hashDemoPassword } from './users.ts';
 
 async function counts() {
   const rows = await db.execute<Record<string, number>>(sql`
@@ -293,6 +296,32 @@ describe('crowd reviews (polish)', () => {
       (select helpful_count from reviews where id = ${voted!.id}) as helpful`);
     expect(row?.stale).toBe(0);
     expect(row?.helpful).toBeGreaterThanOrEqual(1000);
+  });
+});
+
+describe('seeded reviewer accounts cannot sign in', () => {
+  const login = (email: string) =>
+    request(makeTestApp())
+      .post('/api/v1/auth/login')
+      .set('Origin', TEST_ORIGIN)
+      .send({ email, password: DEMO_PASSWORD });
+
+  it('refuses the demo password for crowd and phase-17 reviewers, and a re-seed resets one set later', async () => {
+    await runSeed();
+    expect((await login('sam@pawsome.test')).status).toBe(200);
+    expect((await login('customer0001@pawsome.test')).status).toBe(401);
+    expect((await login('reviewer01@pawsome.test')).status).toBe(401);
+    // Someone gave a crowd account a known password (and holds a session): the next seed undoes both.
+    const demoHash = await hashDemoPassword();
+    await db.execute(
+      sql`update users set password_hash = ${demoHash} where email = 'customer0002@pawsome.test'`,
+    );
+    expect((await login('customer0002@pawsome.test')).status).toBe(200);
+    await runSeed();
+    expect((await login('customer0002@pawsome.test')).status).toBe(401);
+    const [row] = await db.execute<{ n: number }>(sql`select count(*)::int as n from sessions s
+      join users u on u.id = s.user_id where u.email = 'customer0002@pawsome.test'`);
+    expect(row?.n).toBe(0);
   });
 });
 

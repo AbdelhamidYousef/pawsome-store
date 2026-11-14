@@ -7,6 +7,7 @@ import {
   products as productsTable,
   reviewPhotos,
   reviews,
+  sessions,
   users,
 } from '../schema/index.ts';
 
@@ -113,11 +114,12 @@ export async function seedReviews(
   opts: {
     products: readonly ProductSeed[];
     productId: ReadonlyMap<string, string>;
-    passwordHash: string;
+    // Unusable password hash (users.ts): reviewer accounts cannot sign in.
+    lockedHash: string;
     now: Date;
   },
 ) {
-  const { products, productId, passwordHash, now } = opts;
+  const { products, productId, lockedHash, now } = opts;
   const rand = rng(17);
   const DAY = 24 * 60 * 60 * 1000;
 
@@ -129,7 +131,7 @@ export async function seedReviews(
         email: reviewerEmail(i),
         firstName,
         lastName,
-        passwordHash,
+        passwordHash: lockedHash,
       })),
     )
     .onConflictDoUpdate({
@@ -137,6 +139,7 @@ export async function seedReviews(
       set: {
         firstName: sql.raw('excluded."first_name"'),
         lastName: sql.raw('excluded."last_name"'),
+        passwordHash: sql.raw('excluded."password_hash"'),
       },
     })
     .returning({ id: users.id, email: users.email });
@@ -145,6 +148,13 @@ export async function seedReviews(
     if (!row) throw new Error(`reviewer ${i} was not inserted`);
     return row.id;
   };
+
+  await tx.delete(sessions).where(
+    inArray(
+      sessions.userId,
+      reviewerRows.map((r) => r.id),
+    ),
+  );
 
   // Re-running replaces the seeded reviews only (their photos and votes go by cascade); reviews
   // written by anyone else, including e2e and real use, stay.
@@ -217,7 +227,7 @@ export async function seedReviews(
     }
   }
 
-  await seedCrowdReviews(tx, { products, productId, passwordHash, now });
+  await seedCrowdReviews(tx, { products, productId, lockedHash, now });
 
   // The aggregate is recomputed from the approved reviews for EVERY product (not only the seeded
   // ones), so it is right after a re-seed even when other reviews exist.
@@ -279,24 +289,33 @@ export async function seedCrowdReviews(
   opts: {
     products: readonly ProductSeed[];
     productId: ReadonlyMap<string, string>;
-    passwordHash: string;
+    // Unusable password hash (users.ts): reviewer accounts cannot sign in.
+    lockedHash: string;
     now: Date;
   },
 ): Promise<number> {
-  const { products, productId, passwordHash, now } = opts;
+  const { products, productId, lockedHash, now } = opts;
 
   const pool = crowdReviewers();
   const userRows = await tx
     .insert(users)
-    .values(pool.map((r) => ({ ...r, passwordHash })))
+    .values(pool.map((r) => ({ ...r, passwordHash: lockedHash })))
     .onConflictDoUpdate({
       target: users.email,
       set: {
         firstName: sql.raw('excluded."first_name"'),
         lastName: sql.raw('excluded."last_name"'),
+        passwordHash: sql.raw('excluded."password_hash"'),
       },
     })
     .returning({ id: users.id, email: users.email });
+  // Nobody signs in as a seeded reviewer: drop any session one might have.
+  await tx.delete(sessions).where(
+    inArray(
+      sessions.userId,
+      userRows.map((r) => r.id),
+    ),
+  );
   const idByEmail = new Map(userRows.map((r) => [r.email, r.id]));
   const userIds = pool.map((r) => {
     const id = idByEmail.get(r.email);

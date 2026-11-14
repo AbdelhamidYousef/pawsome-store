@@ -53,7 +53,7 @@ import { validateSeed } from './schema.ts';
 import { shippingMethods } from './shipping.ts';
 import { tags } from './tags.ts';
 import { seedTranslations } from './translations.ts';
-import { DEMO_PASSWORD, demoUsers, hashDemoPassword } from './users.ts';
+import { DEMO_PASSWORD, demoUsers, hashDemoPassword, hashUnusablePassword } from './users.ts';
 
 // `excluded` is the row that failed to insert; `ON CONFLICT DO UPDATE` copies its values over the
 // existing row. This is what makes the seed safe to run again: definitions are refreshed in place
@@ -67,6 +67,7 @@ export async function runSeed(now = new Date()) {
   validateSeed(products);
   assertFeedingTablesTile(products);
   const passwordHash = await hashDemoPassword();
+  const lockedHash = await hashUnusablePassword();
   // Read and validated before the transaction opens: a bad Markdown file stops the seed up front.
   const content = loadContent();
 
@@ -508,7 +509,7 @@ export async function runSeed(now = new Date()) {
       });
 
     // ---- reviews and the customer gallery (phase 17): after the products and the users ----
-    await seedReviews(tx, { products, productId, passwordHash, now });
+    await seedReviews(tx, { products, productId, lockedHash, now });
 
     // ---- ~90 days of sales history and sample returns (phase 22): after products and users ----
     await seedSales(tx, { passwordHash, now });
