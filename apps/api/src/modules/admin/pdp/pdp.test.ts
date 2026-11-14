@@ -88,9 +88,10 @@ describe('admin product content', () => {
       constituents: [
         {
           variantId: variants[0]!.id,
+          // Sent out of label order: the read puts protein before kcal whatever the storage order.
           values: [
-            { key: 'protein', valueBp: 2650 },
             { key: 'kcal', valueBp: 365 },
+            { key: 'protein', valueBp: 2650 },
           ],
         },
       ],

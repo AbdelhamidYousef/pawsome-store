@@ -1,4 +1,5 @@
 import {
+  CONSTITUENT_KEYS,
   type AdminProductContent,
   type AdminProductContentInputSchema,
   type AdminSizeGuide,
@@ -45,7 +46,9 @@ export async function getContent(productId: string): Promise<AdminProductContent
       variantId: v.id,
       values: rows
         .filter((r) => r.variantId === v.id)
-        .map((r) => ({ key: r.key as ConstituentKey, valueBp: r.valueBp })),
+        .map((r) => ({ key: r.key as ConstituentKey, valueBp: r.valueBp }))
+        // Label order, never the table's physical order.
+        .sort((a, b) => CONSTITUENT_KEYS.indexOf(a.key) - CONSTITUENT_KEYS.indexOf(b.key)),
     })),
     deliveryNote: product.deliveryNote,
     sizeGuideId: product.sizeGuideId,
