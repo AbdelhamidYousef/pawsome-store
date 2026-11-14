@@ -14,6 +14,7 @@ import {
   TrustBar,
 } from '../features/home/HomeSections';
 import { useHome } from '../features/home/queries';
+import { ShopByBrand } from '../features/home/ShopByBrand';
 import { ShopByPet } from '../features/home/ShopByPet';
 import { getHomeSlots, type HomeSlot } from '../features/home/slots';
 import { SafetyBanner } from '../features/safety/SafetyBanner';
@@ -87,6 +88,10 @@ export default function HomePage() {
             )}
           </div>
         )}
+      </Section>
+
+      <Section id="brands">
+        <ShopByBrand />
       </Section>
 
       {slots.filter((s) => s.id === 'seasonal').map(renderSlot)}

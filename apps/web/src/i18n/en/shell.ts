@@ -211,4 +211,6 @@ export const shell = {
   'shell.storeSwitch.cancel': 'Stay in {store}',
   'shell.announcement.freeDelivery': 'Free delivery on orders over {amount}',
   'shell.home.whoFor': 'Who are you shopping for?',
+  'shell.home.brands.title': 'Shop by brand',
+  'shell.home.brands.view': 'View {brand}',
 } satisfies Dictionary;

@@ -99,13 +99,13 @@ export function GuidesTeaser() {
   if (isError || (data && data.data.length === 0)) return null;
   return (
     <section aria-labelledby="home-guides-heading" data-testid="guides-teaser">
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-2">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
         <h2 id="home-guides-heading" className="text-[1.75rem] font-bold leading-tight sm:text-4xl">
           {t('shell.home.guides.title')}
         </h2>
         <Link
           to="/guides"
-          className="min-h-11 rounded-control font-semibold text-primary-strong underline underline-offset-2"
+          className="inline-flex min-h-11 items-center rounded-control font-semibold text-primary-strong underline underline-offset-2"
         >
           {t('shell.home.guides.all')}
         </Link>

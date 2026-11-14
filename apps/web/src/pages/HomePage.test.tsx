@@ -1,10 +1,11 @@
 import { screen, within } from '@testing-library/react';
 import { http, HttpResponse } from 'msw';
 import { createElement } from 'react';
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { clearHomeSlots, registerHomeSlot } from '../features/home/slots';
 import * as tracking from '../lib/track';
+import { makeBrand } from '../test/fixtures';
 import { renderApp } from '../test/render';
 import { server, API } from '../test/server';
 
@@ -13,12 +14,20 @@ const sections = () =>
     n.getAttribute('data-home-section'),
   );
 
+beforeEach(() => {
+  server.use(
+    http.get(`${API}/brands`, () =>
+      HttpResponse.json({ data: [makeBrand({ slug: 'tidepool', name: 'Tidepool' })] }),
+    ),
+  );
+});
+
 afterEach(() => {
   clearHomeSlots();
 });
 
 describe('home page', () => {
-  it('shows the hero, pet tiles with counts, bestsellers, guides and testimonials', async () => {
+  it('shows the hero, pet portraits with counts, bestsellers, brands, guides and testimonials', async () => {
     const spy = vi.spyOn(tracking, 'track');
     renderApp('/');
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Happy tails start here');
@@ -32,6 +41,10 @@ describe('home page', () => {
     expect(cards[0]).toHaveAttribute('href', '/products/rope-tug');
     expect(await screen.findByTestId('guides-teaser')).toBeInTheDocument();
     expect(await screen.findByTestId('rating-summary')).toHaveTextContent('4.8 out of 5');
+    const brands = await screen.findAllByTestId('home-brand');
+    expect(brands.length).toBeGreaterThan(0);
+    expect(brands[0]).toHaveAttribute('href', expect.stringMatching(/^\/brands\//));
+    expect(brands[0]).toHaveTextContent(/^View /);
     expect(spy).toHaveBeenCalledWith({ name: 'view_home' });
   });
 
@@ -54,6 +67,7 @@ describe('home page', () => {
     await screen.findByTestId('hero-carousel');
     await screen.findByTestId('guides-teaser');
     await screen.findByTestId('rating-summary');
+    await screen.findByTestId('home-brand');
     // No registered slots (cleared here) and every built-in section has content: nothing is an
     // empty wrapper. (`Section` carries `empty:hidden` for the day one is.)
     const all = [...document.querySelectorAll('[data-home-section]')];
@@ -69,6 +83,7 @@ describe('home page', () => {
     expect(sections()).toEqual([
       'shop-by-pet',
       'bestsellers',
+      'brands',
       'seasonal',
       'guides',
       'testimonials',
