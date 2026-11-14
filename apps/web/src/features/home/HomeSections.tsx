@@ -1,4 +1,5 @@
 import type { Testimonial } from '@store/shared';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Skeleton } from '../../components/ui/Skeleton';
@@ -19,25 +20,62 @@ export function HeroSkeleton() {
 }
 
 // Static promises the shop already keeps (free delivery from the seeded standard method, the
-// happy-tail promise); each is a short line so the strip stays one tidy row on desktop.
-const TRUST: readonly { title: StringKey; text: StringKey; Icon: typeof TruckIcon }[] = [
+// happy-tail promise). Each has a flat two-tone spot illustration in /public/usp; until a file
+// exists (or if it fails) the line icon in a tinted circle stands in, at the same size.
+const TRUST: readonly {
+  slug: string;
+  title: StringKey;
+  text: StringKey;
+  Icon: typeof TruckIcon;
+}[] = [
   {
+    slug: 'free-delivery',
     title: 'shell.home.trust.deliveryTitle',
     text: 'shell.home.trust.deliveryText',
     Icon: TruckIcon,
   },
   {
+    slug: 'happy-tail-promise',
     title: 'shell.home.trust.promiseTitle',
     text: 'shell.home.trust.promiseText',
     Icon: HeartHandIcon,
   },
-  { title: 'shell.home.trust.safeTitle', text: 'shell.home.trust.safeText', Icon: LeafIcon },
   {
+    slug: 'pet-safe-picks',
+    title: 'shell.home.trust.safeTitle',
+    text: 'shell.home.trust.safeText',
+    Icon: LeafIcon,
+  },
+  {
+    slug: 'secure-checkout',
     title: 'shell.home.trust.checkoutTitle',
     text: 'shell.home.trust.checkoutText',
     Icon: ShieldIcon,
   },
 ];
+
+function TrustArt({ slug, Icon }: { slug: string; Icon: typeof TruckIcon }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return (
+      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-soft text-primary-strong lg:h-24 lg:w-24">
+        <Icon width={36} height={36} />
+      </span>
+    );
+  }
+  return (
+    <img
+      src={`/usp/${slug}.webp`}
+      alt=""
+      width={96}
+      height={96}
+      loading="lazy"
+      decoding="async"
+      onError={() => setFailed(true)}
+      className="h-20 w-20 object-contain lg:h-24 lg:w-24"
+    />
+  );
+}
 
 export function TrustBar() {
   const { t } = useT();
@@ -48,15 +86,17 @@ export function TrustBar() {
       data-testid="trust-bar"
       className="border-b border-line bg-surface"
     >
-      <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-5 px-4 py-6 sm:px-6 lg:grid-cols-4 lg:gap-8 lg:px-8 lg:py-7">
-        {TRUST.map(({ title, text, Icon }) => (
-          <li key={title} className="flex min-w-0 items-start gap-3">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary-strong">
-              <Icon width={22} height={22} />
-            </span>
+      <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-8 sm:px-6 lg:grid-cols-4 lg:gap-8 lg:px-8 lg:py-10">
+        {TRUST.map(({ slug, title, text, Icon }) => (
+          <li key={slug} className="flex min-w-0 flex-col items-center gap-3 text-center">
+            <TrustArt slug={slug} Icon={Icon} />
             <span className="min-w-0">
-              <span className="block font-display font-semibold leading-snug">{t(title)}</span>
-              <span className="block text-sm leading-snug text-muted">{t(text, { amount })}</span>
+              <span className="block font-display text-lg font-semibold leading-snug">
+                {t(title)}
+              </span>
+              <span className="mt-0.5 block text-sm leading-snug text-muted">
+                {t(text, { amount })}
+              </span>
             </span>
           </li>
         ))}
