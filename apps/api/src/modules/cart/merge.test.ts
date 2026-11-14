@@ -1,4 +1,4 @@
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import request from 'supertest';
 import { beforeAll, describe, expect, it } from 'vitest';
 
@@ -100,7 +100,12 @@ describe('merge on login', () => {
     await db.update(inventory).set({ quantity: 3 }).where(eq(inventory.variantId, v));
 
     const res = await login(user.email, cookie);
-    const [row] = await db.select().from(cartItems).where(eq(cartItems.variantId, v));
+    // The account's line, not the merged guest cart's (which keeps its rows).
+    const [row] = await db
+      .select({ quantity: cartItems.quantity })
+      .from(cartItems)
+      .innerJoin(carts, eq(carts.id, cartItems.cartId))
+      .where(and(eq(cartItems.variantId, v), eq(carts.userId, user.id)));
     // The merge itself leaves 6 (rule 3)...
     expect(row?.quantity).toBe(6);
     // ...and the next read applies the ordinary stock clamp, with its warning.
