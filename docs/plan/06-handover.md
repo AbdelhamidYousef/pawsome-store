@@ -63,6 +63,40 @@ Written by the build sessions for the owner and for the next session.
 7. **Licence holder** in `LICENSE` is your GitHub handle; change it if you want your name.
 8. **Screen reader** pass (NVDA/VoiceOver) on PDP and checkout — couldn't be done here.
 
+## Polish pass QA follow-ups (2026-11-14)
+
+The polish lanes and the QA fix round are on `polish/integration` (not pushed). Still open:
+
+1. **Product photos: 85 of 125 seeded products have none** (image generation waits on you). They
+   show the per-pet brand tile (`apps/web/public/products/placeholders/<pet>.svg`, redrawn in this
+   pass so it reads as deliberate). Generate `apps/web/public/products/<category>/<slug>-1.webp`
+   (and `-2` for a detail shot), then re-run the seed: it swaps the rows over by itself. By pet:
+   - **dog** (15): pumpkin-squeak-ball, chew-knot-bone, memory-foam-mat, cooling-gel-mat, travel-blanket-roll, puppy-snuggle-nest, dental-chew-sticks, light-lean-bites, sensitive-lamb-biscuits, collapsible-travel-bowl, raised-double-diner, ceramic-paw-bowl, comfort-harness, hands-free-leash, compostable-waste-bags
+   - **cat** (15): crinkle-play-tunnel, spooky-bat-teaser, cuddle-cup-bed, cardboard-scratch-lounger, sunny-shelf-hammock, dental-crunch-bites, calm-chews, omega-coat-paste, slanted-raised-bowl, whisper-drinking-fountain, snuffle-feeding-mat, bubble-window-backpack, cat-harness-and-lead, portable-litter-tray, carrier-calming-blanket
+   - **bird** (13): shredding-palm-toy, ladder-and-bell-set, foraging-wheel, fruit-and-nut-mix, daily-pellets, sprouting-seed-mix, starter-flight-cage, night-cage-cover, travel-perch-stand, seed-catcher-tray, drip-water-cup, treat-skewer-holder, twin-ceramic-dish
+   - **fish** (3): freeze-dried-bloodworms, algae-wafers, betta-micro-pellets
+   - **small** (14): willow-tunnel, seagrass-ball-trio, chew-stick-hanger, activity-cube, guinea-pig-pellets, rabbit-herb-treats, hamster-seed-mix, starter-wooden-hutch, nesting-fleece-liners, corner-hideaway, travel-carry-box, hanging-hay-rack, weighted-ceramic-feeder, sipper-bottle-mini
+   - **reptile** (25): glass-terrarium-60, pop-up-mesh-cage, nano-glass-box, tortoise-table, vertical-tree-terrarium, ceramic-heat-lamp, uvb-tube-light, under-tank-heat-mat, digital-thermo-hygrometer, basking-lamp-dome, shallow-water-dish, feeding-tongs, mealworm-dispenser, gecko-gel-cup-set, misting-bottle, half-log-hide, cork-bark-tube, vine-climbing-set, faux-succulent-pack, slate-basking-rock, gecko-meal-pellets, tortoise-greens-mix, calcium-dust, dried-mealworm-treat, dragon-salad-crumble
+2. **Brand logos and guide covers** are not generated either (`/brands/<slug>.webp`,
+   `/guides/<slug>.webp`); the coloured fallbacks are used.
+3. **de/fr content with no translation path** (English on those stores): help answers, the legal and
+   about pages (Markdown), PDP specs and FAQs, gallery captions, the charity description. Hero
+   slides, the promo tile, mega-menu promos and testimonials now have one (`modules/i18n/copy.ts`,
+   keyed by the seeded English text, plus a uk-en table for £ amounts): text an admin types later
+   stays as typed, in every store. A real fix is per-language columns or translation tables for
+   `home_content`, help and legal.
+4. **Live data**: `home_content` and testimonials are insert-or-nothing in the seed, so the live
+   store keeps its old (longer) hero text until those rows are deleted on Neon and re-seeded, or
+   edited in the admin. The translations only match the current seed text.
+5. Admin analytics counts days in `Europe/Riga` (`STORE_TIME_ZONE` in shared) while the shop's
+   dispatch zone is `Europe/Amsterdam`; align them (tests pin the Riga boundary).
+6. Low findings left from `work/polish/qa-findings.md`: page headers mix centred (help) and left
+   (guides, brands, account) (7); PDP text column leaves the right half empty (10); no sticky
+   add-to-cart on mobile PDP (11); footer link rhythm and no payment/social icons (19); "Low stock"
+   badge can touch the wishlist heart on 390 px cards (20); mobile menu lacks account/guides/store
+   links (21); mega-menu 8 px misalignment and no scrim (22); account sidebar buttons look heavy (23).
+7. Stock-alert and review emails still carry English product names (from fix 5).
+
 ## Known limits (also in the README)
 
 - Real Stripe Payment Element and real webhooks never exercised (no keys).
