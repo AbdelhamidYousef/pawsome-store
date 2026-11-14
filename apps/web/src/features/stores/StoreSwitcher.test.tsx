@@ -115,6 +115,17 @@ describe('StoreSwitcher', () => {
       expect(go).toHaveBeenCalledWith('/uk-en/cart');
     });
 
+    it('asks for the preview when the cart has not loaded yet (never assumes it empty)', async () => {
+      const asked = cartWith([{ variantId: 'v2', productName: 'Euro Ball', variantName: 'Large' }]);
+      // The cart request hangs, so the switcher picks before it knows the cart.
+      server.use(http.get(`${API}/cart`, () => new Promise<never>(() => {})));
+      const go = setup('/eu-en/cart');
+      await userEvent.selectOptions(screen.getByTestId('store-switcher'), 'uk-en');
+      expect(await screen.findByRole('dialog')).toHaveTextContent('Euro Ball');
+      expect(asked()).toBe('uk-en');
+      expect(go).not.toHaveBeenCalled();
+    });
+
     it('switches straight away when nothing would drop or the currency stays', async () => {
       const asked = cartWith([]);
       const go = setup('/eu-en/cart');

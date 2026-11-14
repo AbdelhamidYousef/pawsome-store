@@ -50,10 +50,11 @@ export function StoreSwitcher({
   };
 
   // Lines with no price in the new currency drop out of the cart (nothing is converted), so the
-  // shopper is told which ones first. Same currency, an empty cart, or a failed check: no question
-  // (the cart page still names any line that dropped).
+  // shopper is told which ones first. Same currency, a cart known to be empty, or a failed check:
+  // no question (the cart page still names any line that dropped). A cart that has not loaded yet
+  // is asked about rather than assumed empty.
   const pick = (next: StoreView) => {
-    if (next.currency === current.currency || !cart || cart.items.length === 0) {
+    if (next.currency === current.currency || cart?.items.length === 0) {
       go(next);
       return;
     }
