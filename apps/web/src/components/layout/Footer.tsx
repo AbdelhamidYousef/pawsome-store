@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import { CharityTotalNote } from '../../features/loyalty/CharityTotalNote';
 import { petName } from '../../features/navigation/pet-names';
 import { StoreSwitcher } from '../../features/stores/StoreSwitcher';
 import { useT, type StringKey, type TFunction } from '../../i18n';
@@ -86,6 +85,7 @@ function buildGroups(t: TFunction): FooterGroup[] {
       links: [
         legal('about'),
         legal('accessibility'),
+        { label: t('shell.footer.charity'), to: '/charity' },
         { label: t('shell.footer.developers'), to: '/developers' },
         { label: t('shell.account.myAccount'), to: '/account' },
       ],
@@ -117,7 +117,6 @@ export function Footer() {
             Pawsome
           </p>
           <p className="max-w-xs text-surface">{t('shell.footer.tagline')}</p>
-          <CharityTotalNote />
           <StoreSwitcher testId="store-switcher-footer" className="max-w-xs" />
         </div>
 

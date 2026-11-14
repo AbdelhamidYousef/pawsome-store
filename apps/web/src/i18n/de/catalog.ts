@@ -15,11 +15,11 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   // Filters: panel, chips, facet names
   'catalog.filters.applied': 'Aktive Filter',
   'catalog.filters.inStock': 'Auf Lager',
-  'catalog.filters.inStockOnly': 'Nur lagernde Artikel',
+  'catalog.filters.inStockOnly': 'Nur verfügbare Artikel',
   'catalog.filters.brand': 'Marke',
-  'catalog.filters.health': 'Nach Gesundheitsbedarf einkaufen',
+  'catalog.filters.health': 'Nach Gesundheitsthema',
   'catalog.filters.chipBrand': 'Marke: {name}',
-  'catalog.filters.chipHealth': 'Gesundheitsbedarf: {name}',
+  'catalog.filters.chipHealth': 'Gesundheitsthema: {name}',
   'catalog.filters.chipLabel': 'Label: {name}',
   'catalog.filters.chipFacet': '{facet}: {value}',
   'catalog.filters.remove': 'Filter {label} entfernen',
@@ -42,7 +42,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.facet.petReptile': 'Reptilien',
 
   // Sort
-  'catalog.sort.relevance': 'Beste Treffer',
+  'catalog.sort.relevance': 'Relevanz',
   'catalog.sort.newest': 'Neueste',
   'catalog.sort.priceAsc': 'Preis: aufsteigend',
   'catalog.sort.priceDesc': 'Preis: absteigend',
@@ -118,7 +118,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.list.sortBy': 'Sortieren nach',
   'catalog.list.products': 'Produkte',
   'catalog.empty.pageMissing': 'Diese Seite gibt es nicht',
-  'catalog.empty.pageMissingHint': 'Es gibt weniger Ergebnisseiten.',
+  'catalog.empty.pageMissingHint': 'So viele Ergebnisseiten gibt es nicht.',
   'catalog.empty.firstPage': 'Zur ersten Seite',
   'catalog.empty.noResults': 'Keine Ergebnisse für „{q}“',
   'catalog.empty.noMatch': 'Keine passenden Produkte',
@@ -126,7 +126,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.empty.tryWords':
     'Versuchen Sie weniger oder andere Wörter. Die Suche findet ganze Wörter, prüfen Sie also die Schreibweise.',
   'catalog.empty.nothingYet':
-    'Hier gibt es noch nichts. Schauen Sie sich ein anderes Haustier an, während wir nachfüllen.',
+    'Hier gibt es noch nichts. Schauen Sie sich gern bei einem anderen Tier um, bis wir wieder aufgefüllt haben.',
   'catalog.empty.clearFilters': 'Filter löschen',
 
   // Pages
@@ -140,10 +140,10 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.brand.loadError': 'Diese Marke konnte nicht geladen werden',
   'catalog.brand.loading': 'Marke wird geladen',
   'catalog.brands.description':
-    'Die Pawsome-Hausmarken: Leckereien, Betten, Terrarienzubehör und mehr.',
+    'Die Pawsome-Hausmarken: Leckerlis, Betten, Terrarienzubehör und mehr.',
   'catalog.brands.title': 'Unsere Marken',
   'catalog.brands.intro':
-    'Jede Marke hier ist unsere eigene, von uns erfunden und von einer sehr wählerischen Testgruppe aus Haustieren geprüft.',
+    'Sechs Marken, ein Anspruch: Jedes Produkt wird zu Hause von unserem wählerischen Testteam aus Haustieren geprüft, bevor es in den Shop kommt.',
   'catalog.brands.loadError': 'Die Marken konnten nicht geladen werden.',
   'catalog.collection.loadError': 'Diese Kollektion konnte nicht geladen werden',
   'catalog.collection.loading': 'Kollektion wird geladen',

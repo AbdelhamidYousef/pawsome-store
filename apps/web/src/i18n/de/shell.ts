@@ -38,11 +38,9 @@ export const shell: Record<keyof typeof enNs, Entry> = {
 
   // Footer
   'shell.footer.tagline':
-    'Alles für glückliche Schwänze: Zubehör für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere.',
-  'shell.footer.paymentNote':
-    'Zahlungen laufen im Stripe-Testmodus: Es werden keine echten Bestellungen angenommen und keine Karte wird belastet.',
-  'shell.footer.copyright':
-    '© {year} Pawsome Demo-Shop, ein fiktives Unternehmen. Keine Rechtsberatung.',
+    'Bunte, gut gemachte Ausstattung für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere. Zu Hause getestet von unserem wählerischen Testteam.',
+  'shell.footer.paymentNote': 'Zahlungen laufen im Stripe-Testmodus: Keine Karte wird belastet.',
+  'shell.footer.copyright': '© {year} Pawsome. Alle Rechte vorbehalten.',
   'shell.footer.shop': 'Shop',
   'shell.footer.brands': 'Marken',
   'shell.footer.giftFinder': 'Geschenkefinder',
@@ -92,7 +90,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.price.memberFrom': 'Mitgliedspreis ab {price}',
   'shell.price.regular': 'Normalpreis {price}',
   'shell.price.regularFrom': 'Normalpreis ab {price}',
-  'shell.price.memberTeaser': 'Mitgliedspreis: anmelden und ansehen',
+  'shell.price.memberTeaser': 'Mitgliedspreis nach Anmeldung',
   'shell.price.original': 'Ursprünglicher Preis',
   'shell.price.was': 'Vorher',
   'shell.price.lowest30': 'Niedrigster Preis der letzten 30 Tage: {price}',
@@ -120,8 +118,8 @@ export const shell: Record<keyof typeof enNs, Entry> = {
 
   // Home
   'shell.home.seoDescription':
-    'Bunter, robuster und schwanzwedelnd geprüfter Bedarf für Hunde, Katzen, Vögel, Fische und Kleintiere.',
-  'shell.home.h1': 'Hier beginnen glückliche Schwänze',
+    'Bunte, gut gemachte Ausstattung für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere. Kostenlose Lieferung ab 49 Euro und unser Pawsome-Versprechen bei jeder Bestellung.',
+  'shell.home.h1': 'Hier beginnt das Schwanzwedeln',
   'shell.home.shopByPet': 'Nach Tier einkaufen',
   'shell.home.bestsellers': 'Bestseller',
   'shell.home.bestsellersError':
@@ -138,15 +136,15 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.home.trust.label': 'Warum bei uns einkaufen',
   'shell.home.trust.deliveryTitle': 'Kostenlose Lieferung',
   'shell.home.trust.deliveryText': 'Ab 49 Euro Bestellwert',
-  'shell.home.trust.promiseTitle': 'Glücklicher-Schwanz-Versprechen',
-  'shell.home.trust.promiseText': 'Kein Treffer? Wir machen es wieder gut',
+  'shell.home.trust.promiseTitle': 'Pawsome-Versprechen',
+  'shell.home.trust.promiseText': 'Nicht ganz richtig? Wir finden eine Lösung',
   'shell.home.trust.safeTitle': 'Tiersichere Auswahl',
   'shell.home.trust.safeText': 'Ehrliche Materialien und Zutaten',
-  'shell.home.trust.checkoutTitle': 'Sichere Kasse',
-  'shell.home.trust.checkoutText': 'Sicher per Karte bezahlen',
+  'shell.home.trust.checkoutTitle': 'Sichere Zahlung',
+  'shell.home.trust.checkoutText': 'Bequem per Karte bezahlen',
   'shell.home.guides.title': 'Ratgeber zur Tierpflege',
   'shell.home.guides.all': 'Alle Ratgeber',
-  'shell.home.happyTails': 'Glückliche Schwänze',
+  'shell.home.happyTails': 'Glückliche Fellnasen',
   'shell.home.stars': '{rating} von 5 Sternen',
   'shell.home.quote': '„{quote}“',
   'shell.home.withPet': ', mit {pet}',
@@ -155,16 +153,16 @@ export const shell: Record<keyof typeof enNs, Entry> = {
     other: '{average} von 5, von {count} zufriedenen Kunden',
   },
   'shell.seasonal.seeAll': 'Die ganze Kollektion ansehen',
-  'shell.gallery.heading': '#RealPawsomePets',
+  'shell.gallery.heading': 'Pawsome zu Hause',
   'shell.gallery.intro':
-    'Echte Kunden, echte Tiere. Tippen Sie auf ein Foto, um zu entdecken, was sie verwenden.',
+    'Unsere Lieblingsstücke, bereit für Ihr Zuhause. Tippen Sie auf ein Foto, um den Look zu entdecken.',
   'shell.gallery.open': 'Foto öffnen: {name}',
-  'shell.gallery.customerPhotoLower': 'Kundenfoto',
-  'shell.gallery.customerPhoto': 'Kundenfoto',
-  'shell.gallery.aCustomer': 'Ein Kunde',
+  'shell.gallery.customerPhotoLower': 'Foto',
+  'shell.gallery.customerPhoto': 'Foto',
+  'shell.gallery.aCustomer': 'Eine Kundin oder ein Kunde',
   'shell.gallery.petOf': 'Das Tier von {name}',
   'shell.gallery.pictured': 'Abgebildet: {name}',
-  'shell.gallery.shop': 'Dieses Foto shoppen',
+  'shell.gallery.shop': 'Den Look shoppen',
   'shell.gallery.noProducts': 'Mit diesem Foto sind keine Produkte verknüpft.',
   'shell.gallery.addAria': '{name} in den Warenkorb legen',
   'shell.gallery.add': 'In den Warenkorb',
@@ -212,4 +210,5 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.gallery.more': 'Mehr Fotos zeigen',
   'shell.gallery.with': 'mit {product}',
   'shell.gallery.inPhoto': 'Auf diesem Foto',
+  'shell.footer.charity': 'Unser Partner-Tierheim',
 };

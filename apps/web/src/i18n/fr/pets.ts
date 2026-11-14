@@ -14,7 +14,7 @@ export const pets: Record<keyof typeof enNs, Entry> = {
   'pets.limit':
     'Vous avez {max} animaux, le maximum que nous puissions enregistrer. Supprimez-en un pour en ajouter un autre.',
   'pets.empty':
-    'Aucun animal pour l’instant. Ajoutez-en un et la boutique commencera par la bonne nourriture, les bons jouets et les bonnes tailles.',
+    'Aucun animal pour l’instant. Ajoutez-en un et la boutique vous proposera en priorité la bonne nourriture, les bons jouets et les bonnes tailles.',
   'pets.shoppingFor': 'Achats pour',
   'pets.sizeSuffix': ', taille {size}',
   'pets.stopShopping': 'Arrêter les achats pour',
@@ -87,8 +87,7 @@ export const pets: Record<keyof typeof enNs, Entry> = {
   'pets.gift.q.pet.reptile': 'Un reptile',
   'pets.gift.q.pet.any': 'Un amoureux des animaux (tous animaux)',
   'pets.gift.q.age.title': 'Quel âge a-t-il ?',
-  'pets.gift.q.age.hint':
-    'Jeune signifie chiot ou chaton, senior correspond aux belles années de la maturité.',
+  'pets.gift.q.age.hint': 'Jeune signifie chiot ou chaton ; senior, c’est l’âge d’or.',
   'pets.gift.q.age.young': 'Jeune',
   'pets.gift.q.age.adult': 'Adulte',
   'pets.gift.q.age.senior': 'Senior',
@@ -132,7 +131,8 @@ export const pets: Record<keyof typeof enNs, Entry> = {
     'rien ne correspondait jusqu’à {amount}, nous avons donc élargi le budget',
   'pets.gift.relaxed.budgetAny': 'nous avons élargi le budget',
   'pets.gift.relaxed.age': 'nous avons aussi retiré le filtre d’âge',
-  'pets.gift.relaxed.goal': 'rien ne correspondait pour {goal}, voici donc le meilleur du reste',
+  'pets.gift.relaxed.goal':
+    'rien ne correspondait pour {goal}, voici donc nos meilleures alternatives',
   'pets.gift.relaxed.join': ', et ',
 
   // Messages from outside (shared Zod rules)

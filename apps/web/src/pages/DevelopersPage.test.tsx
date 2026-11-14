@@ -16,9 +16,9 @@ describe('developers page', () => {
     expect(names).toHaveLength(6);
   });
 
-  it('says it is experimental, a demo, and what is not exposed', async () => {
+  it('says it is experimental and what is not exposed', async () => {
     renderApp('/developers');
-    expect(await screen.findByRole('note')).toHaveTextContent(/demo store on test data/i);
+    expect(await screen.findByRole('note')).toHaveTextContent(/experimental browser feature/i);
     expect(screen.getByText(/Checkout and payment/)).toBeInTheDocument();
     expect(screen.getByText(/chrome:\/\/flags\/#enable-webmcp-testing/)).toBeInTheDocument();
   });

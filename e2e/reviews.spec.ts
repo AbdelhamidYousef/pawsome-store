@@ -197,7 +197,7 @@ test('a gallery photo opens a modal and its product goes into the cart', async (
     const shopperCtx = await browser.newContext();
     const shopper = await shopperCtx.newPage();
     await shopper.goto('/');
-    await expect(shopper.getByRole('heading', { name: '#RealPawsomePets' })).toBeVisible();
+    await expect(shopper.getByRole('heading', { name: 'Pawsome at home' })).toBeVisible();
     await shopper.getByRole('button', { name: `Open photo: ${caption}` }).click();
     const modal = shopper.getByTestId('gallery-modal');
     await expect(modal).toContainText(caption);
@@ -210,7 +210,7 @@ test('a gallery photo opens a modal and its product goes into the cart', async (
     const pdpCtx = await browser.newContext();
     const pdp = await pdpCtx.newPage();
     await pdp.goto(`/products/${product.slug}`);
-    await expect(pdp.getByRole('heading', { name: 'Customers with this product' })).toBeVisible();
+    await expect(pdp.getByRole('heading', { name: 'Seen at home' })).toBeVisible();
     await expect(pdp.getByTestId('gallery-item')).toHaveCount(1);
     await pdpCtx.close();
   } finally {

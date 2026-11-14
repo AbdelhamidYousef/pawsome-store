@@ -7,7 +7,7 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   'cart.loading': 'Ihr Warenkorb wird geladen',
   'cart.loadError': 'Wir konnten Ihren Warenkorb nicht laden.',
   'cart.tryAgain': 'Erneut versuchen',
-  'cart.empty.page': 'Ihr Warenkorb ist leer. Zeit, etwas zum Schwanzwedeln zu finden!',
+  'cart.empty.page': 'Ihr Warenkorb ist leer. Zeit für etwas, das Schwänze wedeln lässt!',
   'cart.empty.drawer': 'Ihr Warenkorb ist leer.',
   'cart.continueShopping': 'Weiter einkaufen',
   'cart.summary.aria': 'Bestellübersicht',
@@ -53,8 +53,8 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   'cart.summary.freeDelivery': 'Kostenlose Lieferung',
   'cart.summary.shippingEstimate': 'Versand (Schätzung, Standardlieferung)',
   'cart.summary.free': 'Kostenlos',
-  'cart.summary.estimatedTotal': 'Voraussichtliche Summe',
-  'cart.summary.noTax': 'Demo-Shop: Es wird keine Steuer berechnet.',
+  'cart.summary.estimatedTotal': 'Voraussichtlicher Gesamtbetrag',
+  'cart.summary.noTax': 'Preise inkl. MwSt., sofern anwendbar.',
   'cart.summary.checkout': 'Zur Kasse',
   'cart.summary.soldOutBlock': 'Entfernen Sie die ausverkauften Artikel, um fortzufahren.',
 
@@ -95,11 +95,11 @@ export const cart: Record<keyof typeof enNs, Entry> = {
   'cart.rules.orderDiscount':
     'Dann folgt ein Bestellrabatt: ein Mengenrabatt oder ein Code, je nachdem, was mehr spart. Nie beides. Codes können Artikel im Angebot ausschließen.',
   'cart.rules.gift':
-    'Ein Gratisgeschenk wird hinzugefügt, sobald Ihre Artikel nach diesem Rabatt die Geschenkgrenze erreichen.',
+    'Ein Gratisgeschenk kommt dazu, sobald Ihre Artikel nach diesem Rabatt den Mindestwert für das Geschenk erreichen.',
   'cart.rules.delivery':
-    'Die Lieferung ist ab dem Lieferschwellenwert oder mit einem Code für kostenlose Lieferung gratis. Codes für kostenlose Lieferung lassen sich mit allem anderen kombinieren.',
+    'Ab dem Mindestbestellwert für Gratisversand oder mit einem Gratisversand-Code ist die Lieferung kostenlos. Gratisversand-Codes lassen sich mit allem anderen kombinieren.',
   'cart.rules.credits':
-    'Guthaben wird zuletzt angerechnet. Es bezahlt nie die Lieferung, und Ihre Summe sinkt nie unter null.',
+    'Guthaben wird zuletzt angerechnet. Es gilt nie für die Versandkosten, und Ihre Summe fällt nie unter null.',
 
   // ---------- toasts and errors ----------
   'cart.toast.removed': '{name} wurde aus Ihrem Warenkorb entfernt',

@@ -20,8 +20,8 @@ export const pdp = {
   'pdp.page.attr.size': 'Size',
   'pdp.page.attr.brand': 'Brand',
   'pdp.page.attr.goodFor': 'Good for',
-  'pdp.page.gallery.heading': 'Customers with this product',
-  'pdp.page.gallery.intro': 'Photos from real Pawsome pets. Tap one to shop what is in it.',
+  'pdp.page.gallery.heading': 'Seen at home',
+  'pdp.page.gallery.intro': 'See it styled at home. Tap a photo to shop the look.',
 
   // ---- tabs ----
   'pdp.tabs.label': 'Product information',
@@ -93,7 +93,7 @@ export const pdp = {
   'pdp.delivery.shipLink': 'shipping page',
   'pdp.delivery.shipOutro': 'for prices and times.',
   'pdp.delivery.cutoffNote':
-    'Orders placed before 15:00 Amsterdam time on a business day ship the same day. The dispatch schedule and the holiday list are invented for this demo shop.',
+    'Orders placed before 15:00 Amsterdam time on a business day ship the same day.',
   'pdp.delivery.returnsHeading': 'Returns',
   'pdp.delivery.returnsIntro':
     'Changed your mind? Unused items in their original packaging can be returned within 30 days. Opened food and hygiene items cannot be returned unless they are faulty. See',

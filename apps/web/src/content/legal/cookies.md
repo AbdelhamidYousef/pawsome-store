@@ -14,6 +14,4 @@ Under EU rules, cookies that are strictly necessary to provide something you ask
 
 ## Your notice choice
 
-The notice you saw is remembered in your browser's local storage, not in a cookie.
-
-This text is fictional and is not legal advice.
+The notice you saw is remembered in your browser's local storage, not in a cookie. You can clear it at any time in your browser settings.

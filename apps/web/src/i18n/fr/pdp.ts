@@ -21,9 +21,8 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.page.attr.size': 'Taille',
   'pdp.page.attr.brand': 'Marque',
   'pdp.page.attr.goodFor': 'Idéal pour',
-  'pdp.page.gallery.heading': 'Clients avec ce produit',
-  'pdp.page.gallery.intro':
-    'Photos de vrais animaux Pawsome. Touchez-en une pour acheter ce qu’on y voit.',
+  'pdp.page.gallery.heading': 'À la maison',
+  'pdp.page.gallery.intro': 'Touchez une photo pour découvrir le look.',
 
   // ---- tabs ----
   'pdp.tabs.label': 'Informations sur le produit',
@@ -34,13 +33,13 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
 
   // ---- specs ----
   'pdp.specs.heading': 'Caractéristiques',
-  'pdp.specs.analysis': 'Analyse garantie',
+  'pdp.specs.analysis': 'Constituants analytiques',
   'pdp.specs.per100': 'Pour 100 g.',
   'pdp.specs.per100Variant': 'Pour 100 g, {variant}.',
-  'pdp.specs.constituent.protein': 'Protéines',
-  'pdp.specs.constituent.fat': 'Matières grasses',
-  'pdp.specs.constituent.fibre': 'Fibres',
-  'pdp.specs.constituent.ash': 'Cendres',
+  'pdp.specs.constituent.protein': 'Protéines brutes',
+  'pdp.specs.constituent.fat': 'Matières grasses brutes',
+  'pdp.specs.constituent.fibre': 'Cellulose brute',
+  'pdp.specs.constituent.ash': 'Cendres brutes',
   'pdp.specs.constituent.moisture': 'Humidité',
   'pdp.specs.constituent.kcal': 'Énergie',
   'pdp.specs.kcal': '{value} kcal',
@@ -93,17 +92,17 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.delivery.heading': 'Livraison',
   'pdp.delivery.shipIntro':
     'Les commandes partent de notre entrepôt les jours ouvrés. Vous choisissez la livraison standard ou express au paiement et voyez le prix exact avant de payer. Consultez la page',
-  'pdp.delivery.shipLink': 'expédition',
+  'pdp.delivery.shipLink': 'livraison',
   'pdp.delivery.shipOutro': 'pour les prix et les délais.',
   'pdp.delivery.cutoffNote':
-    'Les commandes passées avant 15 h (heure d’Amsterdam) un jour ouvré sont expédiées le jour même. Le calendrier d’expédition et la liste des jours fériés sont inventés pour cette boutique de démonstration.',
+    'Les commandes passées avant 15 h (heure d’Amsterdam) un jour ouvré sont expédiées le jour même.',
   'pdp.delivery.returnsHeading': 'Retours',
   'pdp.delivery.returnsIntro':
     'Vous avez changé d’avis ? Les articles non utilisés dans leur emballage d’origine peuvent être retournés sous 30 jours. Les aliments ouverts et les articles d’hygiène ne peuvent pas être retournés, sauf s’ils sont défectueux. Voir',
   'pdp.delivery.returnsLink': 'retours et rétractation',
 
   // ---- delivery estimate ----
-  'pdp.estimate.orderIn': 'Commandez dans {countdown}, livraison {range}',
+  'pdp.estimate.orderIn': 'Commandez sous {countdown}, livraison {range}',
   'pdp.estimate.orderNow': 'Commandez maintenant, expédition {day}, livraison {range}',
   'pdp.estimate.methodArrives': '{method} : livraison {range}',
   'pdp.estimate.methodArrivesSpoken': '{method} : livraison {range}.',

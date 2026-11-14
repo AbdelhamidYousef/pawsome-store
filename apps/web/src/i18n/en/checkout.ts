@@ -44,11 +44,11 @@ export const checkout = {
   // ---------- vet ----------
   'checkout.vet.bannerTitle': "Needs a vet's okay.",
   'checkout.vet.bannerBody':
-    'After you pay, we hold this order until a vet approves it, then pack it. Demo shop: this is not real medicine and no vet is contacted.',
+    'After you pay, we hold this order until a vet approves it, then pack it. Most requests are approved within one working day.',
   'checkout.vet.legend': 'Your vet',
   'checkout.vet.intro':
     "An item in your cart needs a vet's okay before we pack it. We will email you as soon as it is decided.",
-  'checkout.vet.demo': 'Demo shop: this is not real medicine and no vet is contacted.',
+  'checkout.vet.demo': 'Most requests are approved within one working day.',
   'checkout.vet.name': "Vet's name",
   'checkout.vet.clinic': 'Clinic',
   'checkout.vet.email': "Vet's email",
@@ -70,8 +70,7 @@ export const checkout = {
   'checkout.shipping.continue': 'Continue to payment',
   'checkout.shipping.tryAgain': 'Try again',
   'checkout.roundUp.label': 'Round my total up to the next euro for Whisker Hollow Rescue',
-  'checkout.roundUp.hint':
-    'The extra cents are a separate line on your order. A pretend shelter: no money moves.',
+  'checkout.roundUp.hint': 'The extra cents show as a separate line on your order.',
 
   // ---------- step 3: payment ----------
   'checkout.payment.pay': 'Pay {amount}',
@@ -79,7 +78,7 @@ export const checkout = {
     'Test mode: use card 4242 4242 4242 4242, any future date and any CVC. No real money moves.',
   'checkout.payment.notConfiguredTitle': "Payments aren't configured in this environment",
   'checkout.payment.notConfiguredBody':
-    "This is a demo shop that only runs in Stripe test mode, and this copy has no Stripe key yet, so orders can't be placed here. Everything before this step works as normal.",
+    "Card payments aren't switched on in this copy of the shop yet, so orders can't be placed here. Everything before this step works as normal.",
   'checkout.payment.preparing': 'Preparing your payment…',
   'checkout.payment.loadFailedTitle': 'We could not load the secure payment form',
   'checkout.payment.loadFailedBody':
@@ -100,7 +99,7 @@ export const checkout = {
   'checkout.summary.shipping': 'Shipping',
   'checkout.summary.shippingNext': 'Next step',
   'checkout.summary.discount': 'Discount',
-  'checkout.summary.donation': 'Donation (demo)',
+  'checkout.summary.donation': 'Donation',
   'checkout.summary.tax': 'Tax',
   'checkout.summary.free': 'Free',
   'checkout.summary.total': 'Total',
@@ -135,7 +134,7 @@ export const checkout = {
   'checkout.confirmation.error.title': 'We could not check your order',
   'checkout.confirmation.error.body': 'The server did not answer. Your payment is not affected.',
   'checkout.confirmation.waking':
-    'Our server is waking up after a nap (this demo runs on free hosting), so the first answer can take up to a minute. Hang tight, your order is safe.',
+    'Our server is waking up after a nap, so the first answer can take up to a minute. Hang tight, your order is safe.',
   'checkout.confirmation.tryAgain': 'Try again',
   'checkout.confirmation.checkAgain': 'Check again',
   'checkout.confirmation.continueShopping': 'Continue shopping',

@@ -6,7 +6,7 @@ import type { EmailKey } from './en.ts';
 // insécable précède ? ! : ; comme le veut la typographie française.
 export const fr: Record<EmailKey, TextEntry> = {
   'mail.footer':
-    'Pawsome est une boutique de démonstration fictive créée pour un portfolio. Rien ici n’est réel et aucune carte n’a été débitée.',
+    'Merci d’avoir choisi Pawsome. Les paiements fonctionnent en mode test Stripe : aucune carte n’a été débitée.',
   'mail.signoff': '- L’équipe Pawsome',
   'mail.hello': 'Bonjour {name},',
   'mail.seeOrder': 'Voir votre commande',
@@ -16,7 +16,7 @@ export const fr: Record<EmailKey, TextEntry> = {
   'order.subtotal': 'Sous-total',
   'order.shipping': 'Livraison ({method})',
   'order.discount': 'Remise',
-  'order.donation': 'Don à Whisker Hollow Rescue (démo)',
+  'order.donation': 'Don à Whisker Hollow Rescue',
   'order.total': 'Total',
   'order.shippingTo': 'Adresse de livraison :',
   'order.deliveringTo': 'Livraison à :',
@@ -61,7 +61,7 @@ export const fr: Record<EmailKey, TextEntry> = {
   'return.approved.l1':
     'Bonne nouvelle : votre retour {ref} pour la commande {order} est approuvé.',
   'return.approved.l2':
-    'Comment nous le renvoyer : emballez {list} dans l’emballage d’origine si possible, écrivez {ref} sur le colis et envoyez-le à Pawsome Returns, 1 Bone Street, Riga LV-1010 (une adresse inventée : ceci est une boutique de démonstration).',
+    'Comment nous le renvoyer : emballez {list} dans l’emballage d’origine si possible, écrivez {ref} sur le colis et envoyez-le à Pawsome Returns, 1 Bone Street, Riga LV-1010.',
   'return.approved.l3':
     'Dès que le colis sera arrivé et vérifié, nous vous rembourserons et vous écrirons de nouveau.',
   'return.rejected.subject': 'À propos de votre retour {ref}',
@@ -79,7 +79,7 @@ export const fr: Record<EmailKey, TextEntry> = {
   'return.refunded.heading': 'Votre remboursement est en route',
   'return.refunded.l1': 'Nous avons remboursé {money} pour le retour {ref} (commande {order}).',
   'return.refunded.simulated':
-    'Ceci est une boutique de démonstration : le remboursement a été simulé et aucun argent n’a bougé.',
+    'Le remboursement sera versé sur la carte utilisée pour le paiement.',
   'return.refunded.real':
     'Il apparaît généralement sur votre carte sous quelques jours, selon votre banque.',
 
@@ -88,7 +88,7 @@ export const fr: Record<EmailKey, TextEntry> = {
   'vet.held.l1':
     'Merci ! La commande {number} contient un article qui nécessite l’accord d’un vétérinaire ; nous la retenons jusqu’à la décision. Votre paiement est en sécurité et les articles sont mis de côté pour vous.',
   'vet.held.l2':
-    'Nous vous écrirons dès qu’il y aura une réponse. (Boutique de démonstration : aucun vrai vétérinaire n’est contacté.)',
+    'Nous vous écrirons dès qu’il y aura une réponse. La plupart des demandes sont traitées sous un jour ouvré.',
   'vet.approved.subject': 'La commande {number} est approuvée et en préparation',
   'vet.approved.heading': 'Approuvée, nous la préparons',
   'vet.approved.l1':
@@ -98,8 +98,7 @@ export const fr: Record<EmailKey, TextEntry> = {
   'vet.rejected.l1':
     'Nous sommes désolés : le contrôle vétérinaire de la commande {number} n’a pas été approuvé ; la commande est annulée et votre paiement est intégralement remboursé.',
   'vet.rejected.reason': 'Motif : {reason}',
-  'vet.rejected.simulated':
-    'Ceci est une boutique de démonstration : le remboursement a été simulé et aucun argent n’a bougé.',
+  'vet.rejected.simulated': 'Le remboursement sera versé sur la carte utilisée pour le paiement.',
   'vet.rejected.real':
     'Le remboursement apparaît généralement sur votre carte sous quelques jours.',
 

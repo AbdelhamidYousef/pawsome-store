@@ -37,7 +37,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.details.city': 'Ville',
   'checkout.details.region': 'Région (facultatif)',
   'checkout.details.country': 'Pays',
-  'checkout.details.countryHint': 'Nous livrons partout en Europe.',
+  'checkout.details.countryHint': 'Nous livrons en Europe.',
   'checkout.details.phone': 'Téléphone (facultatif)',
   'checkout.details.phoneHint': 'Uniquement pour le livreur.',
   'checkout.details.saveAddress': 'Enregistrer cette adresse dans mon compte',
@@ -46,12 +46,11 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   // ---------- vet ----------
   'checkout.vet.bannerTitle': 'Nécessite l’accord d’un vétérinaire.',
   'checkout.vet.bannerBody':
-    'Après le paiement, nous mettons cette commande en attente jusqu’à l’approbation d’un vétérinaire, puis nous la préparons. Boutique de démonstration : ce n’est pas un vrai médicament et aucun vétérinaire n’est contacté.',
+    'Après le paiement, nous mettons cette commande en attente jusqu’à l’approbation d’un vétérinaire, puis nous la préparons. La plupart des demandes sont validées sous un jour ouvré.',
   'checkout.vet.legend': 'Votre vétérinaire',
   'checkout.vet.intro':
     'Un article de votre panier nécessite l’accord d’un vétérinaire avant que nous le préparions. Nous vous écrirons dès que la décision sera prise.',
-  'checkout.vet.demo':
-    'Boutique de démonstration : ce n’est pas un vrai médicament et aucun vétérinaire n’est contacté.',
+  'checkout.vet.demo': 'La plupart des demandes sont validées sous un jour ouvré.',
   'checkout.vet.name': 'Nom du vétérinaire',
   'checkout.vet.clinic': 'Clinique',
   'checkout.vet.email': 'E-mail du vétérinaire',
@@ -75,7 +74,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.shipping.tryAgain': 'Réessayer',
   'checkout.roundUp.label': 'Arrondir mon total à l’euro supérieur pour Whisker Hollow Rescue',
   'checkout.roundUp.hint':
-    'Les centimes en plus apparaissent sur une ligne distincte de votre commande. Un refuge imaginaire : aucun argent ne circule.',
+    'Les centimes en plus apparaissent sur une ligne distincte de votre commande.',
 
   // ---------- step 3: payment ----------
   'checkout.payment.pay': 'Payer {amount}',
@@ -84,7 +83,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.payment.notConfiguredTitle':
     'Les paiements ne sont pas configurés dans cet environnement',
   'checkout.payment.notConfiguredBody':
-    'Il s’agit d’une boutique de démonstration qui fonctionne uniquement en mode test Stripe. Cette copie n’a pas encore de clé Stripe, donc aucune commande ne peut y être passée. Tout ce qui précède cette étape fonctionne normalement.',
+    'Le paiement par carte n’est pas encore activé dans cette version de la boutique : aucune commande ne peut donc y être passée. Tout ce qui précède cette étape fonctionne normalement.',
   'checkout.payment.preparing': 'Préparation de votre paiement…',
   'checkout.payment.loadFailedTitle':
     'Nous n’avons pas pu charger le formulaire de paiement sécurisé',
@@ -106,8 +105,8 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.summary.shipping': 'Livraison',
   'checkout.summary.shippingNext': 'Étape suivante',
   'checkout.summary.discount': 'Réduction',
-  'checkout.summary.donation': 'Don (démo)',
-  'checkout.summary.tax': 'Taxe',
+  'checkout.summary.donation': 'Don',
+  'checkout.summary.tax': 'TVA',
   'checkout.summary.free': 'Gratuit',
   'checkout.summary.total': 'Total',
   'checkout.summary.totalPending': 'Confirmé au paiement',
@@ -126,7 +125,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.pending.body':
     'Cela ne prend généralement que quelques secondes. Veuillez garder cette page ouverte.',
   'checkout.confirmation.paid.title': 'Merci, votre commande est payée !',
-  'checkout.confirmation.paid.body': 'Une confirmation est en route vers votre adresse e-mail.',
+  'checkout.confirmation.paid.body': 'Un e-mail de confirmation est en route.',
   'checkout.confirmation.timeout.title': 'Nous confirmons encore votre paiement',
   'checkout.confirmation.timeout.body':
     'Cela prend plus de temps que d’habitude, ce qui peut arriver quand le prestataire de paiement tarde à nous répondre. Merci de ne pas payer une seconde fois. Inutile d’attendre ici : vous recevrez un e-mail dès que le paiement sera confirmé, et vous pouvez revenir sur cette page pour vérifier.',
@@ -134,8 +133,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.failed.body':
     'Vous n’avez pas été débité. Votre panier est toujours là, vous pouvez donc réessayer.',
   'checkout.confirmation.cancelled.title': 'Cette commande a été annulée',
-  'checkout.confirmation.cancelled.body':
-    'Si vous avez payé, l’argent est en route pour vous être remboursé.',
+  'checkout.confirmation.cancelled.body': 'Si vous avez payé, le remboursement est en cours.',
   'checkout.confirmation.notFound.title': 'Nous ne trouvons pas cette commande ici',
   'checkout.confirmation.notFound.body':
     'Une commande ne peut être ouverte que depuis le navigateur ou le compte qui l’a passée.',
@@ -143,7 +141,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.error.body':
     'Le serveur n’a pas répondu. Votre paiement n’est pas affecté.',
   'checkout.confirmation.waking':
-    'Notre serveur se réveille après une sieste (cette démo tourne sur un hébergement gratuit), la première réponse peut donc prendre jusqu’à une minute. Patientez un instant, votre commande est en sécurité.',
+    'Notre serveur se réveille après une sieste : la première réponse peut prendre jusqu’à une minute. Patientez un instant, votre commande est en sécurité.',
   'checkout.confirmation.tryAgain': 'Réessayer',
   'checkout.confirmation.checkAgain': 'Vérifier à nouveau',
   'checkout.confirmation.continueShopping': 'Continuer vos achats',

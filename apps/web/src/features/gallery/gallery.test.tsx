@@ -57,7 +57,7 @@ describe('shoppable gallery', () => {
         <ShoppableGallery />
       </MemoryRouter>,
     );
-    expect(await screen.findByRole('heading', { name: '#RealPawsomePets' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Pawsome at home' })).toBeInTheDocument();
     const items = screen.getAllByTestId('gallery-item');
     expect(items).toHaveLength(2);
     expect(items[0]).toHaveAccessibleName('Open photo: Biscuit with his tug 1');
@@ -123,9 +123,7 @@ describe('shoppable gallery', () => {
     const seen: string[] = [];
     serve([photo(1)], seen);
     renderApp('/products/rope-tug');
-    expect(
-      await screen.findByRole('heading', { name: 'Customers with this product' }),
-    ).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Seen at home' })).toBeInTheDocument();
     expect(seen.some((s) => s.startsWith('?productId='))).toBe(true);
   });
 });
@@ -165,6 +163,6 @@ describe('gallery on the homepage', () => {
     serve([photo(1)]);
     renderApp('/');
     expect(getHomeSlots().map((slot) => slot.id)).toContain('customer-gallery');
-    expect(await screen.findByRole('heading', { name: '#RealPawsomePets' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'Pawsome at home' })).toBeInTheDocument();
   });
 });

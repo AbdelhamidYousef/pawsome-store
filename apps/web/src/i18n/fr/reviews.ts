@@ -18,7 +18,7 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.clearFilters': 'Effacer les filtres',
   'reviews.noMatch': 'Aucun avis ne correspond à ces filtres.',
   'reviews.write': 'Écrire un avis',
-  'reviews.signIn': 'Se connecter',
+  'reviews.signIn': 'Connectez-vous',
   'reviews.signInToWrite': 'pour écrire un avis.',
 
   'reviews.breakdown.label': 'Avis par note en étoiles',
@@ -30,7 +30,7 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
     one: 'Avis {count} étoile : {n}, filtre activé',
     other: 'Avis {count} étoiles : {n}, filtre activé',
   },
-  'reviews.topics.heading': 'Ce que les gens mentionnent',
+  'reviews.topics.heading': 'Points souvent cités',
 
   'reviews.card.verified': 'Achat vérifié',
   'reviews.card.recommend': 'Recommande',
@@ -62,10 +62,11 @@ export const reviews: Record<keyof typeof enNs, Entry> = {
   'reviews.form.petWeight': 'Poids de l’animal (kg)',
   'reviews.form.size': 'Taille achetée',
   'reviews.form.photosLabel': 'Photos (facultatif, jusqu’à {max}, 3 Mo chacune)',
-  'reviews.form.photosToUpload': 'Photos à téléverser',
+  'reviews.form.photosToUpload': 'Photos à ajouter',
   'reviews.form.photoPreview': 'Aperçu de {name}',
   'reviews.form.remove': 'Retirer',
-  'reviews.form.uploadsOff': 'Le téléversement de photos est désactivé dans cette démo.',
+  'reviews.form.uploadsOff':
+    'L’ajout de photos arrive bientôt. En attendant, racontez-nous tout avec des mots.',
   'reviews.form.note':
     'Les avis sont vérifiés avant d’apparaître. Merci de n’y inclure aucune donnée personnelle.',
   'reviews.form.submit': 'Envoyer l’avis',

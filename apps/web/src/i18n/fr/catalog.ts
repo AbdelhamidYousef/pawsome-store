@@ -7,17 +7,17 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.quickFilters': 'Filtres rapides',
 
   // Add to cart
-  'catalog.addToCart.lowStock': 'Plus que quelques-uns',
+  'catalog.addToCart.lowStock': 'Bientôt épuisé',
   'catalog.addToCart.soldOut': 'Épuisé',
   'catalog.addToCart.add': 'Ajouter au panier',
-  'catalog.addToCart.unavailable': "L'ajout au panier n'est pas disponible ici.",
+  'catalog.addToCart.unavailable': 'L’ajout au panier n’est pas disponible ici.',
 
   // Filters: panel, chips, facet names
   'catalog.filters.applied': 'Filtres appliqués',
   'catalog.filters.inStock': 'En stock',
   'catalog.filters.inStockOnly': 'En stock uniquement',
   'catalog.filters.brand': 'Marque',
-  'catalog.filters.health': 'Acheter selon le besoin de santé',
+  'catalog.filters.health': 'Par besoin de santé',
   'catalog.filters.chipBrand': 'Marque : {name}',
   'catalog.filters.chipHealth': 'Besoin de santé : {name}',
   'catalog.filters.chipLabel': 'Label : {name}',
@@ -47,7 +47,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.sort.priceAsc': 'Prix croissant',
   'catalog.sort.priceDesc': 'Prix décroissant',
   'catalog.sort.unitPriceAsc': 'Prix unitaire le plus bas',
-  'catalog.sort.name': 'Nom : A à Z',
+  'catalog.sort.name': 'Nom : de A à Z',
 
   // Price slider
   'catalog.price.title': 'Prix',
@@ -115,7 +115,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.list.sortBy': 'Trier par',
   'catalog.list.products': 'Produits',
   'catalog.empty.pageMissing': 'Cette page n’existe pas',
-  'catalog.empty.pageMissingHint': 'Il y a moins de pages de résultats.',
+  'catalog.empty.pageMissingHint': 'Il n’y a pas autant de pages de résultats.',
   'catalog.empty.firstPage': 'Aller à la première page',
   'catalog.empty.noResults': 'Aucun résultat pour « {q} »',
   'catalog.empty.noMatch': 'Aucun produit ne correspond',
@@ -123,7 +123,7 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.empty.tryWords':
     'Essayez moins de mots, ou d’autres mots. La recherche porte sur des mots entiers, vérifiez donc l’orthographe.',
   'catalog.empty.nothingYet':
-    'Il n’y a rien ici pour l’instant. Jetez un œil à un autre animal pendant que nous réapprovisionnons.',
+    'Il n’y a rien ici pour l’instant. Jetez un œil au rayon d’un autre animal en attendant notre réassort.',
   'catalog.empty.clearFilters': 'Effacer les filtres',
 
   // Pages
@@ -137,10 +137,10 @@ export const catalog: Record<keyof typeof enNs, Entry> = {
   'catalog.brand.loadError': 'Nous n’avons pas pu charger cette marque',
   'catalog.brand.loading': 'Chargement de la marque',
   'catalog.brands.description':
-    'Les marques maison Pawsome : gâteries, paniers, équipement d’habitat et bien plus.',
+    'Les marques maison Pawsome : friandises, paniers, équipement pour terrariums et bien plus.',
   'catalog.brands.title': 'Nos marques',
   'catalog.brands.intro':
-    'Chaque marque ici est la nôtre, inventée par nos soins et testée par un jury d’animaux très difficiles.',
+    'Six marques, une seule exigence : chaque produit est testé à la maison par notre jury d’animaux très difficiles avant d’arriver en boutique.',
   'catalog.brands.loadError': 'Nous n’avons pas pu charger les marques.',
   'catalog.collection.loadError': 'Nous n’avons pas pu charger cette collection',
   'catalog.collection.loading': 'Chargement de la collection',

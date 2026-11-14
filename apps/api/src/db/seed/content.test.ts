@@ -65,7 +65,7 @@ describe('content seed', () => {
       sql`select title, cover_url from guides where slug = 'choosing-a-dog-toy'`,
     );
     expect(rows).toHaveLength(1);
-    expect(rows[0]?.title).toBe('How to choose a dog toy');
+    expect(rows[0]?.title).toBe('How to choose the right dog toy');
     const file = loadContent().guides.find((g) => g.slug === 'choosing-a-dog-toy');
     expect(rows[0]?.cover_url).toBe(file?.cover ?? null);
   });
