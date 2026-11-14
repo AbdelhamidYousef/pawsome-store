@@ -217,4 +217,5 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.storeSwitch.confirm': 'Wechseln und entfernen',
   'shell.storeSwitch.cancel': 'In {store} bleiben',
   'shell.announcement.freeDelivery': 'Kostenloser Versand ab {amount} Bestellwert',
+  'shell.home.whoFor': 'Für wen kaufen Sie ein?',
 };

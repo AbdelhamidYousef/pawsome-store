@@ -2,7 +2,6 @@ import { useEffect, type ReactNode } from 'react';
 
 import { Container } from '../components/layout/Container';
 import { Seo } from '../components/Seo';
-import { PetTiles } from '../features/catalog/PetTiles';
 import { ProductGrid, ProductGridSkeleton } from '../features/catalog/ProductGrid';
 import '../features/home/builtin-slots';
 import { useFreeDeliveryAmount } from '../features/home/free-delivery';
@@ -15,6 +14,7 @@ import {
   TrustBar,
 } from '../features/home/HomeSections';
 import { useHome } from '../features/home/queries';
+import { ShopByPet } from '../features/home/ShopByPet';
 import { getHomeSlots, type HomeSlot } from '../features/home/slots';
 import { SafetyBanner } from '../features/safety/SafetyBanner';
 import { useT } from '../i18n';
@@ -69,8 +69,7 @@ export default function HomePage() {
       <TrustBar />
 
       <Section id="shop-by-pet">
-        <h2 className={SECTION_TITLE}>{t('shell.home.shopByPet')}</h2>
-        <PetTiles />
+        <ShopByPet />
       </Section>
 
       <Section id="bestsellers">
