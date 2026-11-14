@@ -5,7 +5,6 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { clearHomeSlots, registerHomeSlot } from '../features/home/slots';
 import * as tracking from '../lib/track';
-import { makeHome } from '../test/fixtures';
 import { renderApp } from '../test/render';
 import { server, API } from '../test/server';
 
@@ -41,23 +40,13 @@ describe('home page', () => {
     expect(screen.getByTestId('hero-skeleton')).toBeInTheDocument();
   });
 
-  it('shows the promo tile only when the API sends one', async () => {
-    server.use(
-      http.get(`${API}/home`, () =>
-        HttpResponse.json({
-          data: makeHome({
-            promoTile: {
-              enabled: true,
-              text: 'Free delivery!',
-              linkLabel: 'Details',
-              linkHref: '/help',
-            },
-          }),
-        }),
-      ),
-    );
+  it('leaves the free-delivery promise to the announcement bar, not a band in the page', async () => {
     renderApp('/');
-    expect(await screen.findByTestId('promo-tile')).toHaveTextContent('Free delivery!');
+    await screen.findByTestId('hero-carousel');
+    expect(screen.queryByTestId('promo-tile')).toBeNull();
+    expect(screen.getByTestId('announcement-bar')).toHaveTextContent(
+      'Free delivery on orders over €49',
+    );
   });
 
   it('leaves no empty block for missing optional sections', async () => {
@@ -65,13 +54,11 @@ describe('home page', () => {
     await screen.findByTestId('hero-carousel');
     await screen.findByTestId('guides-teaser');
     await screen.findByTestId('rating-summary');
-    // No promo, no registered slots (the seasonal one is cleared here): their wrappers are empty
-    // and hidden by `empty:hidden`, and nothing else is empty.
-    const empty = [...document.querySelectorAll('[data-home-section]')].filter(
-      (n) => n.childNodes.length === 0,
-    );
-    expect(empty.map((n) => n.getAttribute('data-home-section'))).toEqual(['promo']);
-    expect(empty[0]).toHaveClass('empty:hidden');
+    // No registered slots (cleared here) and every built-in section has content: nothing is an
+    // empty wrapper. (`Section` carries `empty:hidden` for the day one is.)
+    const all = [...document.querySelectorAll('[data-home-section]')];
+    expect(all.filter((n) => n.childNodes.length === 0)).toEqual([]);
+    expect(all[0]).toHaveClass('empty:hidden');
   });
 
   it('renders registered slots in the fixed order: seasonal before guides, the rest after', async () => {
@@ -82,7 +69,6 @@ describe('home page', () => {
     expect(sections()).toEqual([
       'shop-by-pet',
       'bestsellers',
-      'promo',
       'seasonal',
       'guides',
       'testimonials',

@@ -209,4 +209,5 @@ export const shell = {
     'These items have no price in {currency}, so they will be removed from your cart:',
   'shell.storeSwitch.confirm': 'Switch and remove them',
   'shell.storeSwitch.cancel': 'Stay in {store}',
+  'shell.announcement.freeDelivery': 'Free delivery on orders over {amount}',
 } satisfies Dictionary;

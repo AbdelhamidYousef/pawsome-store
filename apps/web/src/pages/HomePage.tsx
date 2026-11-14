@@ -11,7 +11,6 @@ import {
   GuidesTeaser,
   HeroSkeleton,
   HeroTrust,
-  PromoTile,
   Testimonials,
   TrustBar,
 } from '../features/home/HomeSections';
@@ -90,8 +89,6 @@ export default function HomePage() {
           </div>
         )}
       </Section>
-
-      <Section id="promo">{data?.promoTile ? <PromoTile tile={data.promoTile} /> : null}</Section>
 
       {slots.filter((s) => s.id === 'seasonal').map(renderSlot)}
 

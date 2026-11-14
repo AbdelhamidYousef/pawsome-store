@@ -65,13 +65,12 @@ export function TrustBar() {
   );
 }
 
-// The little row of promises inside the hero: the real average rating (once it has loaded),
-// free delivery and returns. Short on purpose: the full trust strip sits right below the hero.
+// The little row of promises inside the hero: the real average rating (once it has loaded) and
+// returns (free delivery has the announcement bar above the header). Short on purpose: the full trust strip sits right below the hero.
 export function HeroTrust() {
   const { t } = useT();
   const format = useFormat();
   const { data } = useTestimonials();
-  const amount = useFreeDeliveryAmount();
   const average = data?.meta.average;
   const item = 'flex items-center gap-1.5';
   return (
@@ -85,49 +84,10 @@ export function HeroTrust() {
         </li>
       )}
       <li className={item}>
-        <TruckIcon width={18} height={18} className="text-pet-strong" />
-        {t('shell.home.hero.delivery', { amount })}
-      </li>
-      <li className={item}>
         <ReturnIcon width={18} height={18} className="text-pet-strong" />
         {t('shell.home.hero.returns')}
       </li>
     </ul>
-  );
-}
-
-export function PromoTile({
-  tile,
-}: {
-  tile: { text: string | null; linkLabel: string | null; linkHref: string | null };
-}) {
-  const { t } = useT();
-  const { text, linkLabel, linkHref } = tile;
-  if (!text) return null;
-  return (
-    <section
-      aria-label={t('shell.home.offer')}
-      data-testid="promo-tile"
-      className="flex flex-col items-start gap-4 rounded-card border border-line bg-surface p-6 shadow-card sm:flex-row sm:items-center sm:gap-6 sm:px-8"
-    >
-      <span
-        aria-hidden="true"
-        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary-strong"
-      >
-        <TruckIcon width={28} height={28} />
-      </span>
-      <p className="max-w-prose flex-1 font-display text-lg font-semibold leading-snug text-ink sm:text-xl">
-        {text}
-      </p>
-      {linkLabel && linkHref && (
-        <Link
-          to={linkHref}
-          className="inline-flex min-h-11 shrink-0 items-center rounded-full border-2 border-ink px-5 font-display font-semibold text-ink transition-colors hover:bg-primary-soft"
-        >
-          {linkLabel}
-        </Link>
-      )}
-    </section>
   );
 }
 

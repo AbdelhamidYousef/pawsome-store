@@ -216,4 +216,5 @@ export const shell: Record<keyof typeof enNs, Entry> = {
     'Diese Artikel gibt es nicht in {currency}. Sie werden aus Ihrem Warenkorb entfernt:',
   'shell.storeSwitch.confirm': 'Wechseln und entfernen',
   'shell.storeSwitch.cancel': 'In {store} bleiben',
+  'shell.announcement.freeDelivery': 'Kostenloser Versand ab {amount} Bestellwert',
 };
