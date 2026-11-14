@@ -22,16 +22,17 @@ test('browse: home, category, filter by material, open a product, change variant
     .click();
   await page
     .getByTestId('filters')
-    .getByRole('checkbox', { name: /^Natural rubber/ })
+    .getByRole('checkbox', { name: /^Rubber & silicone/ })
     .check();
-  await expect(page).toHaveURL(/attr\.material=natural\+rubber|attr\.material=natural%20rubber/);
+  await expect(page).toHaveURL(/attr\.material=rubber(&|$)/);
   await expect(
-    page.getByRole('button', { name: /Remove filter Material: Natural rubber/ }),
+    page.getByRole('button', { name: /Remove filter Material: Rubber & silicone/ }),
   ).toBeVisible();
-  await expect(cards).toHaveCount(1);
-  await expect(page.getByTestId('result-count')).toHaveText('1 product');
+  // The rubber ball, the latex squeaky ball and the silicone travel bowl.
+  await expect(cards).toHaveCount(3);
+  await expect(page.getByTestId('result-count')).toHaveText('3 products');
 
-  await cards.first().click();
+  await cards.filter({ hasText: 'Bouncy Rubber Ball' }).click();
   await expect(page).toHaveURL(/\/products\/bouncy-rubber-ball$/);
   await expect(page.getByRole('heading', { level: 1, name: 'Bouncy Rubber Ball' })).toBeVisible();
 

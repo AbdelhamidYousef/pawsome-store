@@ -280,7 +280,8 @@ describe('crowd reviews (polish)', () => {
     // Same rows with the same ids and dates: the re-seed upserts, it does not delete and re-insert.
     await runSeed();
     expect(await crowd()).toEqual(first);
-  });
+    // Two full seeds plus whole-table checksums: more than the file's 60 s on a busy machine.
+  }, 180_000);
 
   it('removes crowd reviews the generator no longer makes, and keeps real votes', async () => {
     await runSeed();

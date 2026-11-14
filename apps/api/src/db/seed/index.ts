@@ -35,6 +35,7 @@ import { loadContent, seedContent } from './content.ts';
 import { FORCED_STOCK, expandVariants, stockLevels } from './expand.ts';
 import { seedHomeContent } from './home.ts';
 import { imageRowsFor } from './images.ts';
+import { materialFacet } from './materials.ts';
 import { seedMenuPromos } from './menu-promos.ts';
 import { assertFeedingTablesTile, pdpFor, sizeGuides } from './pdp.ts';
 import { seedGbpPrices } from './prices.ts';
@@ -169,7 +170,7 @@ export async function runSeed(now = new Date()) {
             status: 'active' as const,
             attributes: {
               pet: p.pet,
-              material: p.material,
+              material: materialFacet(p),
               ageStage: p.ageStage,
               optionKeys: p.axes.map((a) => a.key),
             },
