@@ -644,157 +644,157 @@
   "categories": {
     "dogs": {
       "name": "Hunde",
-      "description": "Spielzeug, Betten, Leckerlis und Gassi-Ausrüstung für Hunde jeder Größe.",
+      "description": "Spielzeug, das jede Toberunde übersteht, Betten zum Heimkommen und Gassi-Ausrüstung für jedes Wetter. Egal wie groß Ihr Hund ist: Hier findet er alles.",
       "slug": "hunde"
     },
     "cats": {
       "name": "Katzen",
-      "description": "Spielzeug, gemütliche Ecken und Snacks für neugierige Katzen.",
+      "description": "Leise Spielzeuge für Mitternachtsjäger, weiche Verstecke für Sonnenanbeter und Snacks, für die sich das Aufwachen lohnt. Alles hier ist darauf ausgelegt, wie Katzen wirklich ticken.",
       "slug": "katzen"
     },
     "birds": {
       "name": "Vögel",
-      "description": "Sitzstangen, Spielzeug und frisches Futter für gefiederte Freunde.",
+      "description": "Sitzstangen, Schaukeln und frische Saatenmischungen für Wellensittiche, Kanarienvögel und Finken. Alles, was gefiederte Freunde für einen abwechslungsreichen Tag brauchen.",
       "slug": "voegel"
     },
     "fish": {
       "name": "Fische",
-      "description": "Aquarien, Futter und Dekoration für ein glückliches Aquarium.",
+      "description": "Starter-Aquarien, ausgewogenes Futter und beruhigende Deko für klares Wasser und entspannte Fische. Mit unseren Sets gelingt das erste Aquarium ganz einfach.",
       "slug": "fische"
     },
     "small-pets": {
       "name": "Kleintiere",
-      "description": "Heu, Verstecke und Knabberzeug für Kaninchen, Meerschweinchen und Co.",
+      "description": "Duftendes Wiesenheu, kausichere Tunnel und gemütliche Verstecke für Kaninchen, Meerschweinchen, Hamster und Co. Kleine Tiere, richtig verwöhnt.",
       "slug": "kleintiere"
     },
     "reptiles": {
       "name": "Reptilien",
-      "description": "Terrarien, Wärme, Licht und Futter für Eidechsen, Schlangen und Schildkröten.",
+      "description": "Terrarien, Wärme und Licht, Futter und Deko für Echsen, Schlangen und Schildkröten. Wenn das Klima stimmt, stimmt auch der Rest.",
       "slug": "reptilien"
     },
     "dog-toys": {
       "name": "Spielzeug",
-      "description": "Zerr-, Apportier- und Kauspielzeug.",
+      "description": "Zerrseile, Wurfbälle und Quietsche-Plüsch, ausgewählt für kräftige Kiefer und lange Spielrunden.",
       "slug": "hunde-spielzeug"
     },
     "dog-beds": {
       "name": "Betten & Liegeplätze",
-      "description": "Weiche Plätze zum Einkuscheln.",
+      "description": "Tiefe, weiche Betten und kuschelige Decken mit Bezügen, die direkt in die Waschmaschine dürfen.",
       "slug": "hunde-betten-liegeplaetze"
     },
     "dog-treats": {
       "name": "Futter & Leckerlis",
-      "description": "Trainingshäppchen und knusprige Kekse.",
+      "description": "Weiche Trainingshappen, knusprige Kekse und langanhaltende Kausnacks mit kurzen, verständlichen Zutatenlisten.",
       "slug": "hunde-futter-leckerlis"
     },
     "dog-bowls": {
       "name": "Näpfe & Futterstationen",
-      "description": "Langlebige Näpfe und Anti-Schling-Näpfe.",
+      "description": "Stabile Näpfe, Anti-Schling-Näpfe für hastige Fresser und Reisenäpfe für unterwegs.",
       "slug": "hunde-naepfe-futterstationen"
     },
     "dog-walk": {
       "name": "Gassi & Reise",
-      "description": "Halsbänder und Leinen für jeden Spaziergang.",
+      "description": "Halsbänder, Geschirre und reflektierende Leinen, die jeden Spaziergang sicherer und bequemer machen.",
       "slug": "hunde-gassi-reise"
     },
     "cat-toys": {
       "name": "Spielzeug",
-      "description": "Federangeln, Kicker und raschelnde Mäuse.",
+      "description": "Federangeln, Katzenminze-Kicker und Knistermäuse zum Anschleichen, Anspringen und Tatzeln.",
       "slug": "katzen-spielzeug"
     },
     "cat-beds": {
       "name": "Betten & Liegeplätze",
-      "description": "Höhlen, Aussichtsplätze und Kissen.",
+      "description": "Höhlen, Fensterplätze und Kissen für jede Art von Katzenschläfchen.",
       "slug": "katzen-betten-liegeplaetze"
     },
     "cat-treats": {
       "name": "Futter & Leckerlis",
-      "description": "Knusprige Leckerlis und schleckbare Beutel.",
+      "description": "Knusprige Leckerlis und Schlecksnacks zum Trainieren, Belohnen und für kleine Bestechungen.",
       "slug": "katzen-futter-leckerlis"
     },
     "cat-bowls": {
       "name": "Näpfe & Futterstationen",
-      "description": "Schnurrhaarfreundliche Näpfe und Wasserspender.",
+      "description": "Flache, schnurrhaarfreundliche Näpfe und Trinkbrunnen, die zum Trinken animieren.",
       "slug": "katzen-naepfe-futterstationen"
     },
     "cat-travel": {
       "name": "Gassi & Reise",
-      "description": "Transportboxen für Tierarztbesuche und Urlaub.",
+      "description": "Sichere, bequeme Transportboxen, die Tierarztbesuche und Reisen etwas entspannter machen.",
       "slug": "katzen-reise"
     },
     "bird-toys": {
       "name": "Spielzeug",
-      "description": "Schaukeln, Glöckchen und Spiegel.",
+      "description": "Schaukeln, Glöckchen und Spiegel, die neugierige Schnäbel zwischen den Mahlzeiten beschäftigen.",
       "slug": "voegel-spielzeug"
     },
     "bird-food": {
       "name": "Futter & Leckerlis",
-      "description": "Körnermischungen und Hirse-Leckerlis.",
+      "description": "Ausgewogene Saatenmischungen und Kolbenhirse für jeden Tag und besondere Momente.",
       "slug": "voegel-futter-leckerlis"
     },
     "bird-cages": {
       "name": "Käfige & Ständer",
-      "description": "Reisekäfige und Spielständer.",
+      "description": "Reisekäfige und Spielständer mit sicherem Gitterabstand und leicht zu reinigenden Schalen.",
       "slug": "voegel-kaefige-staender"
     },
     "bird-feeders": {
       "name": "Näpfe & Futterstationen",
-      "description": "Hänge- und Tischfutterspender.",
+      "description": "Hänge- und Standfutterspender, die das Futter sauber halten und Krümel reduzieren.",
       "slug": "voegel-naepfe-futterstationen"
     },
     "fish-food": {
       "name": "Futter & Leckerlis",
-      "description": "Flocken und Pellets.",
+      "description": "Flocken und Pellets, abgestimmt auf gängige Gesellschaftsfische, in Packungsgrößen, die frisch bleiben.",
       "slug": "fische-futter-leckerlis"
     },
     "fish-tanks": {
       "name": "Aquarien & Dekoration",
-      "description": "Aquarien, Beleuchtung, Pflanzen und Verstecke.",
+      "description": "Komplette Aquarien, sanfte LED-Beleuchtung, Seidenpflanzen und Verstecke für einen ruhigen, natürlichen Look.",
       "slug": "fische-aquarien-dekoration"
     },
     "small-toys": {
       "name": "Spielzeug",
-      "description": "Tunnel und Knabberzeug.",
+      "description": "Tunnel, Kauspielzeug und Beschäftigungsideen, die Zähne in Form und die Neugier wach halten.",
       "slug": "kleintiere-spielzeug"
     },
     "small-food": {
       "name": "Futter & Leckerlis",
-      "description": "Heu und knusprige Knabberstangen.",
+      "description": "Frisches Heu und knusprige Kausnacks, die Basis einer gesunden Ernährung für Kleintiere.",
       "slug": "kleintiere-futter-leckerlis"
     },
     "small-housing": {
       "name": "Betten & Liegeplätze",
-      "description": "Versteckhäuschen.",
+      "description": "Verstecke aus natürlichen Materialien, damit jedes Kleintier einen sicheren Rückzugsort hat.",
       "slug": "kleintiere-betten-liegeplaetze"
     },
     "small-bowls": {
       "name": "Näpfe & Futterstationen",
-      "description": "Näpfe und Trinkflaschen.",
+      "description": "Kippsichere Näpfe und tropffreie Trinkflaschen in der richtigen Größe für kleine Pfoten.",
       "slug": "kleintiere-naepfe-futterstationen"
     },
     "reptile-terrariums": {
       "name": "Terrarien",
-      "description": "Glas- und Gitterheime in jeder Größe.",
+      "description": "Glas- und Gazeterrarien in allen Größen, mit sicheren Deckeln und guter Belüftung.",
       "slug": "reptilien-terrarien"
     },
     "reptile-heat": {
       "name": "Wärme & Beleuchtung",
-      "description": "Lampen, Matten und Thermometer für ein gleichmäßiges Klima.",
+      "description": "Wärmelampen, Heizmatten und Thermometer für ein gleichmäßiges, sicheres Temperaturgefälle.",
       "slug": "reptilien-waerme-beleuchtung"
     },
     "reptile-feeders": {
       "name": "Fütterung & Näpfe",
-      "description": "Wassernäpfe, Fütterungszangen und Spender.",
+      "description": "Wasserschalen, Futterpinzetten und Spender für saubere Fütterungszeiten.",
       "slug": "reptilien-fuetterung-naepfe"
     },
     "reptile-decor": {
       "name": "Dekoration & Verstecke",
-      "description": "Höhlen, Äste und Pflanzen zum Erkunden.",
+      "description": "Höhlen, Äste und Pflanzen, in denen Ihr Reptil sich verstecken, klettern und auf Entdeckung gehen kann.",
       "slug": "reptilien-dekoration-verstecke"
     },
     "reptile-food": {
       "name": "Futter",
-      "description": "Pellets, Ergänzungsfutter und Leckerlis.",
+      "description": "Pellets, Ergänzungsfutter und Leckerlis für ausgewogene, artgerechte Mahlzeiten.",
       "slug": "reptilien-futter"
     }
   },
@@ -839,12 +839,12 @@
   "collections": {
     "halloween": {
       "name": "Halloween",
-      "description": "Gruselige Spielzeuge, Kürbis-Leckerlis und kostümfreier Spaß für die Oktober-Crowd.",
+      "description": "Schaurige Spielzeuge, Kürbis-Leckerlis und Spaß ganz ohne Kostümzwang für die Oktober-Saison.",
       "slug": "halloween"
     },
     "christmas": {
       "name": "Weihnachten",
-      "description": "Kleine Geschenke für den Stiefel und festliche Leckerlis für Haustiere, die auf der Liste der Braven stehen.",
+      "description": "Kleine Geschenke für den Nikolausstiefel und festliche Leckerlis für alle Vierbeiner, die dieses Jahr brav waren.",
       "slug": "weihnachten"
     },
     "puppy-starter-kit": {
@@ -859,7 +859,7 @@
     },
     "under-10": {
       "name": "Unter 10 €",
-      "description": "Kleine Preise, große Schwanzwedler. Jedes Produkt hier hat eine Variante unter 10 €.",
+      "description": "Kleine Preise, viel Freude. Alles hier gibt es in mindestens einer Variante unter 10 €.",
       "slug": "unter-10-euro"
     }
   },

@@ -8,21 +8,21 @@ import { homeContent } from '../schema/index.ts';
 export const HERO_SLIDE_SEEDS = HeroSlidesSchema.parse([
   {
     title: 'Happy tails start here',
-    text: 'Colourful, tough and tail-wag-approved supplies for every pet, from first walk to last nap.',
+    text: 'Tug ropes that survive the zoomies, beds deep enough to sink into and leads for every weather. Everything your dog needs, from first walk to last nap.',
     ctaLabel: 'Shop dogs',
     ctaHref: '/c/dogs',
     imageUrl: '/products/dog-toys/braided-tug-rope-1.webp',
   },
   {
     title: 'Purr-fect playtime',
-    text: 'Feather wands, crinkly mice and cosy caves for curious cats.',
+    text: 'Feather wands, crinkly mice and cosy caves, designed around how cats really hunt, nap and hide. Quiet enough for 3 a.m., tough enough for every pounce.',
     ctaLabel: 'Shop cats',
     ctaHref: '/c/cats',
     imageUrl: '/products/cat-toys/feather-wand-teaser-1.webp',
   },
   {
     title: 'Little pets, big love',
-    text: 'Hay, hideaways and chews for the smallest members of the family.',
+    text: 'Sweet meadow hay, chew-safe tunnels and snug hideaways for rabbits, guinea pigs and hamsters. The smallest members of the family, properly spoiled.',
     ctaLabel: 'Shop small pets',
     ctaHref: '/c/small-pets',
     imageUrl: '/products/small-food/meadow-hay-bundle-1.webp',
@@ -31,7 +31,7 @@ export const HERO_SLIDE_SEEDS = HeroSlidesSchema.parse([
 
 export const PROMO_TILE_SEED = PromoTileSchema.parse({
   enabled: true,
-  text: 'Free delivery on orders over 49 euros. Tails wag faster when the box arrives free.',
+  text: 'Free delivery on orders over 49 euros, packed and dispatched the same day when you order before 15:00.',
   linkLabel: 'See delivery details',
   linkHref: '/help',
 });

@@ -645,157 +645,157 @@
     "dogs": {
       "slug": "chiens",
       "name": "Chiens",
-      "description": "Jouets, paniers, friandises et équipement de balade pour chiens de toutes tailles."
+      "description": "Des jouets qui résistent à toutes les folies, des paniers où il fait bon rentrer et l'équipement de promenade pour tous les temps. Quelle que soit sa taille, votre chien trouve son bonheur ici."
     },
     "cats": {
       "slug": "chats",
       "name": "Chats",
-      "description": "Jouets, coins douillets et en-cas pour chats curieux."
+      "description": "Des jouets discrets pour les chasseurs de minuit, des cachettes douces pour les amateurs de sieste au soleil et des friandises qui valent le réveil. Tout est pensé selon le vrai comportement des chats."
     },
     "birds": {
       "slug": "oiseaux",
       "name": "Oiseaux",
-      "description": "Perchoirs, jeux et nourriture fraîche pour nos amis à plumes."
+      "description": "Perchoirs, balançoires et mélanges de graines frais pour perruches, canaris et pinsons. Tout ce qu'il faut à vos amis à plumes pour des journées bien remplies."
     },
     "fish": {
       "slug": "poissons",
       "name": "Poissons",
-      "description": "Aquariums, nourriture et décoration pour un aquarium heureux."
+      "description": "Aquariums de démarrage, aliments équilibrés et décors apaisants pour une eau limpide et des poissons sereins. Nos kits rendent le premier aquarium étonnamment simple."
     },
     "small-pets": {
       "slug": "petits-animaux",
       "name": "Petits animaux",
-      "description": "Foin, cachettes et friandises à ronger pour lapins, cochons d'Inde et compagnie."
+      "description": "Foin de prairie parfumé, tunnels à ronger en toute sécurité et cachettes douillettes pour lapins, cochons d'Inde, hamsters et compagnie. Les petits animaux, vraiment chouchoutés."
     },
     "reptiles": {
       "slug": "reptiles",
       "name": "Reptiles",
-      "description": "Terrariums, chaleur, lumière et nourriture pour lézards, serpents et tortues."
+      "description": "Terrariums, chauffage et éclairage, alimentation et décor pour lézards, serpents et tortues. Un bon climat, et tout le reste suit."
     },
     "dog-toys": {
       "slug": "jouets-chien",
       "name": "Jouets",
-      "description": "Jouets de traction, de rapport et à mâcher."
+      "description": "Cordes à tirer, balles à rapporter et peluches qui couinent, choisies pour les mâchoires solides et les longues parties."
     },
     "dog-beds": {
       "slug": "paniers-logements-chien",
       "name": "Paniers et logements",
-      "description": "Des endroits douillets où se blottir."
+      "description": "Des paniers profonds et moelleux et des plaids douillets aux housses qui passent directement en machine."
     },
     "dog-treats": {
       "slug": "alimentation-friandises-chien",
       "name": "Alimentation et friandises",
-      "description": "Bouchées d'éducation et biscuits croquants."
+      "description": "Bouchées d'éducation tendres, biscuits croquants et friandises à mâcher longue durée, avec des listes d'ingrédients courtes et lisibles."
     },
     "dog-bowls": {
       "slug": "gamelles-mangeoires-chien",
       "name": "Gamelles et mangeoires",
-      "description": "Des gamelles durables et des gamelles anti-glouton."
+      "description": "Gamelles robustes, gamelles anti-glouton pour les plus pressés et gamelles de voyage pour les sorties."
     },
     "dog-walk": {
       "slug": "promenade-voyage-chien",
       "name": "Promenade et voyage",
-      "description": "Colliers et laisses pour toutes les balades."
+      "description": "Colliers, harnais et laisses réfléchissantes pour des promenades plus sûres et plus confortables."
     },
     "cat-toys": {
       "slug": "jouets-chat",
       "name": "Jouets",
-      "description": "Cannes à pêche, jouets à ruer et souris froissables."
+      "description": "Cannes à plumes, coussins à l'herbe à chat et souris froissables pour guetter, bondir et attraper."
     },
     "cat-beds": {
       "slug": "paniers-logements-chat",
       "name": "Paniers et logements",
-      "description": "Grottes, perchoirs et coussins."
+      "description": "Grottes, hamacs de fenêtre et coussins pour toutes les siestes de chat."
     },
     "cat-treats": {
       "slug": "alimentation-friandises-chat",
       "name": "Alimentation et friandises",
-      "description": "Friandises croquantes et sachets à lécher."
+      "description": "Friandises croquantes et snacks à lécher pour l'éducation, les récompenses et les petites négociations."
     },
     "cat-bowls": {
       "slug": "gamelles-mangeoires-chat",
       "name": "Gamelles et mangeoires",
-      "description": "Gamelles respectueuses des moustaches et fontaines à eau."
+      "description": "Gamelles plates qui ménagent les moustaches et fontaines qui donnent envie de boire davantage."
     },
     "cat-travel": {
       "slug": "promenade-voyage-chat",
       "name": "Promenade et voyage",
-      "description": "Sacs de transport pour les visites chez le vétérinaire et les vacances."
+      "description": "Caisses de transport sûres et confortables pour des visites chez le vétérinaire et des vacances plus sereines."
     },
     "bird-toys": {
       "slug": "jouets-oiseau",
       "name": "Jouets",
-      "description": "Balançoires, clochettes et miroirs."
+      "description": "Balançoires, clochettes et miroirs pour occuper les becs curieux entre deux repas."
     },
     "bird-food": {
       "slug": "alimentation-friandises-oiseau",
       "name": "Alimentation et friandises",
-      "description": "Mélanges de graines et friandises au millet."
+      "description": "Mélanges de graines équilibrés et grappes de millet pour tous les jours et les petites récompenses."
     },
     "bird-cages": {
       "slug": "cages-perchoirs-oiseau",
       "name": "Cages et perchoirs sur pied",
-      "description": "Cages de voyage et aires de jeu sur pied."
+      "description": "Cages de voyage et perchoirs de jeu avec un espacement des barreaux sûr et des bacs faciles à nettoyer."
     },
     "bird-feeders": {
       "slug": "gamelles-mangeoires-oiseau",
       "name": "Gamelles et mangeoires",
-      "description": "Mangeoires suspendues et de table."
+      "description": "Mangeoires suspendues ou à poser qui gardent les graines propres et limitent les dégâts."
     },
     "fish-food": {
       "slug": "alimentation-friandises-poisson",
       "name": "Alimentation et friandises",
-      "description": "Paillettes et granulés."
+      "description": "Flocons et granulés équilibrés pour les poissons d'aquarium courants, en formats qui restent frais."
     },
     "fish-tanks": {
       "slug": "aquariums-decoration",
       "name": "Aquariums et décoration",
-      "description": "Aquariums, éclairages, plantes et cachettes."
+      "description": "Aquariums complets, éclairage LED doux, plantes en soie et cachettes pour un décor calme et naturel."
     },
     "small-toys": {
       "slug": "jouets-petits-animaux",
       "name": "Jouets",
-      "description": "Tunnels et jouets à ronger."
+      "description": "Tunnels, jouets à ronger et anti-ennui qui entretiennent les dents et nourrissent la curiosité."
     },
     "small-food": {
       "slug": "alimentation-friandises-petits-animaux",
       "name": "Alimentation et friandises",
-      "description": "Foin et friandises croquantes à ronger."
+      "description": "Foin frais et friandises croquantes, la base d'une alimentation saine pour les petits animaux."
     },
     "small-housing": {
       "slug": "logements-petits-animaux",
       "name": "Paniers et logements",
-      "description": "Maisonnettes cachettes."
+      "description": "Maisonnettes en matériaux naturels, pour que chaque petit animal ait un refuge bien à lui."
     },
     "small-bowls": {
       "slug": "gamelles-mangeoires-petits-animaux",
       "name": "Gamelles et mangeoires",
-      "description": "Gamelles et biberons."
+      "description": "Gamelles anti-renversement et biberons sans fuite à la taille des petites pattes."
     },
     "reptile-terrariums": {
       "slug": "terrariums",
       "name": "Terrariums",
-      "description": "Des habitats en verre et en maille de toutes tailles."
+      "description": "Terrariums en verre et en grillage de toutes tailles, avec couvercles sécurisés et bonne aération."
     },
     "reptile-heat": {
       "slug": "chaleur-eclairage-reptiles",
       "name": "Chaleur et éclairage",
-      "description": "Lampes, tapis et thermomètres pour un climat stable."
+      "description": "Lampes chauffantes, tapis chauffants et thermomètres pour un gradient de température stable et sûr."
     },
     "reptile-feeders": {
       "slug": "mangeoires-gamelles-reptiles",
       "name": "Mangeoires et gamelles",
-      "description": "Coupelles d'eau, pinces de nourrissage et distributeurs."
+      "description": "Gamelles d'eau, pinces de nourrissage et distributeurs pour des repas sans désordre."
     },
     "reptile-decor": {
       "slug": "decor-cachettes-reptiles",
       "name": "Décor et cachettes",
-      "description": "Grottes, branches et plantes à explorer."
+      "description": "Grottes, branches et plantes pour que votre reptile puisse se cacher, grimper et explorer."
     },
     "reptile-food": {
       "slug": "alimentation-reptiles",
       "name": "Alimentation",
-      "description": "Granulés, compléments et friandises."
+      "description": "Granulés, compléments et friandises pour des repas équilibrés et adaptés à chaque espèce."
     }
   },
   "brands": {
@@ -840,12 +840,12 @@
     "halloween": {
       "slug": "halloween",
       "name": "Halloween",
-      "description": "Jouets effrayants, friandises à la citrouille et amusement sans déguisement pour la bande d'octobre."
+      "description": "Jouets effrayants, friandises à la citrouille et amusement sans déguisement pour la saison d'octobre."
     },
     "christmas": {
       "slug": "noel",
       "name": "Noël",
-      "description": "Petits cadeaux de cheminée et friandises de fête pour les animaux qui ont été bien sages."
+      "description": "Petites surprises pour les souliers de Noël et friandises de fête pour les animaux qui ont été bien sages."
     },
     "puppy-starter-kit": {
       "slug": "kit-de-bienvenue-chiot",
@@ -860,7 +860,7 @@
     "under-10": {
       "slug": "moins-de-10-euros",
       "name": "Moins de 10 €",
-      "description": "Petits prix, grands frétillements de queue. Chaque produit ici a une variante à moins de 10 €."
+      "description": "Petits prix, grande joie. Chaque produit ici existe en au moins une version à moins de 10 €."
     }
   },
   "guides": {

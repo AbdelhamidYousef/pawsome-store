@@ -65,7 +65,7 @@ describe('content seed', () => {
       sql`select title from guides where slug = 'choosing-a-dog-toy'`,
     );
     expect(rows).toHaveLength(1);
-    expect(rows[0]?.title).toBe('How to choose a dog toy');
+    expect(rows[0]?.title).toBe('How to choose the right dog toy');
   });
 
   it('parses front matter, including an unquoted date and the category slug', () => {

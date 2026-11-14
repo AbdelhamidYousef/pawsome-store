@@ -29,7 +29,7 @@ export const collections: CollectionSeed[] = [
   {
     slug: 'halloween',
     name: 'Halloween',
-    description: 'Spooky toys, pumpkin treats and costumes-free fun for the October crowd.',
+    description: 'Spooky toys, pumpkin treats and costume-free fun for the October crowd.',
     accentColor: '#EA580C',
     window: { start: { month: 10, day: 1 }, end: { month: 11, day: 2 } },
     membership: 'listed',
