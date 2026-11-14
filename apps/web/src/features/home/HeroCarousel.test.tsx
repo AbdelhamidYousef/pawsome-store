@@ -47,23 +47,28 @@ describe('HeroCarousel', () => {
     expect(visibleTitle()).toBe('Happy tails start here');
   });
 
-  it('rotates on its own, and the pause button stops it', () => {
+  it('rotates on its own, and has no pause button', () => {
     setup();
     act(() => void vi.advanceTimersByTime(6000));
     expect(visibleTitle()).toBe('Purr-fect playtime');
-    fireEvent.click(screen.getByTestId('hero-toggle'));
-    expect(screen.getByTestId('hero-toggle')).toHaveTextContent('Play');
-    act(() => void vi.advanceTimersByTime(30_000));
-    expect(visibleTitle()).toBe('Purr-fect playtime');
+    expect(screen.queryByTestId('hero-toggle')).toBeNull();
+    expect(screen.queryByRole('button', { name: /pause/i })).toBeNull();
   });
 
-  it('starts paused for reduced motion, and play starts it', () => {
+  it('never rotates for reduced motion', () => {
     mockMotion(true);
     setup();
-    expect(screen.getByTestId('hero-toggle')).toHaveTextContent('Play');
+    expect(screen.getByTestId('hero-carousel')).toHaveAttribute('data-playing', 'false');
     act(() => void vi.advanceTimersByTime(30_000));
     expect(visibleTitle()).toBe('Happy tails start here');
-    fireEvent.click(screen.getByTestId('hero-toggle'));
+  });
+
+  it('pauses while focus is inside, and resumes when it leaves', () => {
+    setup();
+    fireEvent.focus(screen.getByTestId('hero-next'));
+    act(() => void vi.advanceTimersByTime(30_000));
+    expect(visibleTitle()).toBe('Happy tails start here');
+    fireEvent.blur(screen.getByTestId('hero-next'), { relatedTarget: document.body });
     act(() => void vi.advanceTimersByTime(6000));
     expect(visibleTitle()).toBe('Purr-fect playtime');
   });

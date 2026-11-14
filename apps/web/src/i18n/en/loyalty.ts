@@ -172,4 +172,7 @@ export const loyalty = {
 
   // Messages from outside (shared Zod rules)
   'msg.loyalty.emailInvalid': 'Enter a valid email address',
+  'loyalty.newsletter.perkTips': 'Care tips for the pets you pick',
+  'loyalty.newsletter.perkNew': 'First word on new toys and treats',
+  'loyalty.newsletter.perkEasy': 'One-click unsubscribe, any time',
 } satisfies Dictionary;

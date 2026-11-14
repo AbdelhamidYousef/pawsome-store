@@ -66,7 +66,7 @@ export function NewsletterForm() {
       onSubmit={submit}
       noValidate
       data-testid={TEST_IDS.newsletterForm}
-      className="relative flex max-w-xl flex-col gap-3"
+      className="relative flex max-w-xl flex-col gap-4"
     >
       {send.error && (
         <p role="alert" className="font-semibold text-danger">
@@ -84,22 +84,41 @@ export function NewsletterForm() {
         onChange={(e) => setEmail(e.target.value)}
         error={error}
       />
-      <fieldset className="flex flex-col">
-        <legend className="font-semibold">{t('loyalty.newsletter.pets')}</legend>
-        <div className="flex flex-wrap gap-x-5">
+      {/* Pets as toggle chips: a real checkbox, transparent and stretched over its chip (so a click,
+          a tap or a test's `check()` hits the input itself), styled through `peer`. */}
+      <fieldset className="flex flex-col gap-2">
+        <legend className="mb-2 font-semibold">{t('loyalty.newsletter.pets')}</legend>
+        <div className="flex flex-wrap gap-2">
           {PETS.map((p) => {
             const value = petValue(p.slug);
+            const checked = pets.includes(value);
             return (
-              <Checkbox
-                key={p.slug}
-                label={petName(t, p)}
-                checked={pets.includes(value)}
-                onChange={(e) =>
-                  setPets((cur) =>
-                    e.target.checked ? [...cur, value] : cur.filter((v) => v !== value),
-                  )
-                }
-              />
+              <label key={p.slug} className="relative cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="peer absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                  checked={checked}
+                  onChange={(e) =>
+                    setPets((cur) =>
+                      e.target.checked ? [...cur, value] : cur.filter((v) => v !== value),
+                    )
+                  }
+                />
+                <span className="inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 border-line bg-surface px-4 font-semibold text-ink transition-colors hover:border-muted peer-checked:border-primary peer-checked:bg-primary-soft peer-checked:text-primary-strong peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-ink">
+                  {checked && (
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+                      <path
+                        d="M5 12.5l4.2 4.2L19 7"
+                        stroke="currentColor"
+                        strokeWidth="2.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                  {petName(t, p)}
+                </span>
+              </label>
             );
           })}
         </div>

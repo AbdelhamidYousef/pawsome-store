@@ -9,6 +9,7 @@ import { HeroCarousel } from '../features/home/HeroCarousel';
 import {
   GuidesTeaser,
   HeroSkeleton,
+  HeroTrust,
   PromoTile,
   Testimonials,
   TrustBar,
@@ -20,12 +21,15 @@ import { useT } from '../i18n';
 import { TEST_IDS } from '../lib/test-ids';
 import { track } from '../lib/track';
 
+// Section titles share one size and weight across the homepage.
+const SECTION_TITLE = 'mb-6 text-[1.75rem] font-bold leading-tight sm:text-4xl';
+
 // Every section after the hero sits in a Container with a top margin. `empty:hidden` drops the
 // whole block (margin included) when its component rendered nothing, so an optional section that
 // has nothing to show never leaves a gap.
 function Section({ id, children }: { id: string; children: ReactNode }) {
   return (
-    <Container className="mt-12 empty:hidden" data-home-section={id}>
+    <Container className="mt-16 empty:hidden lg:mt-24" data-home-section={id}>
       {children}
     </Container>
   );
@@ -49,23 +53,23 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div data-testid={TEST_IDS.pageHome}>
+    <div data-testid={TEST_IDS.pageHome} className="pb-16 lg:pb-24">
       <Seo title="Pawsome" canonical="/" description={t('shell.home.seoDescription')} />
 
       <SafetyBanner />
 
       <h1 className="sr-only">{t('shell.home.h1')}</h1>
 
-      {data ? <HeroCarousel slides={data.heroSlides} /> : <HeroSkeleton />}
+      {data ? <HeroCarousel slides={data.heroSlides} trust={<HeroTrust />} /> : <HeroSkeleton />}
       <TrustBar />
 
       <Section id="shop-by-pet">
-        <h2 className="mb-5 text-2xl font-bold sm:text-3xl">{t('shell.home.shopByPet')}</h2>
+        <h2 className={SECTION_TITLE}>{t('shell.home.shopByPet')}</h2>
         <PetTiles />
       </Section>
 
       <Section id="bestsellers">
-        <h2 className="mb-5 text-2xl font-bold sm:text-3xl">{t('shell.home.bestsellers')}</h2>
+        <h2 className={SECTION_TITLE}>{t('shell.home.bestsellers')}</h2>
         {isError ? (
           <p role="alert" className="rounded-card bg-danger-soft p-4 text-danger">
             {t('shell.home.bestsellersError')}

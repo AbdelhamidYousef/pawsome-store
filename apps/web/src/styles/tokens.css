@@ -41,6 +41,17 @@
 
   --font-display: 'Fredoka Variable', ui-rounded, 'Nunito Sans Variable', system-ui, sans-serif;
   --font-body: 'Nunito Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Weights. Fredoka is a chunky rounded face: at 700 every heading shouts, so the heaviest weight
+     in the shop is 600. Both fonts are variable, so 550 is a real in-between weight, not a fallback.
+     globals.css points Tailwind's font-bold / font-semibold at these. */
+  --weight-bold: 600;
+  --weight-semibold: 550;
+  --weight-body: 400;
+
+  /* Scrollbars: a thin rounded pill in the brand coral on a transparent track. */
+  --scrollbar-thumb: #f3a08c;
+  --scrollbar-thumb-hover: var(--color-primary-bright);
 }
 
 [data-pet='dog'] {

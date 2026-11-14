@@ -189,4 +189,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
 
   // Messages from outside (shared Zod rules)
   'msg.loyalty.emailInvalid': 'Saisissez une adresse e-mail valide',
+  'loyalty.newsletter.perkTips': 'Des conseils pour les animaux que vous choisissez',
+  'loyalty.newsletter.perkNew': 'Les nouveaux jouets et friandises en avant-première',
+  'loyalty.newsletter.perkEasy': 'Désabonnement en un clic, à tout moment',
 };
