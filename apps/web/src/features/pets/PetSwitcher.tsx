@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { ChevronDownIcon } from '../../components/icons';
+import { ChevronDownIcon, PawIcon } from '../../components/icons';
 import { useDisclosure } from '../../components/layout/use-disclosure';
 import { useT } from '../../i18n';
 import { cn } from '../../lib/cn';
@@ -75,11 +75,24 @@ export function PetSwitcher() {
   const { activePet, pets } = useActivePet();
   const { t } = useT();
   const { open, setOpen, wrapper, button, panelId } = useDisclosure();
+  const pill =
+    'flex min-h-11 max-w-56 items-center gap-1.5 rounded-full border-2 border-line px-3 text-sm font-semibold hover:bg-pet-soft';
+
+  // No pets yet: there is nothing to choose between, so the pill goes straight to the form.
+  if (pets.length === 0) {
+    return (
+      <div className="relative" data-testid="pet-switcher">
+        <Link to="/account/pets?add=1" data-testid="pet-switcher-button" className={pill}>
+          <PawIcon width={16} height={16} className="shrink-0 text-primary" />
+          <span className="truncate">{t('pets.switcher.addYours')}</span>
+        </Link>
+      </div>
+    );
+  }
+
   const label = activePet
     ? t('pets.switcher.shoppingFor', { name: activePet.name })
-    : pets.length > 0
-      ? t('pets.switcher.shoppingForEveryone')
-      : t('pets.switcher.addYours');
+    : t('pets.switcher.shoppingForEveryone');
 
   return (
     <div ref={wrapper} className="relative" data-testid="pet-switcher">
@@ -90,7 +103,7 @@ export function PetSwitcher() {
         aria-controls={panelId}
         data-testid="pet-switcher-button"
         onClick={() => setOpen((v) => !v)}
-        className="flex min-h-11 max-w-56 items-center gap-1 rounded-full border-2 border-line px-3 text-sm font-semibold hover:bg-pet-soft"
+        className={pill}
       >
         <span className="truncate">{label}</span>
         <ChevronDownIcon width={16} height={16} className="shrink-0" />

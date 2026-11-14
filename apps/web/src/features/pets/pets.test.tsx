@@ -96,9 +96,12 @@ describe('pet switcher', () => {
     expect(getActivePetId()).toBeNull();
   });
 
-  it('invites a visitor with no pet to add one', async () => {
+  it('sends a visitor with no pet straight to the add-pet form', async () => {
     renderApp('/');
-    expect(await screen.findByTestId('pet-switcher-button')).toHaveTextContent('Add your pet');
+    const pill = await screen.findByTestId('pet-switcher-button');
+    expect(pill).toHaveTextContent('Add your pet');
+    expect(pill).toHaveAttribute('href', '/account/pets?add=1');
+    expect(pill).not.toHaveAttribute('aria-expanded');
   });
 });
 
