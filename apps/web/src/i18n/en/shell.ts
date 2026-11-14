@@ -195,4 +195,9 @@ export const shell = {
   'shell.error.notFoundText': 'The page you asked for does not exist.',
   'shell.error.text': 'An unexpected error stopped this page from loading. Please try again.',
   'shell.error.reload': 'Reload the shop',
+  'shell.home.hero.eyebrow': 'Fresh picks for happy pets',
+  'shell.home.hero.secondary': 'Try the gift finder',
+  'shell.home.hero.rating': 'Rated {average} out of 5',
+  'shell.home.hero.delivery': 'Free delivery over 49 euros',
+  'shell.home.hero.returns': '30-day returns',
 } satisfies Dictionary;

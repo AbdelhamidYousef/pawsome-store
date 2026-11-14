@@ -9,6 +9,7 @@ import { HeroCarousel } from '../features/home/HeroCarousel';
 import {
   GuidesTeaser,
   HeroSkeleton,
+  HeroTrust,
   PromoTile,
   Testimonials,
   TrustBar,
@@ -56,7 +57,7 @@ export default function HomePage() {
 
       <h1 className="sr-only">{t('shell.home.h1')}</h1>
 
-      {data ? <HeroCarousel slides={data.heroSlides} /> : <HeroSkeleton />}
+      {data ? <HeroCarousel slides={data.heroSlides} trust={<HeroTrust />} /> : <HeroSkeleton />}
       <TrustBar />
 
       <Section id="shop-by-pet">

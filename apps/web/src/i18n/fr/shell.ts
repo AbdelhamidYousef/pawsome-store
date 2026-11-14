@@ -200,4 +200,9 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   'shell.error.text':
     'Une erreur inattendue a empêché le chargement de cette page. Veuillez réessayer.',
   'shell.error.reload': 'Recharger la boutique',
+  'shell.home.hero.eyebrow': 'Des nouveautés pour des animaux heureux',
+  'shell.home.hero.secondary': 'Trouver une idée cadeau',
+  'shell.home.hero.rating': 'Noté {average} sur 5',
+  'shell.home.hero.delivery': 'Livraison offerte dès 49 euros',
+  'shell.home.hero.returns': 'Retours sous 30 jours',
 };

@@ -8,6 +8,7 @@ import { GuideCard } from '../guides/GuideCard';
 import { useGuides } from '../guides/queries';
 
 import { HERO_BOX } from './HeroCarousel';
+import { HeartHandIcon, LeafIcon, ReturnIcon, ShieldIcon, StarIcon, TruckIcon } from './icons';
 import { useTestimonials } from './queries';
 
 export function HeroSkeleton() {
@@ -17,12 +18,24 @@ export function HeroSkeleton() {
 }
 
 // Static promises the shop already keeps (free delivery from the seeded standard method, the
-// happy-tail promise); each is a short line so the bar stays one tidy row.
-const TRUST: readonly { title: StringKey; text: StringKey }[] = [
-  { title: 'shell.home.trust.deliveryTitle', text: 'shell.home.trust.deliveryText' },
-  { title: 'shell.home.trust.promiseTitle', text: 'shell.home.trust.promiseText' },
-  { title: 'shell.home.trust.safeTitle', text: 'shell.home.trust.safeText' },
-  { title: 'shell.home.trust.checkoutTitle', text: 'shell.home.trust.checkoutText' },
+// happy-tail promise); each is a short line so the strip stays one tidy row on desktop.
+const TRUST: readonly { title: StringKey; text: StringKey; Icon: typeof TruckIcon }[] = [
+  {
+    title: 'shell.home.trust.deliveryTitle',
+    text: 'shell.home.trust.deliveryText',
+    Icon: TruckIcon,
+  },
+  {
+    title: 'shell.home.trust.promiseTitle',
+    text: 'shell.home.trust.promiseText',
+    Icon: HeartHandIcon,
+  },
+  { title: 'shell.home.trust.safeTitle', text: 'shell.home.trust.safeText', Icon: LeafIcon },
+  {
+    title: 'shell.home.trust.checkoutTitle',
+    text: 'shell.home.trust.checkoutText',
+    Icon: ShieldIcon,
+  },
 ];
 
 export function TrustBar() {
@@ -33,15 +46,50 @@ export function TrustBar() {
       data-testid="trust-bar"
       className="border-b border-line bg-surface"
     >
-      <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-3 px-4 py-4 sm:px-6 lg:grid-cols-4 lg:px-8">
-        {TRUST.map((item) => (
-          <li key={item.title} className="min-w-0">
-            <p className="font-display font-bold">{t(item.title)}</p>
-            <p className="text-sm text-muted">{t(item.text)}</p>
+      <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-5 px-4 py-6 sm:px-6 lg:grid-cols-4 lg:gap-8 lg:px-8 lg:py-7">
+        {TRUST.map(({ title, text, Icon }) => (
+          <li key={title} className="flex min-w-0 items-start gap-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary-strong">
+              <Icon width={22} height={22} />
+            </span>
+            <span className="min-w-0">
+              <span className="block font-display font-semibold leading-snug">{t(title)}</span>
+              <span className="block text-sm leading-snug text-muted">{t(text)}</span>
+            </span>
           </li>
         ))}
       </ul>
     </section>
+  );
+}
+
+// The little row of promises inside the hero: the real average rating (once it has loaded),
+// free delivery and returns. Short on purpose: the full trust strip sits right below the hero.
+export function HeroTrust() {
+  const { t } = useT();
+  const format = useFormat();
+  const { data } = useTestimonials();
+  const average = data?.meta.average;
+  const item = 'flex items-center gap-1.5';
+  return (
+    <ul className="mt-1 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm font-semibold text-ink md:mt-2">
+      {average != null && (
+        <li className={item}>
+          <StarIcon width={18} height={18} className="text-star" />
+          {t('shell.home.hero.rating', {
+            average: format.number(average, { minimumFractionDigits: 1, maximumFractionDigits: 1 }),
+          })}
+        </li>
+      )}
+      <li className={item}>
+        <TruckIcon width={18} height={18} className="text-pet-strong" />
+        {t('shell.home.hero.delivery')}
+      </li>
+      <li className={item}>
+        <ReturnIcon width={18} height={18} className="text-pet-strong" />
+        {t('shell.home.hero.returns')}
+      </li>
+    </ul>
   );
 }
 
