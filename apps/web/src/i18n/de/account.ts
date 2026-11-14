@@ -10,7 +10,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.nav.addresses': 'Adressen',
   'account.nav.pets': 'Haustiere',
   'account.nav.orders': 'Bestellungen',
-  'account.nav.buyAgain': 'Nochmal kaufen',
+  'account.nav.buyAgain': 'Erneut kaufen',
   'account.nav.rewards': 'Prämien',
   'account.notFound.title': 'Diese Seite finden wir nicht',
   'account.notFound.body': 'Wählen Sie im Menü einen Bereich Ihres Kontos aus.',
@@ -39,7 +39,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.addresses.loadError': 'Wir konnten Ihre Adressen nicht laden.',
   'account.addresses.tryAgain': 'Erneut versuchen',
   'account.addresses.empty':
-    'Sie haben noch keine gespeicherten Adressen. Fügen Sie eine hinzu, dann geht die Kasse schneller.',
+    'Sie haben noch keine gespeicherten Adressen. Fügen Sie eine hinzu, dann geht der Bezahlvorgang schneller.',
   'account.addresses.defaultShipping': 'Standard-Lieferadresse',
   'account.addresses.defaultBilling': 'Standard-Rechnungsadresse',
   'account.addresses.makeShipping': 'Als Standard-Lieferadresse festlegen',
@@ -90,7 +90,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.order.loadErrorBody': 'Bitte versuchen Sie es gleich noch einmal.',
   'account.order.tryAgain': 'Erneut versuchen',
   'account.order.title': 'Bestellung {number}',
-  'account.order.placed': 'Aufgegeben am {date}',
+  'account.order.placed': 'Bestellt am {date}',
   'account.order.withdraw': 'Vertrag widerrufen',
   'account.order.progress': 'Bestellstatus',
   'account.order.items': 'Artikel',
@@ -100,7 +100,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
 
   'account.status.pending_payment': 'Zahlung ausstehend',
   'account.status.paid': 'Bezahlt',
-  'account.status.awaiting_vet_approval': 'Wartet auf Freigabe durch den Tierarzt',
+  'account.status.awaiting_vet_approval': 'Wartet auf tierärztliche Freigabe',
   'account.status.processing': 'Wird gepackt',
   'account.status.shipped': 'Versendet',
   'account.status.delivered': 'Geliefert',
@@ -108,7 +108,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.status.refunded': 'Erstattet',
   'account.timeline.pending_payment': 'Bestellung angelegt',
   'account.timeline.paid': 'Zahlung bestätigt',
-  'account.timeline.awaiting_vet_approval': 'Ein Tierarzt muss Ihre Bestellung noch freigeben',
+  'account.timeline.awaiting_vet_approval': 'Ihre Bestellung wartet auf die tierärztliche Freigabe',
   'account.timeline.processing': 'Wir packen Ihre Bestellung',
   'account.timeline.shipped': 'Auf dem Weg zu Ihnen',
   'account.timeline.delivered': 'Geliefert',
@@ -127,7 +127,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.tracking.notFound':
     'Wir konnten keine Bestellung mit dieser Nummer und E-Mail-Adresse finden. Prüfen Sie beides und versuchen Sie es erneut.',
   'account.tracking.tooMany':
-    'Zu viele Versuche von dieser Verbindung. Bitte warten Sie einen Moment und versuchen Sie es erneut.',
+    'Zu viele Versuche über diese Verbindung. Bitte warten Sie einen Moment und versuchen Sie es erneut.',
   'account.tracking.failed':
     'Wir konnten das gerade nicht abfragen. Bitte versuchen Sie es gleich noch einmal.',
   'account.tracking.status': 'Status:',
@@ -138,7 +138,7 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.tracking.when': '{date} UTC',
   'account.tracking.state.pending_payment': 'Zahlung ausstehend',
   'account.tracking.state.paid': 'Zahlung bestätigt',
-  'account.tracking.state.awaiting_vet_approval': 'Wartet auf Freigabe durch den Tierarzt',
+  'account.tracking.state.awaiting_vet_approval': 'Wartet auf tierärztliche Freigabe',
   'account.tracking.state.processing': 'Wird gepackt',
   'account.tracking.state.shipped': 'Unterwegs',
   'account.tracking.state.delivered': 'Geliefert',
@@ -157,8 +157,8 @@ export const account: Record<keyof typeof enNs, Entry> = {
   'account.reorder.skipped': '{name} ({variant}): {reason}',
   'account.reorder.reason.sold_out': 'derzeit ausverkauft',
   'account.reorder.reason.unavailable': 'nicht mehr im Sortiment',
-  'account.reorder.reason.limit': 'auf ein Stück pro Kunde begrenzt',
-  'account.reorder.heading': 'Nochmal kaufen',
+  'account.reorder.reason.limit': 'auf ein Stück pro Person begrenzt',
+  'account.reorder.heading': 'Erneut kaufen',
   'account.reorder.intro': 'Artikel, die Sie schon einmal bestellt haben, zu heutigen Preisen.',
   'account.reorder.loadError': 'Wir konnten Ihre bisherigen Artikel gerade nicht laden.',
   'account.reorder.empty':

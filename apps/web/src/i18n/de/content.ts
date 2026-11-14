@@ -5,7 +5,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   // Guides
   'content.guides.title': 'Ratgeber zur Tierpflege',
   'content.guides.seoDescription':
-    'Kurze, freundliche Ratgeber für Halter von Hunden, Katzen, Vögeln, Fischen und Kleintieren.',
+    'Kurze, praktische Ratgeber für alle, die Hunde, Katzen, Vögel, Fische oder Kleintiere halten.',
   'content.guides.intro':
     'Praktische Tipps vom Pawsome-Team, abgestimmt mit tierärztlichem Wissen: das erste Aquarium einrichten, einen Welpen eingewöhnen, Wohnungskatzen beschäftigen und vieles mehr. Machen Sie es sich gemütlich und lesen Sie los.',
   'content.guides.topics': 'Ratgeber-Themen',
@@ -25,11 +25,11 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.guides.more': 'Weitere Ratgeber',
 
   // Help centre
-  'content.help.title': 'Hilfecenter',
+  'content.help.title': 'Hilfe-Center',
   'content.help.seoDescription': 'Antworten zu Versand, Rücksendungen, Zahlung und Ihrem Konto.',
   'content.help.intro': 'Suchen Sie oder wählen Sie ein Thema.',
   'content.help.searchLabel': 'Hilfe durchsuchen',
-  'content.help.searchInput': 'Hilfecenter durchsuchen',
+  'content.help.searchInput': 'Hilfe-Center durchsuchen',
   'content.help.topics': 'Hilfethemen',
   'content.help.allTopics': 'Alle Themen',
   'content.help.topic.shipping': 'Versand',
@@ -77,7 +77,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.contact.seoDescription': 'Schreiben Sie dem Pawsome-Team.',
   'content.contact.intro':
     'Fragen zu einer Bestellung, einem Produkt oder Ihren Daten? Schreiben Sie uns, und ein Mensch antwortet Ihnen. Vielleicht finden Sie schnell eine Antwort im',
-  'content.contact.helpLink': 'Hilfecenter',
+  'content.contact.helpLink': 'Hilfe-Center',
   'content.contact.name': 'Ihr Name',
   'content.contact.email': 'E-Mail',
   'content.contact.emailHint': 'An diese Adresse antworten wir.',
@@ -104,10 +104,10 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.contact.referenceBefore': 'Ihre Referenznummer lautet',
   'content.contact.referenceAfter':
     '. Wir haben Ihnen eine Kopie per E-Mail geschickt und antworten an diese Adresse, in der Regel innerhalb von zwei Werktagen.',
-  'content.contact.browseHelp': 'Hilfecenter durchstöbern',
+  'content.contact.browseHelp': 'Hilfe-Center durchstöbern',
 
   // /developers
-  'content.dev.seoTitle': 'Für Entwickler: Agent-Tools',
+  'content.dev.seoTitle': 'Für Entwickler: Tools für KI-Agenten',
   'content.dev.seoDescription':
     'Pawsome bietet strukturierte WebMCP-Tools, mit denen KI-Agenten im Browser den Katalog durchsuchen und einen Warenkorb für Sie füllen können. Experimentell.',
   'content.dev.title': 'Einkaufen mit einem KI-Agenten',
@@ -117,7 +117,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.dev.whatText':
     'WebMCP ist ein Entwurf der W3C Web Machine Learning Community Group. Eine Seite registriert Tools beim Browser, und ein im Browser integrierter KI-Agent ruft sie mit JSON-Argumenten auf, statt den Bildschirm auszulesen. Die Tools laufen in Ihrem Tab, mit Ihrer eigenen Sitzung und Ihrem eigenen Warenkorb, über dieselbe API, die auch die Website selbst nutzt. Ein Agent kann also nie mehr tun als Sie. In einem Browser ohne WebMCP verhalten sich diese Seite und der gesamte Shop wie gewohnt.',
   'content.dev.tryTitle': 'So probieren Sie es aus',
-  'content.dev.try1': 'Verwenden Sie Chrome 146 oder neuer (zum Zeitpunkt des Schreibens Canary).',
+  'content.dev.try1': 'Verwenden Sie Chrome 146 oder neuer (derzeit noch Canary).',
   'content.dev.try2Before': 'Öffnen Sie',
   'content.dev.try2After': ', stellen Sie es auf „Enabled“ und starten Sie den Browser neu.',
   'content.dev.try3':
@@ -130,7 +130,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.dev.schema': 'Eingabeschema',
   'content.dev.exampleCall': 'Beispielaufruf',
   'content.dev.exampleResult': 'Beispielergebnis',
-  'content.dev.errorsLead': 'Fehler kommen zurück als',
+  'content.dev.errorsLead': 'Fehler werden zurückgegeben als',
   'content.dev.errorsMid': 'mit den shopeigenen Codes, zum Beispiel',
   'content.dev.errorsAnd': 'und',
   'content.dev.errorsRest':
@@ -143,7 +143,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.dev.notExposed.account':
     'Konto-, Adress-, Kartendaten sowie Treuepunkte und Wunschliste.',
   'content.dev.notExposed.clicking':
-    'Alles, was der angemeldete Kunde nicht ohnehin per Klick tun könnte.',
+    'Alles, was Sie angemeldet nicht ohnehin per Klick tun könnten.',
 
   // Messages from outside (shared Zod rules)
   'msg.content.required': 'Pflichtfeld',

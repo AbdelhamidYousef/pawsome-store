@@ -60,7 +60,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.worth': 'An der Kasse {amount} wert',
   'loyalty.rewards.earnRateOne': 'Sie erhalten 1 Punkt pro ausgegebenem Euro.',
   'loyalty.rewards.earnRatePercent': 'Sie erhalten {percent} % pro ausgegebenem Euro.',
-  'loyalty.rewards.nextTier': 'Noch {points} verdiente Punkte bis {label}.',
+  'loyalty.rewards.nextTier': 'Noch {points} Punkte sammeln, um {label} zu erreichen.',
   'loyalty.rewards.topTier': 'Sie sind in der höchsten Stufe. Brav gemacht!',
   'loyalty.rewards.spendTitle': 'Punkte ausgeben',
   'loyalty.rewards.rewardsError': 'Die Prämien konnten nicht geladen werden.',
@@ -97,7 +97,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.rewards.colPoints': 'Punkte',
   'loyalty.rewards.kind.earn': 'Gesammelt',
   'loyalty.rewards.kind.redeem': 'Ausgegeben',
-  'loyalty.rewards.kind.reversal': 'Zurückgegeben oder zurückgebucht',
+  'loyalty.rewards.kind.reversal': 'Erstattet oder zurückgebucht',
   'loyalty.rewards.kind.bonus': 'Bonus',
   'loyalty.rewards.kind.donate': 'Gespendet',
   'loyalty.rewards.kind.adjust': 'Korrektur',
@@ -117,7 +117,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.wishlist.keepBrowsing': 'Weiter stöbern',
   'loyalty.wishlist.shareTitle': 'Wunschliste teilen',
   'loyalty.wishlist.shareText':
-    'Jeder mit dem Link sieht diese Artikel und Ihren Vornamen, sonst nichts. Wenn Sie das Teilen beenden, funktioniert der Link nicht mehr.',
+    'Alle, die den Link haben, sehen diese Artikel und Ihren Vornamen, sonst nichts. Wenn Sie das Teilen beenden, funktioniert der Link nicht mehr.',
   'loyalty.wishlist.stopSharing': 'Teilen beenden',
   'loyalty.wishlist.createLink': 'Link zum Teilen erstellen',
   'loyalty.wishlist.signIn': 'Melden Sie sich an,',
@@ -148,7 +148,7 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
   'loyalty.newsletter.done':
     'Fast geschafft! Wenn diese Adresse E-Mails empfangen kann, ist ein Bestätigungslink unterwegs. Klicken Sie darauf, dann folgt Ihr Willkommenscode.',
   'loyalty.newsletter.tooMany':
-    'Zu viele Anmeldungen von hier. Bitte versuchen Sie es später erneut.',
+    'Zu viele Anmeldungen über diese Verbindung. Bitte versuchen Sie es später erneut.',
   'loyalty.newsletter.failed':
     'Die Anmeldung war gerade nicht möglich. Bitte versuchen Sie es gleich noch einmal.',
   'loyalty.newsletter.token.incomplete':
@@ -167,17 +167,18 @@ export const loyalty: Record<keyof typeof enNs, Entry> = {
     'Sie sind abgemeldet. Wir senden Ihnen keine Neuigkeiten mehr.',
 
   // Stock alerts
-  'loyalty.stockAlerts.title': 'Per E-Mail benachrichtigen, wenn wieder da',
+  'loyalty.stockAlerts.title': 'Bei Verfügbarkeit benachrichtigen',
   'loyalty.stockAlerts.email': 'E-Mail',
   'loyalty.stockAlerts.submit': 'Benachrichtigen',
   'loyalty.stockAlerts.done':
-    'Alles klar. Wir schreiben an {email} einmal, sobald der Artikel wieder da ist.',
+    'Alles klar. Wir benachrichtigen {email} einmalig, sobald der Artikel wieder da ist.',
   'loyalty.stockAlerts.inStock': 'Der Artikel ist gerade verfügbar: Laden Sie die Seite neu.',
-  'loyalty.stockAlerts.limit': 'Sie können auf höchstens 5 Artikel gleichzeitig warten.',
+  'loyalty.stockAlerts.limit':
+    'Sie können sich für höchstens 5 Artikel gleichzeitig benachrichtigen lassen.',
   'loyalty.stockAlerts.tooMany': 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.',
   'loyalty.stockAlerts.failed':
     'Das konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.',
-  'loyalty.stockAlerts.cancel.title': 'Verfügbarkeitsbenachrichtigung',
+  'loyalty.stockAlerts.cancel.title': 'Benachrichtigung bei Verfügbarkeit',
   'loyalty.stockAlerts.cancel.done': 'Erledigt: Wir schreiben Ihnen nicht mehr zu diesem Artikel.',
 
   // Messages from outside (shared Zod rules)

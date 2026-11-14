@@ -14,31 +14,31 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.page.sku': 'Art.-Nr. {sku}',
   'pdp.page.trialSize': 'Probiergröße',
   'pdp.page.trialNote':
-    'Eine Probe zum Ausprobieren: eine pro Kunde. Für die Originalgröße gibt es keine Begrenzung.',
+    'Eine kleine Packung zum Testen, bevor Sie sich festlegen: eine pro Person. Die normale Größe ist unbegrenzt erhältlich.',
   'pdp.page.attr.pet': 'Haustier',
   'pdp.page.attr.material': 'Material',
   'pdp.page.attr.ageStage': 'Lebensphase',
   'pdp.page.attr.size': 'Größe',
   'pdp.page.attr.brand': 'Marke',
   'pdp.page.attr.goodFor': 'Gut für',
-  'pdp.page.gallery.heading': 'Kunden mit diesem Produkt',
+  'pdp.page.gallery.heading': 'Kundinnen und Kunden mit diesem Produkt',
   'pdp.page.gallery.intro':
-    'Fotos von echten Pawsome-Haustieren. Tippen Sie auf eines, um zu sehen, was darauf zu kaufen ist.',
+    'Fotos von echten Pawsome-Haustieren. Tippen Sie auf ein Foto, um die abgebildeten Produkte zu kaufen.',
 
   // ---- tabs ----
   'pdp.tabs.label': 'Produktinformationen',
   'pdp.tabs.description': 'Beschreibung',
-  'pdp.tabs.specs': 'Daten',
+  'pdp.tabs.specs': 'Details',
   'pdp.tabs.feeding': 'Fütterungsempfehlung',
   'pdp.tabs.delivery': 'Lieferung & Rücksendung',
 
   // ---- specs ----
   'pdp.specs.heading': 'Technische Daten',
-  'pdp.specs.analysis': 'Garantierte Analyse',
+  'pdp.specs.analysis': 'Analytische Bestandteile',
   'pdp.specs.per100': 'Pro 100 g.',
   'pdp.specs.per100Variant': 'Pro 100 g, {variant}.',
-  'pdp.specs.constituent.protein': 'Eiweiß',
-  'pdp.specs.constituent.fat': 'Fett',
+  'pdp.specs.constituent.protein': 'Rohprotein',
+  'pdp.specs.constituent.fat': 'Rohfett',
   'pdp.specs.constituent.fibre': 'Rohfaser',
   'pdp.specs.constituent.ash': 'Rohasche',
   'pdp.specs.constituent.moisture': 'Feuchtigkeit',
@@ -52,7 +52,7 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   // ---- feeding ----
   'pdp.feeding.stage.any': 'Alle Lebensphasen',
   'pdp.feeding.stage.puppy': 'Welpe oder Kitten',
-  'pdp.feeding.stage.adult': 'Erwachsen',
+  'pdp.feeding.stage.adult': 'Ausgewachsen',
   'pdp.feeding.stage.senior': 'Senior',
   'pdp.feeding.table.caption': 'Tagesmenge nach Gewicht des Tieres. Nur als Richtwert.',
   'pdp.feeding.table.stage': 'Lebensphase',
@@ -73,12 +73,12 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
     'Unsere Empfehlung beginnt bei {from} kg, daher gilt diese Menge für {from} kg. Fragen Sie Ihre Tierärztin oder Ihren Tierarzt zu einem so leichten Tier.',
   'pdp.feeding.clampAbove':
     'Unsere Empfehlung endet bei {to} kg, daher gilt diese Menge für {last} kg. Fragen Sie Ihre Tierärztin oder Ihren Tierarzt zu einem so schweren Tier.',
-  'pdp.feeding.bagLessThanDay': 'Dieser Sack reicht nicht für einen ganzen Tag.',
+  'pdp.feeding.bagLessThanDay': 'Diese Packung reicht nicht für einen ganzen Tag.',
   'pdp.feeding.bagLasts': {
     one: 'Dieser Sack reicht etwa {count} Tag, etwa {price} pro Tag.',
     other: 'Dieser Sack reicht etwa {count} Tage, etwa {price} pro Tag.',
   },
-  'pdp.feeding.pickMonth': 'Wählen Sie die Sackgröße, die einen Monat reicht',
+  'pdp.feeding.pickMonth': 'Wählen Sie die Packungsgröße, die einen Monat reicht',
   'pdp.feeding.pickMonthNote': {
     one: '{name}: etwa {count} Tag.',
     other: '{name}: etwa {count} Tage.',
@@ -102,7 +102,7 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.delivery.returnsLink': 'Rücksendung und Widerruf',
 
   // ---- delivery estimate ----
-  'pdp.estimate.orderIn': 'Bestellen Sie in {countdown}, Lieferung {range}',
+  'pdp.estimate.orderIn': 'Bestellen Sie innerhalb von {countdown}, Lieferung {range}',
   'pdp.estimate.orderNow': 'Jetzt bestellen, Versand {day}, Lieferung {range}',
   'pdp.estimate.methodArrives': '{method}: Lieferung {range}',
   'pdp.estimate.methodArrivesSpoken': '{method}: Lieferung {range}.',
@@ -124,7 +124,7 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.size.measure.length': 'Länge',
 
   // ---- bought together ----
-  'pdp.bought.heading': 'Wird oft zusammen gekauft',
+  'pdp.bought.heading': 'Oft zusammen gekauft',
   'pdp.bought.thisItem': 'Dieser Artikel:',
   'pdp.bought.notAvailable': '(nicht verfügbar)',
   'pdp.bought.withVariant': '{name} ({variant})',

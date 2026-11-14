@@ -22,7 +22,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.step.editAria': '{title} ändern',
   'checkout.step.editDetails': 'Kontakt und Adresse ändern',
   'checkout.step.editShipping': 'Versandart ändern',
-  'checkout.step.vetSummary': 'Tierarzt: {name}, {clinic}',
+  'checkout.step.vetSummary': 'Tierarztpraxis: {name}, {clinic}',
 
   // ---------- step 1: details ----------
   'checkout.details.haveAccount': 'Sie haben ein Konto?',
@@ -45,16 +45,16 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.details.continue': 'Weiter zum Versand',
 
   // ---------- vet ----------
-  'checkout.vet.bannerTitle': 'Benötigt das Okay eines Tierarztes.',
+  'checkout.vet.bannerTitle': 'Tierärztliche Freigabe erforderlich.',
   'checkout.vet.bannerBody':
-    'Nach der Zahlung halten wir diese Bestellung zurück, bis ein Tierarzt sie freigibt, und packen sie dann. Demo-Shop: Das ist keine echte Medizin, und es wird kein Tierarzt kontaktiert.',
-  'checkout.vet.legend': 'Ihr Tierarzt',
+    'Nach der Zahlung halten wir diese Bestellung zurück, bis die tierärztliche Freigabe vorliegt, und verpacken sie dann. Demo-Shop: Das ist keine echte Medizin, und es wird keine Tierarztpraxis kontaktiert.',
+  'checkout.vet.legend': 'Ihre Tierarztpraxis',
   'checkout.vet.intro':
-    'Ein Artikel in Ihrem Warenkorb benötigt das Okay eines Tierarztes, bevor wir ihn packen. Wir schreiben Ihnen per E-Mail, sobald entschieden ist.',
+    'Ein Artikel in Ihrem Warenkorb benötigt eine tierärztliche Freigabe, bevor wir ihn verpacken. Wir benachrichtigen Sie per E-Mail, sobald die Entscheidung gefallen ist.',
   'checkout.vet.demo': 'Die meisten Anfragen werden innerhalb eines Werktags freigegeben.',
-  'checkout.vet.name': 'Name des Tierarztes',
+  'checkout.vet.name': 'Name (Tierärztin/Tierarzt)',
   'checkout.vet.clinic': 'Praxis',
-  'checkout.vet.email': 'E-Mail des Tierarztes',
+  'checkout.vet.email': 'E-Mail der Praxis',
 
   // ---------- step 2: shipping ----------
   'checkout.shipping.loading': 'Versandoptionen werden geladen',
@@ -78,7 +78,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   // ---------- step 3: payment ----------
   'checkout.payment.pay': '{amount} bezahlen',
   'checkout.payment.testMode':
-    'Testmodus: Verwenden Sie die Karte 4242 4242 4242 4242, ein beliebiges Datum in der Zukunft und eine beliebige Prüfziffer. Es fließt kein echtes Geld.',
+    'Testmodus: Verwenden Sie die Karte 4242 4242 4242 4242, ein beliebiges Ablaufdatum in der Zukunft und eine beliebige Prüfnummer (CVC). Es fließt kein echtes Geld.',
   'checkout.payment.notConfiguredTitle': 'Zahlungen sind in dieser Umgebung nicht eingerichtet',
   'checkout.payment.notConfiguredBody':
     'Kartenzahlungen sind in dieser Shop-Umgebung noch nicht freigeschaltet, daher können hier keine Bestellungen aufgegeben werden. Alles vor diesem Schritt funktioniert wie gewohnt.',
@@ -103,7 +103,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.summary.shippingNext': 'Nächster Schritt',
   'checkout.summary.discount': 'Rabatt',
   'checkout.summary.donation': 'Spende',
-  'checkout.summary.tax': 'Steuer',
+  'checkout.summary.tax': 'MwSt.',
   'checkout.summary.free': 'Kostenlos',
   'checkout.summary.total': 'Gesamtsumme',
   'checkout.summary.totalPending': 'Wird bei der Zahlung bestätigt',
@@ -122,11 +122,11 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   'checkout.confirmation.pending.body':
     'Das dauert meist nur wenige Sekunden. Bitte lassen Sie diese Seite geöffnet.',
   'checkout.confirmation.paid.title': 'Vielen Dank, Ihre Bestellung ist bezahlt!',
-  'checkout.confirmation.paid.body': 'Eine Bestätigung ist unterwegs zu Ihrer E-Mail-Adresse.',
+  'checkout.confirmation.paid.body': 'Eine Bestätigung ist per E-Mail unterwegs zu Ihnen.',
   'checkout.confirmation.timeout.title': 'Wir bestätigen Ihre Zahlung noch',
   'checkout.confirmation.timeout.body':
-    'Es dauert länger als gewöhnlich, was passieren kann, wenn der Zahlungsanbieter uns langsam benachrichtigt. Bitte zahlen Sie nicht erneut. Sie müssen hier nicht warten: Sobald die Zahlung bestätigt ist, erhalten Sie eine E-Mail, und Sie können jederzeit auf diese Seite zurückkehren, um nachzusehen.',
-  'checkout.confirmation.failed.title': 'Ihre Zahlung ist nicht durchgegangen',
+    'Es dauert länger als gewöhnlich. Das kann passieren, wenn der Zahlungsanbieter uns verzögert benachrichtigt. Bitte zahlen Sie nicht erneut. Sie müssen hier nicht warten: Sobald die Zahlung bestätigt ist, erhalten Sie eine E-Mail, und Sie können jederzeit auf diese Seite zurückkehren, um nachzusehen.',
+  'checkout.confirmation.failed.title': 'Ihre Zahlung war nicht erfolgreich',
   'checkout.confirmation.failed.body':
     'Es wurde nichts abgebucht. Ihr Warenkorb ist noch da, Sie können es also erneut versuchen.',
   'checkout.confirmation.cancelled.title': 'Diese Bestellung wurde storniert',
@@ -151,7 +151,7 @@ export const checkout: Record<keyof typeof enNs, Entry> = {
   // ---------- messages from outside (Zod rules in @store/shared) ----------
   'msg.checkout.required': 'Pflichtfeld',
   'msg.checkout.emailInvalid': 'Ungültige E-Mail-Adresse',
-  'msg.checkout.vetName': 'Geben Sie den Namen des Tierarztes ein',
+  'msg.checkout.vetName': 'Geben Sie den Namen der Tierärztin oder des Tierarztes ein',
   'msg.checkout.vetClinic': 'Geben Sie die Praxis ein',
   'msg.checkout.countryUnsupported': 'In dieses Land liefern wir nicht',
 };

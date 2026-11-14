@@ -27,7 +27,7 @@ export const returns: Record<keyof typeof enNs, Entry> = {
   'returns.reason.not_as_described': 'Nicht wie beschrieben',
   'returns.reason.changed_mind': 'Meinung geändert',
   'returns.reason.other': 'Etwas anderes',
-  'returns.form.chooseOne': 'Wählen Sie mindestens einen Artikel zur Rücksendung',
+  'returns.form.chooseOne': 'Wählen Sie mindestens einen Artikel für die Rücksendung aus',
   'returns.form.whichItems': 'Welche Artikel gehen zurück?',
   'returns.form.itemLabel': '{product} ({variant})',
   'returns.form.quantityOf': 'Menge von {product}',
@@ -42,7 +42,7 @@ export const returns: Record<keyof typeof enNs, Entry> = {
   'returns.withdraw.notFound':
     'Wir konnten keine Bestellung mit dieser Nummer und E-Mail-Adresse finden. Prüfen Sie beides und versuchen Sie es erneut.',
   'returns.withdraw.tooMany':
-    'Zu viele Versuche von dieser Verbindung. Bitte warten Sie und versuchen Sie es erneut.',
+    'Zu viele Versuche über diese Verbindung. Bitte warten Sie und versuchen Sie es erneut.',
   'returns.withdraw.failed':
     'Wir konnten Ihren Widerruf gerade nicht senden. Bitte versuchen Sie es gleich noch einmal.',
   'returns.withdraw.doneSeo': 'Widerruf erhalten',
@@ -62,7 +62,8 @@ export const returns: Record<keyof typeof enNs, Entry> = {
   'returns.withdraw.itemsHint': 'Leer lassen, um die gesamte Bestellung zu widerrufen.',
   'returns.withdraw.reason': 'Grund (optional)',
   'msg.returns.notDelivered': 'Nur eine gelieferte Bestellung kann zurückgesendet werden',
-  'msg.returns.alreadyInReturn': 'Alle Artikel dieser Bestellung sind bereits in einer Rücksendung',
+  'msg.returns.alreadyInReturn':
+    'Alle Artikel dieser Bestellung sind bereits Teil einer Rücksendung',
   'msg.returns.noPaidItems': 'Diese Bestellung enthält keine bezahlten Artikel zur Rücksendung',
   'msg.returns.cannotReturn': 'Diese Bestellung kann nicht zurückgesendet werden',
   'msg.returns.notPartOfOrder': 'Dieser Artikel gehört nicht zu dieser Bestellung',
