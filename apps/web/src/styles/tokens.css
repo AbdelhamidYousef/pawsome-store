@@ -49,9 +49,19 @@
   --weight-semibold: 550;
   --weight-body: 400;
 
+  /* Vertical gap between homepage sections. Generous on purpose: each section gets room to be
+     looked at on its own, like a modern DTC store. Phones get a little over half of it. */
+  --space-section: 4.5rem;
+
   /* Scrollbars: a thin rounded pill in the brand coral on a transparent track. */
   --scrollbar-thumb: #f3a08c;
   --scrollbar-thumb-hover: var(--color-primary-bright);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --space-section: 8rem;
+  }
 }
 
 [data-pet='dog'] {

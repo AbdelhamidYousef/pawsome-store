@@ -30,7 +30,7 @@ const SECTION_TITLE = 'mb-6 text-[1.75rem] font-bold leading-tight sm:text-4xl';
 // has nothing to show never leaves a gap.
 function Section({ id, children }: { id: string; children: ReactNode }) {
   return (
-    <Container className="mt-16 empty:hidden lg:mt-24" data-home-section={id}>
+    <Container className="mt-[var(--space-section)] empty:hidden" data-home-section={id}>
       {children}
     </Container>
   );
@@ -55,7 +55,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div data-testid={TEST_IDS.pageHome} className="pb-16 lg:pb-24">
+    <div data-testid={TEST_IDS.pageHome} className="pb-[var(--space-section)]">
       <Seo
         title="Pawsome"
         canonical="/"
