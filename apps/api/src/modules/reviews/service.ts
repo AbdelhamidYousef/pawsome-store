@@ -13,6 +13,7 @@ import { db } from '../../db/client.ts';
 import { uniqueViolation } from '../../lib/db-errors.ts';
 import { conflict, forbidden, notFound, validation } from '../../lib/errors.ts';
 import { removePhotos, savePhoto, type UploadConfig } from '../../lib/uploads.ts';
+import { resolveSlug } from '../i18n/translations.ts';
 
 import * as repo from './repo.ts';
 import { extractTopics, type Topic } from './topics.ts';
@@ -33,7 +34,8 @@ export async function createReview(
   input: ReviewInput,
   upload?: { files: Buffer[]; config: UploadConfig },
 ): Promise<CreateReviewResult> {
-  const product = await repo.findActiveProduct(slug);
+  // The PDP passes the URL's slug, which is the translated one on the de/fr stores.
+  const product = await repo.findActiveProduct(await resolveSlug('product', slug));
   if (!product) throw notFound('Product not found');
 
   const orderId = await repo.findPaidOrderId(userId, product.id, VERIFIED_STATUSES);
@@ -113,7 +115,7 @@ export async function listReviews(
   uploadsEnabled: boolean,
   now = Date.now(),
 ): Promise<ReviewListResponse> {
-  const productId = await repo.findProductId(slug);
+  const productId = await repo.findProductId(await resolveSlug('product', slug));
   if (!productId) throw notFound('Product not found');
 
   const [page, sum, topics] = await Promise.all([

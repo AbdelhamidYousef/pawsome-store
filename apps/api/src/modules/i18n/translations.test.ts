@@ -95,6 +95,24 @@ describe('catalogue translations', () => {
     expect((await get('/api/v1/products/unknown', 'de-de')).status).toBe(404);
   });
 
+  // The de/fr PDP calls its sub-resources with the URL's (translated) slug.
+  it('serves reviews and recommendations under a translated slug', async () => {
+    const { product } = await seed();
+    await db.insert(productTranslations).values([
+      { productId: product.id, locale: 'de', name: 'Quietschknochen', slug: 'quietschknochen' },
+      { productId: product.id, locale: 'fr', name: 'Os qui couine', slug: 'os-qui-couine' },
+    ]);
+    for (const [slug, store] of [
+      ['quietschknochen', 'de-de'],
+      ['os-qui-couine', 'fr-fr'],
+    ] as const) {
+      expect((await get(`/api/v1/products/${slug}/reviews`, store)).status).toBe(200);
+      expect((await get(`/api/v1/products/${slug}/recommendations`, store)).status).toBe(200);
+    }
+    expect((await get('/api/v1/products/unknown/reviews', 'de-de')).status).toBe(404);
+    expect((await get('/api/v1/products/unknown/recommendations', 'de-de')).status).toBe(404);
+  });
+
   it('translates list cards, the category tree and filters by a translated slug', async () => {
     const { product, category } = await seed();
     await db.insert(productTranslations).values({
