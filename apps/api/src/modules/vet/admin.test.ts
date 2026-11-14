@@ -202,7 +202,7 @@ describe('rejecting', () => {
     expect(await statusOf(held.number)).toBe('cancelled');
     await outbox.drain();
     expect(transport.sent.find((m) => /was not approved/.test(m.subject ?? ''))?.text).toContain(
-      'simulated',
+      'The refund goes back to the card you paid with.',
     );
     void errorOf;
   });
