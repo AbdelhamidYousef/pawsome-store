@@ -88,11 +88,11 @@ Written by the build sessions for the owner and for the next session.
 
 Still open after the polish pass (none blocks the demo):
 
-1. **de/fr content with no translation path** (English on those stores): help answers, the legal and
-   about pages, PDP specs and FAQs, gallery captions, the charity description. A real fix is
-   per-language columns or translation tables.
-2. Admin analytics counts days in `Europe/Riga` (`STORE_TIME_ZONE` in shared) while the shop's
-   dispatch zone is `Europe/Amsterdam`; align them (tests pin the Riga boundary).
+1. ~~de/fr content with no translation path~~ fixed 2026-11-14 (`feat/content-translations`, migration
+   0038): help answers, legal and about pages, PDP specs/FAQs, size guides, gallery captions, charity.
+   Left: no admin screen for these translations (re-seed after editing English), help search matches
+   English text only.
+2. ~~Admin analytics counts days in `Europe/Riga`~~ fixed 2026-11-14: one zone, `Europe/Amsterdam`.
 3. Guide covers were upscaled from 1024 px to 1600×900; regenerate at full size if they look soft.
 4. Low findings left from the QA pass: page headers mix centred (help) and left (guides, brands,
    account); PDP text column leaves the right half empty; no sticky add-to-cart on mobile PDP; no
