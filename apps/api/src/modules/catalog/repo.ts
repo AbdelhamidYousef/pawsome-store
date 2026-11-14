@@ -1,4 +1,4 @@
-import type { ConstituentKey, SizeGuideTable } from '@store/shared';
+import { CONSTITUENT_KEYS, type ConstituentKey, type SizeGuideTable } from '@store/shared';
 import {
   and,
   asc,
@@ -747,6 +747,10 @@ async function getContent(productId: string, sizeGuideId: string | null) {
     const list = constituents.get(r.variantId) ?? [];
     list.push({ key: r.key as ConstituentKey, valueBp: r.valueBp });
     constituents.set(r.variantId, list);
+  }
+  // Label order (protein, fat, fibre, ash, moisture, kcal), never the table's physical order.
+  for (const list of constituents.values()) {
+    list.sort((a, b) => CONSTITUENT_KEYS.indexOf(a.key) - CONSTITUENT_KEYS.indexOf(b.key));
   }
   return { specs, faqs, feeding, sizeGuide: guide[0] ?? null, constituents };
 }
