@@ -395,6 +395,25 @@ describe('POST /checkout', () => {
   });
 
   describe('when Stripe fails', () => {
+    it('aborts before any write when the pre-check cannot reach Stripe', async () => {
+      const { variants } = await createProduct({ variants: [{ priceCents: 1000, stock: 10 }] });
+      const shopper = makeShopper(app);
+      await shopper.addToCart(variants[0]!.id, 1);
+      await shopper.call('post', '/checkout', checkoutBody());
+      const before = (await allOrders())[0]!;
+      await shopper.call('post', '/cart/items', { variantId: variants[0]!.id, quantity: 2 });
+
+      stripe.failNext('retrieve');
+      const res = await shopper.call('post', '/checkout', checkoutBody());
+      expect(res.status).toBe(502);
+      // The pending order, its lines, the stock hold and the intent are exactly as they were.
+      expect(await allOrders()).toEqual([before]);
+      expect(await db.select().from(orderItems)).toMatchObject([{ quantity: 1 }]);
+      expect(await stockOf(variants[0]!.id)).toEqual({ quantity: 10, reserved: 1 });
+      expect(stripe.callsTo('update')).toHaveLength(0);
+      expect(stripe.callsTo('create')).toHaveLength(1);
+    });
+
     it('cancels the new order, releases the stock and answers 502; a retry then works', async () => {
       const { variants } = await createProduct({ variants: [{ stock: 4 }] });
       const shopper = makeShopper(app);

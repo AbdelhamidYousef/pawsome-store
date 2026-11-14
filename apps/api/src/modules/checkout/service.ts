@@ -121,8 +121,9 @@ export async function placeOrder(
 
 // Intent states in which money is moving or has moved: the amount must not change under them.
 // (`requires_action` is left out on purpose: an abandoned 3-D Secure window would otherwise lock
-// the cart until the sweeper, and an amount update there simply makes the challenge charge the new
-// total, which the order then matches.)
+// the cart until the sweeper. Changing the amount there sends the intent back to
+// `requires_confirmation`, so tab A's open 3-D Secure challenge can no longer complete: that tab
+// has to confirm again, and then pays the new total, which the order matches.)
 const UNDERWAY = new Set(['processing', 'requires_capture', 'succeeded']);
 
 // The cross-tab race: tab A confirms its payment in the browser (Stripe only, our server hears

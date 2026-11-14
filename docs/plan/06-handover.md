@@ -27,6 +27,9 @@ Written by the build sessions for the owner and for the next session.
      had leaked into the German seed and was fixed on 2026-11-14; a test now guards that case).
   8. Emails are skipped on the demo until a Resend key is added; review photo upload is off there.
   9. README statement-coverage figures are from phase 11.
+  10. Checkout race, residual window: between Stripe's status answer in the pre-check and phase 1's
+      commit there are a few milliseconds in which another tab could confirm; phase 2's re-check and
+      the webhook's amount check cover it, but it is not closed.
 
 ## Where things stand
 
