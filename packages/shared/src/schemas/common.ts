@@ -4,6 +4,12 @@ import { z } from 'zod';
 // API) means the web parses responses with the very schema the API validated them against.
 export const DataSchema = <T extends z.ZodType>(item: T) => z.object({ data: item });
 
+// A catalogue page's slug in every UI language: its translated slug, or the English one where it has
+// none. Only detail endpoints fill it; <Seo> uses it so each hreflang alternate carries the slug of
+// its own store view (not the current page's slug, which would only work through a redirect).
+export const LangSlugsSchema = z.object({ en: z.string(), de: z.string(), fr: z.string() });
+export type LangSlugs = z.infer<typeof LangSlugsSchema>;
+
 export const PaginationMetaSchema = z.object({
   page: z.number().int().min(1),
   limit: z.number().int().min(1),

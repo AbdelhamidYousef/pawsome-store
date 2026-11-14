@@ -5,7 +5,7 @@ import { FeedingRowSchema } from '../feeding.ts';
 import { NetUnitSchema } from '../pets.ts';
 
 import { BundleDetailSchema, KitTeaserSchema } from './bundles.ts';
-import { PaginatedSchema, PaginationQuerySchema, DataSchema } from './common.ts';
+import { PaginatedSchema, PaginationQuerySchema, DataSchema, LangSlugsSchema } from './common.ts';
 import { ConstituentSchema, FaqSchema, SizeGuideSchema, SpecSchema } from './pdp.ts';
 import { MemberOfferSchema, SaleOfferSchema } from './promotions.ts';
 import { RatingSummarySchema } from './reviews.ts';
@@ -53,7 +53,11 @@ export const CategorySchema = z.object({
 export type Category = z.infer<typeof CategorySchema>;
 
 // The tree is one level deep (Dogs > Toys), so children are plain categories, no recursion.
-export const CategoryNodeSchema = CategorySchema.extend({ children: z.array(CategorySchema) });
+export const CategoryNodeSchema = CategorySchema.extend({
+  children: z.array(CategorySchema),
+  // Detail endpoint only (hreflang).
+  slugs: LangSlugsSchema.optional(),
+});
 export type CategoryNode = z.infer<typeof CategoryNodeSchema>;
 
 export const CategoryTreeResponseSchema = DataSchema(z.array(CategoryNodeSchema));
@@ -180,6 +184,8 @@ export const BreadcrumbItemSchema = z.object({ slug: z.string(), name: z.string(
 export const ProductDetailSchema = z.object({
   id: z.string(),
   slug: z.string(),
+  // The slug in every UI language, for hreflang.
+  slugs: LangSlugsSchema.optional(),
   name: z.string(),
   description: z.string(),
   category: BreadcrumbItemSchema,

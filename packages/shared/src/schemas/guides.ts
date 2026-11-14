@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 import { ProductCardSchema } from './catalog.ts';
-import { DataSchema, PaginatedSchema, PaginationQuerySchema } from './common.ts';
+import { DataSchema, LangSlugsSchema, PaginatedSchema, PaginationQuerySchema } from './common.ts';
 
 // ---------- pet-care guides (public) ----------
 
@@ -36,6 +36,8 @@ export const GuideDetailSchema = GuideCardSchema.extend({
   bodyMd: z.string(),
   products: z.array(ProductCardSchema),
   related: z.array(GuideCardSchema),
+  // The slug in every UI language, for hreflang.
+  slugs: LangSlugsSchema.optional(),
 });
 export type GuideDetail = z.infer<typeof GuideDetailSchema>;
 export const GuideDetailResponseSchema = DataSchema(GuideDetailSchema);

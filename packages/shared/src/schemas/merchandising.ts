@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { DataSchema } from './common.ts';
+import { DataSchema, LangSlugsSchema } from './common.ts';
 
 // Brands, collections and health-need tags: the "merchandising" side of the catalogue. Public
 // shapes first, then the admin inputs.
@@ -26,6 +26,8 @@ export const BrandSchema = z.object({
   logoUrl: z.string().nullable(),
   // Active products that carry the brand.
   productCount: z.number().int().min(0),
+  // Detail endpoint only (hreflang).
+  slugs: LangSlugsSchema.optional(),
 });
 export type Brand = z.infer<typeof BrandSchema>;
 export const BrandListResponseSchema = DataSchema(z.array(BrandSchema));
@@ -40,6 +42,8 @@ export const CollectionSchema = z.object({
   startsAt: z.string().nullable(),
   endsAt: z.string().nullable(),
   productCount: z.number().int().min(0),
+  // Detail endpoint only (hreflang).
+  slugs: LangSlugsSchema.optional(),
 });
 export type Collection = z.infer<typeof CollectionSchema>;
 export const CollectionListResponseSchema = DataSchema(z.array(CollectionSchema));

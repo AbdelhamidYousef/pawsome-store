@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { ApiError } from '../api/client';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Spinner } from '../components/ui/Spinner';
 import { hasActiveFilters, useProductListParams } from '../features/catalog/list-params';
@@ -58,6 +58,7 @@ export default function BrandPage() {
         title={brand.name}
         description={brand.tagline}
         canonical={`/brands/${brand.slug}`}
+        alternates={slugAlternates('brands', brand.slugs)}
         noindex={variant}
       />
       <Breadcrumbs

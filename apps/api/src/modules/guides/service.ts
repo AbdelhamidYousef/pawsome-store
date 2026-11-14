@@ -9,7 +9,7 @@ import {
 
 import { notFound } from '../../lib/errors.ts';
 import * as catalog from '../catalog/service.ts';
-import { loadTranslations, overlay, pick, resolveSlug } from '../i18n/translations.ts';
+import { loadTranslations, overlay, pick, resolveSlug, slugsByLang } from '../i18n/translations.ts';
 
 import * as repo from './repo.ts';
 
@@ -66,13 +66,15 @@ export async function getGuide(slugFromUrl: string): Promise<GuideDetail> {
     repo.listProductIds(guide.id),
     repo.listRelated(guide, RELATED_COUNT),
   ]);
-  const [[card], relatedCards, translations] = await Promise.all([
+  const [[card], relatedCards, translations, slugs] = await Promise.all([
     translateCards([toCard(guide)]),
     translateCards(related.map(toCard)),
     loadTranslations('guide', [guide.slug]),
+    slugsByLang('guide', guide.slug),
   ]);
   return {
     ...(card as GuideCard),
+    slugs,
     bodyMd: pick(translations.get(guide.slug), 'bodyMd', guide.bodyMd),
     products: await catalog.listCardsByIds(productIds),
     related: relatedCards,

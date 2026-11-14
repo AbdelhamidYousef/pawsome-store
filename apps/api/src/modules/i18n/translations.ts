@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access -- the five table pairs share a shape but not a type; this file is the one place that treats them alike */
+import type { LangSlugs } from '@store/shared';
 import { and, eq, inArray, sql } from 'drizzle-orm';
 
 import { db } from '../../db/client.ts';
@@ -153,4 +154,24 @@ export async function resolveSlug(entity: Entity, slug: string): Promise<string>
     .orderBy(sql`(${tr.locale} = ${lang}) desc`)
     .limit(1)) as { baseSlug: string }[];
   return rows[0]?.baseSlug ?? slug;
+}
+
+/**
+ * The page's slug in every UI language, for hreflang: the translated slug where one exists, else the
+ * English (base) one. One query, whatever the request's language.
+ */
+export async function slugsByLang(entity: Entity, baseSlug: string): Promise<LangSlugs> {
+  const { base, tr, fk } = TABLES[entity];
+  const rows = (await db
+    .select({ locale: tr.locale, slug: tr.slug })
+    .from(tr)
+    .innerJoin(base, eq(base.id, fk))
+    .where(eq(base.slug, baseSlug))) as { locale: string; slug: string | null }[];
+  const out: LangSlugs = { en: baseSlug, de: baseSlug, fr: baseSlug };
+  for (const row of rows) {
+    if ((row.locale === 'de' || row.locale === 'fr') && row.slug && row.slug.trim() !== '') {
+      out[row.locale] = row.slug;
+    }
+  }
+  return out;
 }

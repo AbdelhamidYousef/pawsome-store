@@ -1,9 +1,27 @@
-import { DEFAULT_STORE, STORES } from '@store/shared';
+import { DEFAULT_STORE, STORES, type LangSlugs, type StoreView } from '@store/shared';
 import { useEffect } from 'react';
 
 import { useStorePath } from '../features/stores/StoreContext';
 
 const SITE = 'Pawsome';
+
+/** The page's root-relative path (no store prefix) in each UI language. */
+export type AlternatePaths = Record<StoreView['lang'], string>;
+
+/**
+ * Alternates for a page whose slug is translated: `/products/<slug in that language>` per language,
+ * plus an optional query (`?page=2`). Without slugs (an older API), `true`: every store gets the
+ * canonical path and reaches the right slug through the page's redirect.
+ */
+export function slugAlternates(
+  section: string,
+  slugs: LangSlugs | undefined,
+  suffix = '',
+): AlternatePaths | true {
+  if (!slugs) return true;
+  const path = (slug: string) => `/${section}/${slug}${suffix}`;
+  return { en: path(slugs.en), de: path(slugs.de), fr: path(slugs.fr) };
+}
 
 interface SeoProps {
   title: string;
@@ -14,8 +32,11 @@ interface SeoProps {
    * the hreflang alternates for every store view.
    */
   canonical?: string;
-  /** Set false on a page that exists in one store view only (no hreflang links). */
-  alternates?: boolean;
+  /**
+   * Set false on a page that exists in one store view only (no hreflang links). Pass paths per
+   * language when the slug is translated, so each store's alternate carries its own slug.
+   */
+  alternates?: boolean | AlternatePaths;
   noindex?: boolean;
   /** `article` adds the Open Graph article tags (guides); everything else stays a plain page. */
   type?: 'website' | 'article';
@@ -90,25 +111,32 @@ export function Seo({
 
   // hreflang: every store view of this page plus x-default (the default store), absolute URLs as
   // the spec asks. Only for indexable shop pages; the same path in each store is a translation
-  // or a currency variant of this one. (Per-locale slugs arrive with the catalogue slice.)
-  const alternatesPath = isShopPath && alternates && !noindex ? canonical : undefined;
+  // or a currency variant of this one. A page with translated slugs passes its path per language
+  // (`alternates` as a map), so `/de-de/...` carries the German slug, not the current page's.
+  const alternatesPath = isShopPath && alternates !== false && !noindex ? canonical : undefined;
+  // Serialised so the effect depends on a string, not on an object that is new every render.
+  const pathsText = typeof alternates === 'object' ? JSON.stringify(alternates) : null;
   useEffect(() => {
     if (!alternatesPath) return;
-    const tail = alternatesPath === '/' ? '' : alternatesPath;
+    const paths = pathsText ? (JSON.parse(pathsText) as AlternatePaths) : null;
+    const tailFor = (store: StoreView) => {
+      const path = paths?.[store.lang] ?? alternatesPath;
+      return path === '/' ? '' : path;
+    };
     const entries = [
-      ...STORES.map((store) => ({ hreflang: store.locale, code: store.code })),
-      { hreflang: 'x-default', code: DEFAULT_STORE.code },
+      ...STORES.map((store) => ({ hreflang: store.locale, store })),
+      { hreflang: 'x-default', store: DEFAULT_STORE },
     ];
-    const added = entries.map(({ hreflang, code }) => {
+    const added = entries.map(({ hreflang, store }) => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');
       link.setAttribute('hreflang', hreflang);
-      link.setAttribute('href', `${window.location.origin}/${code}${tail}`);
+      link.setAttribute('href', `${window.location.origin}/${store.code}${tailFor(store)}`);
       document.head.appendChild(link);
       return link;
     });
     return () => added.forEach((link) => link.remove());
-  }, [alternatesPath]);
+  }, [alternatesPath, pathsText]);
 
   useEffect(() => {
     if (!noindex) return;
