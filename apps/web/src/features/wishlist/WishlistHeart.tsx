@@ -31,7 +31,7 @@ export function WishlistHeart({
       add.mutate(
         { productId },
         {
-          onSuccess: () => toast.show(t('loyalty.wishlist.saved', { name: productName })),
+          onSuccess: () => toast.show(t('loyalty.wishlist.saved', { name: productName }), 'love'),
           onError: fail,
         },
       );
