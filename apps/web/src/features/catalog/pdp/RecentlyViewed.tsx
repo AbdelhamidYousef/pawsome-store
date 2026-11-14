@@ -32,14 +32,15 @@ export function RecentlyViewed({
     <section
       aria-labelledby="recently-viewed-heading"
       data-testid="recently-viewed"
-      className="mt-10"
+      className="mt-16 sm:mt-20"
     >
-      <h2 id="recently-viewed-heading" className="font-display text-2xl font-bold">
-        {heading}
-      </h2>
-      <div className="mt-4">
-        <ProductRail cards={data} label={heading} testId="recently-viewed-list" />
-      </div>
+      <ProductRail
+        cards={data}
+        label={heading}
+        testId="recently-viewed-list"
+        heading={heading}
+        headingId="recently-viewed-heading"
+      />
     </section>
   );
 }

@@ -9,7 +9,7 @@ import { Container } from '../components/layout/Container';
 import { Seo } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
-import { ProductGrid } from '../features/catalog/ProductGrid';
+import { ProductRail } from '../features/catalog/pdp/ProductRail';
 import { GuideCard, GuideCover } from '../features/guides/GuideCard';
 import { MarkdownBody } from '../features/guides/MarkdownBody';
 import { useGuide } from '../features/guides/queries';
@@ -105,15 +105,14 @@ function GuideView({ guide }: { guide: GuideDetail }) {
 
       {guide.products.length > 0 && (
         <section className="mt-16 sm:mt-24" aria-labelledby="guide-products-heading">
-          <h2
-            id="guide-products-heading"
-            className="font-display text-2xl font-semibold sm:text-3xl"
-          >
-            {t('content.guides.products')}
-          </h2>
-          <div className="mt-4" data-testid={TEST_IDS.guideProducts}>
-            <ProductGrid products={guide.products} listId={`guide-${guide.slug}`} />
-          </div>
+          <ProductRail
+            cards={guide.products}
+            label={t('content.guides.products')}
+            testId={TEST_IDS.guideProducts}
+            heading={t('content.guides.products')}
+            headingId="guide-products-heading"
+            listId={`guide-${guide.slug}`}
+          />
         </section>
       )}
 
