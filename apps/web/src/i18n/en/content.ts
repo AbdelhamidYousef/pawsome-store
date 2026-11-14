@@ -156,4 +156,7 @@ export const content = {
   'content.contact.emailValue': 'We answer at the address you give us in the form.',
   'content.contact.quickTitle': 'Quick answers',
   'content.contact.formTitle': 'Send us a message',
+  'content.help.moreTitle': 'Still need help?',
+  'content.help.moreBody': 'Write to us and a person will answer within one working day.',
+  'content.help.moreCta': 'Contact us',
 } satisfies Dictionary;

@@ -161,4 +161,7 @@ export const content: Record<keyof typeof enNs, Entry> = {
   'content.contact.emailValue': 'Wir antworten an die Adresse, die Sie im Formular angeben.',
   'content.contact.quickTitle': 'Schnelle Antworten',
   'content.contact.formTitle': 'Schreiben Sie uns',
+  'content.help.moreTitle': 'Noch Fragen?',
+  'content.help.moreBody': 'Schreiben Sie uns, ein Mensch antwortet innerhalb eines Werktags.',
+  'content.help.moreCta': 'Kontakt aufnehmen',
 };

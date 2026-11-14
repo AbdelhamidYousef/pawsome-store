@@ -23,7 +23,7 @@ const TOPIC_KEYS: Record<HelpTopic, StringKey> = {
 };
 
 const tab =
-  'inline-flex min-h-11 items-center rounded-full border-2 border-line px-4 font-display font-semibold hover:bg-pet-soft aria-[current=page]:border-primary aria-[current=page]:bg-primary-soft aria-[current=page]:text-primary-strong';
+  'inline-flex min-h-11 items-center whitespace-nowrap rounded-full border border-line bg-surface px-4 font-semibold transition-colors hover:border-ink/40 aria-[current=page]:border-ink aria-[current=page]:bg-ink aria-[current=page]:text-surface';
 
 // The query and topic live in the URL (`/help?q=refund&topic=returns`): a search can be shared,
 // reloaded and walked with Back. The box keeps its own text and writes the URL after a pause, so
@@ -75,97 +75,124 @@ export default function HelpPage() {
   };
 
   return (
-    <Container className="py-8" data-testid={TEST_IDS.pageHelp}>
+    <Container className="pb-16 pt-10 sm:pb-24 sm:pt-14" data-testid={TEST_IDS.pageHelp}>
       <Seo title={t('content.help.title')} description={t('content.help.seoDescription')} />
-      <h1 className="font-display text-3xl font-bold sm:text-4xl">{t('content.help.title')}</h1>
-      <p className="mt-2 max-w-prose text-muted">{t('content.help.intro')}</p>
+      <div className="mx-auto max-w-3xl">
+        <header className="text-center">
+          <h1 className="font-display text-4xl font-semibold sm:text-5xl">
+            {t('content.help.title')}
+          </h1>
+          <p className="mt-3 text-lg text-muted">{t('content.help.intro')}</p>
+        </header>
 
-      <form
-        role="search"
-        aria-label={t('content.help.searchLabel')}
-        className="mt-5 max-w-xl"
-        onSubmit={(e) => e.preventDefault()}
-      >
-        <Input
-          label={t('content.help.searchInput')}
-          type="search"
-          value={text}
-          maxLength={100}
-          data-testid={TEST_IDS.helpSearch}
-          onChange={(e) => setText(e.target.value)}
-        />
-      </form>
+        <form
+          role="search"
+          aria-label={t('content.help.searchLabel')}
+          className="mx-auto mt-8 max-w-xl"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <Input
+            label={t('content.help.searchInput')}
+            type="search"
+            value={text}
+            maxLength={100}
+            data-testid={TEST_IDS.helpSearch}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </form>
 
-      <nav aria-label={t('content.help.topics')} className="mt-4">
-        <ul className="flex flex-wrap gap-2">
-          <li>
-            <Link
-              to={hrefForTopic(undefined)}
-              aria-current={topic ? undefined : 'page'}
-              data-testid={TEST_IDS.helpTopic}
-              className={tab}
-            >
-              {t('content.help.allTopics')}
-            </Link>
-          </li>
-          {HELP_TOPICS.map((topicValue) => (
-            <li key={topicValue}>
+        <nav
+          aria-label={t('content.help.topics')}
+          className="-mx-4 mt-6 overflow-x-auto px-4 pb-1 sm:mx-0 sm:overflow-visible sm:px-0"
+        >
+          <ul className="flex gap-2 sm:flex-wrap sm:justify-center">
+            <li>
               <Link
-                to={hrefForTopic(topicValue)}
-                aria-current={topic === topicValue ? 'page' : undefined}
+                to={hrefForTopic(undefined)}
+                aria-current={topic ? undefined : 'page'}
                 data-testid={TEST_IDS.helpTopic}
                 className={tab}
               >
-                {t(TOPIC_KEYS[topicValue])}
+                {t('content.help.allTopics')}
               </Link>
             </li>
-          ))}
-        </ul>
-      </nav>
+            {HELP_TOPICS.map((topicValue) => (
+              <li key={topicValue}>
+                <Link
+                  to={hrefForTopic(topicValue)}
+                  aria-current={topic === topicValue ? 'page' : undefined}
+                  data-testid={TEST_IDS.helpTopic}
+                  className={tab}
+                >
+                  {t(TOPIC_KEYS[topicValue])}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      <section className="mt-6" aria-live="polite" aria-label={t('content.help.articles')}>
-        {isPending && !error && <Skeleton className="h-48 w-full rounded-card" />}
-        {error && !data && (
-          <div role="alert">
-            <p className="font-semibold text-danger">{t('content.help.error')}</p>
-            <Button className="mt-2" variant="secondary" onClick={() => void refetch()}>
-              {t('content.help.retry')}
-            </Button>
-          </div>
-        )}
-        {data && data.length === 0 && (
-          <div data-testid={TEST_IDS.helpNoResults}>
-            <p className="font-semibold">
-              {q ? t('content.help.nothingFound', { q }) : t('content.help.noArticles')}
-            </p>
-            <p className="mt-1 text-muted">
-              {t('content.help.tryDifferent')}{' '}
-              <Link to="/help" className="font-semibold text-primary-strong underline">
-                {t('content.help.browseAll')}
-              </Link>
-              {t('content.help.stuck')}{' '}
-              <Link
-                to="/contact"
-                className="font-semibold text-primary-strong underline"
-                data-testid={TEST_IDS.helpContact}
-              >
-                {t('content.help.contact')}
-              </Link>{' '}
-              {t('content.help.contactRest')}
-            </p>
-          </div>
-        )}
-        {data && data.length > 0 && (
-          <>
-            {q && (
-              <p className="mb-2 text-sm text-muted">
-                {tn('content.help.results', data.length, { q })}
+        <section className="mt-10" aria-live="polite" aria-label={t('content.help.articles')}>
+          {isPending && !error && <Skeleton className="h-48 w-full rounded-card" />}
+          {error && !data && (
+            <div role="alert">
+              <p className="font-semibold text-danger">{t('content.help.error')}</p>
+              <Button className="mt-2" variant="secondary" onClick={() => void refetch()}>
+                {t('content.help.retry')}
+              </Button>
+            </div>
+          )}
+          {data && data.length === 0 && (
+            <div data-testid={TEST_IDS.helpNoResults}>
+              <p className="font-semibold">
+                {q ? t('content.help.nothingFound', { q }) : t('content.help.noArticles')}
               </p>
-            )}
-            <HelpAccordion hits={data} searching={!!q.trim()} />
-          </>
-        )}
-      </section>
+              <p className="mt-1 text-muted">
+                {t('content.help.tryDifferent')}{' '}
+                <Link to="/help" className="font-semibold text-primary-strong underline">
+                  {t('content.help.browseAll')}
+                </Link>
+                {t('content.help.stuck')}{' '}
+                <Link
+                  to="/contact"
+                  className="font-semibold text-primary-strong underline"
+                  data-testid={TEST_IDS.helpContact}
+                >
+                  {t('content.help.contact')}
+                </Link>{' '}
+                {t('content.help.contactRest')}
+              </p>
+            </div>
+          )}
+          {data && data.length > 0 && (
+            <>
+              {q && (
+                <p className="mb-2 text-sm text-muted">
+                  {tn('content.help.results', data.length, { q })}
+                </p>
+              )}
+              <HelpAccordion hits={data} searching={!!q.trim()} />
+            </>
+          )}
+        </section>
+
+        <aside
+          aria-labelledby="help-more"
+          className="mt-12 flex flex-col items-start gap-4 rounded-card bg-primary-soft p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8"
+        >
+          <div>
+            <h2 id="help-more" className="font-display text-xl font-semibold">
+              {t('content.help.moreTitle')}
+            </h2>
+            <p className="mt-1 text-ink/80">{t('content.help.moreBody')}</p>
+          </div>
+          <Link
+            to="/contact"
+            className="inline-flex min-h-11 shrink-0 items-center rounded-control bg-primary px-5 font-semibold text-white hover:bg-primary-hover"
+          >
+            {t('content.help.moreCta')}
+          </Link>
+        </aside>
+      </div>
     </Container>
   );
 }
