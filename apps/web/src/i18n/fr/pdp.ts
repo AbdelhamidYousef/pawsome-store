@@ -152,4 +152,6 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.related.heading': 'Vous aimerez aussi',
   'pdp.related.label': 'Produits similaires',
   'pdp.recent.heading': 'Récemment consultés',
+  'pdp.rail.prev': 'Produits précédents',
+  'pdp.rail.next': 'Produits suivants',
 };

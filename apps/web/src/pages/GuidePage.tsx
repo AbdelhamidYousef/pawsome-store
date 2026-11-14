@@ -3,13 +3,14 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { ApiError } from '../api/client';
+import { ChevronRightIcon } from '../components/icons';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
 import { Seo } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
-import { ProductGrid } from '../features/catalog/ProductGrid';
-import { GuideCard } from '../features/guides/GuideCard';
+import { ProductRail } from '../features/catalog/pdp/ProductRail';
+import { GuideCard, GuideCover } from '../features/guides/GuideCard';
 import { MarkdownBody } from '../features/guides/MarkdownBody';
 import { useGuide } from '../features/guides/queries';
 import { useCanonicalSlug } from '../features/stores/useCanonicalSlug';
@@ -58,7 +59,7 @@ function GuideView({ guide }: { guide: GuideDetail }) {
   }, [guide.slug, guide.category.slug]);
 
   return (
-    <Container className="py-8" data-testid={TEST_IDS.pageGuide}>
+    <Container className="pb-16 pt-6 sm:pb-24" data-testid={TEST_IDS.pageGuide}>
       <Seo
         title={guide.title}
         description={guide.summary}
@@ -74,57 +75,72 @@ function GuideView({ guide }: { guide: GuideDetail }) {
           { label: guide.title },
         ]}
       />
-      <article className="mt-4">
-        <header>
-          <h1 className="font-display text-3xl font-bold leading-tight break-words sm:text-4xl">
+      <article className="mt-6 sm:mt-10">
+        <header className="mx-auto max-w-3xl text-center">
+          <Link
+            to={`/guides?category=${guide.category.slug}`}
+            className="inline-flex min-h-9 items-center rounded-full bg-primary-soft px-4 text-sm font-semibold text-primary-strong hover:underline"
+          >
+            {guide.category.name}
+          </Link>
+          <h1 className="mt-4 break-words font-display text-4xl font-semibold leading-tight sm:text-5xl">
             {guide.title}
           </h1>
-          <p className="mt-2 text-muted">
+          <p className="mt-4 text-lg text-muted sm:text-xl">{guide.summary}</p>
+          <p className="mt-4 text-sm font-semibold text-muted">
             {date.format(new Date(guide.publishedAt))} &middot;{' '}
             {t('content.guides.minRead', { minutes: guide.readingMinutes })}
           </p>
         </header>
-        {guide.coverUrl && (
-          <img
-            src={guide.coverUrl}
-            alt=""
-            className="mt-4 aspect-[16/9] w-full max-w-prose rounded-card object-cover"
-          />
-        )}
-        <div className="mt-6" data-testid={TEST_IDS.guideBody}>
+        <GuideCover
+          coverUrl={guide.coverUrl}
+          categorySlug={guide.category.slug}
+          eager
+          className="mx-auto mt-8 max-w-5xl rounded-card shadow-card sm:mt-12"
+        />
+        <div className="mx-auto mt-10 max-w-[68ch] sm:mt-14" data-testid={TEST_IDS.guideBody}>
           <MarkdownBody source={guide.bodyMd} />
         </div>
       </article>
 
       {guide.products.length > 0 && (
-        <section className="mt-12" aria-labelledby="guide-products-heading">
-          <h2 id="guide-products-heading" className="font-display text-2xl font-bold">
-            {t('content.guides.products')}
-          </h2>
-          <div className="mt-4" data-testid={TEST_IDS.guideProducts}>
-            <ProductGrid products={guide.products} listId={`guide-${guide.slug}`} />
-          </div>
+        <section className="mt-16 sm:mt-24" aria-labelledby="guide-products-heading">
+          <ProductRail
+            cards={guide.products}
+            label={t('content.guides.products')}
+            testId={TEST_IDS.guideProducts}
+            heading={t('content.guides.products')}
+            headingId="guide-products-heading"
+            listId={`guide-${guide.slug}`}
+          />
         </section>
       )}
 
       {guide.related.length > 0 && (
-        <section className="mt-12" aria-labelledby="guide-related-heading">
-          <h2 id="guide-related-heading" className="font-display text-2xl font-bold">
-            {t('content.guides.more')}
-          </h2>
+        <section className="mt-16 sm:mt-24" aria-labelledby="guide-related-heading">
+          <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
+            <h2
+              id="guide-related-heading"
+              className="font-display text-2xl font-semibold sm:text-3xl"
+            >
+              {t('content.guides.more')}
+            </h2>
+            <Link
+              to="/guides"
+              className="inline-flex min-h-11 items-center gap-1 font-semibold text-primary-strong hover:underline"
+            >
+              {t('content.guides.all')}
+              <ChevronRightIcon className="h-4 w-4" />
+            </Link>
+          </div>
           <ul
-            className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
             data-testid={TEST_IDS.guideRelated}
           >
             {guide.related.map((g) => (
               <GuideCard key={g.slug} guide={g} />
             ))}
           </ul>
-          <p className="mt-4">
-            <Link to="/guides" className="font-semibold text-primary-strong underline">
-              {t('content.guides.all')}
-            </Link>
-          </p>
         </section>
       )}
     </Container>

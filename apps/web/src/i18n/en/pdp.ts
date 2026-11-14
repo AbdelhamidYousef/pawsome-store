@@ -148,4 +148,6 @@ export const pdp = {
   'pdp.related.heading': 'You may also like',
   'pdp.related.label': 'Related products',
   'pdp.recent.heading': 'Recently viewed',
+  'pdp.rail.prev': 'Previous products',
+  'pdp.rail.next': 'Next products',
 } satisfies Dictionary;

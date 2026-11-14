@@ -34,6 +34,12 @@ export const GuideFrontMatterSchema = z
     summary: z.string().trim().min(1),
     products: z.array(slugField).default([]),
     publishedAt: z.coerce.date(),
+    // A site path to the 16:9 cover in apps/web/public, e.g. /guides/<slug>.webp. Optional: the
+    // UI draws a category-coloured block when a guide has none.
+    cover: z
+      .string()
+      .regex(/^\/guides\/[a-z0-9-]+\.(webp|png|jpg|jpeg|avif)$/, 'a path like /guides/<slug>.webp')
+      .optional(),
   })
   .strict();
 
@@ -160,6 +166,7 @@ export async function seedContent(
           bodyMd: g.bodyMd,
           status: 'published' as const,
           publishedAt: g.publishedAt,
+          coverUrl: g.cover ?? null,
         })),
       )
       .onConflictDoUpdate({
@@ -170,6 +177,8 @@ export async function seedContent(
           bodyMd: excluded('body_md'),
           categoryId: excluded('category_id'),
           publishedAt: excluded('published_at'),
+          // The file is the source of truth: dropping `cover` from it clears the cover too.
+          coverUrl: excluded('cover_url'),
         },
       })
       .returning({ id: guides.id, slug: guides.slug });

@@ -15,17 +15,23 @@ import { TEST_IDS } from '../lib/test-ids';
 export function NewsletterPage() {
   const { t } = useT();
   return (
-    <Container className="py-10" data-testid={TEST_IDS.pageNewsletter}>
+    <Container className="pb-16 pt-10 sm:pb-24 sm:pt-14" data-testid={TEST_IDS.pageNewsletter}>
       <Seo
         title={t('loyalty.newsletter.seoTitle')}
         description={t('loyalty.newsletter.seoDescription')}
         canonical="/newsletter"
       />
-      <h1 className="font-display text-3xl font-bold sm:text-4xl">
-        {t('loyalty.newsletter.pageTitle')}
-      </h1>
-      <p className="mb-5 mt-2 max-w-prose text-muted">{t('loyalty.newsletter.pageText')}</p>
-      <NewsletterForm />
+      <div className="mx-auto max-w-xl">
+        <header className="text-center">
+          <h1 className="font-display text-4xl font-semibold sm:text-5xl">
+            {t('loyalty.newsletter.pageTitle')}
+          </h1>
+          <p className="mt-3 text-lg text-muted">{t('loyalty.newsletter.pageText')}</p>
+        </header>
+        <div className="mt-8 rounded-card bg-surface p-6 shadow-card sm:p-8">
+          <NewsletterForm />
+        </div>
+      </div>
     </Container>
   );
 }
@@ -57,7 +63,7 @@ function TokenPage({
 
   const expired = mutation.error instanceof ApiError && mutation.error.status === 410;
   return (
-    <Container className="max-w-xl py-10" data-testid={testId}>
+    <Container className="max-w-xl py-16 sm:py-24" data-testid={testId}>
       <Seo title={t(title)} noindex />
       <h1 className="font-display text-3xl font-bold">{t(title)}</h1>
       <div className="mt-4" aria-live="polite">

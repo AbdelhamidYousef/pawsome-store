@@ -130,6 +130,7 @@ export async function runSeed(now = new Date()) {
           tagline: excluded('tagline'),
           story: excluded('story'),
           accentColor: excluded('accent_color'),
+          logoUrl: excluded('logo_url'),
         },
       })
       .returning({ id: brandsTable.id, slug: brandsTable.slug });

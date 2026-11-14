@@ -26,7 +26,7 @@ export function HelpAccordion({
 
   return (
     <ul
-      className="divide-y divide-line rounded-card border border-line bg-surface"
+      className="divide-y divide-line overflow-hidden rounded-card bg-surface shadow-card"
       data-testid={TEST_IDS.helpList}
     >
       {hits.map((hit) => {
@@ -40,7 +40,7 @@ export function HelpAccordion({
                 aria-expanded={expanded}
                 aria-controls={panelId}
                 onClick={() => toggle(hit.slug)}
-                className="flex min-h-14 w-full items-center justify-between gap-3 px-4 py-3 text-left font-display text-lg font-semibold hover:bg-pet-soft"
+                className="flex min-h-14 w-full items-center justify-between gap-3 px-5 py-4 text-left text-lg font-semibold hover:bg-pet-soft sm:px-6"
               >
                 <span className="break-words">{hit.question}</span>
                 <ChevronRightIcon
@@ -52,7 +52,7 @@ export function HelpAccordion({
               </button>
             </h3>
             {!expanded && searching && hit.snippet && (
-              <p className="px-4 pb-3 text-muted" data-testid={TEST_IDS.helpSnippet}>
+              <p className="px-5 pb-4 text-muted sm:px-6" data-testid={TEST_IDS.helpSnippet}>
                 {splitHighlights(hit.snippet).map((part, i) =>
                   part.match ? (
                     <mark key={i} className="rounded bg-primary-soft px-0.5 font-semibold text-ink">
@@ -69,7 +69,7 @@ export function HelpAccordion({
               role="region"
               aria-label={hit.question}
               hidden={!expanded}
-              className="px-4 pb-4"
+              className="px-5 pb-5 sm:px-6"
             >
               <MarkdownBody source={hit.answerMd} className="text-base" />
             </div>

@@ -58,14 +58,16 @@ describe('content seed', () => {
   it('refreshes a guide in place instead of duplicating it', async () => {
     await runSeed();
     await db.execute(
-      sql`update guides set title = 'Edited by hand' where slug = 'choosing-a-dog-toy'`,
+      sql`update guides set title = 'Edited by hand', cover_url = '/guides/stale.webp' where slug = 'choosing-a-dog-toy'`,
     );
     await runSeed();
-    const rows = await db.execute<{ title: string }>(
-      sql`select title from guides where slug = 'choosing-a-dog-toy'`,
+    const rows = await db.execute<{ title: string; cover_url: string | null }>(
+      sql`select title, cover_url from guides where slug = 'choosing-a-dog-toy'`,
     );
     expect(rows).toHaveLength(1);
     expect(rows[0]?.title).toBe('How to choose a dog toy');
+    const file = loadContent().guides.find((g) => g.slug === 'choosing-a-dog-toy');
+    expect(rows[0]?.cover_url).toBe(file?.cover ?? null);
   });
 
   it('parses front matter, including an unquoted date and the category slug', () => {
@@ -74,7 +76,23 @@ describe('content seed', () => {
     expect(guide?.publishedAt).toEqual(new Date('2026-03-04'));
   });
 
+  it('reads an optional cover path into the guide', () => {
+    const withCover = goodGuide.replace(
+      'products: []',
+      'products: []\ncover: /guides/a-guide.webp',
+    );
+    const [guide] = loadContent(contentDir({ guides: { 'a-guide.md': withCover } })).guides;
+    expect(guide?.cover).toBe('/guides/a-guide.webp');
+    const [plain] = loadContent(contentDir({ guides: { 'a-guide.md': goodGuide } })).guides;
+    expect(plain?.cover).toBeUndefined();
+  });
+
   it.each([
+    [
+      'a cover outside /guides/',
+      goodGuide.replace('products: []', 'products: []\ncover: https://x.test/a.png'),
+      'cover',
+    ],
     ['a missing summary', goodGuide.replace('summary: "Short."\n', ''), 'summary'],
     ['an unknown key', goodGuide.replace('products: []', 'sumary: x'), 'sumary'],
     ['a bad date', goodGuide.replace('2026-03-04', 'last tuesday'), 'publishedAt'],
