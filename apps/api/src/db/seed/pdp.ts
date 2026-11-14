@@ -116,11 +116,27 @@ const CARE: Record<string, string> = {
   'dog-walk': 'Wipe clean with a damp cloth. Check for wear before every walk.',
 };
 
+const PET_LABEL: Record<string, string> = {
+  dog: 'Dogs',
+  cat: 'Cats',
+  bird: 'Birds',
+  fish: 'Fish',
+  small: 'Small pets',
+  reptile: 'Reptiles',
+};
+const AGE_LABEL: Record<string, string> = {
+  all: 'All life stages',
+  adult: 'Adults',
+  puppy: 'Puppies',
+  kitten: 'Kittens',
+  senior: 'Seniors',
+};
+
 function specsFor(p: ProductSeed): PdpSeed['specs'] {
   const specs: PdpSeed['specs'] = [
     { label: 'Material', value: p.material },
-    { label: 'Suitable for', value: p.pet === 'small' ? 'Small pets' : p.pet },
-    { label: 'Life stage', value: p.ageStage === 'all' ? 'All life stages' : p.ageStage },
+    { label: 'Suitable for', value: PET_LABEL[p.pet] ?? p.pet },
+    { label: 'Life stage', value: AGE_LABEL[p.ageStage] ?? p.ageStage },
   ];
   if (FED_CATEGORIES.has(p.categorySlug)) {
     specs.push({ label: 'Storage', value: 'Keep cool and dry, reseal after opening.' });
@@ -128,7 +144,7 @@ function specsFor(p: ProductSeed): PdpSeed['specs'] {
   } else if (CARE[p.categorySlug]) {
     specs.push({ label: 'Care', value: CARE[p.categorySlug] ?? '' });
   }
-  specs.push({ label: 'Made in', value: 'Pawsome Workshop (a made-up place)' });
+  specs.push({ label: 'Made in', value: 'European Union' });
   return specs;
 }
 
