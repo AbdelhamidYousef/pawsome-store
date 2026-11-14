@@ -7,7 +7,8 @@ import { api, restock } from './helpers';
 // is placed with exactly what the panel filled in, paid by the test-only simulator, and the
 // confirmation must say paid. With a Stripe key the card step is covered by checkout.spec.ts.
 
-const PRODUCT = 'bouncy-rubber-ball';
+// Its own product: checkout.spec.ts buys bouncy-rubber-ball in parallel and checks the stock maths.
+const PRODUCT = 'pumpkin-squeak-ball';
 
 test.beforeAll(async ({ browser, baseURL }) => {
   await restock(browser, baseURL, [PRODUCT]);

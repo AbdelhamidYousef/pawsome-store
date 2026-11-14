@@ -65,12 +65,13 @@ test.describe('homepage', () => {
     await hero.hover();
     await expect(hero).toHaveAttribute('data-playing', 'false');
 
-    // Paused means it stays put; next/previous still work by hand.
+    // Paused means it stays put; the dots still move it by hand.
     const title = () => hero.getByRole('heading', { level: 2 }).filter({ visible: true });
     const first = await title().innerText();
-    await page.getByTestId('hero-next').click();
+    const dots = page.getByTestId('hero-dots');
+    await dots.getByRole('button', { name: 'Go to slide 2' }).click();
     await expect(title()).not.toHaveText(first);
-    await page.getByTestId('hero-prev').click();
+    await dots.getByRole('button', { name: 'Go to slide 1' }).click();
     await expect(title()).toHaveText(first);
 
     await expect(page.getByTestId('guides-teaser')).toBeVisible();
@@ -174,7 +175,7 @@ test.describe('cookie notice', () => {
     const banner = page.getByTestId('cookie-banner');
     await expect(banner).toBeVisible();
     // A notice, not a gate: the page behind it still works.
-    await page.getByTestId('hero-next').click();
+    await page.getByTestId('hero-dots').getByRole('button', { name: 'Go to slide 2' }).click();
 
     await page.getByTestId('cookie-ok').click();
     await expect(banner).toHaveCount(0);
