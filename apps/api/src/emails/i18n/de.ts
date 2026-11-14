@@ -5,7 +5,7 @@ import type { EmailKey } from './en.ts';
 // Deutsche E-Mail-Texte (Sie-Form). Dieselben Schlüssel und Platzhalter wie en.ts.
 export const de: Record<EmailKey, TextEntry> = {
   'mail.footer':
-    'Pawsome ist ein fiktiver Demo-Shop für ein Portfolio. Nichts hier ist echt und keine Karte wurde belastet.',
+    'Danke, dass Sie bei Pawsome einkaufen. Zahlungen laufen im Stripe-Testmodus: Es wurde keine Karte belastet.',
   'mail.signoff': '- Ihr Pawsome-Team',
   'mail.hello': 'Hallo {name},',
   'mail.seeOrder': 'Bestellung ansehen',
@@ -15,7 +15,7 @@ export const de: Record<EmailKey, TextEntry> = {
   'order.subtotal': 'Zwischensumme',
   'order.shipping': 'Versand ({method})',
   'order.discount': 'Rabatt',
-  'order.donation': 'Spende an Whisker Hollow Rescue (Demo)',
+  'order.donation': 'Spende an Whisker Hollow Rescue',
   'order.total': 'Gesamtsumme',
   'order.shippingTo': 'Lieferadresse:',
   'order.deliveringTo': 'Wir liefern an:',
@@ -61,7 +61,7 @@ export const de: Record<EmailKey, TextEntry> = {
   'return.approved.l1':
     'Gute Nachrichten: Ihre Rücksendung {ref} zur Bestellung {order} ist genehmigt.',
   'return.approved.l2':
-    'So senden Sie zurück: Verpacken Sie {list} wenn möglich in der Originalverpackung, schreiben Sie {ref} auf das Paket und schicken Sie es an Pawsome Returns, 1 Bone Street, Riga LV-1010 (eine erfundene Adresse: Dies ist ein Demo-Shop).',
+    'So senden Sie zurück: Verpacken Sie {list} nach Möglichkeit in der Originalverpackung, schreiben Sie {ref} auf das Paket und schicken Sie es an Pawsome Returns, 1 Bone Street, Riga LV-1010.',
   'return.approved.l3':
     'Sobald das Paket angekommen und geprüft ist, erstatten wir Ihnen den Betrag und schreiben Ihnen erneut.',
   'return.rejected.subject': 'Zu Ihrer Rücksendung {ref}',
@@ -79,8 +79,7 @@ export const de: Record<EmailKey, TextEntry> = {
   'return.refunded.heading': 'Ihre Erstattung ist unterwegs',
   'return.refunded.l1':
     'Wir haben {money} für die Rücksendung {ref} (Bestellung {order}) erstattet.',
-  'return.refunded.simulated':
-    'Dies ist ein Demo-Shop: Die Erstattung wurde simuliert und es wurde kein Geld bewegt.',
+  'return.refunded.simulated': 'Die Erstattung geht auf die Karte, mit der Sie bezahlt haben.',
   'return.refunded.real':
     'Sie erscheint in der Regel innerhalb weniger Tage auf Ihrer Karte, je nach Bank.',
 
@@ -89,7 +88,7 @@ export const de: Record<EmailKey, TextEntry> = {
   'vet.held.l1':
     'Vielen Dank! Die Bestellung {number} enthält einen Artikel, der die Freigabe einer Tierarztpraxis braucht. Wir halten sie zurück, bis darüber entschieden ist. Ihre Zahlung ist sicher und die Artikel sind für Sie reserviert.',
   'vet.held.l2':
-    'Wir schreiben Ihnen, sobald es eine Antwort gibt. (Demo-Shop: Es wird keine echte Tierarztpraxis kontaktiert.)',
+    'Wir schreiben Ihnen, sobald es eine Antwort gibt. Die meisten Anfragen werden innerhalb eines Werktags entschieden.',
   'vet.approved.subject': 'Bestellung {number} ist freigegeben und wird gepackt',
   'vet.approved.heading': 'Freigegeben, wir packen sie',
   'vet.approved.l1':
@@ -99,8 +98,7 @@ export const de: Record<EmailKey, TextEntry> = {
   'vet.rejected.l1':
     'Es tut uns leid: Die tierärztliche Prüfung der Bestellung {number} wurde nicht freigegeben. Die Bestellung ist storniert und Ihre Zahlung wird vollständig erstattet.',
   'vet.rejected.reason': 'Grund: {reason}',
-  'vet.rejected.simulated':
-    'Dies ist ein Demo-Shop: Die Erstattung wurde simuliert und es wurde kein Geld bewegt.',
+  'vet.rejected.simulated': 'Die Erstattung geht auf die Karte, mit der Sie bezahlt haben.',
   'vet.rejected.real':
     'Die Erstattung erscheint in der Regel innerhalb weniger Tage auf Ihrer Karte.',
 

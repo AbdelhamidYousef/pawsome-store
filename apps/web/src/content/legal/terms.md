@@ -1,17 +1,27 @@
 ## About these terms
 
-These are sample terms for a fictional demo store. They show where terms would go in a real shop.
+These terms apply when you order from Pawsome. Please read them before you place an order; by ordering, you agree to them.
 
-## Orders
+## Orders and prices
 
-An order is accepted when you receive our confirmation email. Prices are in euros. Payments run in test mode, so no card is ever charged.
+An order is accepted when you receive our confirmation email. Prices are shown in the currency of the store you shop in and include VAT where it applies. Delivery costs are shown at checkout before you pay.
+
+## Payment
+
+We accept card payments through our payment provider, Stripe. Your card is charged when you place the order.
+
+## Delivery
+
+We aim to deliver within the times shown on the shipping page. If an order is delayed, we will let you know by email.
+
+## Returns and withdrawal
+
+You can return unused items within 30 days, and EU customers may withdraw from an order within 14 days of delivery. See the returns page for the details.
 
 ## Liability
 
-Because nothing is really sold, nothing is promised. In a real store this section would describe warranty and liability.
+We take care to describe our products accurately. If a product is faulty, your statutory rights apply. Always follow the care and safety instructions that come with each product, and ask your vet about anything to do with your pet's health.
 
-## Changes
+## Changes to these terms
 
-We may change these terms. The date of the latest version would be shown here.
-
-This text is fictional and is not legal advice.
+We may update these terms from time to time. The version that applies is the one shown when you place your order.
