@@ -51,8 +51,10 @@ export function ProductCard({
   const more = product.swatches.length - shown.length;
 
   return (
-    <li data-pet={accentForPetAttribute(product.attributes.pet)} className="min-w-0">
-      <div className="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-surface shadow-card transition-transform hover:-translate-y-0.5">
+    // A flex column, so an optional footer (the gift finder's "why") sits under the card inside
+    // the grid cell instead of spilling over the next row.
+    <li data-pet={accentForPetAttribute(product.attributes.pet)} className="flex min-w-0 flex-col">
+      <div className="group relative flex flex-1 flex-col overflow-hidden rounded-card border border-line bg-surface shadow-card transition-transform hover:-translate-y-0.5">
         <Link
           to={`/products/${product.slug}`}
           data-testid={TEST_IDS.productCard}
