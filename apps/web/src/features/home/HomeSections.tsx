@@ -140,7 +140,10 @@ export function GuidesTeaser() {
   return (
     <section aria-labelledby="home-guides-heading" data-testid="guides-teaser">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-2">
-        <h2 id="home-guides-heading" className="text-[1.75rem] font-bold leading-tight sm:text-4xl">
+        <h2
+          id="home-guides-heading"
+          className="text-[1.75rem] font-semibold leading-tight sm:text-4xl"
+        >
           {t('shell.home.guides.title')}
         </h2>
         <Link
@@ -157,9 +160,11 @@ export function GuidesTeaser() {
           ))}
         </div>
       ) : (
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {data.data.slice(0, GUIDES_SHOWN).map((g) => (
-            <GuideCard key={g.slug} guide={g} />
+        // Phones: one swipeable row with the next card peeking (three stacked 16:9 cards were
+        // almost two screens tall); md and up: three columns.
+        <ul className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:px-6 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden [&>li]:shrink-0 [&>li]:basis-[82%] [&>li]:snap-start sm:[&>li]:basis-[60%] md:[&>li]:basis-auto">
+          {data.data.slice(0, GUIDES_SHOWN).map((g, i) => (
+            <GuideCard key={g.slug} guide={g} eager={i === 0} />
           ))}
         </ul>
       )}

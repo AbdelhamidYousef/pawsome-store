@@ -12,7 +12,7 @@ import { track } from '../../lib/track';
 import { useAddToCartAction } from '../cart/queries';
 import { useGallery } from '../reviews/queries';
 
-// #RealPawsomePets: customers' photos as square tiles with a caption overlay (pet name in the
+// "Pawsome at home": gallery photos as square tiles with a caption overlay (pet name in the
 // display font, "with <product>" under it). On the homepage, with 9 or more photos, the first is a
 // big 2x2 feature tile and eight small ones fill the rest, so the rows are always full (4 columns:
 // 2+2 / 2+2 / 4; 2 columns: 2 / 2+2 ... ); "Show more photos" adds 8 at a time. Elsewhere (the
