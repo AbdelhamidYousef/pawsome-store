@@ -84,8 +84,8 @@ export function NewsletterForm() {
         onChange={(e) => setEmail(e.target.value)}
         error={error}
       />
-      {/* Pets as toggle chips: a real checkbox (visually hidden, still focusable and announced)
-          inside each label, styled through `peer`. */}
+      {/* Pets as toggle chips: a real checkbox, transparent and stretched over its chip (so a click,
+          a tap or a test's `check()` hits the input itself), styled through `peer`. */}
       <fieldset className="flex flex-col gap-2">
         <legend className="mb-2 font-semibold">{t('loyalty.newsletter.pets')}</legend>
         <div className="flex flex-wrap gap-2">
@@ -93,10 +93,10 @@ export function NewsletterForm() {
             const value = petValue(p.slug);
             const checked = pets.includes(value);
             return (
-              <label key={p.slug} className="cursor-pointer">
+              <label key={p.slug} className="relative cursor-pointer">
                 <input
                   type="checkbox"
-                  className="peer sr-only"
+                  className="peer absolute inset-0 h-full w-full cursor-pointer opacity-0"
                   checked={checked}
                   onChange={(e) =>
                     setPets((cur) =>
