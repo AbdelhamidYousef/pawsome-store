@@ -2,7 +2,6 @@ import { useEffect, type ReactNode } from 'react';
 
 import { Container } from '../components/layout/Container';
 import { Seo } from '../components/Seo';
-import { PetTiles } from '../features/catalog/PetTiles';
 import { ProductGrid, ProductGridSkeleton } from '../features/catalog/ProductGrid';
 import '../features/home/builtin-slots';
 import { useFreeDeliveryAmount } from '../features/home/free-delivery';
@@ -11,11 +10,12 @@ import {
   GuidesTeaser,
   HeroSkeleton,
   HeroTrust,
-  PromoTile,
   Testimonials,
   TrustBar,
 } from '../features/home/HomeSections';
 import { useHome } from '../features/home/queries';
+import { ShopByBrand } from '../features/home/ShopByBrand';
+import { ShopByPet } from '../features/home/ShopByPet';
 import { getHomeSlots, type HomeSlot } from '../features/home/slots';
 import { SafetyBanner } from '../features/safety/SafetyBanner';
 import { useT } from '../i18n';
@@ -30,7 +30,7 @@ const SECTION_TITLE = 'mb-6 text-[1.75rem] font-bold leading-tight sm:text-4xl';
 // has nothing to show never leaves a gap.
 function Section({ id, children }: { id: string; children: ReactNode }) {
   return (
-    <Container className="mt-16 empty:hidden lg:mt-24" data-home-section={id}>
+    <Container className="mt-[var(--space-section)] empty:hidden" data-home-section={id}>
       {children}
     </Container>
   );
@@ -55,7 +55,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div data-testid={TEST_IDS.pageHome} className="pb-16 lg:pb-24">
+    <div data-testid={TEST_IDS.pageHome} className="pb-[var(--space-section)]">
       <Seo
         title="Pawsome"
         canonical="/"
@@ -70,8 +70,7 @@ export default function HomePage() {
       <TrustBar />
 
       <Section id="shop-by-pet">
-        <h2 className={SECTION_TITLE}>{t('shell.home.shopByPet')}</h2>
-        <PetTiles />
+        <ShopByPet />
       </Section>
 
       <Section id="bestsellers">
@@ -91,7 +90,9 @@ export default function HomePage() {
         )}
       </Section>
 
-      <Section id="promo">{data?.promoTile ? <PromoTile tile={data.promoTile} /> : null}</Section>
+      <Section id="brands">
+        <ShopByBrand />
+      </Section>
 
       {slots.filter((s) => s.id === 'seasonal').map(renderSlot)}
 

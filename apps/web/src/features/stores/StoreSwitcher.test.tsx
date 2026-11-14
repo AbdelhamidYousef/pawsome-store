@@ -50,6 +50,23 @@ describe('StoreSwitcher', () => {
     expect(track).toHaveBeenCalledWith({ name: 'store_switched', from: 'de-de', to: 'uk-en' });
   });
 
+  it('compact: shows only "EN · £" closed, still lists full store names and still switches', async () => {
+    const go = vi.fn();
+    renderApp('/uk-en/c/dogs', [
+      {
+        element: <StoreLayout />,
+        children: [{ path: '*', element: <StoreSwitcher compact onNavigate={go} /> }],
+      },
+    ]);
+    expect(screen.getByTestId('store-switcher-label')).toHaveTextContent('EN · £');
+    expect(screen.getByRole('option', { name: 'France (Français)' })).toBeInTheDocument();
+    await userEvent.selectOptions(
+      screen.getByRole('combobox', { name: 'Country and language' }),
+      'fr-fr',
+    );
+    expect(go).toHaveBeenCalledWith('/fr-fr/c/dogs');
+  });
+
   describe('with a full cart', () => {
     let cartServed = false;
     // The header has read the cart long before a real click; wait for it the same way.

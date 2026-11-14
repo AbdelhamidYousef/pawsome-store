@@ -65,10 +65,12 @@ describe('HeroCarousel', () => {
 
   it('pauses while focus is inside, and resumes when it leaves', () => {
     setup();
-    fireEvent.focus(screen.getByTestId('hero-next'));
+    fireEvent.focus(screen.getByRole('button', { name: 'Go to slide 2' }));
     act(() => void vi.advanceTimersByTime(30_000));
     expect(visibleTitle()).toBe('Happy tails start here');
-    fireEvent.blur(screen.getByTestId('hero-next'), { relatedTarget: document.body });
+    fireEvent.blur(screen.getByRole('button', { name: 'Go to slide 2' }), {
+      relatedTarget: document.body,
+    });
     act(() => void vi.advanceTimersByTime(6000));
     expect(visibleTitle()).toBe('Purr-fect playtime');
   });
@@ -83,11 +85,20 @@ describe('HeroCarousel', () => {
     expect(visibleTitle()).toBe('Purr-fect playtime');
   });
 
-  it('moves with prev, next and the dots, wrapping around', () => {
+  it('has no arrow buttons; moves with the dots, arrow keys and a swipe, wrapping around', () => {
     setup();
-    fireEvent.click(screen.getByTestId('hero-prev'));
+    expect(screen.queryByTestId('hero-prev')).toBeNull();
+    expect(screen.queryByTestId('hero-next')).toBeNull();
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Go to slide 1' }), { key: 'ArrowLeft' });
     expect(visibleTitle()).toBe('Little pets, big love');
-    fireEvent.click(screen.getByTestId('hero-next'));
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Go to slide 3' }), { key: 'ArrowRight' });
+    expect(visibleTitle()).toBe('Happy tails start here');
+    const hero = screen.getByTestId('hero-carousel');
+    fireEvent.touchStart(hero, { touches: [{ clientX: 300, clientY: 100 }] });
+    fireEvent.touchEnd(hero, { changedTouches: [{ clientX: 200, clientY: 110 }] });
+    expect(visibleTitle()).toBe('Purr-fect playtime');
+    fireEvent.touchStart(hero, { touches: [{ clientX: 200, clientY: 100 }] });
+    fireEvent.touchEnd(hero, { changedTouches: [{ clientX: 300, clientY: 100 }] });
     expect(visibleTitle()).toBe('Happy tails start here');
     fireEvent.click(screen.getByRole('button', { name: 'Go to slide 2' }));
     expect(visibleTitle()).toBe('Purr-fect playtime');

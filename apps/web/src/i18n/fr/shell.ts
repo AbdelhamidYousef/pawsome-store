@@ -212,4 +212,8 @@ export const shell: Record<keyof typeof enNs, Entry> = {
     'Ces articles n’ont pas de prix en {currency} et seront retirés de votre panier :',
   'shell.storeSwitch.confirm': 'Changer et les retirer',
   'shell.storeSwitch.cancel': 'Rester sur {store}',
+  'shell.announcement.freeDelivery': 'Livraison offerte dès {amount} d’achat',
+  'shell.home.whoFor': 'Pour qui faites-vous vos achats ?',
+  'shell.home.brands.title': 'Acheter par marque',
+  'shell.home.brands.view': 'Voir {brand}',
 };

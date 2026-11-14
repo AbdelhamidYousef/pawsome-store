@@ -181,3 +181,36 @@ dialog::backdrop {
   outline-offset: 2px;
   box-shadow: 0 0 0 5px var(--color-surface);
 }
+
+/* Toasts (components/ui/Toast.tsx): a short rise on arrival, and the wishlist's burst of hearts
+   flying out of both ends. The reduced-motion rule in the base layer cuts both to nothing, and
+   the burst is not rendered at all for those visitors. */
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+}
+.toast-in {
+  animation: toast-in 220ms ease-out;
+}
+@keyframes toast-heart {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%) scale(0.3);
+  }
+  25% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), calc(-50% + var(--dy))) scale(1.1) rotate(12deg);
+  }
+}
+.toast-heart {
+  opacity: 0;
+  animation: toast-heart 1100ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
