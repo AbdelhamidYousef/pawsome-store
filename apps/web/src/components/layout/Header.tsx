@@ -43,7 +43,9 @@ export function Header({
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-surface" data-testid="header">
-      <Container className="flex flex-wrap items-center gap-x-3 gap-y-2 py-2 lg:flex-nowrap">
+      {/* Desktop top row is ~84 px: a bigger logo and a taller, wider search give the brand some
+          presence. Phones keep the compact two-row layout. */}
+      <Container className="flex flex-wrap items-center gap-x-3 gap-y-2 py-2 lg:flex-nowrap lg:gap-x-4 lg:py-4">
         <button
           type="button"
           aria-label={t('shell.header.openMenu')}
@@ -59,16 +61,16 @@ export function Header({
           to="/"
           aria-label={t('shell.header.home')}
           data-testid="logo"
-          className="mr-auto flex min-h-11 items-center gap-2 rounded-control font-display text-2xl font-bold text-primary-strong lg:mr-0"
+          className="mr-auto flex min-h-11 items-center gap-2 rounded-control font-display text-2xl font-bold text-primary-strong lg:mr-0 lg:gap-2.5 lg:text-[2rem]"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-bright text-ink">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-bright text-ink lg:h-12 lg:w-12 [&>svg]:lg:h-7 [&>svg]:lg:w-7">
             <PawIcon width={22} height={22} />
           </span>
           Pawsome
         </Link>
 
         {/* Desktop: search sits inline. Mobile: it wraps to its own full-width row (order-last). */}
-        <div className="order-last w-full lg:order-none lg:mx-4 lg:max-w-md lg:flex-1">
+        <div className="order-last w-full lg:order-none lg:mx-6 lg:max-w-xl lg:flex-1 lg:[&_input]:min-h-[3.25rem] lg:[&_input]:pl-5 lg:[&_button[type=submit]]:h-11 lg:[&_button[type=submit]]:w-11">
           <SearchBox idPrefix="header" />
         </div>
 
@@ -115,7 +117,7 @@ export function Header({
 
       <nav
         aria-label={t('shell.shopByPet')}
-        className="relative hidden border-t border-line lg:block"
+        className="relative hidden border-t border-line lg:block lg:[&_[data-testid=main-nav]]:py-2.5"
       >
         <Container>
           <MegaMenu />
