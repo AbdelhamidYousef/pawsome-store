@@ -6,6 +6,11 @@ export const BrandSeedSchema = z.object({
   tagline: z.string().min(5).max(120),
   story: z.string().min(40).max(600),
   accentColor: z.string().regex(/^#[0-9A-Fa-f]{6}$/),
+  // Square badge artwork in apps/web/public/brands; the UI falls back to the accent colour.
+  logoUrl: z
+    .string()
+    .regex(/^\/brands\/[a-z0-9-]+\.(webp|png|jpg|jpeg|avif)$/)
+    .optional(),
 });
 export type BrandSeed = z.infer<typeof BrandSeedSchema>;
 
