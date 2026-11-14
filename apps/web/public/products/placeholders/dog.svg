@@ -1,10 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Photo coming soon">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1200" role="img" aria-label="Pawsome">
+  <!-- Brand tile shown until the product photo arrives: pet-tinted, a faint paw pattern, one badge. -->
+  <defs>
+    <g id="paw">
+      <ellipse cx="0" cy="60" rx="95" ry="80"/>
+      <ellipse cx="-112" cy="-42" rx="35" ry="48" transform="rotate(-20 -112 -42)"/>
+      <ellipse cx="-45" cy="-102" rx="35" ry="50" transform="rotate(-6 -45 -102)"/>
+      <ellipse cx="45" cy="-102" rx="35" ry="50" transform="rotate(6 45 -102)"/>
+      <ellipse cx="112" cy="-42" rx="35" ry="48" transform="rotate(20 112 -42)"/>
+    </g>
+    <pattern id="paws" width="240" height="240" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+      <g fill="#92400E" opacity="0.1">
+        <use xlink:href="#paw" href="#paw" transform="translate(60 60) scale(0.2)"/>
+        <use xlink:href="#paw" href="#paw" transform="translate(180 180) scale(0.2) rotate(180)"/>
+      </g>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
   <rect width="1200" height="1200" fill="#FEF3C7"/>
-  <g fill="#F59E0B" opacity="0.85">
-    <ellipse cx="600" cy="720" rx="190" ry="160"/>
-    <ellipse cx="380" cy="520" rx="70" ry="95" transform="rotate(-20 380 520)"/>
-    <ellipse cx="510" cy="400" rx="70" ry="100" transform="rotate(-6 510 400)"/>
-    <ellipse cx="690" cy="400" rx="70" ry="100" transform="rotate(6 690 400)"/>
-    <ellipse cx="820" cy="520" rx="70" ry="95" transform="rotate(20 820 520)"/>
-  </g>
+  <rect width="1200" height="1200" fill="url(#paws)"/>
+  <circle cx="600" cy="600" r="460" fill="url(#glow)"/>
+  <circle cx="600" cy="600" r="236" fill="#F59E0B" opacity="0.18"/>
+  <circle cx="600" cy="600" r="210" fill="#FFFFFF"/>
+  <use xlink:href="#paw" href="#paw" transform="translate(600 610) scale(0.78)" fill="#F59E0B"/>
 </svg>
