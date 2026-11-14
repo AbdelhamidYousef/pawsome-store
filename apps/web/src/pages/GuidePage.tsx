@@ -6,7 +6,7 @@ import { ApiError } from '../api/client';
 import { ChevronRightIcon } from '../components/icons';
 import { Breadcrumbs } from '../components/layout/Breadcrumbs';
 import { Container } from '../components/layout/Container';
-import { Seo } from '../components/Seo';
+import { Seo, slugAlternates } from '../components/Seo';
 import { Button } from '../components/ui/Button';
 import { Skeleton } from '../components/ui/Skeleton';
 import { ProductRail } from '../features/catalog/pdp/ProductRail';
@@ -63,6 +63,8 @@ function GuideView({ guide }: { guide: GuideDetail }) {
       <Seo
         title={guide.title}
         description={guide.summary}
+        canonical={`/guides/${guide.slug}`}
+        alternates={slugAlternates('guides', guide.slugs)}
         type="article"
         publishedAt={guide.publishedAt}
         {...(guide.coverUrl && { image: guide.coverUrl })}
