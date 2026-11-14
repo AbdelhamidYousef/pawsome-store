@@ -41,8 +41,9 @@ describe('seed', () => {
       brands: 12,
       tags: 6,
       collections: 5,
-      // 3 demo logins, the 14 invented reviewers (phase 17) and the returns demo customer (phase 22).
-      users: 18,
+      // 3 demo logins, the 14 invented reviewers (phase 17), the returns demo customer (phase 22)
+      // and the 1100 customers behind the crowd reviews.
+      users: 1118,
       shipping: 2,
     });
   });
@@ -168,7 +169,7 @@ describe('seed: product page content', () => {
 });
 
 describe('seeded reviews and gallery (phase 17)', () => {
-  it('writes about 60 reviews in all three states, 12 gallery photos, and is idempotent', async () => {
+  it('writes about 60 hand-made reviews in all three states, 12 gallery photos, and is idempotent', async () => {
     await runSeed();
     const q = async () =>
       (
@@ -182,9 +183,11 @@ describe('seeded reviews and gallery (phase 17)', () => {
           published: number;
           links: number;
           products_rated: number;
-        }>(sql`select
-          (select count(*)::int from reviews) as total,
-          (select count(*)::int from reviews where status = 'approved') as approved,
+        }>(sql`with phase17 as (select id from users where email like 'reviewer__@pawsome.test')
+        select
+          (select count(*)::int from reviews where user_id in (select id from phase17)) as total,
+          (select count(*)::int from reviews
+            where status = 'approved' and user_id in (select id from phase17)) as approved,
           (select count(*)::int from reviews where status = 'pending') as pending,
           (select count(*)::int from reviews where status = 'rejected') as rejected,
           (select count(*)::int from review_photos) as photos,
@@ -231,6 +234,65 @@ describe('seeded reviews and gallery (phase 17)', () => {
       sql`select count(*)::int as n from reviews where status = 'approved' and moderated_at is null`,
     );
     expect(row?.n).toBe(0);
+  });
+});
+
+describe('crowd reviews (polish)', () => {
+  const crowd = async () =>
+    (
+      await db.execute<{
+        total: number;
+        min: number;
+        max: number;
+        low_avg: number;
+        ids: string;
+        not_approved: number;
+      }>(sql`select
+        (select count(*)::int from reviews r join users u on u.id = r.user_id
+          where u.email like 'customer____@pawsome.test') as total,
+        (select min(rating_count)::int from products where status = 'active') as min,
+        (select max(rating_count)::int from products) as max,
+        (select count(*)::int from products
+          where rating_count > 0 and rating_sum::numeric / rating_count not between 4.1 and 4.9) as low_avg,
+        (select md5(string_agg(r.id::text || r.created_at::text, ',' order by r.id)) from reviews r
+          join users u on u.id = r.user_id where u.email like 'customer____@pawsome.test') as ids,
+        (select count(*)::int from reviews r join users u on u.id = r.user_id
+          where u.email like 'customer____@pawsome.test' and r.status <> 'approved') as not_approved`)
+    )[0]!;
+
+  it('gives every product and kit 100-1000 approved reviews, idempotently and in place', async () => {
+    await runSeed();
+    const first = await crowd();
+    expect(first.total).toBeGreaterThan(25_000);
+    expect(first.min).toBeGreaterThanOrEqual(100);
+    expect(first.max).toBeLessThanOrEqual(1010);
+    expect(first.low_avg).toBe(0);
+    expect(first.not_approved).toBe(0);
+    // Same rows with the same ids and dates: the re-seed upserts, it does not delete and re-insert.
+    await runSeed();
+    expect(await crowd()).toEqual(first);
+  });
+
+  it('removes crowd reviews the generator no longer makes, and keeps real votes', async () => {
+    await runSeed();
+    const [extra] = await db.execute<{ id: string }>(sql`
+      insert into reviews (product_id, user_id, rating, title, body, would_recommend, status, moderated_at)
+      select (select id from products where slug = 'fetch-play-kit'), u.id, 5, 'Stale', 'Old crowd row.',
+        true, 'approved', now()
+      from users u where u.email like 'customer____@pawsome.test'
+        and not exists (select 1 from reviews r where r.user_id = u.id
+          and r.product_id = (select id from products where slug = 'fetch-play-kit'))
+      limit 1 returning id`);
+    const [voted] = await db.execute<{ id: string }>(sql`
+      update reviews set helpful_count = helpful_count + 1000
+      where id = (select r.id from reviews r join users u on u.id = r.user_id
+        where u.email like 'customer____@pawsome.test' order by r.id limit 1) returning id`);
+    await runSeed();
+    const [row] = await db.execute<{ stale: number; helpful: number }>(sql`select
+      (select count(*)::int from reviews where id = ${extra!.id}) as stale,
+      (select helpful_count from reviews where id = ${voted!.id}) as helpful`);
+    expect(row?.stale).toBe(0);
+    expect(row?.helpful).toBeGreaterThanOrEqual(1000);
   });
 });
 
