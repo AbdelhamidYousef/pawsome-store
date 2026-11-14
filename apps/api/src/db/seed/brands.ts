@@ -6,6 +6,11 @@ export const BrandSeedSchema = z.object({
   tagline: z.string().min(5).max(120),
   story: z.string().min(40).max(600),
   accentColor: z.string().regex(/^#[0-9A-Fa-f]{6}$/),
+  // Square badge artwork in apps/web/public/brands; the UI falls back to the accent colour.
+  logoUrl: z
+    .string()
+    .regex(/^\/brands\/[a-z0-9-]+\.(webp|png|jpg|jpeg|avif)$/)
+    .optional(),
 });
 export type BrandSeed = z.infer<typeof BrandSeedSchema>;
 
@@ -17,49 +22,55 @@ export const brands: BrandSeed[] = [
   {
     slug: 'pawsome',
     name: 'Pawsome',
-    tagline: 'Everyday essentials for every kind of pet.',
+    tagline: 'Everyday essentials, done properly.',
     story:
-      'Our own label: the sensible, colourful basics we reach for ourselves, from tug ropes to water bottles, tested by a very fussy panel of pets.',
+      "Pawsome is our own label: the bowls, leads, toys and bottles we kept wishing someone made a little better. Every piece goes through a household test panel of dogs, cats and one very opinionated rabbit before it reaches the shop. We favour washable fabrics, sturdy stitching and colours that cheer up a hallway. If something doesn't last, tell us and we'll put it right.",
     accentColor: '#F59E0B',
+    logoUrl: '/brands/pawsome.webp',
   },
   {
     slug: 'burrow-and-biscuit',
     name: 'Burrow & Biscuit',
-    tagline: 'Cosy beds and honest bakes for dogs and small pets.',
+    tagline: 'Cosy beds and small-batch bakes for dogs and small pets.',
     story:
-      'Started with one oven and one very patient beagle. Burrow & Biscuit makes soft places to sleep and simple treats baked in small batches, with short ingredient lists you can read out loud.',
+      'Burrow & Biscuit began with one oven, one sofa and a beagle who refused to sleep anywhere else. Today the team makes deep, squashy beds with removable, machine-washable covers, and treats baked in small batches from a short list of ingredients you can read out loud. No mystery fillers, no artificial colours. Just the two things a good day ends with: a snack and somewhere soft to curl up.',
     accentColor: '#D97706',
+    logoUrl: '/brands/burrow-and-biscuit.webp',
   },
   {
     slug: 'moonbeam-mews',
     name: 'Moonbeam Mews',
-    tagline: 'Playful, gentle goods for curious cats.',
+    tagline: 'Quiet toys and soft hideaways for curious cats.',
     story:
-      'Moonbeam Mews is for cats who nap in sunbeams and hunt at midnight. Quiet toys, soft hideaways and gentle food, designed around how cats actually behave.',
+      'Moonbeam Mews designs for cats as they really are: sunbeam nappers at noon, fearless hunters at midnight. Toys are built around stalking, pouncing and batting, sized for real paws and stitched to survive the 3 a.m. zoomies. The hideaways are soft, warm and a little bit secret, because every cat deserves somewhere to watch the world unseen. Calm colours, gentle materials and nothing that rattles you awake.',
     accentColor: '#7C3AED',
+    logoUrl: '/brands/moonbeam-mews.webp',
   },
   {
     slug: 'scaleby',
     name: 'Scaleby',
-    tagline: 'Habitat gear that gets the climate right.',
+    tagline: 'Terrarium gear that gets the climate right.',
     story:
-      'Scaleby builds terrariums and heat gear for keepers who care about getting temperature and humidity right. Clear instructions, sturdy glass and safe, steady warmth.',
+      'Scaleby is for keepers who check the thermometer before they say good morning. The range covers glass terrariums, basking lamps, heat mats and the small fittings that turn a tank into a proper habitat. Every heat product ships with clear set-up instructions and a recommended temperature gradient for common species. Sturdy, steady and safe, so your reptile can bask, hide and thrive.',
     accentColor: '#16A34A',
+    logoUrl: '/brands/scaleby.webp',
   },
   {
     slug: 'pebble-and-pine',
     name: 'Pebble & Pine',
-    tagline: 'Natural materials, lighter on the planet.',
+    tagline: 'Natural materials, made to last, lighter on the planet.',
     story:
-      'Pebble & Pine uses recycled fibres, untreated wood and plant-based dyes. Fewer plastics, more products that are made to be washed, refilled and kept for years.',
+      "Pebble & Pine makes pet gear from recycled fibres, untreated wood and plant-based dyes. The idea is simple: fewer things, made better, kept longer. Beds have covers you can wash for years, toys use offcuts instead of new plastic, and packaging is card you can recycle at home. It's the range for people who like their pet's corner to feel as calm and natural as the rest of the house.",
     accentColor: '#15803D',
+    logoUrl: '/brands/pebble-and-pine.webp',
   },
   {
     slug: 'tidepool',
     name: 'Tidepool',
     tagline: 'Clear water, calm fish, simple care.',
     story:
-      'Tidepool keeps aquariums easy: balanced foods, soft lighting and decor that gives fish somewhere to hide. Everything is made to be gentle on the water as well as the eye.',
+      'Tidepool takes the guesswork out of fishkeeping. The starter tanks arrive with everything you need in one box, the foods are balanced for common community fish, and the lighting is soft enough to show off colour without stressing anyone out. Decor and silk plants give fish places to hide and explore. Every product comes with plain-English tips, because a happy aquarium is mostly a matter of good habits.',
     accentColor: '#0284C7',
+    logoUrl: '/brands/tidepool.webp',
   },
 ];
