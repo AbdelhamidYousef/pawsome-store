@@ -220,9 +220,9 @@ Three layers, all run in CI on every push ([workflow](.github/workflows/ci.yml))
 
 | Layer | Tools | What it covers | Result |
 | --- | --- | --- | --- |
-| Unit and component | Vitest, Testing Library, msw | Pure rules (pricing, shipping, the order state machine), schemas, and the web app with the API replaced by msw | shared: 338 tests; web: 969 tests |
-| Integration | Vitest, Supertest, real Postgres | Every endpoint against a real database, including parallel requests on one cart and the inventory invariants | api: 1,462 passed, 2 skipped (they call the live Stripe test API and need keys) |
-| End to end | Playwright, Chromium | Browse, cart, auth, guest and account checkout through to a paid confirmation, account pages, the admin flows, content and trust pages, promotions, loyalty, reviews, returns, the agent tools, and the store views with their currencies | 79 passed, 1 skipped (the real-card test, which needs Stripe keys) |
+| Unit and component | Vitest, Testing Library, msw | Pure rules (pricing, shipping, the order state machine), schemas, and the web app with the API replaced by msw | shared: 338 tests; web: 1,015 tests |
+| Integration | Vitest, Supertest, real Postgres | Every endpoint against a real database, including parallel requests on one cart and the inventory invariants | api: 1,504 passed, 2 skipped (they call the live Stripe test API and need keys) |
+| End to end | Playwright, Chromium | Browse, cart, auth, guest and account checkout through to a paid confirmation, account pages, the admin flows, content and trust pages, promotions, loyalty, reviews, returns, the agent tools, and the store views with their currencies | 83 passed, 1 skipped (the real-card test, which needs Stripe keys) |
 
 Statement coverage at the end of phase 11: shared 100 %, web 95.0 %, API 96.5 % (`pnpm coverage`, figures from the coverage review in the [build journal](docs/plan/05-build-journal.md)). A high percentage only says which code never ran, so the invariant and concurrency tests do the real work on stock and money. Without a Stripe key the API boots a fake payment gateway under `NODE_ENV=test`, and the e2e suite pays orders through a test-only webhook simulator that exists only in that mode and needs a secret header. CI also scans the full history for secrets (gitleaks) and runs a warn-only dependency audit.
 

@@ -1097,3 +1097,19 @@ Learn: derive what can drift (kit stock), store what is a decision (kit price), 
 ## Polish QA fix round (2026-11-14)
 - Built: fixes for the cold QA pass (`work/polish/qa-findings.md`) on `polish/integration`: de/fr PDP reviews and recommendations (translated slug now resolved in those endpoints), home hero/promo/menu promos/testimonials in the store's language and currency (text-keyed overlay in `modules/i18n/copy.ts`), "free delivery over …" from one shared threshold per currency, shorter hero bodies, Amsterdam return address, cart hint asking a country the store ships to, centred legal pages, gift-result captions inside their cells and no first-load focus, faded rail edges, calmer product placeholders, guide canonical + hreflang, home guides as a swipeable row on phones, admin promotion guards (int4 cap, stale GBP value cleared, GBP gift threshold needs a GBP price), store-switch preview before the cart loads. Verified with the auditor's scripts on a clean seed: console errors 12 → 0 and failed requests 20 → 0 over the 108 de/fr/uk page runs.
 - Learn / explain: a translated URL slug has to be resolved at EVERY endpoint that takes it, not only the main one; the PDP's sub-requests (reviews, recommendations) reuse the URL's slug, so one missed `resolveSlug` empties half the page in two languages. A test per sub-resource under a translated slug is the guard.
+
+## Polish pass: assembly and ship (2026-11-14)
+- Built: the API suite made green and fast (tests empty the database with `DELETE` in foreign-key
+  order instead of `TRUNCATE`, 40+ min hang → ~7 min), e2e specs updated for the dots-only hero and
+  de-conflicted (the demo-helper checkout buys its own product), "You may also like" no longer shows
+  a kit made of the viewed product, bought-together "You save" counts a suggestion's sale against
+  its 30-day reference, seeded reviewer accounts hidden from the admin customer list, filler words
+  dropped from the review topic chips, four bought-together tiles fit on desktop. Final visual QA at
+  1440 and 390 px on 20 pages × 4 stores: no horizontal scroll, no broken images. Then merged to
+  `main`, Neon re-seeded, pushed.
+- Learn / explain: `TRUNCATE` looks like the cheap way to empty a table, but it swaps in new files for
+  the table and every index, and Postgres 16 fsyncs each new index file. For a test database that
+  holds a few rows, `DELETE` is far cheaper; the order (children first) comes from `pg_constraint`, so
+  new tables are handled without a list. A side effect worth knowing: `DELETE` leaves free space in
+  the heap, so row order changes, and one test that read "the first row" without an `ORDER BY` or a
+  precise filter failed. Tests that depend on physical order are bugs waiting to happen.

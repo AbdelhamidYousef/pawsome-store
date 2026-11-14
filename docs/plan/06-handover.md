@@ -9,8 +9,10 @@ Written by the build sessions for the owner and for the next session.
   (stores `/eu-en/`, `/uk-en/` in GBP, `/de-de/`, `/fr-fr/`), repo
   <https://github.com/AbdelhamidYousef/pawsome-store>. CI green on `main` (typecheck/lint/format,
   unit + integration, e2e, gitleaks, audit). No worktree or lane is open; `feat/*` branches are merged.
-- Counts on the final tree: shared 338, web 969, API 1,462 + 2 skipped (live Stripe), e2e 79 + 1
-  skipped (real card).
+- Counts on the final tree (after the polish pass, below): shared 338, web 1,015, API 1,504 + 2
+  skipped (live Stripe), e2e 83 + 1 skipped (real card).
+- **Polish pass shipped 2026-11-14**: new design, quick add, bought-together picks, 12 brands,
+  35,751 reviews, 118 Gemini images. Details and what is still open: "Polish pass" below.
 - Deploy: one Vercel project (web static + Express as a function on the same origin), Neon
   Frankfurt, Stripe sandbox (test mode), hourly jobs via GitHub Actions. See `docs/DEPLOYMENT.md`.
   A schema change must be migrated on Neon (direct URL, from a shell) **before** the push that needs
@@ -63,39 +65,41 @@ Written by the build sessions for the owner and for the next session.
 7. **Licence holder** in `LICENSE` is your GitHub handle; change it if you want your name.
 8. **Screen reader** pass (NVDA/VoiceOver) on PDP and checkout — couldn't be done here.
 
-## Polish pass QA follow-ups (2026-11-14)
+## Polish pass (2026-11-14) — shipped
 
-The polish lanes and the QA fix round are on `polish/integration` (not pushed). Still open:
+`polish/integration` was merged into `main` and is live. What it did:
 
-1. **Product photos: 85 of 125 seeded products have none** (image generation waits on you). They
-   show the per-pet brand tile (`apps/web/public/products/placeholders/<pet>.svg`, redrawn in this
-   pass so it reads as deliberate). Generate `apps/web/public/products/<category>/<slug>-1.webp`
-   (and `-2` for a detail shot), then re-run the seed: it swaps the rows over by itself. By pet:
-   - **dog** (15): pumpkin-squeak-ball, chew-knot-bone, memory-foam-mat, cooling-gel-mat, travel-blanket-roll, puppy-snuggle-nest, dental-chew-sticks, light-lean-bites, sensitive-lamb-biscuits, collapsible-travel-bowl, raised-double-diner, ceramic-paw-bowl, comfort-harness, hands-free-leash, compostable-waste-bags
-   - **cat** (15): crinkle-play-tunnel, spooky-bat-teaser, cuddle-cup-bed, cardboard-scratch-lounger, sunny-shelf-hammock, dental-crunch-bites, calm-chews, omega-coat-paste, slanted-raised-bowl, whisper-drinking-fountain, snuffle-feeding-mat, bubble-window-backpack, cat-harness-and-lead, portable-litter-tray, carrier-calming-blanket
-   - **bird** (13): shredding-palm-toy, ladder-and-bell-set, foraging-wheel, fruit-and-nut-mix, daily-pellets, sprouting-seed-mix, starter-flight-cage, night-cage-cover, travel-perch-stand, seed-catcher-tray, drip-water-cup, treat-skewer-holder, twin-ceramic-dish
-   - **fish** (3): freeze-dried-bloodworms, algae-wafers, betta-micro-pellets
-   - **small** (14): willow-tunnel, seagrass-ball-trio, chew-stick-hanger, activity-cube, guinea-pig-pellets, rabbit-herb-treats, hamster-seed-mix, starter-wooden-hutch, nesting-fleece-liners, corner-hideaway, travel-carry-box, hanging-hay-rack, weighted-ceramic-feeder, sipper-bottle-mini
-   - **reptile** (25): glass-terrarium-60, pop-up-mesh-cage, nano-glass-box, tortoise-table, vertical-tree-terrarium, ceramic-heat-lamp, uvb-tube-light, under-tank-heat-mat, digital-thermo-hygrometer, basking-lamp-dome, shallow-water-dish, feeding-tongs, mealworm-dispenser, gecko-gel-cup-set, misting-bottle, half-log-hide, cork-bark-tube, vine-climbing-set, faux-succulent-pack, slate-basking-rock, gecko-meal-pellets, tortoise-greens-mix, calcium-dust, dried-mealworm-treat, dragon-salad-crumble
-2. **Brand logos and guide covers** are not generated either (`/brands/<slug>.webp`,
-   `/guides/<slug>.webp`); the coloured fallbacks are used.
-3. **de/fr content with no translation path** (English on those stores): help answers, the legal and
-   about pages (Markdown), PDP specs and FAQs, gallery captions, the charity description. Hero
-   slides, the promo tile, mega-menu promos and testimonials now have one (`modules/i18n/copy.ts`,
-   keyed by the seeded English text, plus a uk-en table for £ amounts): text an admin types later
-   stays as typed, in every store. A real fix is per-language columns or translation tables for
-   `home_content`, help and legal.
-4. **Live data**: `home_content` and testimonials are insert-or-nothing in the seed, so the live
-   store keeps its old (longer) hero text until those rows are deleted on Neon and re-seeded, or
-   edited in the admin. The translations only match the current seed text.
-5. Admin analytics counts days in `Europe/Riga` (`STORE_TIME_ZONE` in shared) while the shop's
+- **Design**: a calmer 2026 DTC look (Fredoka 600 headings, 128 px section rhythm, one card style),
+  full-bleed dots-only hero, EN·€ store switcher, hide-on-scroll free-delivery bar, "Who are you
+  shopping for?" pet photo circles, Shop by brand, illustrated USP strip, nav pet avatars, love toast
+  with a heart burst, centred legal pages, carousels with scroll-snap and arrows.
+- **Shopping**: product-card quick add, picture-row "Frequently bought together" with editor picks per
+  product (same pet, complementary categories), "You save" counting a suggestion's sale against its
+  30-day reference, "You may also like" never showing a kit made of the product, demo helper panel
+  (register / login / checkout with the test card).
+- **Data**: 12 invented brands with stories in en/de/fr, 35,751 crowd reviews (100–999 per product,
+  reviewer accounts cannot sign in and are hidden from the admin customer list), a 12-value Material
+  facet, de/fr hero/promo/menu/testimonial copy.
+- **Images (Gemini)**: 12 brand logos, 6 pet portraits, 5 USP illustrations, 10 guide covers and 85
+  product photos: every product now has a real photo.
+- **Copy**: an en/de/fr copy pass and 17 QA fixes (`work/polish/qa-findings.md`, untracked).
+- **Tests**: API tests empty the database with DELETE instead of TRUNCATE (the suite went from a
+  40-minute hang to ~7 minutes).
+
+Still open after the polish pass (none blocks the demo):
+
+1. **de/fr content with no translation path** (English on those stores): help answers, the legal and
+   about pages, PDP specs and FAQs, gallery captions, the charity description. A real fix is
+   per-language columns or translation tables.
+2. Admin analytics counts days in `Europe/Riga` (`STORE_TIME_ZONE` in shared) while the shop's
    dispatch zone is `Europe/Amsterdam`; align them (tests pin the Riga boundary).
-6. Low findings left from `work/polish/qa-findings.md`: page headers mix centred (help) and left
-   (guides, brands, account) (7); PDP text column leaves the right half empty (10); no sticky
-   add-to-cart on mobile PDP (11); footer link rhythm and no payment/social icons (19); "Low stock"
-   badge can touch the wishlist heart on 390 px cards (20); mobile menu lacks account/guides/store
-   links (21); mega-menu 8 px misalignment and no scrim (22); account sidebar buttons look heavy (23).
-7. Stock-alert and review emails still carry English product names (from fix 5).
+3. Guide covers were upscaled from 1024 px to 1600×900; regenerate at full size if they look soft.
+4. Low findings left from the QA pass: page headers mix centred (help) and left (guides, brands,
+   account); PDP text column leaves the right half empty; no sticky add-to-cart on mobile PDP; no
+   payment/social icons in the footer; mobile menu lacks account/guides/store links; mega-menu has no
+   scrim; account sidebar buttons look heavy.
+5. Stock-alert and review emails still carry English product names.
+6. Crowd reviews are English on every store (the reviews table has no language column).
 
 ## Known limits (also in the README)
 
