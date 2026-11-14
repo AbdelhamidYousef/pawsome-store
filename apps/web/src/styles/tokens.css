@@ -29,6 +29,9 @@
   --color-success-soft: #dcfce7;
   --color-danger: #b91c1c;
   --color-danger-soft: #fee2e2;
+  /* Wishlist ("love") toast: a pink tint and its heart colour. */
+  --color-love: #db2777;
+  --color-love-soft: #fce7f3;
 
   /* Default pet theme (no data-pet) is the brand coral. */
   --pet-accent: var(--color-primary-bright);
