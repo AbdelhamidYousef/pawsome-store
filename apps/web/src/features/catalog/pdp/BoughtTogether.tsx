@@ -101,8 +101,13 @@ export function BoughtTogether({
       image: i.card.image?.url ?? null,
       priceCents: i.variant.saleCents ?? i.variant.priceCents,
       wasCents: i.variant.saleCents !== null ? i.variant.priceCents : null,
-      // Suggestions carry no 30-day reference price, so no saving is claimed for them.
-      savingCents: 0,
+      // Same Omnibus rule as the page's own item: a saving only against the 30-day reference.
+      savingCents:
+        i.variant.saleCents !== null &&
+        i.variant.referenceCents !== null &&
+        i.variant.referenceCents > i.variant.saleCents
+          ? i.variant.referenceCents - i.variant.saleCents
+          : 0,
       suggestion: true,
       buyable: true,
     })),

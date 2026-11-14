@@ -66,6 +66,7 @@ export async function getRecommendations(slug: string, viewer: Viewer): Promise<
             priceCents: variant.priceCents,
             currency: variant.currency,
             saleCents: offers.byVariant.get(variant.id)?.priceCents ?? null,
+            referenceCents: offers.byVariant.get(variant.id)?.referenceCents ?? null,
           },
         },
       ];

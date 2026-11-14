@@ -95,6 +95,7 @@ describe('GET /products/:slug/recommendations', () => {
       name: 'Default A',
       priceCents: 700,
       saleCents: null,
+      referenceCents: null,
     });
   });
 

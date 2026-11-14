@@ -22,6 +22,7 @@ const item = (
     name: `Pack ${n}`,
     priceCents: 500 * n,
     saleCents: null,
+    referenceCents: null,
     currency: 'EUR',
     ...over,
   },
@@ -63,6 +64,15 @@ describe('Frequently bought together', () => {
     renderApp('/products/rope-tug');
     const block = await screen.findByTestId('bought-together');
     expect(within(block).getByTestId('bought-together-total')).toHaveTextContent('€18.99');
+  });
+
+  it('counts a suggestion\'s sale in "You save" only against its 30-day reference price', async () => {
+    server.use(
+      recs([item(2, { saleCents: 800, referenceCents: 950 }), item(3, { saleCents: 900 })]),
+    );
+    renderApp('/products/rope-tug');
+    const block = await screen.findByTestId('bought-together');
+    expect(within(block).getByText('You save €1.50')).toBeInTheDocument();
   });
 
   it('adds the chosen items in one request and says so', async () => {
