@@ -36,8 +36,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   // Footer
   'shell.footer.tagline':
     'Des accessoires colorés et bien faits pour chiens, chats, oiseaux, poissons, reptiles et petits animaux. Testés à la maison par notre jury très exigeant.',
-  'shell.footer.paymentNote':
-    'Les paiements fonctionnent en mode test Stripe : aucune carte n’est débitée.',
+  'shell.footer.paymentNote': 'Paiement sécurisé par Stripe (mode test).',
   'shell.footer.copyright': '© {year} Pawsome. Tous droits réservés.',
   'shell.footer.shop': 'Boutique',
   'shell.footer.brands': 'Marques',

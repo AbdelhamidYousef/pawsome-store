@@ -39,7 +39,7 @@ export const shell: Record<keyof typeof enNs, Entry> = {
   // Footer
   'shell.footer.tagline':
     'Bunte, gut gemachte Ausstattung für Hunde, Katzen, Vögel, Fische, Reptilien und Kleintiere. Zu Hause getestet von unserem wählerischen Testteam.',
-  'shell.footer.paymentNote': 'Zahlungen laufen im Stripe-Testmodus: Keine Karte wird belastet.',
+  'shell.footer.paymentNote': 'Sicher bezahlen mit Stripe (Testmodus).',
   'shell.footer.copyright': '© {year} Pawsome. Alle Rechte vorbehalten.',
   'shell.footer.shop': 'Shop',
   'shell.footer.brands': 'Marken',

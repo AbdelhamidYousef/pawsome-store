@@ -75,7 +75,7 @@ describe('AppLayout', () => {
     renderShell();
     const footer = screen.getByRole('contentinfo');
     expect(within(footer).getByRole('navigation', { name: 'Shop' })).toBeInTheDocument();
-    expect(footer).toHaveTextContent('Stripe test mode');
+    expect(footer).toHaveTextContent('Stripe (test mode)');
   });
 });
 

@@ -35,7 +35,7 @@ export const shell = {
   // Footer
   'shell.footer.tagline':
     'Colourful, well-made supplies for dogs, cats, birds, fish, reptiles and small pets. Tested at home by our own fussy panel.',
-  'shell.footer.paymentNote': 'Payments run in Stripe test mode: no card is ever charged.',
+  'shell.footer.paymentNote': 'Secure checkout by Stripe (test mode).',
   'shell.footer.copyright': '© {year} Pawsome. All rights reserved.',
   'shell.footer.shop': 'Shop',
   'shell.footer.brands': 'Brands',
