@@ -281,8 +281,10 @@ const CROWD_BATCH = 4000;
  * The crowd: 100-1000 approved reviews per catalogue product and kit, from a pool of 1100 invented
  * customers (one review per customer per product, as the unique key demands). Idempotent:
  * an upsert on (user, product) that rewrites a row only when its content changed, then a delete of
- * crowd rows the generator no longer produces. Helpful counts are written once and then left
- * alone, so real votes on a seeded review survive a re-seed.
+ * crowd rows the generator no longer produces. The seed is the source of truth for these rows: a
+ * re-seed puts back a crowd review an admin rejected or deleted (approved again, same text), and a
+ * re-seed on a later day rewrites every row because the dates move with "today". Helpful counts are
+ * written once and then left alone, so real votes on a seeded review survive a re-seed.
  */
 export async function seedCrowdReviews(
   tx: Tx,
@@ -330,7 +332,7 @@ export async function seedCrowdReviews(
       id,
       slug: p.slug,
       pet: p.pet,
-      kind: kindFor(p.categorySlug),
+      kind: kindFor(p.categorySlug, p.slug),
       bestseller: p.bestseller ?? false,
       axes: p.axes
         .map((a) => ({

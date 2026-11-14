@@ -6,7 +6,8 @@ import type { Pet } from '@store/shared';
 //
 // Everything hangs off a PRNG seeded per product slug, so every run, machine and database gets the
 // same rows, and adding a product does not reshuffle the others. Dates are relative to the start of
-// the current UTC day, so a re-seed on the same day changes nothing.
+// the current UTC day: a re-seed on the same day changes nothing, while a re-seed on a later day
+// moves every date forward and so rewrites every crowd row once.
 //
 // English only: the reviews table has no language column, so a German review would show on the
 // English stores too (decisions log, 2026-11-14).
@@ -23,7 +24,17 @@ export type CrowdKind =
   | 'heat'
   | 'decor'
   | 'aquarium'
-  | 'kit';
+  | 'kit'
+  // Product-level kinds, for products whose category text would not fit (KIND_BY_SLUG).
+  | 'water'
+  | 'feeder'
+  | 'tool'
+  | 'care'
+  | 'supplement'
+  | 'scratcher'
+  | 'cooling'
+  | 'tank'
+  | 'accessory';
 
 export interface CrowdProduct {
   id: string;
@@ -88,8 +99,43 @@ const KIND_BY_CATEGORY: Record<string, CrowdKind> = {
   'fish-tanks': 'aquarium',
 };
 
-export function kindFor(categorySlug: string): CrowdKind {
-  const kind = KIND_BY_CATEGORY[categorySlug];
+// Products whose category's text would read wrong ("heavy enough not to slide" on feeding tongs,
+// "the cover washes well" on a cooling mat). Every seeded product was checked against its kind.
+export const KIND_BY_SLUG: Record<string, CrowdKind> = {
+  'drip-water-cup': 'water',
+  'gravity-water-dispenser': 'water',
+  'whisper-drinking-fountain': 'water',
+  'bottle-water-dispenser': 'water',
+  'sipper-bottle-mini': 'water',
+  'hanging-seed-feeder': 'feeder',
+  'treat-skewer-holder': 'feeder',
+  'hanging-hay-rack': 'feeder',
+  'mealworm-dispenser': 'feeder',
+  'gecko-gel-cup-set': 'feeder',
+  'feeding-tongs': 'tool',
+  'misting-bottle': 'tool',
+  'digital-thermo-hygrometer': 'tool',
+  'compostable-waste-bags': 'care',
+  'portable-litter-tray': 'care',
+  'nesting-fleece-liners': 'care',
+  'seed-catcher-tray': 'care',
+  'omega-coat-paste': 'supplement',
+  'calcium-dust': 'supplement',
+  'cardboard-scratch-lounger': 'scratcher',
+  'cooling-gel-mat': 'cooling',
+  'starter-tank-20l': 'tank',
+  'soft-glow-led-bar': 'tank',
+  'night-cage-cover': 'accessory',
+  'travel-blanket-roll': 'accessory',
+  'carrier-calming-blanket': 'accessory',
+  'travel-carry-box': 'travel',
+  'cat-harness-and-lead': 'walk',
+  'corner-hideaway': 'decor',
+  'cosy-hideaway-house': 'decor',
+};
+
+export function kindFor(categorySlug: string, productSlug: string): CrowdKind {
+  const kind = KIND_BY_SLUG[productSlug] ?? KIND_BY_CATEGORY[categorySlug];
   if (!kind) throw new Error(`no review kind for category ${categorySlug}`);
   return kind;
 }
@@ -134,7 +180,9 @@ export function crowdCount(rand: Rand, bestseller: boolean): number {
 
 interface PetVoice {
   names: string[];
-  kinds: string[]; // "beagle", "tabby"
+  // Breeds or species. Proper-noun breeds are capitalised ("Labrador", "Maine Coon"); common
+  // nouns stay lower case ("beagle", "tabby"), as in ordinary English prose.
+  kinds: string[];
   weightG?: [number, number];
   maxAgeMonths: number;
 }
@@ -171,21 +219,21 @@ const PETS: Record<Pet, PetVoice> = {
     ],
     kinds: [
       'beagle',
-      'labrador',
-      'cocker spaniel',
-      'border collie',
+      'Labrador',
+      'Cocker Spaniel',
+      'Border Collie',
       'dachshund',
       'rescue greyhound',
-      'staffie',
-      'golden retriever',
-      'jack russell',
+      'Staffie',
+      'Golden Retriever',
+      'Jack Russell',
       'cockapoo',
       'whippet',
-      'french bulldog',
-      'german shepherd',
+      'French Bulldog',
+      'German Shepherd',
       'rescue mix',
-      'vizsla',
-      'shih tzu',
+      'Vizsla',
+      'Shih Tzu',
     ],
     weightG: [3_000, 38_000],
     maxAgeMonths: 168,
@@ -216,12 +264,12 @@ const PETS: Record<Pet, PetVoice> = {
     kinds: [
       'tabby',
       'ragdoll',
-      'british shorthair',
-      'maine coon',
+      'British Shorthair',
+      'Maine Coon',
       'black cat',
-      'siamese',
+      'Siamese',
       'ginger tom',
-      'bengal',
+      'Bengal',
       'rescue cat',
       'tortoiseshell',
       'senior moggy',
@@ -249,7 +297,7 @@ const PETS: Record<Pet, PetVoice> = {
       'cockatiel',
       'canary',
       'green-cheek conure',
-      'african grey',
+      'African Grey',
       'parrotlet',
       'lovebird',
     ],
@@ -356,7 +404,7 @@ const KINDS: Record<CrowdKind, KindText> = {
       'Keeps {name} busy for ages, which means a quieter evening for us.',
       'The colours are bright and have not faded.',
       'Light enough to carry around, sturdy enough to chew on.',
-      'It has become the toy that gets brought to us first thing every morning.',
+      'It is the first thing picked up every morning.',
       'Good size: big enough to be safe, small enough to carry.',
       'Holds up better than the cheaper toys we tried before.',
     ],
@@ -488,8 +536,8 @@ const KINDS: Record<CrowdKind, KindText> = {
       'The reflective trim is great on dark winter evenings.',
       'The clips feel solid and are easy to use with cold fingers.',
       'Easy to adjust, it took two minutes to get a good fit.',
-      'It survived mud, rain and a swim in the lake, and washed up fine.',
-      'Much less pulling on walks since we switched.',
+      'It survived mud and rain, and washed up fine.',
+      'Comfortable enough that it goes on without any fuss.',
     ],
     mixed: [
       'Good quality, but sizing was tricky, so check the guide twice.',
@@ -518,7 +566,7 @@ const KINDS: Record<CrowdKind, KindText> = {
       'Folds away neatly when we do not need it.',
     ],
     mixed: [
-      'It works, but it is a bit snug for a bigger cat.',
+      'It works, but it is a bit snug for a bigger pet.',
       'Good, but the strap could be more padded.',
     ],
     bad: ['The zip gave out on the second trip.', 'Far too small, despite checking the sizes.'],
@@ -567,7 +615,7 @@ const KINDS: Record<CrowdKind, KindText> = {
   },
   decor: {
     good: [
-      'Looks natural in the terrarium, not plasticky at all.',
+      'Looks natural in the enclosure, not plasticky at all.',
       'Stable, it does not topple when climbed on.',
       'Easy to rinse and safe, with no sharp edges.',
       'Gets used as a hide and a lookout, often on the same day.',
@@ -595,6 +643,123 @@ const KINDS: Record<CrowdKind, KindText> = {
     bad: ['The colour started to fade in the water.', 'It arrived broken.'],
     titles: ['Beautiful tank', 'Happy fish', 'Looks great', 'Lovely addition'],
   },
+  water: {
+    good: [
+      'Fresh water all day, and it is easy to see when it needs a refill.',
+      'No drips, and the bedding stays dry.',
+      'Easy to take apart and clean.',
+      'Drinks more since we got it, which the vet was pleased about.',
+      'Quiet, and it holds plenty.',
+    ],
+    mixed: [
+      'It works, but the spout took some getting used to.',
+      'Good, though it needs cleaning more often than I hoped.',
+    ],
+    bad: ['It leaks.', 'The spout clogged within a fortnight.'],
+    titles: ['Fresh water, no fuss', 'No more spills', 'Drinks more now', 'Simple and clean'],
+  },
+  feeder: {
+    good: [
+      'Keeps food off the floor and clean.',
+      'Easy to fill and it attaches securely.',
+      'Much less waste than before.',
+      'Simple to take down and wash.',
+      'Turns feeding into a little foraging game.',
+    ],
+    mixed: [
+      'Works well, but the clip is a bit fiddly.',
+      'Good idea, though it is smaller than I expected.',
+    ],
+    bad: ['It fell off the bars twice in the first week.', 'Hard to clean properly.'],
+    titles: ['Tidy feeding', 'Less waste', 'Clever design', 'Does the job well'],
+  },
+  tool: {
+    good: [
+      'Well made and does exactly what it should.',
+      'Comfortable to use every day.',
+      'Accurate and easy to read.',
+      'Makes the daily routine quicker.',
+      'Feels sturdy, not like a cheap gadget.',
+    ],
+    mixed: ['It works, but the finish could be better.', 'Good, though a little fiddly at first.'],
+    bad: ['It stopped working properly within a month.', 'Feels flimsy for the price.'],
+    titles: ['Handy tool', 'Use it every day', 'Does what it says', 'Small but essential'],
+  },
+  care: {
+    good: [
+      'Makes cleaning up quick and easy.',
+      'Strong, and it does not leak or tear.',
+      'Keeps everything much tidier.',
+      'Washes well and dries quickly.',
+      'Good to have something less wasteful.',
+    ],
+    mixed: ['Does the job, but I go through it faster than expected.', 'Fine, nothing special.'],
+    bad: ['It tore the first time I used it.', 'Not as absorbent as I hoped.'],
+    titles: ['Clean-up made easy', 'Tidy home', 'Practical', 'Good everyday buy'],
+  },
+  supplement: {
+    good: [
+      'Easy to add to food and it gets eaten without fuss.',
+      'The coat looks glossier after a few weeks.',
+      'A little goes a long way.',
+      'Clear dosing instructions on the pack.',
+      'Our vet was happy for us to use it.',
+    ],
+    mixed: ['Hard to say if it is making a difference yet.', 'Good, but the pack is small.'],
+    bad: ['Refused anything it was mixed into.', 'No difference after two months.'],
+    titles: ['Part of the routine', 'Easy to give', 'Healthy shine', 'Worth adding'],
+  },
+  scratcher: {
+    good: [
+      'Gets scratched every day, and the sofa has been spared.',
+      'Doubles as a favourite napping spot.',
+      'Sturdy, it does not slide around when scratched.',
+      'Lasted much longer than I expected for cardboard.',
+    ],
+    mixed: ['Good, but it sheds bits of cardboard.', 'Used, but not as much as the doormat.'],
+    bad: ['Ignored completely.', 'Fell apart within a few weeks.'],
+    titles: ['Sofa saved', 'Scratch heaven', 'Great scratcher', 'Well used'],
+  },
+  cooling: {
+    good: [
+      'Stays cool on hot days without any electricity.',
+      'Lies on it every afternoon in summer.',
+      'Wipes clean in seconds.',
+      'Light enough to take in the car.',
+    ],
+    mixed: [
+      'Cools well, but it warms up after an hour or so.',
+      'Good, though it creases a little.',
+    ],
+    bad: ['It punctured within a week.', 'Barely felt cool at all.'],
+    titles: ['Summer saver', 'Cool and comfy', 'Hot day essential', 'Great in the heat'],
+  },
+  tank: {
+    good: [
+      'Easy to set up, and everything needed was in the box.',
+      'The light shows off the colours without being harsh.',
+      'Runs quietly, and the water has stayed clear.',
+      'The fish settled in quickly.',
+      'Looks smart on the shelf.',
+    ],
+    mixed: [
+      'Good, though the instructions could be clearer.',
+      'Nice, but a little smaller than I imagined.',
+    ],
+    bad: ['It arrived with a crack.', 'Stopped working after a few weeks.'],
+    titles: ['Great starter setup', 'Beautiful tank', 'Happy fish', 'Easy to set up'],
+  },
+  accessory: {
+    good: [
+      'Well made and fits perfectly.',
+      'Washes well and keeps its shape.',
+      'Makes evenings and journeys much calmer.',
+      'Good quality fabric, and it feels sturdy.',
+    ],
+    mixed: ['Does the job, but the fit is a little loose.', 'Fine, though thinner than expected.'],
+    bad: ['Frayed after the first wash.', 'Did not fit as described.'],
+    titles: ['Useful extra', 'Good quality', 'Does the job', 'Nicely made'],
+  },
   kit: {
     good: [
       'Everything we needed in one box.',
@@ -619,7 +784,7 @@ const PET_LINES: Record<Pet, string[]> = {
   dog: [
     'Tail going the whole time.',
     'Even the puppy next door wants one now.',
-    'Great for training, recall has really improved.',
+    'I have recommended it to friends at the park.',
   ],
   cat: ['The purring says it all.', 'Rare for a cat to approve of anything new this quickly.'],
   bird: [
@@ -627,8 +792,8 @@ const PET_LINES: Record<Pet, string[]> = {
     'More singing in the mornings, I am sure of it.',
   ],
   small: [
-    'Lots of happy popcorning since it arrived.',
-    'The wheeking when I open the cupboard says it all.',
+    'Lots of happy zooming around since it arrived.',
+    '{Name} comes straight to the front of the cage when I open the cupboard.',
   ],
   reptile: [
     'Looks relaxed and is eating well.',
@@ -662,7 +827,7 @@ const CLOSERS = {
   good: [
     'Will definitely buy again.',
     'Already ordered a second one.',
-    'I have recommended it to friends at the park.',
+    'I have recommended it to friends.',
     'Cannot fault it.',
     'Happy pet, happy owner.',
     'Highly recommend.',
@@ -704,7 +869,8 @@ const TITLES = {
 const MENTIONED_AXES = new Set(['color', 'size', 'pack', 'flavour', 'length']);
 
 function optionLine(rand: Rand, key: string, label: string, tone: 'good' | 'mixed'): string {
-  const l = key === 'color' || key === 'size' || key === 'flavour' ? label.toLowerCase() : label;
+  // Words go lower case mid-sentence ("the large"), units keep their case ("the 3 L").
+  const l = /^[A-Za-z ]+$/.test(label) ? label.toLowerCase() : label;
   if (tone === 'mixed') {
     if (key === 'size') return `The ${l} runs a little small, so size up if in doubt.`;
     if (key === 'color') return `The ${l} is a little darker than on screen.`;
@@ -830,7 +996,19 @@ export function generateCrowdReviews(products: readonly CrowdProduct[], now: Dat
           ...(rand() < 0.6 ? [pick(rand, CLOSERS.bad)] : []),
         ];
       }
-      const body = fill([...new Set(sentences)].join(' '), name, kind, product.pet);
+      // A body sentence that only repeats the title ("Highly recommend" / "Highly recommend.") goes.
+      const same = (a: string) =>
+        a
+          .replace(/[.!]+$/, '')
+          .trim()
+          .toLowerCase();
+      const kept = sentences.filter((x) => same(x) !== same(title));
+      const body = fill(
+        [...new Set(kept.length > 0 ? kept : ['Really pleased with it.'])].join(' '),
+        name,
+        kind,
+        product.pet,
+      );
 
       // Newer reviews are more common than old ones (a growing shop): u^1.6 leans towards today.
       const daysAgo = 1 + Math.floor((HISTORY_DAYS - 1) * rand() ** 1.6);

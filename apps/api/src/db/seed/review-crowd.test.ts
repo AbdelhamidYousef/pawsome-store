@@ -7,6 +7,7 @@ import {
   CROWD_POOL_SIZE,
   crowdReviewers,
   generateCrowdReviews,
+  KIND_BY_SLUG,
   kindFor,
   type CrowdProduct,
 } from './review-crowd.ts';
@@ -17,7 +18,7 @@ const catalogue: CrowdProduct[] = products.map((p) => ({
   id: p.slug,
   slug: p.slug,
   pet: p.pet,
-  kind: kindFor(p.categorySlug),
+  kind: kindFor(p.categorySlug, p.slug),
   bestseller: p.bestseller ?? false,
   axes: p.axes.map((a) => ({
     key: a.key,
@@ -33,6 +34,23 @@ for (const r of rows) {
 }
 
 describe('crowd reviews generator', () => {
+  it('only overrides the text kind of products that exist', () => {
+    const slugs = new Set(products.map((p) => p.slug));
+    expect(Object.keys(KIND_BY_SLUG).filter((s) => !slugs.has(s))).toEqual([]);
+  });
+
+  it('never repeats the title as a body sentence', () => {
+    const same = (a: string) =>
+      a
+        .replace(/[.!]+$/, '')
+        .trim()
+        .toLowerCase();
+    const echoes = rows.filter((r) =>
+      r.body.split(/(?<=[.!])\s+/).some((x) => x.includes(' ') && same(x) === same(r.title)),
+    );
+    expect(echoes.length).toBe(0);
+  });
+
   it('is deterministic', () => {
     expect(generateCrowdReviews(catalogue, now)).toEqual(rows);
   });
