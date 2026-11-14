@@ -51,6 +51,50 @@ describe('seed', () => {
     });
   });
 
+  it('seeds German and French help, spec, FAQ, size guide, gallery and charity text, idempotently', async () => {
+    const tables = [
+      'help_article_translations',
+      'product_spec_translations',
+      'product_faq_translations',
+      'size_guide_translations',
+      'gallery_photo_translations',
+      'charity_translations',
+    ];
+    const count = async () =>
+      Object.fromEntries(
+        await Promise.all(
+          tables.map(
+            async (t) =>
+              [
+                t,
+                (await db.execute<{ n: number }>(sql.raw(`select count(*)::int n from ${t}`)))[0]
+                  ?.n,
+              ] as const,
+          ),
+        ),
+      );
+    await runSeed();
+    const first = await count();
+    await runSeed();
+    expect(await count()).toEqual(first);
+    for (const t of tables) expect(first[t], t).toBeGreaterThan(0);
+    // 20 help articles x 2 languages, 3 size guides x 2, one charity x 2.
+    expect(first).toMatchObject({
+      help_article_translations: 40,
+      size_guide_translations: 6,
+      charity_translations: 2,
+    });
+
+    const app = makeTestApp();
+    const [one] = await db.execute<{ slug: string }>(
+      sql`select slug from products where kind = 'simple' and delivery_note is not null limit 1`,
+    );
+    const de = await request(app).get(`/api/v1/products/${one!.slug}`).set('X-Store-View', 'de-de');
+    const body = de.body as { data: { specs: { label: string }[]; deliveryNote: string } };
+    expect(body.data.specs.map((x) => x.label)).toContain('Hergestellt in');
+    expect(body.data.deliveryNote).toMatch(/Karton|Keramik/);
+  });
+
   it('gives every variant exactly one base price-history row, backdated, even after a re-seed', async () => {
     await runSeed();
     await runSeed();

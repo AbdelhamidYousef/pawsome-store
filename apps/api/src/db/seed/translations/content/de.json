@@ -1,0 +1,260 @@
+{
+  "specLabels": {
+    "Material": "Material",
+    "Suitable for": "Geeignet für",
+    "Life stage": "Lebensphase",
+    "Care": "Pflege",
+    "Made in": "Hergestellt in",
+    "Storage": "Lagerung",
+    "Best before": "Mindestens haltbar bis"
+  },
+  "specValues": {
+    "braided cotton": "geflochtene Baumwolle",
+    "Dogs": "Hunde",
+    "All life stages": "Alle Lebensphasen",
+    "Wipe clean or hand wash. Supervise play and replace when worn.": "Feucht abwischen oder von Hand waschen. Spiel beaufsichtigen und bei Abnutzung ersetzen.",
+    "European Union": "Europäische Union",
+    "soft polyester plush": "weicher Polyester-Plüsch",
+    "natural rubber": "Naturkautschuk",
+    "recycled fibre fill with cotton cover": "Füllung aus recycelten Fasern mit Baumwollbezug",
+    "Machine washable at 30 degrees, cover removable.": "Bei 30 Grad maschinenwaschbar, Bezug abnehmbar.",
+    "baked meat and oat treats": "gebackene Leckerlis aus Fleisch und Hafer",
+    "Puppies": "Welpen",
+    "Keep cool and dry, reseal after opening.": "Kühl und trocken lagern, nach dem Öffnen wieder verschließen.",
+    "Printed on the pack, at least 6 months": "Auf der Packung aufgedruckt, mindestens 6 Monate",
+    "oven-baked wheat biscuits": "im Ofen gebackene Weizenkekse",
+    "Adults": "Erwachsene",
+    "stainless steel with silicone base": "Edelstahl mit Silikonboden",
+    "Dishwasher safe.": "Spülmaschinengeeignet.",
+    "BPA-free plastic": "BPA-freier Kunststoff",
+    "soft nylon webbing": "weiches Nylongurtband",
+    "Wipe clean with a damp cloth. Check for wear before every walk.": "Mit einem feuchten Tuch abwischen. Vor jedem Spaziergang auf Verschleiß prüfen.",
+    "reflective nylon with padded handle": "reflektierendes Nylon mit gepolstertem Griff",
+    "soft latex": "weicher Latex",
+    "knotted untreated hemp rope": "geknotetes, unbehandeltes Hanfseil",
+    "memory foam with washable cover": "Memory-Schaum mit waschbarem Bezug",
+    "Seniors": "Senioren",
+    "pressure-activated gel with nylon top": "druckaktiviertes Gel mit Nylonoberseite",
+    "recycled-fibre fleece": "Fleece aus recycelten Fasern",
+    "plush cover with soft fill": "Plüschbezug mit weicher Füllung",
+    "baked rice and mint sticks": "gebackene Sticks aus Reis und Minze",
+    "baked chicken and pea treats": "gebackene Leckerlis aus Huhn und Erbsen",
+    "single-protein baked biscuits": "gebackene Kekse mit nur einer Proteinquelle",
+    "food-safe silicone": "lebensmittelechtes Silikon",
+    "bamboo stand with steel bowls": "Bambusständer mit Stahlnäpfen",
+    "glazed stoneware": "glasiertes Steinzeug",
+    "padded mesh and webbing": "gepolstertes Netzgewebe und Gurtband",
+    "climbing-grade rope with padded belt": "Kletterseil mit gepolstertem Gurt",
+    "plant-starch film": "Folie aus Pflanzenstärke",
+    "natural feathers on a wooden rod": "Naturfedern an einem Holzstab",
+    "Cats": "Katzen",
+    "Wipe clean. Supervise play and replace when worn.": "Feucht abwischen. Spiel beaufsichtigen und bei Abnutzung ersetzen.",
+    "cotton fabric with crinkle lining": "Baumwollstoff mit knisterndem Futter",
+    "cotton canvas filled with catnip": "Baumwollcanvas mit Katzenminze-Füllung",
+    "thick felt": "dicker Filz",
+    "quilted microfibre": "gesteppte Mikrofaser",
+    "baked crunchy treats with soft centre": "gebackene, knusprige Leckerlis mit weichem Kern",
+    "smooth lickable puree in pouches": "cremiges Püree zum Schlecken im Portionsbeutel",
+    "Kittens": "Kätzchen",
+    "glazed ceramic": "glasierte Keramik",
+    "padded nylon with mesh windows": "gepolstertes Nylon mit Netzfenstern",
+    "crinkly polyester": "knisternder Polyester",
+    "felt and cotton cord": "Filz und Baumwollkordel",
+    "plush cover with raised sides": "Plüschbezug mit erhöhten Seitenrändern",
+    "recycled corrugated cardboard": "recycelte Wellpappe",
+    "steel frame with fleece hammock": "Stahlrahmen mit Fleece-Hängematte",
+    "baked chicken and fibre bites": "gebackene Häppchen aus Huhn und Ballaststoffen",
+    "soft chews with chamomile": "weiche Kausnacks mit Kamille",
+    "salmon oil paste": "Paste mit Lachsöl",
+    "BPA-free plastic with carbon filter": "BPA-freier Kunststoff mit Aktivkohlefilter",
+    "washable fleece": "waschbarer Fleece",
+    "ventilated polycarbonate dome": "belüftete Polycarbonat-Kuppel",
+    "soft mesh and nylon": "weiches Netzgewebe und Nylon",
+    "folding BPA-free plastic": "faltbarer, BPA-freier Kunststoff",
+    "recycled fleece": "recycelter Fleece",
+    "cotton rope with wooden bar": "Baumwollseil mit Holzstange",
+    "Birds": "Vögel",
+    "stainless steel bell and acrylic mirror": "Glocke aus Edelstahl und Acrylspiegel",
+    "cleaned mixed seeds": "gereinigte Saatenmischung",
+    "natural millet sprays": "natürliche Hirsekolben",
+    "powder-coated steel": "pulverbeschichteter Stahl",
+    "sanded natural wood": "geschliffenes Naturholz",
+    "clear acrylic with plastic base": "klares Acryl mit Kunststoffsockel",
+    "dried palm leaf": "getrocknetes Palmblatt",
+    "untreated wood and steel bells": "unbehandeltes Holz und Stahlglöckchen",
+    "paper and wood": "Papier und Holz",
+    "dried fruit, nuts and seeds": "Trockenfrüchte, Nüsse und Samen",
+    "extruded grains and vegetables": "extrudiertes Getreide und Gemüse",
+    "organic seeds and pulses": "Bio-Samen und Hülsenfrüchte",
+    "breathable cotton blend": "atmungsaktiver Baumwollmix",
+    "wood and steel": "Holz und Stahl",
+    "BPA-free plastic and mesh": "BPA-freier Kunststoff und Netzgewebe",
+    "acrylic": "Acryl",
+    "stainless steel": "Edelstahl",
+    "glass with ABS frame": "Glas mit ABS-Rahmen",
+    "Fish": "Fische",
+    "multi-grain flakes": "Mehrkorn-Flocken",
+    "slow-sinking pellets": "langsam sinkende Pellets",
+    "aquarium-safe resin": "aquariumgeeignetes Harz",
+    "silk fabric with weighted bases": "Seidenstoff mit beschwerten Füßen",
+    "ABS plastic casing": "Gehäuse aus ABS-Kunststoff",
+    "freeze-dried larvae": "gefriergetrocknete Larven",
+    "spirulina and vegetable wafers": "Wafer aus Spirulina und Gemüse",
+    "fish meal and shrimp": "Fischmehl und Garnelen",
+    "sun-dried grass hay": "sonnengetrocknetes Wiesenheu",
+    "Small pets": "Kleintiere",
+    "baked vegetable and hay chews": "gebackene Kausnacks aus Gemüse und Heu",
+    "woven willow": "geflochtene Weide",
+    "untreated pine": "unbehandelte Kiefer",
+    "BPA-free plastic with steel spout": "BPA-freier Kunststoff mit Stahltülle",
+    "seagrass and hay": "Seegras und Heu",
+    "apple wood sticks": "Apfelholzstäbchen",
+    "hay-based pellets with vitamin C": "Pellets auf Heubasis mit Vitamin C",
+    "dried herbs and grass": "getrocknete Kräuter und Gräser",
+    "seeds, grains and dried veg": "Samen, Körner und Trockengemüse",
+    "treated fir with wire front": "behandelte Tanne mit Drahtfront",
+    "pressed wood": "Pressholz",
+    "recycled plastic with metal door": "recycelter Kunststoff mit Metalltür",
+    "BPA-free plastic and steel tube": "BPA-freier Kunststoff und Stahlrohr",
+    "glass with mesh lid": "Glas mit Netzdeckel",
+    "Reptiles": "Reptilien",
+    "nylon mesh with steel frame": "Nylonnetz mit Stahlrahmen",
+    "glass": "Glas",
+    "pine wood with waterproof liner": "Kiefernholz mit wasserdichter Auskleidung",
+    "glass with tall mesh vents": "Glas mit hohen Lüftungsgittern",
+    "ceramic emitter": "Keramikstrahler",
+    "T5 fluorescent tube": "T5-Leuchtstoffröhre",
+    "flexible heating film": "flexible Heizfolie",
+    "ABS with probe": "ABS mit Fühler",
+    "aluminium dome": "Aluminiumkuppel",
+    "smooth acrylic": "glattes Acryl",
+    "food-safe resin": "lebensmittelechtes Harz",
+    "recycled plastic": "recycelter Kunststoff",
+    "cork bark": "Korkrinde",
+    "natural cork": "Naturkork",
+    "bendable vines with suction pads": "biegsame Ranken mit Saugnäpfen",
+    "natural slate": "Naturschiefer",
+    "insect protein and fruit": "Insektenprotein und Früchte",
+    "dried grasses and flowers": "getrocknete Gräser und Blüten",
+    "calcium carbonate": "Calciumcarbonat",
+    "dried mealworms": "getrocknete Mehlwürmer",
+    "dried vegetables and herbs": "getrocknetes Gemüse und Kräuter"
+  },
+  "faqs": {
+    "How should I store it after opening?": {
+      "question": "Wie lagere ich es nach dem Öffnen?",
+      "answer": "Verschließen Sie die Packung fest und lagern Sie sie kühl und trocken. Innerhalb von 8 Wochen verbrauchen."
+    },
+    "Can it replace a regular meal?": {
+      "question": "Kann es eine normale Mahlzeit ersetzen?",
+      "answer": "Nein. Es ist ein Ergänzungsprodukt: Orientieren Sie sich für die Tagesmenge an der Fütterungsempfehlung und füttern Sie an Tagen mit mehr davon etwas weniger Hauptmahlzeit."
+    },
+    "What if my pet is not eating it?": {
+      "question": "Was, wenn mein Tier es nicht frisst?",
+      "answer": "Probieren Sie zuerst eine Probiergröße. Wenn Ihr Tier es trotzdem verschmäht, melden Sie sich bei uns, wir helfen gern weiter."
+    },
+    "Can I wash it?": {
+      "question": "Kann ich es waschen?",
+      "answer": "Ja. Nehmen Sie den Bezug ab, waschen Sie ihn bei 30 Grad in der Maschine und lassen Sie ihn an der Luft trocknen."
+    },
+    "Which size should I pick?": {
+      "question": "Welche Größe soll ich wählen?",
+      "answer": "Öffnen Sie die Größentabelle neben der Größenauswahl. Wenn Sie zwischen zwei Größen liegen, wählen Sie die größere."
+    },
+    "Is it safe to leave with my pet unsupervised?": {
+      "question": "Kann ich es meinem Tier ohne Aufsicht überlassen?",
+      "answer": "Wir empfehlen, das Spiel zu beaufsichtigen und den Artikel regelmäßig auf Abnutzung zu prüfen."
+    },
+    "What is the return policy?": {
+      "question": "Wie sind die Rückgabebedingungen?",
+      "answer": "Unbenutzte Artikel können innerhalb von 30 Tagen zurückgegeben werden. Mehr dazu im Tab „Lieferung & Rückgabe“."
+    }
+  },
+  "deliveryNotes": {
+    "Beds ship in their own box and can arrive separately from the rest of your order.": "Betten werden in einem eigenen Karton verschickt und können getrennt vom Rest Ihrer Bestellung eintreffen.",
+    "Ceramic goods are packed with extra padding, so the box is a little larger.": "Keramikartikel werden mit zusätzlicher Polsterung verpackt, daher fällt der Karton etwas größer aus."
+  },
+  "sizeGuides": {
+    "dog-harness-collar": {
+      "title": "Größen für Hundegeschirre und Halsbänder",
+      "table": {
+        "columns": ["Hals (cm)", "Brust (cm)", "Gewicht des Hundes (kg)"],
+        "rows": [
+          {
+            "size": "S",
+            "label": "Klein",
+            "values": ["25 bis 35", "40 bis 55", "bis 8"]
+          },
+          {
+            "size": "M",
+            "label": "Mittel",
+            "values": ["35 bis 45", "55 bis 70", "8 bis 20"]
+          },
+          {
+            "size": "L",
+            "label": "Groß",
+            "values": ["45 bis 60", "70 bis 95", "20 bis 40"]
+          }
+        ]
+      },
+      "howtoMd": "1. Nehmen Sie ein weiches Maßband und lassen Sie Ihren Hund stehen.\n2. Messen Sie den Hals dort, wo ein Halsband sitzt, und addieren Sie zwei Finger Platz.\n3. Messen Sie die Brust an der breitesten Stelle, hinter den Vorderbeinen.\n4. Vergleichen Sie beide Maße mit der Tabelle. Liegen sie in unterschiedlichen Größen, wählen Sie die größere.",
+      "tip": "Zwischen zwei Größen? Wählen Sie die größere."
+    },
+    "cat-harness": {
+      "title": "Größen für Katzengeschirre",
+      "table": {
+        "columns": ["Hals (cm)", "Brust (cm)", "Gewicht der Katze (kg)"],
+        "rows": [
+          {
+            "size": "S",
+            "label": "Klein",
+            "values": ["18 bis 24", "28 bis 36", "bis 3"]
+          },
+          {
+            "size": "M",
+            "label": "Mittel",
+            "values": ["22 bis 28", "34 bis 44", "3 bis 5"]
+          },
+          {
+            "size": "L",
+            "label": "Groß",
+            "values": ["26 bis 34", "42 bis 54", "5 bis 8"]
+          }
+        ]
+      },
+      "howtoMd": "1. Lassen Sie Ihre Katze zur Ruhe kommen und messen Sie dann die Brust hinter den Vorderbeinen.\n2. Messen Sie den Hals locker: Unter den Gurt sollten zwei Finger passen.\n3. Wählen Sie die Größe, die dem Brustumfang entspricht.",
+      "tip": "Zwischen zwei Größen? Wählen Sie die größere."
+    },
+    "bed-sizes": {
+      "title": "Bettengrößen",
+      "table": {
+        "columns": ["Bettgröße (cm)", "Geeignet für Tiere bis (kg)"],
+        "rows": [
+          {
+            "size": "S",
+            "label": "Klein",
+            "values": ["50 x 40", "6"]
+          },
+          {
+            "size": "M",
+            "label": "Mittel",
+            "values": ["70 x 55", "15"]
+          },
+          {
+            "size": "L",
+            "label": "Groß",
+            "values": ["95 x 70", "35"]
+          }
+        ]
+      },
+      "howtoMd": "1. Messen Sie Ihr Tier von der Nase bis zum Schwanzansatz, während es sich ausstreckt.\n2. Addieren Sie etwa 15 cm für mehr Komfort.\n3. Wählen Sie das Bett, dessen längere Seite mindestens so lang ist.",
+      "tip": "Zwischen zwei Größen? Wählen Sie die größere."
+    }
+  },
+  "charities": {
+    "whisker-hollow-rescue": {
+      "name": "Whisker Hollow Rescue",
+      "description": "Ein kleines, ehrenamtlich geführtes Tierheim in einem ruhigen Tal, das streunenden Katzen, Hunden und gelegentlich einem Kaninchen ein neues Zuhause vermittelt. Ihre Aufrundungen und Punkte helfen, Futter, Decken und Tierarztbesuche zu bezahlen, während jedes Tier auf die passende Familie wartet."
+    }
+  }
+}
