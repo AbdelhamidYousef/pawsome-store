@@ -154,7 +154,7 @@ describe('related and recently viewed on the product page', () => {
     server.use(recs([]));
     renderApp('/products/rope-tug');
     const strip = await screen.findByTestId('related');
-    expect(within(strip).getByText('Related One')).toBeInTheDocument();
+    expect(within(strip).getByRole('link', { name: /Related One/ })).toBeInTheDocument();
   });
 
   it('records the visit, and shows earlier visits (not the page itself) after a reload', async () => {
@@ -171,7 +171,7 @@ describe('related and recently viewed on the product page', () => {
     );
     renderApp('/products/rope-tug');
     const strip = await screen.findByTestId('recently-viewed');
-    expect(within(strip).getByText('Seen Before')).toBeInTheDocument();
+    expect(within(strip).getByRole('link', { name: /Seen Before/ })).toBeInTheDocument();
     expect(asked).toBe(other);
     // The page recorded its own id, first in the list.
     expect(window.localStorage.getItem('pawsome.recently-viewed')).toContain('p1');
@@ -204,7 +204,7 @@ describe('cart page and mini cart', () => {
     );
     renderApp('/cart');
     const strip = await screen.findByTestId('recently-viewed');
-    expect(within(strip).getByText('Seen Before')).toBeInTheDocument();
+    expect(within(strip).getByRole('link', { name: /Seen Before/ })).toBeInTheDocument();
   });
 
   it('suggests at most two things you might need, never what is already in the cart', async () => {
