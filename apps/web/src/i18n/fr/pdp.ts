@@ -125,20 +125,11 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
 
   // ---- bought together ----
   'pdp.bought.heading': 'Souvent achetés ensemble',
-  'pdp.bought.thisItem': 'Cet article :',
-  'pdp.bought.notAvailable': '(indisponible)',
+  'pdp.bought.notAvailable': 'Indisponible',
   'pdp.bought.withVariant': '{name} ({variant})',
-  'pdp.bought.view': 'Voir',
-  'pdp.bought.viewLabel': 'Voir {name}',
   'pdp.bought.anItem': 'Un article',
   'pdp.bought.problem': '{name} : {message}',
-  'pdp.bought.total': 'Total',
   'pdp.bought.beforeDiscounts': 'Avant remises éventuelles.',
-  'pdp.bought.addAll': 'Tout ajouter',
-  'pdp.bought.addAllCount': {
-    one: 'Tout ajouter ({count} article)',
-    other: 'Tout ajouter ({count} articles)',
-  },
 
   // ---- bundles and kits ----
   'pdp.bundle.heading': 'Contenu du kit',
@@ -153,4 +144,17 @@ export const pdp: Record<keyof typeof enNs, Entry> = {
   'pdp.recent.heading': 'Récemment consultés',
   'pdp.rail.prev': 'Produits précédents',
   'pdp.rail.next': 'Produits suivants',
+  'pdp.bought.thisItemBadge': 'Cet article',
+  'pdp.bought.variantSpoken': ', {variant}',
+  'pdp.bought.totalFor': {
+    one: 'Total pour {count} article',
+    other: 'Total pour {count} articles',
+  },
+  'pdp.bought.saving': 'Vous économisez {amount}',
+  'pdp.bought.addCount': {
+    one: 'Ajouter {count} article au panier',
+    other: 'Ajouter {count} articles au panier',
+  },
+  'pdp.bought.added': 'Ajouté au panier',
+  'pdp.bought.chooseOne': 'Cochez au moins un article',
 };
