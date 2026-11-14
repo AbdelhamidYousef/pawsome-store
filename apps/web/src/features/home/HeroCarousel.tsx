@@ -1,5 +1,5 @@
 import type { HeroSlide } from '@store/shared';
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Container } from '../../components/layout/Container';
@@ -7,8 +7,6 @@ import { useT } from '../../i18n';
 import { cn } from '../../lib/cn';
 import { image600 } from '../../lib/images';
 import { petBySlug } from '../../lib/pets';
-
-import { ArrowLeftIcon, ArrowRightIcon } from './icons';
 
 const ROTATE_MS = 6000;
 
@@ -49,6 +47,7 @@ export function HeroCarousel({
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const count = slides.length;
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const go = useCallback((to: number) => setIndex(((to % count) + count) % count), [count]);
 
@@ -58,9 +57,6 @@ export function HeroCarousel({
     const timer = setInterval(() => setIndex((i) => (i + 1) % count), ROTATE_MS);
     return () => clearInterval(timer);
   }, [rotating, count]);
-
-  const arrow =
-    'inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-pet-soft';
 
   return (
     <section
@@ -74,6 +70,20 @@ export function HeroCarousel({
       onFocus={() => setFocused(true)}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false);
+      }}
+      // A horizontal swipe of 40 px or more changes slide; a mostly vertical drag is a scroll.
+      onTouchStart={(e) => {
+        const touch = e.touches[0];
+        touchStart.current = touch ? { x: touch.clientX, y: touch.clientY } : null;
+      }}
+      onTouchEnd={(e) => {
+        const start = touchStart.current;
+        const touch = e.changedTouches[0];
+        touchStart.current = null;
+        if (!start || !touch) return;
+        const dx = touch.clientX - start.x;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(touch.clientY - start.y)) return;
+        go(index + (dx < 0 ? 1 : -1));
       }}
     >
       {/* Announce slide changes only when the user is driving; never while it rotates by itself. */}
@@ -137,53 +147,44 @@ export function HeroCarousel({
         ))}
       </div>
 
-      {/* Phones: the controls sit on the photo's bottom edge, so long copy never runs under them.
-          Desktop: under the copy, bottom left. */}
+      {/* Dots only (no arrows): each is a real button, so Tab reaches them, and Left/Right move
+          between slides once one has focus. Touch screens swipe. Phones: the dots sit on the
+          photo's bottom edge, so long copy never runs under them; desktop: under the copy. */}
       {count > 1 && (
-        <div className="pointer-events-none absolute inset-x-0 top-[calc(40%-3.5rem)] md:bottom-8 md:top-auto">
-          <Container className="flex justify-end md:justify-start">
-            <div className="pointer-events-auto flex items-center rounded-full bg-surface p-1 shadow-card">
-              <button
-                type="button"
-                className={arrow}
-                onClick={() => go(index - 1)}
-                data-testid="hero-prev"
-              >
-                <ArrowLeftIcon width={20} height={20} />
-                <span className="sr-only">{t('shell.home.prev')}</span>
-              </button>
-              <ul className="flex items-center" data-testid="hero-dots">
-                {slides.map((slide, i) => (
-                  <li key={slide.title}>
-                    <button
-                      type="button"
-                      onClick={() => go(i)}
-                      aria-label={t('shell.home.goTo', { n: i + 1 })}
-                      aria-current={i === index ? 'true' : undefined}
-                      className="group inline-flex h-11 w-6 items-center justify-center"
-                    >
-                      <span
-                        className={cn(
-                          'block h-2.5 rounded-full transition-all',
-                          i === index
-                            ? 'w-6 bg-ink'
-                            : 'w-2.5 bg-muted opacity-50 group-hover:opacity-90',
-                        )}
-                      />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-              <button
-                type="button"
-                className={arrow}
-                onClick={() => go(index + 1)}
-                data-testid="hero-next"
-              >
-                <ArrowRightIcon width={20} height={20} />
-                <span className="sr-only">{t('shell.home.next')}</span>
-              </button>
-            </div>
+        <div className="pointer-events-none absolute inset-x-0 top-[calc(40%-2.75rem)] md:bottom-8 md:top-auto">
+          <Container className="flex justify-center md:justify-start">
+            <ul
+              className="pointer-events-auto flex items-center rounded-full bg-surface px-2 shadow-card"
+              data-testid="hero-dots"
+              onKeyDown={(e) => {
+                if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+                e.preventDefault();
+                const to = (((index + (e.key === 'ArrowRight' ? 1 : -1)) % count) + count) % count;
+                go(to);
+                e.currentTarget.querySelectorAll('button')[to]?.focus();
+              }}
+            >
+              {slides.map((slide, i) => (
+                <li key={slide.title}>
+                  <button
+                    type="button"
+                    onClick={() => go(i)}
+                    aria-label={t('shell.home.goTo', { n: i + 1 })}
+                    aria-current={i === index ? 'true' : undefined}
+                    className="group inline-flex h-11 w-7 items-center justify-center"
+                  >
+                    <span
+                      className={cn(
+                        'block h-2.5 rounded-full transition-all',
+                        i === index
+                          ? 'w-6 bg-ink'
+                          : 'w-2.5 bg-muted opacity-50 group-hover:opacity-90',
+                      )}
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
           </Container>
         </div>
       )}
