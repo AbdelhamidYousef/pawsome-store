@@ -11,6 +11,7 @@ import { TEST_IDS } from '../../lib/test-ids';
 import { track } from '../../lib/track';
 import { useCreateAddress } from '../account/queries';
 import { formErrorMessage } from '../auth/form-errors';
+import { CheckoutDemoHelper } from '../demo-helper/helpers';
 import { PointsRedeem } from '../loyalty/PointsRedeem';
 import { useStore } from '../stores/StoreContext';
 
@@ -153,6 +154,12 @@ export function CheckoutFlow({
   const a = details?.shippingAddress;
   return (
     <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-10">
+      <CheckoutDemoHelper
+        className="lg:col-span-2"
+        step={step}
+        signedIn={user !== null}
+        requiresVet={cart.requiresVetApproval}
+      />
       <div className="flex min-w-0 flex-col gap-4">
         <StepCard
           id="details"

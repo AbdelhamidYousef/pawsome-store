@@ -4,6 +4,7 @@ import { cart } from './de/cart';
 import { catalog } from './de/catalog';
 import { checkout } from './de/checkout';
 import { content } from './de/content';
+import { demo } from './de/demo';
 import { loyalty } from './de/loyalty';
 import { pdp } from './de/pdp';
 import { pets } from './de/pets';
@@ -28,4 +29,5 @@ export const de: Record<keyof typeof en, Entry> = {
   ...loyalty,
   ...pets,
   ...content,
+  ...demo,
 };

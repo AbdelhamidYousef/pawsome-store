@@ -45,7 +45,12 @@ export function LoginForm({ next }: { next: string | null }) {
   });
 
   return (
-    <form onSubmit={(e) => void submit(e)} noValidate className="mt-2 flex flex-col gap-4">
+    <form
+      onSubmit={(e) => void submit(e)}
+      noValidate
+      data-demo-form="login"
+      className="mt-2 flex flex-col gap-4"
+    >
       <FormAlert message={formError} />
       <Input
         label={t('auth.email')}
