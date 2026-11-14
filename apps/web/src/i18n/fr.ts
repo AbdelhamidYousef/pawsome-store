@@ -5,6 +5,7 @@ import { cart } from './fr/cart';
 import { catalog } from './fr/catalog';
 import { checkout } from './fr/checkout';
 import { content } from './fr/content';
+import { demo } from './fr/demo';
 import { loyalty } from './fr/loyalty';
 import { pdp } from './fr/pdp';
 import { pets } from './fr/pets';
@@ -28,4 +29,5 @@ export const fr: Record<keyof typeof en, Entry> = {
   ...loyalty,
   ...pets,
   ...content,
+  ...demo,
 };

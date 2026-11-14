@@ -247,6 +247,17 @@ export const TEST_IDS = {
   adminTransition: 'admin-transition',
   adminTimeline: 'admin-timeline',
   adminStripeLink: 'admin-stripe-link',
+  demoHelper: 'demo-helper',
+  demoHelperExpand: 'demo-helper-expand',
+  demoHelperCollapse: 'demo-helper-collapse',
+  demoHelperClose: 'demo-helper-close',
+  demoFillRegister: 'demo-fill-register',
+  demoFillLogin: 'demo-fill-login',
+  demoFillContact: 'demo-fill-contact',
+  demoFillAddress: 'demo-fill-address',
+  demoPickShipping: 'demo-pick-shipping',
+  demoTestCard: 'demo-test-card',
+  demoPassword: 'demo-password',
 } as const;
 
 export type TestId = (typeof TEST_IDS)[keyof typeof TEST_IDS];
