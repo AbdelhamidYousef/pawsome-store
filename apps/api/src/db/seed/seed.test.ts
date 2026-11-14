@@ -271,6 +271,12 @@ describe('crowd reviews (polish)', () => {
     expect(first.max).toBeLessThanOrEqual(1010);
     expect(first.low_avg).toBe(0);
     expect(first.not_approved).toBe(0);
+    // The reviewer accounts predate their reviews and sort below real sign-ups (newest first).
+    const [order] = await db.execute<{ bad: number; newest_crowd: boolean }>(sql`select
+      (select count(*)::int from reviews r join users u on u.id = r.user_id
+        where u.email like 'customer____@pawsome.test' and u.created_at >= r.created_at) as bad,
+      (select u.email like 'customer%' from users u order by u.created_at desc limit 1) as newest_crowd`);
+    expect(order).toEqual({ bad: 0, newest_crowd: false });
     // Same rows with the same ids and dates: the re-seed upserts, it does not delete and re-insert.
     await runSeed();
     expect(await crowd()).toEqual(first);

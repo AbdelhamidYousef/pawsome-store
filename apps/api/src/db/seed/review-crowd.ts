@@ -1174,10 +1174,21 @@ export const CROWD_EMAIL_PATTERN = 'customer____@pawsome.test';
 export const crowdReviewerEmail = (i: number) =>
   `customer${String(i + 1).padStart(4, '0')}@pawsome.test`;
 
+// Accounts dated before every review they wrote, and before any real sign-up: the admin customer
+// list (newest first) shows real customers above the 1100 reviewer accounts. A fixed date, so a
+// re-seed does not rewrite the rows.
+export const CROWD_ACCOUNTS_FROM = Date.UTC(2025, 0, 6);
+
 /** The reviewer pool: invented names on the reserved `.test` domain. */
-export function crowdReviewers(): { email: string; firstName: string; lastName: string }[] {
+export function crowdReviewers(): {
+  email: string;
+  firstName: string;
+  lastName: string;
+  createdAt: Date;
+}[] {
   return Array.from({ length: CROWD_POOL_SIZE }, (_, i) => ({
     email: crowdReviewerEmail(i),
+    createdAt: new Date(CROWD_ACCOUNTS_FROM - i * 60 * 60 * 1000),
     firstName: FIRST[i % FIRST.length]!,
     lastName: LAST[(i * 7 + Math.floor(i / FIRST.length)) % LAST.length]!,
   }));

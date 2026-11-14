@@ -308,6 +308,7 @@ export async function seedCrowdReviews(
         firstName: sql.raw('excluded."first_name"'),
         lastName: sql.raw('excluded."last_name"'),
         passwordHash: sql.raw('excluded."password_hash"'),
+        createdAt: sql.raw('excluded."created_at"'),
       },
     })
     .returning({ id: users.id, email: users.email });
