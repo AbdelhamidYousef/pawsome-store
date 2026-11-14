@@ -5,6 +5,7 @@ import { db } from '../../db/client.ts';
 import { helpArticles } from '../../db/schema/index.ts';
 
 export interface HelpRow {
+  id: string;
   slug: string;
   topic: HelpTopic;
   question: string;
@@ -23,6 +24,7 @@ const tsQuery = (q: string) => sql`websearch_to_tsquery('english', ${q})`;
 const likeEscape = (q: string) => q.replace(/[\\%_]/g, '\\$&');
 
 const columns = {
+  id: helpArticles.id,
   slug: helpArticles.slug,
   topic: helpArticles.topic,
   question: helpArticles.question,

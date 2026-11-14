@@ -1,0 +1,260 @@
+{
+  "specLabels": {
+    "Material": "Matériau",
+    "Suitable for": "Convient à",
+    "Life stage": "Âge",
+    "Care": "Entretien",
+    "Made in": "Fabriqué en",
+    "Storage": "Conservation",
+    "Best before": "À consommer de préférence avant"
+  },
+  "specValues": {
+    "braided cotton": "coton tressé",
+    "Dogs": "Chiens",
+    "All life stages": "Tous les âges",
+    "Wipe clean or hand wash. Supervise play and replace when worn.": "Nettoyer d’un coup d’éponge ou laver à la main. Surveillez le jeu et remplacez l’article lorsqu’il est usé.",
+    "European Union": "Union européenne",
+    "soft polyester plush": "peluche de polyester douce",
+    "natural rubber": "caoutchouc naturel",
+    "recycled fibre fill with cotton cover": "garnissage en fibres recyclées avec housse en coton",
+    "Machine washable at 30 degrees, cover removable.": "Lavable en machine à 30 degrés, housse amovible.",
+    "baked meat and oat treats": "friandises cuites à la viande et à l’avoine",
+    "Puppies": "Chiots",
+    "Keep cool and dry, reseal after opening.": "Conserver au frais et au sec, refermer après ouverture.",
+    "Printed on the pack, at least 6 months": "Indiquée sur l’emballage, au moins 6 mois",
+    "oven-baked wheat biscuits": "biscuits de blé cuits au four",
+    "Adults": "Adultes",
+    "stainless steel with silicone base": "acier inoxydable avec base en silicone",
+    "Dishwasher safe.": "Passe au lave-vaisselle.",
+    "BPA-free plastic": "plastique sans BPA",
+    "soft nylon webbing": "sangle en nylon doux",
+    "Wipe clean with a damp cloth. Check for wear before every walk.": "Nettoyer avec un chiffon humide. Vérifiez l’usure avant chaque promenade.",
+    "reflective nylon with padded handle": "nylon réfléchissant avec poignée rembourrée",
+    "soft latex": "latex souple",
+    "knotted untreated hemp rope": "corde en chanvre brut nouée",
+    "memory foam with washable cover": "mousse à mémoire de forme avec housse lavable",
+    "Seniors": "Seniors",
+    "pressure-activated gel with nylon top": "gel à activation par pression avec dessus en nylon",
+    "recycled-fibre fleece": "polaire en fibres recyclées",
+    "plush cover with soft fill": "housse en peluche avec garnissage doux",
+    "baked rice and mint sticks": "bâtonnets cuits au riz et à la menthe",
+    "baked chicken and pea treats": "friandises cuites au poulet et aux petits pois",
+    "single-protein baked biscuits": "biscuits cuits à protéine unique",
+    "food-safe silicone": "silicone alimentaire",
+    "bamboo stand with steel bowls": "support en bambou avec gamelles en acier",
+    "glazed stoneware": "grès émaillé",
+    "padded mesh and webbing": "maille rembourrée et sangle",
+    "climbing-grade rope with padded belt": "corde de qualité escalade avec ceinture rembourrée",
+    "plant-starch film": "film d’amidon végétal",
+    "natural feathers on a wooden rod": "plumes naturelles sur une tige en bois",
+    "Cats": "Chats",
+    "Wipe clean. Supervise play and replace when worn.": "Nettoyer d’un coup d’éponge. Surveillez le jeu et remplacez l’article lorsqu’il est usé.",
+    "cotton fabric with crinkle lining": "tissu en coton avec doublure craquante",
+    "cotton canvas filled with catnip": "toile de coton remplie d’herbe à chat",
+    "thick felt": "feutre épais",
+    "quilted microfibre": "microfibre matelassée",
+    "baked crunchy treats with soft centre": "friandises cuites croustillantes au cœur fondant",
+    "smooth lickable puree in pouches": "purée onctueuse à lécher en sachets",
+    "Kittens": "Chatons",
+    "glazed ceramic": "céramique émaillée",
+    "padded nylon with mesh windows": "nylon rembourré avec fenêtres en maille",
+    "crinkly polyester": "polyester craquant",
+    "felt and cotton cord": "feutre et cordon en coton",
+    "plush cover with raised sides": "housse en peluche à bords relevés",
+    "recycled corrugated cardboard": "carton ondulé recyclé",
+    "steel frame with fleece hammock": "cadre en acier avec hamac en polaire",
+    "baked chicken and fibre bites": "bouchées cuites au poulet et aux fibres",
+    "soft chews with chamomile": "friandises molles à la camomille",
+    "salmon oil paste": "pâte à l’huile de saumon",
+    "BPA-free plastic with carbon filter": "plastique sans BPA avec filtre à charbon",
+    "washable fleece": "polaire lavable",
+    "ventilated polycarbonate dome": "dôme ventilé en polycarbonate",
+    "soft mesh and nylon": "maille souple et nylon",
+    "folding BPA-free plastic": "plastique pliable sans BPA",
+    "recycled fleece": "polaire recyclée",
+    "cotton rope with wooden bar": "corde en coton avec barre en bois",
+    "Birds": "Oiseaux",
+    "stainless steel bell and acrylic mirror": "clochette en acier inoxydable et miroir en acrylique",
+    "cleaned mixed seeds": "mélange de graines nettoyées",
+    "natural millet sprays": "épis de millet naturels",
+    "powder-coated steel": "acier thermolaqué",
+    "sanded natural wood": "bois naturel poncé",
+    "clear acrylic with plastic base": "acrylique transparent avec base en plastique",
+    "dried palm leaf": "feuille de palmier séchée",
+    "untreated wood and steel bells": "bois brut et clochettes en acier",
+    "paper and wood": "papier et bois",
+    "dried fruit, nuts and seeds": "fruits secs, noix et graines",
+    "extruded grains and vegetables": "céréales et légumes extrudés",
+    "organic seeds and pulses": "graines et légumineuses bio",
+    "breathable cotton blend": "mélange de coton respirant",
+    "wood and steel": "bois et acier",
+    "BPA-free plastic and mesh": "plastique sans BPA et maille",
+    "acrylic": "acrylique",
+    "stainless steel": "acier inoxydable",
+    "glass with ABS frame": "verre avec cadre en ABS",
+    "Fish": "Poissons",
+    "multi-grain flakes": "flocons multicéréales",
+    "slow-sinking pellets": "granulés à chute lente",
+    "aquarium-safe resin": "résine compatible aquarium",
+    "silk fabric with weighted bases": "tissu en soie avec bases lestées",
+    "ABS plastic casing": "boîtier en plastique ABS",
+    "freeze-dried larvae": "larves lyophilisées",
+    "spirulina and vegetable wafers": "pastilles de spiruline et de légumes",
+    "fish meal and shrimp": "farine de poisson et crevettes",
+    "sun-dried grass hay": "foin de graminées séché au soleil",
+    "Small pets": "Petits animaux",
+    "baked vegetable and hay chews": "friandises à mâcher cuites aux légumes et au foin",
+    "woven willow": "saule tressé",
+    "untreated pine": "pin non traité",
+    "BPA-free plastic with steel spout": "plastique sans BPA avec bec en acier",
+    "seagrass and hay": "jonc de mer et foin",
+    "apple wood sticks": "bâtonnets de bois de pommier",
+    "hay-based pellets with vitamin C": "granulés à base de foin enrichis en vitamine C",
+    "dried herbs and grass": "herbes et graminées séchées",
+    "seeds, grains and dried veg": "graines, céréales et légumes secs",
+    "treated fir with wire front": "sapin traité avec façade grillagée",
+    "pressed wood": "bois aggloméré",
+    "recycled plastic with metal door": "plastique recyclé avec porte en métal",
+    "BPA-free plastic and steel tube": "plastique sans BPA et tube en acier",
+    "glass with mesh lid": "verre avec couvercle grillagé",
+    "Reptiles": "Reptiles",
+    "nylon mesh with steel frame": "filet en nylon avec cadre en acier",
+    "glass": "verre",
+    "pine wood with waterproof liner": "bois de pin avec revêtement étanche",
+    "glass with tall mesh vents": "verre avec hautes grilles d’aération",
+    "ceramic emitter": "émetteur en céramique",
+    "T5 fluorescent tube": "tube fluorescent T5",
+    "flexible heating film": "film chauffant flexible",
+    "ABS with probe": "ABS avec sonde",
+    "aluminium dome": "dôme en aluminium",
+    "smooth acrylic": "acrylique lisse",
+    "food-safe resin": "résine alimentaire",
+    "recycled plastic": "plastique recyclé",
+    "cork bark": "écorce de liège",
+    "natural cork": "liège naturel",
+    "bendable vines with suction pads": "lianes flexibles avec ventouses",
+    "natural slate": "ardoise naturelle",
+    "insect protein and fruit": "protéines d’insectes et fruits",
+    "dried grasses and flowers": "graminées et fleurs séchées",
+    "calcium carbonate": "carbonate de calcium",
+    "dried mealworms": "vers de farine séchés",
+    "dried vegetables and herbs": "légumes et herbes séchés"
+  },
+  "faqs": {
+    "How should I store it after opening?": {
+      "question": "Comment le conserver après ouverture ?",
+      "answer": "Refermez bien l’emballage et conservez-le dans un endroit frais et sec. À consommer dans les 8 semaines."
+    },
+    "Can it replace a regular meal?": {
+      "question": "Peut-il remplacer un repas normal ?",
+      "answer": "Non. C’est un produit complémentaire : suivez le guide d’alimentation pour la quantité quotidienne et réduisez un peu le repas principal les jours où vous en donnez davantage."
+    },
+    "What if my pet is not eating it?": {
+      "question": "Et si mon animal n’en veut pas ?",
+      "answer": "Essayez d’abord un format d’essai. Si votre animal le refuse toujours, contactez-nous, nous vous aiderons."
+    },
+    "Can I wash it?": {
+      "question": "Puis-je le laver ?",
+      "answer": "Oui. Retirez la housse, lavez-la en machine à 30 degrés, puis laissez-la sécher à l’air libre."
+    },
+    "Which size should I pick?": {
+      "question": "Quelle taille choisir ?",
+      "answer": "Ouvrez le guide des tailles à côté du sélecteur de taille. Si vous hésitez entre deux tailles, prenez la plus grande."
+    },
+    "Is it safe to leave with my pet unsupervised?": {
+      "question": "Puis-je le laisser à mon animal sans surveillance ?",
+      "answer": "Nous recommandons de surveiller le jeu et de vérifier régulièrement l’usure de l’article."
+    },
+    "What is the return policy?": {
+      "question": "Quelle est la politique de retour ?",
+      "answer": "Les articles non utilisés peuvent être retournés sous 30 jours. Consultez l’onglet « Livraison et retours »."
+    }
+  },
+  "deliveryNotes": {
+    "Beds ship in their own box and can arrive separately from the rest of your order.": "Les lits sont expédiés dans leur propre carton et peuvent arriver séparément du reste de votre commande.",
+    "Ceramic goods are packed with extra padding, so the box is a little larger.": "Les articles en céramique sont emballés avec un rembourrage supplémentaire, le carton est donc un peu plus grand."
+  },
+  "sizeGuides": {
+    "dog-harness-collar": {
+      "title": "Tailles des harnais et colliers pour chiens",
+      "table": {
+        "columns": ["Cou (cm)", "Poitrine (cm)", "Poids du chien (kg)"],
+        "rows": [
+          {
+            "size": "S",
+            "label": "Petit",
+            "values": ["25 à 35", "40 à 55", "jusqu’à 8"]
+          },
+          {
+            "size": "M",
+            "label": "Moyen",
+            "values": ["35 à 45", "55 à 70", "8 à 20"]
+          },
+          {
+            "size": "L",
+            "label": "Grand",
+            "values": ["45 à 60", "70 à 95", "20 à 40"]
+          }
+        ]
+      },
+      "howtoMd": "1. Prenez un mètre ruban souple et laissez votre chien debout.\n2. Mesurez le cou là où se place un collier, puis ajoutez deux doigts d’aisance.\n3. Mesurez la poitrine à l’endroit le plus large, derrière les pattes avant.\n4. Comparez les deux mesures avec le tableau. Si elles correspondent à des tailles différentes, choisissez la plus grande.",
+      "tip": "Entre deux tailles ? Prenez la plus grande."
+    },
+    "cat-harness": {
+      "title": "Tailles des harnais pour chats",
+      "table": {
+        "columns": ["Cou (cm)", "Poitrine (cm)", "Poids du chat (kg)"],
+        "rows": [
+          {
+            "size": "S",
+            "label": "Petit",
+            "values": ["18 à 24", "28 à 36", "jusqu’à 3"]
+          },
+          {
+            "size": "M",
+            "label": "Moyen",
+            "values": ["22 à 28", "34 à 44", "3 à 5"]
+          },
+          {
+            "size": "L",
+            "label": "Grand",
+            "values": ["26 à 34", "42 à 54", "5 à 8"]
+          }
+        ]
+      },
+      "howtoMd": "1. Laissez votre chat se détendre, puis mesurez la poitrine derrière les pattes avant.\n2. Mesurez le cou sans serrer : vous devez pouvoir glisser deux doigts sous la sangle.\n3. Choisissez la taille qui correspond au tour de poitrine.",
+      "tip": "Entre deux tailles ? Prenez la plus grande."
+    },
+    "bed-sizes": {
+      "title": "Tailles des lits",
+      "table": {
+        "columns": ["Taille du lit (cm)", "Convient aux animaux jusqu’à (kg)"],
+        "rows": [
+          {
+            "size": "S",
+            "label": "Petit",
+            "values": ["50 x 40", "6"]
+          },
+          {
+            "size": "M",
+            "label": "Moyen",
+            "values": ["70 x 55", "15"]
+          },
+          {
+            "size": "L",
+            "label": "Grand",
+            "values": ["95 x 70", "35"]
+          }
+        ]
+      },
+      "howtoMd": "1. Mesurez votre animal du nez à la base de la queue, pendant qu’il s’étire.\n2. Ajoutez environ 15 cm pour son confort.\n3. Choisissez le lit dont le grand côté est au moins aussi long.",
+      "tip": "Entre deux tailles ? Prenez la plus grande."
+    }
+  },
+  "charities": {
+    "whisker-hollow-rescue": {
+      "name": "Whisker Hollow Rescue",
+      "description": "Un petit refuge tenu par des bénévoles, dans une vallée tranquille, qui trouve un foyer aux chats et aux chiens errants et, de temps en temps, à un lapin. Vos arrondis et vos points aident à payer la nourriture, la literie et les visites chez le vétérinaire pendant que chaque animal attend la bonne famille."
+    }
+  }
+}

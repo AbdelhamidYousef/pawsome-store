@@ -267,6 +267,13 @@
       "when": 1794658433469,
       "tag": "0037_email_store_view",
       "breakpoints": true
+    },
+    {
+      "idx": 38,
+      "version": "7",
+      "when": 1794690177336,
+      "tag": "0038_content_translations",
+      "breakpoints": true
     }
   ]
 }

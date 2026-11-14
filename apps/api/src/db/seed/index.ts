@@ -31,6 +31,7 @@ import { bundleSeeds, seedBundles } from './bundles.ts';
 import { categories } from './categories.ts';
 import { seedCharity } from './charity.ts';
 import { collections, windowDates } from './collections.ts';
+import { seedContentTranslations } from './content-translations.ts';
 import { loadContent, seedContent } from './content.ts';
 import { FORCED_STOCK, expandVariants, stockLevels } from './expand.ts';
 import { seedHomeContent } from './home.ts';
@@ -534,6 +535,9 @@ export async function runSeed(now = new Date()) {
 
     // ---- GBP prices for the UK store view (phase 21): last, so kits and gifts have rows too ----
     await seedGbpPrices(tx);
+
+    // ---- content translations (phase 21.7): after every row they hang off exists ----
+    await seedContentTranslations(tx);
   });
 }
 

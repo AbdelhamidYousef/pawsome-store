@@ -567,7 +567,7 @@ export interface ProductDetailRows {
   images: ProductImageRow[];
   kind: 'simple' | 'bundle';
   deliveryNote: string | null;
-  specs: { label: string; value: string }[];
+  specs: { id: string; label: string; value: string }[];
   faqs: { id: string; question: string; answer: string }[];
   feeding: {
     petWeightGMin: number;
@@ -581,6 +581,7 @@ export interface ProductDetailRows {
 }
 
 export interface SizeGuideRow {
+  id: string;
   slug: string;
   title: string;
   table: SizeGuideTable;
@@ -701,7 +702,7 @@ export async function getProductBySlug(slug: string): Promise<ProductDetailRows 
 async function getContent(productId: string, sizeGuideId: string | null) {
   const [specs, faqs, feeding, guide, constituentRows] = await Promise.all([
     db
-      .select({ label: productSpecs.label, value: productSpecs.value })
+      .select({ id: productSpecs.id, label: productSpecs.label, value: productSpecs.value })
       .from(productSpecs)
       .where(eq(productSpecs.productId, productId))
       .orderBy(asc(productSpecs.sortOrder), asc(productSpecs.label)),
@@ -723,6 +724,7 @@ async function getContent(productId: string, sizeGuideId: string | null) {
     sizeGuideId
       ? db
           .select({
+            id: sizeGuides.id,
             slug: sizeGuides.slug,
             title: sizeGuides.title,
             table: sizeGuides.rows,

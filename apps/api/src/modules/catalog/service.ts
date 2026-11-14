@@ -19,6 +19,7 @@ import {
 
 import { db } from '../../db/client.ts';
 import { notFound } from '../../lib/errors.ts';
+import { translateFaqs, translateSizeGuide, translateSpecs } from '../i18n/content-translations.ts';
 import { loadTranslations, overlay, pick, resolveSlug, slugsByLang } from '../i18n/translations.ts';
 import {
   memberPricesForProducts,
@@ -471,6 +472,12 @@ export async function getProduct(
     slugsByLang('product', rows.product.slug),
   ]);
   const tr = pt.get(rows.product.slug);
+  // Specs, FAQs and the size guide are rows of their own with their own translation rows.
+  const [specs, faqs, guide] = await Promise.all([
+    translateSpecs(rows.specs),
+    translateFaqs(rows.faqs),
+    rows.sizeGuide ? translateSizeGuide(rows.sizeGuide.id, rows.sizeGuide) : Promise.resolve(null),
+  ]);
   const nameOf = <T extends { slug: string; name: string }>(c: T): T => {
     const t = ct.get(c.slug);
     return t ? { ...c, slug: pick(t, 'slug', c.slug), name: pick(t, 'name', c.name) } : c;
@@ -513,18 +520,18 @@ export async function getProduct(
     // Notices are looked up by variant: a recall is often one size, and the page then warns about
     // the product as a whole (the shopper may switch variants without a reload).
     safetyNotices: await noticesForVariants(rows.variants.map((v) => v.id)),
-    specs: rows.specs,
-    faqs: rows.faqs,
+    specs: specs.map(({ label, value }) => ({ label, value })),
+    faqs,
     feedingTable: rows.feeding,
-    sizeGuide: rows.sizeGuide && {
-      slug: rows.sizeGuide.slug,
-      title: rows.sizeGuide.title,
-      columns: rows.sizeGuide.table.columns,
-      rows: rows.sizeGuide.table.rows,
-      howtoMd: rows.sizeGuide.howtoMd,
-      tip: rows.sizeGuide.tip,
+    sizeGuide: guide && {
+      slug: guide.slug,
+      title: guide.title,
+      columns: guide.table.columns,
+      rows: guide.table.rows,
+      howtoMd: guide.howtoMd,
+      tip: guide.tip,
     },
-    deliveryNote: rows.deliveryNote,
+    deliveryNote: pick(tr, 'deliveryNote', rows.deliveryNote),
     rating: {
       count: rows.product.ratingCount,
       averageTenths: averageTenths(rows.product.ratingCount, rows.product.ratingSum),
