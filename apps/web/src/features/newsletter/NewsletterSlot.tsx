@@ -25,7 +25,7 @@ export function NewsletterSlot() {
         <div className="min-w-0">
           <h2
             id="newsletter-heading"
-            className="font-display text-3xl font-semibold leading-tight sm:text-4xl"
+            className="font-display text-3xl font-bold leading-tight sm:text-4xl"
           >
             {t('loyalty.newsletter.slotTitle')}
           </h2>

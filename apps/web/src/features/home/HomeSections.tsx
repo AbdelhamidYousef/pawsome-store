@@ -137,10 +137,7 @@ export function GuidesTeaser() {
   return (
     <section aria-labelledby="home-guides-heading" data-testid="guides-teaser">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-2">
-        <h2
-          id="home-guides-heading"
-          className="text-[1.75rem] font-semibold leading-tight sm:text-4xl"
-        >
+        <h2 id="home-guides-heading" className="text-[1.75rem] font-bold leading-tight sm:text-4xl">
           {t('shell.home.guides.title')}
         </h2>
         <Link
@@ -201,7 +198,7 @@ export function Testimonials() {
       <div className="mb-6 flex flex-wrap items-end justify-between gap-x-4 gap-y-1">
         <h2
           id="home-testimonials-heading"
-          className="text-[1.75rem] font-semibold leading-tight sm:text-4xl"
+          className="text-[1.75rem] font-bold leading-tight sm:text-4xl"
         >
           {t('shell.home.happyTails')}
         </h2>

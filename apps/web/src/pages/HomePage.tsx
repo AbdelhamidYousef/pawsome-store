@@ -22,7 +22,7 @@ import { TEST_IDS } from '../lib/test-ids';
 import { track } from '../lib/track';
 
 // Section titles share one size and weight across the homepage.
-const SECTION_TITLE = 'mb-6 text-[1.75rem] font-semibold leading-tight sm:text-4xl';
+const SECTION_TITLE = 'mb-6 text-[1.75rem] font-bold leading-tight sm:text-4xl';
 
 // Every section after the hero sits in a Container with a top margin. `empty:hidden` drops the
 // whole block (margin included) when its component rendered nothing, so an optional section that

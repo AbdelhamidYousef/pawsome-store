@@ -17,7 +17,7 @@ const ROTATE_MS = 6000;
 // Desktop: the first screen minus the header (~150 px), never under 560 or over 760 px.
 // Phones: tall, but the trust strip still peeks above the fold.
 export const HERO_BOX =
-  'h-[clamp(35rem,calc(100svh-8rem),38rem)] md:h-[clamp(35rem,calc(100svh-9.5rem),47.5rem)]';
+  'h-[clamp(34rem,calc(100svh-8rem),36rem)] md:h-[clamp(35rem,calc(100svh-9.5rem),47.5rem)]';
 
 function prefersReducedMotion(): boolean {
   return (
@@ -60,7 +60,7 @@ export function HeroCarousel({
   }, [rotating, count]);
 
   const arrow =
-    'pointer-events-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-ink shadow-card transition-colors hover:border-ink';
+    'inline-flex h-11 w-11 items-center justify-center rounded-full text-ink transition-colors hover:bg-pet-soft';
 
   return (
     <section
@@ -110,13 +110,13 @@ export function HeroCarousel({
                 <p className="rounded-full bg-surface px-3 py-1 text-sm font-semibold text-pet-strong">
                   {t('shell.home.hero.eyebrow')}
                 </p>
-                <h2 className="line-clamp-2 font-display text-[2rem] font-semibold leading-[1.1] text-ink sm:text-5xl lg:text-[3.5rem]">
+                <h2 className="line-clamp-2 font-display text-[2rem] font-bold leading-[1.1] text-ink sm:text-5xl lg:text-[3.5rem]">
                   {slide.title}
                 </h2>
                 <p className="line-clamp-2 max-w-xl text-base text-ink md:text-xl md:leading-relaxed">
                   {slide.text}
                 </p>
-                <div className="mt-1 flex flex-wrap items-center gap-3">
+                <div className="mt-1 flex flex-wrap items-center gap-2 sm:gap-3">
                   {slide.ctaHref.startsWith('/') ? (
                     <Link to={slide.ctaHref} className={ctaClass}>
                       {slide.ctaLabel}
@@ -137,49 +137,53 @@ export function HeroCarousel({
         ))}
       </div>
 
+      {/* Phones: the controls sit on the photo's bottom edge, so long copy never runs under them.
+          Desktop: under the copy, bottom left. */}
       {count > 1 && (
-        <div className="pointer-events-none absolute inset-x-0 bottom-3 md:bottom-8">
-          <Container className="flex items-center justify-center gap-1 md:justify-start">
-            <button
-              type="button"
-              className={arrow}
-              onClick={() => go(index - 1)}
-              data-testid="hero-prev"
-            >
-              <ArrowLeftIcon width={20} height={20} />
-              <span className="sr-only">{t('shell.home.prev')}</span>
-            </button>
-            <ul className="pointer-events-auto flex items-center px-1" data-testid="hero-dots">
-              {slides.map((slide, i) => (
-                <li key={slide.title}>
-                  <button
-                    type="button"
-                    onClick={() => go(i)}
-                    aria-label={t('shell.home.goTo', { n: i + 1 })}
-                    aria-current={i === index ? 'true' : undefined}
-                    className="group inline-flex h-11 w-7 items-center justify-center"
-                  >
-                    <span
-                      className={cn(
-                        'block h-2.5 rounded-full transition-all',
-                        i === index
-                          ? 'w-6 bg-ink'
-                          : 'w-2.5 bg-muted opacity-50 group-hover:opacity-90',
-                      )}
-                    />
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
-              className={arrow}
-              onClick={() => go(index + 1)}
-              data-testid="hero-next"
-            >
-              <ArrowRightIcon width={20} height={20} />
-              <span className="sr-only">{t('shell.home.next')}</span>
-            </button>
+        <div className="pointer-events-none absolute inset-x-0 top-[calc(40%-3.5rem)] md:bottom-8 md:top-auto">
+          <Container className="flex justify-end md:justify-start">
+            <div className="pointer-events-auto flex items-center rounded-full bg-surface p-1 shadow-card">
+              <button
+                type="button"
+                className={arrow}
+                onClick={() => go(index - 1)}
+                data-testid="hero-prev"
+              >
+                <ArrowLeftIcon width={20} height={20} />
+                <span className="sr-only">{t('shell.home.prev')}</span>
+              </button>
+              <ul className="flex items-center" data-testid="hero-dots">
+                {slides.map((slide, i) => (
+                  <li key={slide.title}>
+                    <button
+                      type="button"
+                      onClick={() => go(i)}
+                      aria-label={t('shell.home.goTo', { n: i + 1 })}
+                      aria-current={i === index ? 'true' : undefined}
+                      className="group inline-flex h-11 w-6 items-center justify-center"
+                    >
+                      <span
+                        className={cn(
+                          'block h-2.5 rounded-full transition-all',
+                          i === index
+                            ? 'w-6 bg-ink'
+                            : 'w-2.5 bg-muted opacity-50 group-hover:opacity-90',
+                        )}
+                      />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <button
+                type="button"
+                className={arrow}
+                onClick={() => go(index + 1)}
+                data-testid="hero-next"
+              >
+                <ArrowRightIcon width={20} height={20} />
+                <span className="sr-only">{t('shell.home.next')}</span>
+              </button>
+            </div>
           </Container>
         </div>
       )}
@@ -188,7 +192,7 @@ export function HeroCarousel({
 }
 
 const ctaClass =
-  'inline-flex min-h-12 items-center rounded-full bg-primary px-7 font-display text-lg font-semibold text-surface shadow-card transition-colors hover:bg-primary-hover md:min-h-14 md:px-9';
+  'inline-flex min-h-12 items-center rounded-full bg-primary px-5 font-display text-base font-semibold text-surface shadow-card transition-colors hover:bg-primary-hover md:min-h-14 md:px-9 md:text-lg';
 
 const secondaryClass =
-  'inline-flex min-h-12 items-center rounded-full border-2 border-ink bg-surface px-6 font-display text-lg font-semibold text-ink transition-colors hover:bg-bg md:min-h-14 md:px-8';
+  'inline-flex min-h-12 items-center rounded-full border-2 border-ink bg-surface px-5 font-display text-base font-semibold text-ink transition-colors hover:bg-bg md:min-h-14 md:px-8 md:text-lg';

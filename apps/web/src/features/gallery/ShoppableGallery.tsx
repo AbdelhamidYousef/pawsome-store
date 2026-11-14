@@ -50,7 +50,7 @@ export function ShoppableGallery({
       <h2
         id={`gallery-heading-${productId ?? 'home'}`}
         className={cn(
-          'font-display font-semibold leading-tight',
+          'font-display font-bold leading-tight',
           productId ? 'text-2xl sm:text-3xl' : 'text-[1.75rem] sm:text-4xl',
         )}
       >
@@ -134,7 +134,7 @@ function GalleryTile({
           {photo.petName && (
             <span
               className={cn(
-                'font-display font-semibold leading-tight',
+                'font-display font-bold leading-tight',
                 big ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg',
               )}
             >
@@ -168,7 +168,7 @@ function GalleryModalBody({ photo }: { photo: GalleryPhoto }) {
         className="aspect-square w-full rounded-card bg-pet-soft object-cover"
       />
       <div className="flex min-w-0 flex-col gap-4">
-        <p className="font-display text-2xl font-semibold leading-tight">
+        <p className="font-display text-2xl font-bold leading-tight">
           {photo.caption || photo.petName || t('shell.gallery.customerPhoto')}
         </p>
         {photo.petName && (
@@ -178,9 +178,7 @@ function GalleryModalBody({ photo }: { photo: GalleryPhoto }) {
         )}
         {photo.products.length > 0 ? (
           <>
-            <h3 className="mt-2 font-display text-lg font-semibold">
-              {t('shell.gallery.inPhoto')}
-            </h3>
+            <h3 className="mt-2 font-display text-lg font-bold">{t('shell.gallery.inPhoto')}</h3>
             <ul className="flex flex-col divide-y divide-line border-y border-line">
               {photo.products.map((p) => (
                 <GalleryProductRow key={p.id} product={p} />
