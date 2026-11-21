@@ -4,10 +4,11 @@ Written by the build sessions for the owner and for the next session.
 
 ## Final state (2026-11-14) — start here
 
+- **2026-11-21**: content translations and the analytics time zone fix pushed; Neon migrated (0038) and re-seeded, de/fr help, legal, specs and FAQs are live. Repo renamed to `store-pawsome`, local folder too.
 - **Everything in the plan is built, merged on `main`, pushed and live**: phases 0–13 and the
   expansion phases 14–22 and 24 (23 was cut). Live demo <https://pawsome-store-tau.vercel.app>
   (stores `/eu-en/`, `/uk-en/` in GBP, `/de-de/`, `/fr-fr/`), repo
-  <https://github.com/AbdelhamidYousef/pawsome-store>. CI green on `main` (typecheck/lint/format,
+  <https://github.com/AbdelhamidYousef/store-pawsome>. CI green on `main` (typecheck/lint/format,
   unit + integration, e2e, gitleaks, audit). No worktree or lane is open; `feat/*` branches are merged.
 - Counts on the final tree (after the polish pass, below): shared 338, web 1,015, API 1,504 + 2
   skipped (live Stripe), e2e 83 + 1 skipped (real card).
@@ -56,7 +57,7 @@ Written by the build sessions for the owner and for the next session.
 1. ~~Stripe, GitHub, deploy~~ **Done 2026-11-14.** Live at <https://pawsome-store-tau.vercel.app>
    (web + API on Vercel, Neon Frankfurt, Stripe sandbox in test mode, hourly jobs from GitHub
    Actions). A real test-card payment went through and its webhook marked the order paid. Repo:
-   <https://github.com/AbdelhamidYousef/pawsome-store>. Optional: a Resend key for real emails;
+   <https://github.com/AbdelhamidYousef/store-pawsome>. Optional: a Resend key for real emails;
    branch protection on `main`; triage the Dependabot PRs.
 4. **13.5 decision** → publish admin demo credentials with a nightly data reset? (plan default: yes).
 5. **13.6** → interview notes, written by you with a session's help; then prune `docs/plan/`
